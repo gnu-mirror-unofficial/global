@@ -26,10 +26,10 @@ You can get and build CVS version of GLOBAL like this:
 <br>Hit return when prompted for the login password.)
 <p>
 <pre>
-% cvs -d:pserver:anoncvs@subversions.gnu.org:/cvsroot login
+% cvs -d:pserver:anoncvs@subversions.gnu.org:/cvsroot/global login
 (Logging in to anoncvs@subversions.gnu.org)
 CVS password: [RET]
-% cvs -d:pserver:anoncvs@subversions.gnu.org:/cvsroot co global
+% cvs -d:pserver:anoncvs@subversions.gnu.org:/cvsroot/global co global
 % cd global
 % sh reconf.sh 
 % ./configure
