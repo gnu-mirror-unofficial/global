@@ -37,8 +37,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	part of the GLOBAL package.
 <dt><a href=http://www.vim.org/>Vim editor</a><dd>
 	Vim is a vi clone written by Bram Moolenaar. You can use GLOBAL
-	from this editor using
-	<a href=http://tamacom.com/unix/index.html#vim>this patch</a>.
+	from this editor using gtags.vim script.
 <dt><a href=http://elvis.the-little-red-haired-girl.org/>Elvis editor</a><dd>
 	Elvis is a vi clone written by Steve Kirkendall,
 	which has two variables "tagprg" and "tagprgonce" for running
