@@ -16,7 +16,7 @@ HTMLS=	global.html whatsnew.html ${MANUAL}_toc.html license.html links.html \
 	plans.html contribute.html maillist.html download.html
 
 TUTOR=	${MANUAL}_toc.in ${MANUAL}.html
-IMAGE=	globe.jpg sglobe.jpg
+IMAGE=	globe.png sglobe.png
 
 all: ${HTMLS} ${MANUAL}.html
 
