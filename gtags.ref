@@ -113,7 +113,7 @@ Gtags skips files which listed in this list.
 As a special exception, gtags collect values from multiple @code{skip} variables.
 If the value ends with '/', it assumed as a directory and gtags skips all files under it.
 If the value start with '/', it assumed relative path from the root of source directory.
-By default, it assumes GPATH, GTAGS, GRTAGS, GSYMS, HTML/, tags, TAGS, ID, y.tab.c, y.tab.h, SCCS/, RCS/, CVS/, CVSROOT/, .deps/.
+By default, it assumes GPATH, GTAGS, GRTAGS, GSYMS, HTML/, tags, TAGS, ID, y.tab.c, y.tab.h, .notfunction, cscope.out, SCCS/, RCS/, CVS/, CVSROOT/, .deps/, @{arch@}/.
 @item @code{suffixes}(comma separated list)
 Suffixes of target source file.
 As a special exception, gtags collect values from multiple @code{suffixes} variables.
@@ -131,6 +131,10 @@ Use specified sort(1) command, which is used internally.
 @end table
 @unnumberedsubsec DIAGNOSTICS
 Gtags exits with a non 0 value if an error occurred, 0 otherwise.
+@unnumberedsubsec MESSAGE FORMAT
+Verbose message has important level. The most important level is 0,
+the second it 1 and so on. All the message has level numbers leading
+blanks.
 @unnumberedsubsec SEE ALSO
 gctags(1),
 global(1),

@@ -32,7 +32,7 @@ Free Documentation License".
 @end ifinfo
 
 @titlepage
-@title GNU GLOBAL source code tag system
+@title GNU GLOBAL Source Code Tag System
 @subtitle Edition @value{EDITION}, for GNU GLOBAL version @value{VERSION}
 @subtitle @value{UPDATED}
 @author by Shigio Yamaguchi
@@ -2002,8 +2002,7 @@ Otherwise, you can make a suitable wrapper for the plug-in parser.
 @node   Compact format
 @section Compact format.
 
-You can save disk space with the compact format. The compact format
-needs source files.
+You can save disk space with the compact format.
 
 @itemize @bullet
 @item To specify the use of the compact format on the command line,
