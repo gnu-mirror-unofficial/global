@@ -162,7 +162,7 @@ for ($i = 0; $i < $total; $i++) {
 	print OUTFILE "<!-- $outfile{$infile} generated automatically by makehtml.pl from $infile. -->\n";
 	print OUTFILE "<small>\n";
 	print OUTFILE "<a href=http://www.gnu.org/>GNU Project</a> -\n";
-	print OUTFILE "<a href=http://www.gnu.org/software/>Software</a> / \n";
+	print OUTFILE "<a href=http://www.gnu.org/directory/GNU/>software</a> / \n";
 	print OUTFILE "<a href=http://savannah.gnu.org/>Savannah</a> -\n";
 	print OUTFILE "<a href=http://savannah.gnu.org/projects/global/>GLOBAL</a>\n";
 	print OUTFILE "</small>\n";

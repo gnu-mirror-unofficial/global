@@ -20,7 +20,7 @@ IMAGE=	globe.png sglobe.png
 
 all: ${HTMLS} ${MANUAL}.html
 
-${HTMLS}: ${FILES} ${TUTOR}
+${HTMLS}: makehtml.pl ${FILES} ${TUTOR}
 	@./makehtml.pl -v ${FILES}
 
 ${TUTOR}: global.txi version.texi reference.txi fdl.txi gctags.ref global.ref gtags.ref htags.ref
