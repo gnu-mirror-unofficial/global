@@ -20,7 +20,30 @@ ___________________________________
 GLOBAL NEWS - User visible changes.
 At least, you had better search '[INCOMPATIBLE CHANGES]' for each version.
 
-Version 4.3 - Jan 10 2002, by Shigio Yamaguchi
+Version 4.4 - March 30 2002, by Shigio Yamaguchi
+
+* gozilla: gozilla return to GLOBAL.
+* htags: -o(--other) option added. This option list not only source files
+  but also other files like 'README'.
+* global: -o(--other) option added. This option search in not only source
+  files but also other files like 'README'.
+* htags: configuration variable other_files added.
+* htags: configuration variable definition_header={no|after|before} added.
+* htags: configuration variable enable_grep and enable_idutils added.
+* htags: -l(--each-line-tag) option deleted.
+  From now on, htags works as if -l flag is always specified.
+  But -l(--each-line-tag) option is accepted for backward compatibility.
+* global: path conversion optimized and bug fixed.
+* gtags.conf: added documentation about variables.
+* htags: shut another security hole.
+* Some bugs are fixed.
+
+Version 4.3.1 - January 22 2002, by Shigio Yamaguchi
+
+This is bug fix version.
+* htags: global.cgi wasn't generated correctly.
+
+Version 4.3 - January 10 2002, by Shigio Yamaguchi
 
 * Support DJGPP.
 * Support nvi-1.81.5.
@@ -29,7 +52,7 @@ Version 4.3 - Jan 10 2002, by Shigio Yamaguchi
 * htags: fill anchors into path name.
 * global: GTAGSROOT file supported.
 
-Version 4.2 - Nov 24 2001, by Shigio Yamaguchi
+Version 4.2 - November 24 2001, by Shigio Yamaguchi
 
 * postgres support added.
   You need to configure GLOBAL with --with-postgres option.

@@ -4,7 +4,7 @@ htags - generate hypertext from source code.
 @unnumberedsubsec SYNOPSIS
 @noindent
 @quotation
-htags [-a][-c][-f][-F][-l][-n][-v][-s][-w][-d dir][-S dir][-t title][dir]@*
+htags [-a][-c][-f][-F][-n][-o][-s][-v][-w][-d dir][-S dir][-t title][dir]@*
 @end quotation
 @unnumberedsubsec DESCRIPTION
 Htags makes hypertext from C, C++, Yacc and Java source code.
@@ -36,12 +36,11 @@ You need to set up an HTTP server for this.
 Use frame for each part of the contents.
 @item @samp{--gtagsconf} file
 Load user's configuration from file.
-@item @samp{-l}, @samp{--each-line-tag}
-Make a name tag(<A NAME=line number>) for each line, so that
-other hypertext can link to any line of this hypertext.
-By default, htags makes it only for lines that are referred to.
 @item @samp{-n}, @samp{--line-number}
 Print the line numbers. By default, doesn't print it.
+@item @samp{-o}, @samp{--other}
+Pick up not only source files but also other files except for
+binary files.
 @item @samp{-v}, @samp{--verbose}
 Verbose mode.
 @item @samp{-w}, @samp{--warning}
@@ -93,6 +92,66 @@ configuration file. The default is @file{$HOME/.globalrc}.
 @item @var{GTAGSLABEL}
 If this variable is set, its value is used as the label
 of configuration file. The default is @code{default}.
+@end table
+@unnumberedsubsec CONFIGURATION
+The following configuration variables affect the execution of htags:
+@table @asis
+@item @code{htags_options}(string)
+Default options for htags. This value is inserted into
+the head of arguments.
+@item @code{body_begin}(string)
+Begin tag for body. The default is '<BODY>'.
+@item @code{body_end}(string)
+End tag for body. The default is '</BODY>'.
+@item @code{title_begin}(string)
+Begin tag for Title. The default is '<FONT COLOR=#cc0000>'.
+@item @code{title_end}(string)
+End tag for Title. The default is '</FONT>'.
+@item @code{comment_begin}(string)
+Begin tag for comments. The default is '<I><FONT COLOR=green>'.
+@item @code{comment_end}(string)
+End tag for comments. The default is '</FONT></I>'.
+@item @code{sharp_begin}(string)
+Begin tag for 'define'. The default is '<FONT COLOR=darkred>'.
+@item @code{sharp_end}(string)
+End tag for 'define'. The default is '</FONT>'.
+@item @code{brace_begin}(string)
+Begin tag for brace. The default is '<FONT COLOR=blue>'.
+@item @code{brace_end}(string)
+End tag for brace. The default is '</FONT>'.
+@item @code{reserved_begin}(string)
+Begin tag for reserved word. The default is '<B>'.
+@item @code{reserved_end}(string)
+End tag for reserved word. The default is '</B>'.
+@item @code{position_begin}(string)
+Begin tag for posiotion mark. The default is '<FONT COLOR=gray>'.
+@item @code{position_end}(string)
+End tag for posiotion mark. The default is '</FONT>'.
+@item @code{ncol}(number)
+Columns of line number. The default is 4.
+@item @code{tabs}(number)
+Tab stop. The default is 8.
+@item @code{full_path}(boolean)
+List file names with full path in file index.
+By default, list just the last component of a path.
+@item @code{table_list}(boolean)
+List tags using table tag. The default is false.
+@item @code{normal_suffix}(string)
+Suffix for normal html file. The default is 'html'.
+@item @code{gzipped_suffix}(string)
+Suffix for compressed html file. The default is 'ghtml'.
+@item @code{script_alias}(string)
+Script alias for safe cgi script (@samp{-S}).
+@item @code{show_position}(boolean)
+Show position per function definition. The default is false.
+@item @code{definition_header}(no|before|after)
+Position of link header. The default is after.
+@item @code{other_files}(boolean)
+File index includes not only source files but also other files. The default is false.
+@item @code{enable_grep}(boolean)
+Enable grep search using CGI program. The default is false.
+@item @code{enable_idutils}(boolean)
+Enable idutils search using CGI program. The default is false.
 @end table
 @unnumberedsubsec DIAGNOSTICS
 Htags exits with a non 0 value if an error occurred, 0 otherwise.
