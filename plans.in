@@ -39,6 +39,7 @@ Plans of the highest priority are listed first.
 <li>Ttags(1) command.<br>
         Ttags(1) is similar to htags(1) but makes TeX source for a book
         instead of hypertext.
+<li>Support multi-bytes code set.
 </ul>
 Any contributions are appreciated.
 Please see <a href=contribute.html>contribution</a>.
