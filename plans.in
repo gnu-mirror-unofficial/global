@@ -24,7 +24,7 @@ enum name, enum value, union name and struct name. Finally, remove GSYMS.
         <li>LaTeX
 	<li>Lex
         </ul>
-<li>Visual interface with GUI.
+<li>Visual interface using GUI.
 <li>Ttags(1) command.<br>
         Ttags(1) is similar to htags(1) but makes TeX source for a book
         instead of hypertext.
