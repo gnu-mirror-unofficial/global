@@ -1,11 +1,15 @@
 @title What's new?
 @link What's new
 @license
-Copyright (c) 2000, 2001, 2002, 2003, 2004 Tama Communications Corporation
+Copyright (c) 2000, 2001, 2002, 2003, 2004, 2005 Tama Communications Corporation
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <dl compact>
+<dt>2005/3/4<dd>
+	GLOBAL-4.8.4 was released.
+	This is the bug fix version of GLOBAL-4.8.3.
+	See <a href=http://savannah.gnu.org/forum/forum.php?forum_id=3659>release note</a>.
 <dt>2005/2/26<dd>
 	GLOBAL-4.8.3 was released.
 	See <a href=http://savannah.gnu.org/forum/forum.php?forum_id=3645>release note</a>.
