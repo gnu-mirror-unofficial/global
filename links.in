@@ -102,7 +102,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 
 <H3>Source code browsing Tools</H3>
 <dl>
-<dt><a href=ftp://ftp.netsw.org/netsw/SoftEng/Lang/C/Tools/cflow/>cflow clone</a><dd>
+<dt><a href=ftp://ftp.netsw.org/softeng/lang/c/tools/cflow/>cflow clone</a><dd>
 	This is a clone of cflow based on ctags.
 <dt><a href=http://www.gedanken.demon.co.uk/cxref/>Cxref</a><dd>
 	Cxref is a C source code cross referencing and documenting program
