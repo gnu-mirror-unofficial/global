@@ -12,11 +12,16 @@ Plans of the highest priority are listed first.
 <li>Support new languages.
 	Here is a list of candidates:
         <ul>
+	<li>C#
 	<li>LaTeX
 	<li>Scheme
         </ul>
 <li>Pickup definitions of data type, enum name, enum value,
 	union name and struct name. Finally, remove GSYMS. (gctags, gtags)
+<li>Make the links in htags(1) context sensitive.<br>
+	For example, if you have a pointer p to a struct B with a field b,
+	and write p->b in the code, the "b" is linked to the field in B.
+	It supports struct, class and namespace(C++).
 <li>The --dynamic option generates not only index files but also hypertext
 	of source code itself.
 <li>Include external parsers (gctags).<br>
