@@ -88,6 +88,10 @@ under the terms of the GNU Free Documentation License, Version 1.1
 
 <H3>Source code browsing Tools</H3>
 <dl>
+<dt><a href=http://students.ceid.upatras.gr/~sxanth/ncc/>ncc</a><dd>
+	ncc is a compiler that produces program analysis information.
+	ncc is a decent replacement of cflow and cscope able to analyse
+	any program using the gcc compiler.
 <dt><a href=http://sourceforge.net/projects/lxr>LXR</a><dd>
 	A general purpose source code indexer and cross-referencer that
 	provides web-based browsing of source code with links to the
