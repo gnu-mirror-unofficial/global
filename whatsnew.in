@@ -17,7 +17,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	GLOBAL-4.1 was released.
 	<br>
 	It includes GloBash -- Global facility for Bash.
-	See <a href=http://www.tamacom.com/global/global.html#SEC6>3. Global facility for Bash</a>.
+	See <a href=http://tamacom.com/global/global.html#SEC6>3. Global facility for Bash</a>.
 <dt>2001/7/6<dd>
 	Jason Hood made another GLOBAL-4.0.1 port using DJGPP.
 	He also distributes the binary package.
@@ -30,7 +30,6 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	Now GLOBAL supports <a href=http://www.vim.org/>vim</a> editor.
 	Here is <a href=http://tamacom.com/unix/index.html#vim>a patch</a>
 	for vim 6.0o.<br>
-	See <a href=vim-6.0o+gtags/README>README</a>.
 <dt>2001/2/21<dd>
 	GLOBAL-4.0.1 binary package for RedHat 7.X Linux. See
 	<a href=http://caliente.as.arizona.edu/~tim/RPMS/rh7x/i386/global-4.0.1-1.i386.html>this</a>.
@@ -43,7 +42,6 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	Now GLOBAL supports
 	<a href=http://www.gnu.org/software/less/less.html>less</a> viewer.
 	Here is <a href=http://tamacom.com/unix/index.html#less>a patch</a> for less-358.<br>
-	See <a href=less-358+gtags/README>README</a> and <a href=less-358+gtags/HACKING>design memo</a>.<br>
 	Binary package for Windows is also available at <a href="http://www.geocities.com/shankara_c/global.html">Shankar Chakkere's GLOBAL Page</A>.
 <dt>2000/11/13<dd>
 	Now CVS repository is available. See <a href=download.html>Download</a>.
