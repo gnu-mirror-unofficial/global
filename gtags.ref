@@ -159,6 +159,6 @@ Please be careful of info string using @samp{--info} option.
 Info string is passed to external system as is.
 If you mistake the value then program may abort with core dump.
 @unnumberedsubsec AUTHOR
-Shigio Yamaguchi, Tama Communications Corporation.
+Tama Communications Corporation.
 @unnumberedsubsec HISTORY
 The gtags command appeared in FreeBSD 2.2.2.

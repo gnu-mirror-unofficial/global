@@ -189,6 +189,6 @@ less(1).
 GNU GLOBAL source code tag system@*
 (http://www.gnu.org/software/global/).
 @unnumberedsubsec AUTHOR
-Shigio Yamaguchi, Tama Communications Corporation.
+Tama Communications Corporation.
 @unnumberedsubsec HISTORY
 The global command appeared in FreeBSD 2.2.2.

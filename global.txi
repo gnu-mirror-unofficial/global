@@ -577,7 +577,7 @@ First, do the preparation of global. (Please see @xref{Preparation}.).
 And you can invoke bash(1) with ---rcfile option.
 @example
 
-    % bash --rcfile globash.rc
+    % bash --rcfile /usr/local/share/gtags/globash.rc
 
 @end example
 
@@ -1589,7 +1589,7 @@ If you are editing @file{main.c} itself, you can use '%' instead.
 
     :Gtags func1               <- @r{'nc1' is appended by vim}
 
-@item You can browse project files whose path includs specified pattern.
+@item You can browse project files whose path includes specified pattern.
 @opindex -P
 @example
 
