@@ -6,6 +6,10 @@ Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <dl compact>
+<dt>2003/3/29<dd>
+	GLOBAL-4.5.2 was released.
+	See <a href=http://savannah.gnu.org/forum/forum.php?forum_id=1713>release note</a>.
+	<br>
 <dt>2002/11/9<dd>
 	GLOBAL-4.5.1 was released.
 	See <a href=http://mail.gnu.org/archive/html/info-global/2002-11/msg00000.html>release note</a>.
