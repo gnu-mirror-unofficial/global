@@ -25,6 +25,8 @@ all: $(TARGET)
 
 update: clean all distclean
 
+index.html: index.in
+	./makehtml.pl index
 global.html: $(SOURCE)
 	texi2html -number -monolithic $(SOURCE)
 global.html.gz: global.html
@@ -51,4 +53,5 @@ global-texinfo.tar.gz:
 distclean:
 	rm -f $(CLEAN_FILES) $(DVI) global_toc.html
 clean:
-	rm -f $(CLEAN_FILES) $(DVI) global_toc.html global.html $(TARGET)
+	rm -f $(CLEAN_FILES) $(DVI) global_toc.html \
+		global.html $(TARGET) index.html
