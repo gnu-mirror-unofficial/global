@@ -8,13 +8,13 @@ under the terms of the GNU Free Documentation License, Version 1.1
 Plans of the highest priority are listed first.
 <p>
 <ul>
+<li>Write vim script 'gtags.vim' to use GLOBAL from vim editor.
 <li>Support new languages.
 	Here is a list of candidates:
         <ul>
 	<li>LaTeX
 	<li>Scheme
         </ul>
-<li>In C++, pickup functions in namespace.
 <li>Pickup definitions of data type, enum name, enum value,
 	union name and struct name. Finally, remove GSYMS. (gctags, gtags)
 <li>The --dynamic option generates not only index files but also hypertext
