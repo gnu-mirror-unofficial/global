@@ -32,7 +32,8 @@ You need to bring following files from GLOBAL package by hand.
 o *.texi *.txi and *.ref (used by tutorial).
 
 -------------------------------------------------------------------------
-Additional copyright notice about graphic files. (globe.png, sglobe.png)
+Additional copyright notice about graphic files.
+(globe.png, sglobe.png, pglobe.png)
 -------------------------------------------------------------------------
 Copyright(c) 2001 Tama Communications Corporation
 
