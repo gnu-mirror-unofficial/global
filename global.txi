@@ -109,7 +109,7 @@ User's position (current directory) is the first argument for GLOBAL's command.
 GNU GLOBAL has following features:
 
 @itemize @bullet
-@item support C, C++, Yacc, Java, PHP and assembler.
+@item support C, C++, Yacc, Java, PHP and assembly.
 @item work the same way across diverse environments. Currently, support followings:
 	@itemize @minus
 	@item Shell command line
@@ -1481,9 +1481,12 @@ Second, write the following set command to the @file{.vimrc} and start vim.
     $HOME/.vimrc
     +----------------------------
     |set grepprg=global\ -t
-    |set grepformat=%m\@kbd{TAB}%f\@kbd{TAB}%l
-
-    TAB means @kbd{CTL-I}
+    |set grepformat=%m%\\t%f%\\t%l
+or
+    $HOME/.vimrc
+    +----------------------------
+    |set grepprg=global\ -x
+    |set grepformat=%m%\\s%\\+%l%\\s%f%.%#
 
 @end example
 @opindex -t

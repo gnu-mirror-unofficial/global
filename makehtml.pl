@@ -98,6 +98,22 @@ sub copyright {
 	$msg .= $l_GFDL;
 	return logobox($msg, -1, $l_smalllogo);
 }
+sub get_version {
+	my($infile) = 'version.texi';
+	my($val);
+
+	open(INFILE, "$infile") || die("cannot open '$infile'\n");
+	while (<INFILE>) {
+		if (/^\@set VERSION (.*)$/) {
+			$val = $1;
+		}
+	}
+	close(INFILE);
+	if (!$val) {
+		die("Version number not found in '$infile'\n");
+	}
+	$val;
+}
 # End of definitions
 ############################################################
 while ($ARGV[0] =~ /^-/) {
@@ -106,6 +122,7 @@ while ($ARGV[0] =~ /^-/) {
 		$verbose = 1;
 	}
 }
+$version = get_version();
 $total = @ARGV;
 #
 # Making %outfile, %title, %link, %body for each @ARGV.
@@ -145,6 +162,9 @@ for ($i = 0; $i < $total; $i++) {
 		die("\@link not found.\n");
 	}
 	my(@body) = <INFILE>;
+	foreach (@body) {
+		s/\@VERSION\@/$version/g;
+	}
 	$body{$infile} = \@body;
 	close(INFILE);
 }

@@ -8,7 +8,7 @@ gctags [-bdenrstvw] file ...@*
 @end quotation
 @unnumberedsubsec DESCRIPTION
 Gctags print cross reference list for gtags(1)
-from the specified C, C++, yacc, java, PHP and assembler source
+from the specified C, C++, yacc, java, PHP and Assembly source
 to standard output.
 Each line of output contains the object name,
 the line number which it appears, the file in which it is defined,
@@ -22,7 +22,7 @@ and other symbols.
 Files whose names end in @file{.c} or @file{.h} are assumed to be C
 source files and are searched for C style routine and macro definitions.
 Files whose names end in @file{.c++} @file{.cc} @file{.cpp}
-@file{.cxx} @file{.hxx} @file{.C} @file{.H} are assumed to be C++
+@file{.cxx} @file{.hxx} @file{.hpp} @file{.C} @file{.H} are assumed to be C++
 source files.
 Files whose names end in @file{.y} are assumed to be YACC source files.
 Files whose names end in @file{.java} are assumed to be Java source files.
@@ -68,7 +68,7 @@ Print warning message.
 @item @samp{--langmap}=map
 Language mapping. Each comma-separated  map  consists of
 the language name, a colon, and a list of file extensions.
-Default mapping is 'c:.c.h,yacc:.y,asm:.s.S,java:.java,cpp:.c++.cc.cpp.cxx.hxx.C.H,php:.php.php3.phtml'.
+Default mapping is 'c:.c.h,yacc:.y,asm:.s.S,java:.java,cpp:.c++.cc.cpp.cxx.hxx.hpp.C.H,php:.php.php3.phtml'.
 @end table
 
 The @samp{-r} and @samp{-s} options override each other;
