@@ -50,7 +50,7 @@ You can get the relative path of objects from anywhere within that scope.
 <li> plugged-in parser is available to treat new language.
 <li> compact format is available to save disk space.
 <li> support incremental updating of tag files.
-<li> support customizing with global.conf.
+<li> support customizing with gtags.conf.
 <li> generate completion list for completing input method.
 </ul>
 
