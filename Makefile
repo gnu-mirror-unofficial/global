@@ -11,9 +11,9 @@
 #
 MANUAL=	globaldoc
 FILES=	global.in whatsnew.in ${MANUAL}_toc.in license.in links.in \
-	plans.in contribute.in museum.in maillist.in download.in
+	plans.in contribute.in maillist.in download.in
 HTMLS=	global.html whatsnew.html ${MANUAL}_toc.html license.html links.html \
-	plans.html contribute.html museum.html maillist.html download.html
+	plans.html contribute.html maillist.html download.html
 
 TUTOR=	${MANUAL}_toc.in ${MANUAL}.html
 IMAGE=	globe.jpg sglobe.jpg
