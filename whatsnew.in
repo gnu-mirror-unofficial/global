@@ -7,6 +7,10 @@ Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <dl compact>
+<dt>2001/12/23<dd>
+	Now <a href=http://www.greenwoodsoftware.com/less/>less-370</a>
+	supports GLOBAL officially.
+	(You must set environment variable LESSGLOBALTAGS.)
 <dt>2001/11/24<dd>
 	GLOBAL-4.2 was released. Postgres database system was supported as
 	tag storage.
