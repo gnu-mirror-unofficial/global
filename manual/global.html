@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.56k from ../global.txi on 1 February 2004 -->
+<!-- Created by texi2html 1.56k from ../global.txi on 26 August 2004 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY>
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 4.7, for GNU GLOBAL version 4.7</H2>
-<H2>1 February 2004</H2>
+<H2>Edition 4.8, for GNU GLOBAL version 4.8</H2>
+<H2>26 August 2004</H2>
 <ADDRESS>by Shigio Yamaguchi</ADDRESS>
 <P>
 <P><HR><P>
@@ -193,7 +193,7 @@
 <P>
 Copyright (C) 2000, 2001, 2002, 2003, 2004 Tama Communications Corporation
 This is the first edition of the GNU GLOBAL documentation,<BR>
-and is consistent with 4.7.<BR>
+and is consistent with 4.8.<BR>
 Published by Tama Communications Corporation <BR>
 Tama-shi, Tokyo, Japan.<BR>
 
@@ -260,7 +260,7 @@ GNU GLOBAL has following features:
 
 
 <UL>
-<LI>support C, C++, Yacc, Java, PHP and assembly.
+<LI>support C, C++, Yacc, Java, PHP4 and assembly.
 
 <LI>work the same way across diverse environments. Currently, support followings:
 
@@ -787,7 +787,7 @@ And you can invoke bash(1) with --rcfile option.
 
 <PRE>
 
-    % bash --rcfile globash.rc
+    % bash --rcfile /usr/local/share/gtags/globash.rc
 
 </PRE>
 
@@ -1967,7 +1967,7 @@ If you are editing <TT>`main.c'</TT> itself, you can use '%' instead.
 
     :Gtags func1               &#60;- 'nc1' is appended by vim
 
-<LI>You can browse project files whose path includs specified pattern.
+<LI>You can browse project files whose path includes specified pattern.
 
 <A NAME="IDX22"></A>
 
@@ -2913,7 +2913,7 @@ GNU GLOBAL source code tag system<BR>
 
 <H3><A NAME="SEC67" HREF="global.html#TOC67">AUTHOR</A></H3>
 <P>
-Shigio Yamaguchi, Tama Communications Corporation.
+Tama Communications Corporation.
 
 
 <H3><A NAME="SEC68" HREF="global.html#TOC68">HISTORY</A></H3>
@@ -3168,7 +3168,7 @@ If you mistake the value then program may abort with core dump.
 
 <H3><A NAME="SEC82" HREF="global.html#TOC82">AUTHOR</A></H3>
 <P>
-Shigio Yamaguchi, Tama Communications Corporation.
+Tama Communications Corporation.
 
 
 <H3><A NAME="SEC83" HREF="global.html#TOC83">HISTORY</A></H3>
@@ -3282,7 +3282,8 @@ Specify the main function name. The default is <CODE>main</CODE>.
 Print the line numbers. By default, doesn't print it.
 <DT><SAMP>`--no-map-file'</SAMP>
 <DD>
-Doesn't generate <TT>`MAP'</TT> file. By default, htags generates it.
+Doesn't generate <TT>`MAP'</TT> and <TT>`MAPFILE'</TT> file.
+By default, htags generates them.
 <DT><SAMP>`-o'</SAMP>, <SAMP>`--other'</SAMP>
 <DD>
 Pick up not only source files but also other files except for
@@ -3334,7 +3335,7 @@ The default is the current directory.
 	% lynx HTML/D/348.html
 
 	% cd global
-	% htags -gv --cvsweb=http://savannah.gnu.org/cgi-bin/cvsweb/global/
+	% htags -gv --cvsweb=http://savannah.gnu.org/cgi-bin/viewcvs/global/global/
 
 </PRE>
 
@@ -3365,6 +3366,10 @@ Index file for hypertext.
 <DD>
 Mapping file for converting tag into path of hypertext.
 External system utilize this file. See EXAMPLES.
+<DT><TT>`HTML/FILEMAP'</TT>
+<DD>
+Mapping file for converting file name into path of hypertext.
+External system utilize this file.
 </DL>
 
 
@@ -3397,6 +3402,12 @@ btree cache. The default is 500000 (bytes).
 The following configuration variables affect the execution of htags:
 <DL COMPACT>
 
+<DT><CODE>datadir</CODE>(string)
+<DD>
+Shared data directory. The default is '/usr/local/share' but
+you can change the value using configure script.
+Htags lookup templete files in the 'gtags' directory
+in this data directory.
 <DT><CODE>htags_options</CODE>(string)
 <DD>
 Default options for htags. This value is inserted into
@@ -3550,7 +3561,7 @@ PHP supprt is far from complete.
 
 <H3><A NAME="SEC97" HREF="global.html#TOC97">AUTHOR</A></H3>
 <P>
-Shigio Yamaguchi, Tama Communications Corporation.
+Tama Communications Corporation.
 
 
 <H3><A NAME="SEC98" HREF="global.html#TOC98">HISTORY</A></H3>
@@ -3701,7 +3712,7 @@ Probably valid only for FreeBSD and Linux kernel source.
 
 <H3><A NAME="SEC107" HREF="global.html#TOC107">AUTHOR</A></H3>
 <P>
-Shigio Yamaguchi, Tama Communications Corporation.
+Tama Communications Corporation.
 
 
 <H3><A NAME="SEC108" HREF="global.html#TOC108">HISTORY</A></H3>
@@ -3873,7 +3884,7 @@ environment.
 
 <H3><A NAME="SEC121" HREF="global.html#TOC121">AUTHORS</A></H3>
 <P>
-Shigio Yamaguchi, Tama Communications Corporation.
+Tama Communications Corporation.
 
 
 <H3><A NAME="SEC122" HREF="global.html#TOC122">HISTORY</A></H3>
@@ -4384,7 +4395,7 @@ to permit their use in free software.
 Jump to:
 <P>
 <P><HR><P>
-This document was generated on 1 February 2004 using
+This document was generated on 26 August 2004 using
 <A HREF="http://wwwinfo.cern.ch/dis/texi2html/">texi2html</A>&nbsp;1.56k.
 </BODY>
 </HTML>

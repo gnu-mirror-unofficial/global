@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.56k from globaldoc.txi on 7 June 2004 -->
+<!-- Created by texi2html 1.56k from globaldoc.txi on 26 August 2004 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY>
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 4.7.2, for GNU GLOBAL version 4.7.2</H2>
-<H2>7 June 2004</H2>
+<H2>Edition 4.8, for GNU GLOBAL version 4.8</H2>
+<H2>26 August 2004</H2>
 <ADDRESS>by Shigio Yamaguchi</ADDRESS>
 <P>
 <P><HR><P>
@@ -15,7 +15,7 @@
 <P>
 Copyright (C) 2000, 2001, 2002, 2003, 2004 Tama Communications Corporation
 This is the first edition of the GNU GLOBAL documentation,<BR>
-and is consistent with 4.7.2.<BR>
+and is consistent with 4.8.<BR>
 Published by Tama Communications Corporation <BR>
 Tama-shi, Tokyo, Japan.<BR>
 
@@ -3104,7 +3104,8 @@ Specify the main function name. The default is <CODE>main</CODE>.
 Print the line numbers. By default, doesn't print it.
 <DT><SAMP>`--no-map-file'</SAMP>
 <DD>
-Doesn't generate <TT>`MAP'</TT> file. By default, htags generates it.
+Doesn't generate <TT>`MAP'</TT> and <TT>`MAPFILE'</TT> file.
+By default, htags generates them.
 <DT><SAMP>`-o'</SAMP>, <SAMP>`--other'</SAMP>
 <DD>
 Pick up not only source files but also other files except for
@@ -3187,6 +3188,10 @@ Index file for hypertext.
 <DD>
 Mapping file for converting tag into path of hypertext.
 External system utilize this file. See EXAMPLES.
+<DT><TT>`HTML/FILEMAP'</TT>
+<DD>
+Mapping file for converting file name into path of hypertext.
+External system utilize this file.
 </DL>
 
 
@@ -3219,6 +3224,12 @@ btree cache. The default is 500000 (bytes).
 The following configuration variables affect the execution of htags:
 <DL COMPACT>
 
+<DT><CODE>datadir</CODE>(string)
+<DD>
+Shared data directory. The default is '/usr/local/share' but
+you can change the value using configure script.
+Htags lookup templete files in the 'gtags' directory
+in this data directory.
 <DT><CODE>htags_options</CODE>(string)
 <DD>
 Default options for htags. This value is inserted into
@@ -4206,7 +4217,7 @@ to permit their use in free software.
 Jump to:
 <P>
 <P><HR><P>
-This document was generated on 7 June 2004 using
+This document was generated on 26 August 2004 using
 <A HREF="http://wwwinfo.cern.ch/dis/texi2html/">texi2html</A>&nbsp;1.56k.
 </BODY>
 </HTML>
