@@ -2,8 +2,8 @@
 @link Tutorial
 @body
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 4.5.3, for GNU GLOBAL version 4.5.3</H2>
-<H2>5 June 2003</H2>
+<H2>Edition 4.6, for GNU GLOBAL version 4.6</H2>
+<H2>2 July 2003</H2>
 <ADDRESS>by Shigio Yamaguchi</ADDRESS>
 <P>
 <P><HR><P>
@@ -184,5 +184,5 @@
 <LI><A NAME="TOC136" HREF="globaldoc.html#SEC136">Option Index</A>
 </UL>
 <P><HR><P>
-This document was generated on 5 June 2003 using
+This document was generated on 2 July 2003 using
 <A HREF="http://wwwinfo.cern.ch/dis/texi2html/">texi2html</A>&nbsp;1.56k.

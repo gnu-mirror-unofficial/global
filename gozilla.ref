@@ -82,7 +82,8 @@ Gozilla exits with a non 0 value if an error occurred, 0 otherwise.
 @unnumberedsubsec SEE ALSO
 global(1),
 gtags(1),
-htags(1).
+htags(1),
+mozilla(1).
 
 GNU GLOBAL source code tag system@*
 (http://www.gnu.org/software/global/).

@@ -16,7 +16,7 @@ You should execute this command at the root of the source tree.
 If your source directory is on a read only device like CDROM,
 specify dbpath of the directory on which make tag files.
 
-C, C++, yacc, java and assembler source files are supported.
+C, C++, yacc, java, PHP and assembler source files are supported.
 Files whose names end in @file{.c} or @file{.h} are assumed to be
 C source files and are searched for C style routine and macro
 definitions.
@@ -24,6 +24,8 @@ Files whose names end in @file{.c++} @file{.cc} @file{.cpp} @file{.cxx}
 @file{.hxx} @file{.C} @file{.H} are assumed to be C++ source files.
 Files whose names end in @file{.y} are assumed to be YACC source files.
 Files whose names end in @file{.java} are assumed to be Java source files.
+Files whose names end in @file{.php} @file{.php3} @file{.phtml} are
+assumed to be PHP source files.
 Files whose names end in @file{.s} or @file{.S}
 are assumed to be Assembler source files.
 Other files are searched for C style definitions.
@@ -113,11 +115,11 @@ Gtags skips files which listed in this list.
 As a special exception, gtags collect values from multiple @code{skip} variables.
 If the value ends with '/', it assumed as a directory and gtags skips all files under it.
 If the value start with '/', it assumed relative path from the root of source directory.
-By default, it assumes GPATH, GTAGS, GRTAGS, GSYMS, HTML/, tags, TAGS, ID, y.tab.c, y.tab.h, .notfunction, cscope.out, SCCS/, RCS/, CVS/, CVSROOT/, .deps/, @{arch@}/.
+By default, it assumes GPATH, GTAGS, GRTAGS, GSYMS, HTML/, tags, TAGS, ID, y.tab.c, y.tab.h, .notfunction, cscope.out, SCCS/, RCS/, CVS/, CVSROOT/, .deps/, @{arch@}/, .cvsrc, .cvsignore, .cvspass, .cvswrappers.
 @item @code{suffixes}(comma separated list)
 Suffixes of target source file.
 As a special exception, gtags collect values from multiple @code{suffixes} variables.
-By default, it assumes c, h, y, c++, cc, cpp, cxx, hxx, C, H, s, S, java.
+By default, it assumes c, h, y, c++, cc, cpp, cxx, hxx, C, H, s, S, java, php, php3, phtml.
 @item @code{format}(standard|compact)
 Format of tag files. The default is @code{standard}.
 Compact format is same to @samp{-c}(@samp{--compact}).

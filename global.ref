@@ -15,7 +15,7 @@ global -u[qv]@*
 @end quotation
 @unnumberedsubsec DESCRIPTION
 Global find the locations of specified object
-in C, C++, Yacc, Java and assembler source files.
+in C, C++, Yacc, Java, PHP and assembler source files.
 Global can treat a source tree, that is, a directory that
 has subdirectories and source files.
 You can get the relative path of objects from anywhere within the tree.
@@ -183,7 +183,8 @@ Global exits with a non 0 value if an error occurred, 0 otherwise.
 @unnumberedsubsec SEE ALSO
 gctags(1),
 gtags(1),
-htags(1).
+htags(1),
+less(1).
 
 GNU GLOBAL source code tag system@*
 (http://www.gnu.org/software/global/).

@@ -7,7 +7,7 @@ htags - generate hypertext from source code.
 htags [-a][-c][-D][-f][-F][-g][-n][-o][-s][-v][-w][-d dbpath][-m name][-S cgidir][-t title][htmldir]@*
 @end quotation
 @unnumberedsubsec DESCRIPTION
-Htags makes hypertext from C, C++, Yacc and Java source code.
+Htags makes hypertext from C, C++, Yacc, Java, PHP and assembler source code.
 
 In advance of using this command, you must execute
 gtags(1) from the root directory of the source tree.
@@ -192,6 +192,8 @@ The default is false.
 Begin tag for line which htags warned. The default is '<SPAN STYLE="background-color:yellow">'.
 @item @code{warned_line_end}(string)
 End tag for line which htags warned. The default is '</SPAN>'.
+@item @code{hr}(string)
+Horizontal rules. The default is '<HR>'.
 @item @code{ncol}(number)
 Columns of line number. The default is 4.
 @item @code{tabs}(number)
@@ -214,8 +216,8 @@ Show position per function definition. The default is false.
 @item @code{symbol}(boolean)
 Make anchors not only for functions but also other symbols.
 @file{GSYMS} tag file needed.
-@item @code{definition_header}(no|before|after)
-Position of link header. The default is after.
+@item @code{definition_header}(no|before|right|after)
+Position of link header. The default is 'no'.
 @item @code{other_files}(boolean)
 File index includes not only source files but also other files. The default is false.
 @item @code{enable_grep}(boolean)
@@ -241,6 +243,8 @@ GNU GLOBAL source code tag system@*
 @unnumberedsubsec BUG
 Generated hypertext is VERY LARGE.
 In advance, check the space of your disk.
+
+PHP supprt is far from complete.
 @unnumberedsubsec AUTHOR
 Shigio Yamaguchi
 @unnumberedsubsec HISTORY
