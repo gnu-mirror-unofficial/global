@@ -167,6 +167,11 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	source files, or entire source trees to html, preserving formatting 
 	and emacs colourisation / syntax highlighting as much as possible 
 	through careful application of CSS stylesheets and html tags.
+<dt><a href=http://www.gnu.org/software/src-highlite/>GNU Source-highlight</a><dd>
+	Source-highlight, given a source file, produces a document with syntax
+	highlighting. This package can handle Java, Javascript, C,C+, Prolog,
+	Perl, Php3, Python, Flex, ChangeLog and Ruby as source languages, and
+	HTML, XHTML and ANSI color escape sequences as output formats.
 </dl>
 
 <h3>Hypertext of source code</h3>

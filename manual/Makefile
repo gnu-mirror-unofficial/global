@@ -35,7 +35,7 @@ global-html.tar.gz: $(SOURCE)
 	rm -rf tmp
 	mkdir tmp && cd tmp && texi2html -number -split_chapter ../$(SOURCE) && tar czvf ../global-html.tar.gz global_*.html
 	rm -rf tmp
-global-info.tar.gz:
+global-info.tar.gz: $(SOURCE)
 	makeinfo -I.. $(SOURCE)
 	tar czvf global-info.tar.gz global.info*
 $(DVI): $(SOURCE)
