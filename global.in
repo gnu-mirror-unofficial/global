@@ -33,7 +33,7 @@ GNU GLOBAL has following features:
 	<li> Less viewer
         <li> Web browser
 		(See <a href=http://tamacom.com/tour/global/index.html>the example</a>
-                 of GLOBAL itself.)
+                 of GLOBAL itself or <a href=http://tamacom.com/unix/index.html#kernel>Kernel source tour!</a>.)
         </ul>
 <li> find the locations of a specified object quickly.
 <li> locate not only object definitions but also object references.
