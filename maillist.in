@@ -18,6 +18,12 @@ This list distributes, to the active maintainers of GLOBAL,
 bug reports and fixes for, and suggestions for improvements in GLOBAL.
 This list is also for user discussion.
 <p>
+At least, you should describe the followings:
+<ul>
+<li>What did you do? (command line)
+<li>What did you expect from it?
+<li>What was occured? (as is)
+</ul>
 To subscribe this list, please visit
 <a href=http://mail.gnu.org/mailman/listinfo/bug-global>
 http://mail.gnu.org/mailman/listinfo/bug-global</a>.
