@@ -13,7 +13,7 @@ or
 
 <h3>CVS repository</h3>
 You can browse the GLOBAL CVS repository via the
-<a href=http://subversions.gnu.org/cgi-bin/cvsweb/global/>CVSweb interface</a>.
+<a href=http://savannah.gnu.org/cgi-bin/viewcvs/global/global/>ViewCVS interface</a>.
 <p>
 You can also use the <a href=http://www.gnu.org/software/cvs/cvs.html>
 CVS utility</a> to obtain anonymous read-only access.
