@@ -8,7 +8,13 @@ under the terms of the GNU Free Documentation License, Version 1.1
 Plans of the highest priority are listed first.
 <p>
 <ul>
-<li>Rewrite htags(1) using C or Scheme.
+<li>Rewrite htags(1) using C.
+	Here is a functions list which are not implemented yet.
+        <ul>
+	<li>configuration variable `htags_options'.
+	<li>PNG icon support.
+	<li>Image anchor support(JPG and PNG).
+        </ul>
 <li>Rewrite gctags(1) using flex(1) completely.
 <li>Support new languages.
 	Here is a list of candidates:
