@@ -27,7 +27,6 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	GLOBAL-4.1 was released.
 	<br>
 	It includes GloBash -- Global facility for Bash.
-	See <a href=http://tamacom.com/global/global.html#SEC6>3. Global facility for Bash</a>.
 <dt>2001/7/6<dd>
 	Jason Hood made another GLOBAL-4.0.1 port using DJGPP.
 	He also distributes the binary package.
