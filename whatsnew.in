@@ -18,7 +18,6 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <dt>2001/11/24<dd>
 	GLOBAL-4.2 was released. Postgres database system was supported as
 	tag storage.
-	See [<a href=NEWS>NEWS</a>/<a href=ChangeLog>ChangeLog</a>]
 	<br>
 <dt>2001/8/1<dd>
 	GLOBAL-4.1.1 was released because 4.1 had some important bugs.
