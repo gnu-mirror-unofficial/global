@@ -43,16 +43,16 @@ You can browse the GLOBAL CVS repository via the
 <p>
 You can also use the <a href=http://www.gnu.org/software/cvs/cvs.html>
 CVS utility</a> to obtain anonymous read-only access.
-The module name is <strong>global</strong>.
+Please see
+<a href=http://savannah.gnu.org/cvs/?group=global>
+savannah CVS page
+</a>
+for the details.
 <p>
-You can get and build CVS version of GLOBAL like this:
-<br>(You need automake, autoconf, gperf and flex installed in your machine.
-<br>Hit return when prompted for the login password.)
+You can build CVS version of GLOBAL like this:
+<br>(You need automake, autoconf, gperf and flex installed in your machine.)
 <p>
 <pre>
-% setenv CVS_RSH ssh
-% cvs -d:ext:anoncvs@savannah.gnu.org:/cvsroot/global co -P global
-% cd global
 % sh reconf.sh 
 % ./configure
 % make
