@@ -2,7 +2,8 @@
  Copyright (c) 2001
         Tama Communications Corporation. All rights reserved.
 
- This file is free software; as a special exception the author gives
+ This file, globe.jpg, sglobe.jpg are
+              free software; as a special exception the author gives
  unlimited permission to copy and/or distribute it, with or without
  modifications, as long as this notice is preserved.
 
@@ -34,5 +35,4 @@ o global.texi as globaldoc.texi (used by tutorial).
 o NEWS (used by What's new).
 o ChangeLog (used by What's new).
 
-	
 Shigio Yamaguchi
