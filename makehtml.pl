@@ -1,7 +1,6 @@
 #!/usr/bin/perl
 #
-# Copyright (c) 2001
-#        Tama Communications Corporation. All rights reserved.
+# Copyright (c) 2001 Tama Communications Corporation
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -36,9 +35,8 @@
 $l_year = '2000,2001,2002';
 $l_company = 'Tama Communications Corporation';
 $l_name = 'Shigio Yamaguchi';
-$l_copyright = 'Copyright';
-$l_reserved = 'All rights reserved.';
-$l_statement = "$l_copyright $l_year $l_company. $l_reserved";
+$l_copyright = 'Copyright (c)';
+$l_statement = "$l_copyright $l_year $l_company";
 $l_biglogo = 'globe.jpg';
 $l_smalllogo = 'sglobe.jpg';
 $l_GFDL = 'Permission is granted to copy, distribute and/or modify this document
@@ -91,7 +89,7 @@ sub title {
 sub home_title {
 	logobox("<h2>$_[0]</h2>", 4, $l_biglogo) .
 	"<p align=right><i><font size=-1>\n" .
-	"$l_copyright $l_year $l_company. $l_reserved" .
+	"$l_copyright $l_year $l_company" .
 	"</font></i></p>\n";
 }
 sub copyright {
