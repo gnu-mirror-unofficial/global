@@ -33,7 +33,7 @@ You can build CVS version of GLOBAL like this:
 </pre>
 
 <h3>Binary archive</h3>
-Windows9X version compiled by DJGPP is distributed by
+DOS and Windows 32 version are distributed by
 <a href=http://www.geocities.com/shankara_c/global.html>Shankar Chakkere</a>
 and
 <a href=http://www.geocities.com/jadoxa/global/index.html>Jason Hood</a>.
