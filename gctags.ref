@@ -4,7 +4,7 @@ gctags - print cross reference list for gtags.
 @unnumberedsubsec SYNOPSIS
 @noindent
 @quotation
-gctags [-bdenrsvw] file ...@*
+gctags [-bdenrstvw] file ...@*
 @end quotation
 @unnumberedsubsec DESCRIPTION
 Gctags print cross reference list for gtags(1)
@@ -56,6 +56,9 @@ By default, locate function definitions.
 @item @samp{-s}, @samp{--symbol}
 Collect symbols other than functions.
 By default, locate function definitions.
+@item @samp{-t}, @samp{--typedef}
+Pick up not only function but also typedef name and enum member
+as a definition.
 @item @samp{-v}, @samp{--verbose}
 Verbose mode.
 @item @samp{-w}, @samp{--warning}
