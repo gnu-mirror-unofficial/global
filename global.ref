@@ -173,10 +173,6 @@ The following configuration variables affect the execution of global:
 @table @asis
 @item @code{icase_path}(boolean)
 Ignore case distinctions in the pattern.
-@item @code{sed_command}(string)
-Use specified sed(1) command, which is used internally.
-@item @code{sort_command}(string)
-Use specified sort(1) command, which is used internally.
 @end table
 @unnumberedsubsec DIAGNOSTICS
 Global exits with a non 0 value if an error occurred, 0 otherwise.

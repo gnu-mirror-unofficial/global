@@ -53,10 +53,6 @@ Currently you can use it with -P option.
 @item @samp{-o}, @samp{--omit-gsyms}
 Suppress making @file{GSYMS} file.
 Use this option if you don't use -s option of global(1).
-@item @samp{-P}, @samp{--postgres}
-Use postgres database system instead of db(3).
-you can pass info string to PQconnectdb(3)
-using @samp{--info} option.
 @item @samp{-q}, @samp{--quiet}
 Quiet mode.
 @item @samp{-v}, @samp{--verbose}
@@ -125,10 +121,6 @@ Compact format is same to @samp{-c}(@samp{--compact}).
 @item @code{icase_path}(boolean)
 Ignore case distinctions in the path.
 Suffixes check are affected by this capability.
-@item @code{sed_command}(string)
-Use specified sed(1) command, which is used internally.
-@item @code{sort_command}(string)
-Use specified sort(1) command, which is used internally.
 @end table
 @unnumberedsubsec DIAGNOSTICS
 Gtags exits with a non 0 value if an error occurred, 0 otherwise.
@@ -154,10 +146,6 @@ Probably valid only for FreeBSD and Linux kernel source.
 There is no concurrency control about tag files.
 
 Symbols in Assembly source files are not extracted for @file{GSYMS}.
-
-Please be careful of info string using @samp{--info} option.
-Info string is passed to external system as is.
-If you mistake the value then program may abort with core dump.
 @unnumberedsubsec AUTHOR
 Tama Communications Corporation.
 @unnumberedsubsec HISTORY
