@@ -169,10 +169,9 @@ under the terms of the GNU Free Documentation License, Version 1.1
 </dl>
 <h3>UNIX and its clone's Kernel source code</h3>
 <dl>
-<dt><a href=http://minnie.tuhs.org/PUPS/index.html>PDP Unix Preservation Society</a><dd>
-	The PUPS Archive contains 5th, 6th and 7th Edition Unix.
-	You can use these source code under a personal Unix source license
-	from SCO which covers 1st to 7th Edition UNIX and 32v.
+<dt><a href=http://www.tuhs.org/>The Unix Heritage Society</a><dd>
+	Unix Archive contains 5th, 6th and 7th Edition Unix and more.
+	Now, you can use these source code under BSD style license.
 <dt><a href=http://www.mckusick.com/csrg>CSRG Archive CD-ROMs</a><dd>
 	Kirk McKusick is selling a 4CD set of all the 4BSD releases
 	from the Computer Systems Research Group.
