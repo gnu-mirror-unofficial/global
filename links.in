@@ -7,16 +7,11 @@ under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <h3>GLOBAL related tools</h3>
 <dl>
-<dt><a href=http://tamacom.com/unix/index.html#gozilla>Gozilla</a><dd>
-	Gozilla is a controller for mozilla.
-	You can make Mozilla to display the hypertext which was generated
-	by htags(1) from your command line.
-<dt><a href=http://tamacom.com/unix/index.html#systags>Systags</a><dd>
-	Systags is a script that generates a tagged html version of
-	a source code directory using htags(1).
-	The script is specially prepared to work with the source of
-	FreeBSD, NetBSD, OpenBSD, Linux, GNUmach and GNUhurd.
-	This package includes online manual written by Sergio Talens-Oliag.
+<dt><a href=http://tamacom.com/global/global-w32-borland.tar.gz>GLOBAL Win32kit for Borland compiler</a><dd>
+	This kit was part of GLOBAL package until version 4.7.
+	With some modifications, you will be able to build Win32 version
+	of GLOBAL using Borland Compiler. But please remember that it is
+	not maintained any longer.
 <!--
 <dt><a href=http://www.microtronics.com.au/~ron/debian/>Htmake</a><dd>
 	Htmake is a wrapper script for htags(1), written by Ron Lee.
