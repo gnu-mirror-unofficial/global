@@ -37,6 +37,9 @@ Show the value of config variable name.
 If name is not specified then show whole of config entry.
 @item @samp{--gtagsconf} file
 Load user's configuration from file.
+@item @samp{--gtagslabel} label
+label is used as the label of configuration file.
+The default is @code{default}.
 @item @samp{-i}, @samp{--incremental}
 Update tag files incrementally. You had better use
 global(1) with the -u option.
@@ -126,7 +129,6 @@ Use specified sort(1) command, which is used internally.
 @unnumberedsubsec DIAGNOSTICS
 Gtags exits with a non 0 value if an error occurred, 0 otherwise.
 @unnumberedsubsec SEE ALSO
-btreeop(1),
 gctags(1),
 global(1),
 htags(1).

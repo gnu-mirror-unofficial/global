@@ -72,7 +72,6 @@ the last one specified determines the method used.
 Gctags exits with a non 0 value if an error occurred, 0 otherwise.
 Duplicate objects are not considered errors.
 @unnumberedsubsec SEE ALSO
-btreeop(1),
 global(1),
 gtags(1),
 htags(1).
