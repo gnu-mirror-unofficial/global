@@ -1,0 +1,42 @@
+@title Plans for the future
+@link Plans
+@license
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+@body
+Plans of the highest priority are listed first.
+<p>
+<ul>
+<li>Pickup definitions of data type, macro with no argument, 
+enum name, enum value, union name and struct name. Finally, remove GSYMS.
+<li>Write plugged-in parser writer's guide.
+<li>Support other developing environment.
+	<ul>
+	<li><a href=http://www.delorie.com/djgpp/>DJGPP</a>
+	</ul>
+<li>Include external parsers.<br>
+	I would like to include parsers which belong to the following systems:
+        <ul>
+        <li><a href=http://www.gedanken.demon.co.uk/cxref/>Cxref</a>
+        <li><a href=http://sources.redhat.com/sourcenav/>Source-Navigator</a>
+        </ul>
+<li>Rewrite online manual with man format. (Currently mandoc format.)
+<li>Support other editors.
+	<ul>
+	<li>nvi-1.81
+	</ul>
+<li>Support of other languages.<br>
+        <ul>
+	<li>PHP
+        <li>Scheme
+        <li>Texinfo
+        <li>LaTeX
+	<li>Lex
+        </ul>
+<li>Visual interface with GUI.
+<li>Ttags(1) command.<br>
+        Ttags(1) is similar to htags(1) but makes TeX source for a book
+        instead of hypertext.
+</ul>
+Any contributions are appreciated.
+Please see <a href=contribute.html>contribution</a>.

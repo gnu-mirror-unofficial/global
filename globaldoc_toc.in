@@ -1,0 +1,127 @@
+@title Tutorial
+@link Tutorial
+@body
+<H1>GLOBAL source code tag system</H1>
+<H2>Edition 4.2, for GLOBAL version 4.2</H2>
+<H2>24 November 2001</H2>
+<ADDRESS>by Shigio Yamaguchi</ADDRESS>
+<P>
+<P><HR><P>
+<UL>
+<LI><A NAME="TOC1" HREF="globaldoc.html#SEC1">1. Overview of the tools</A>
+<UL>
+<LI><A NAME="TOC2" HREF="globaldoc.html#SEC2">1.1 What is this?</A>
+<LI><A NAME="TOC3" HREF="globaldoc.html#SEC3">1.2 Concept of project.</A>
+<LI><A NAME="TOC4" HREF="globaldoc.html#SEC4">1.3 Features.</A>
+</UL>
+<LI><A NAME="TOC5" HREF="globaldoc.html#SEC5">2. Command line GLOBAL</A>
+<UL>
+<LI><A NAME="TOC6" HREF="globaldoc.html#SEC6">2.1 Preparation.</A>
+<LI><A NAME="TOC7" HREF="globaldoc.html#SEC7">2.2 Basic usage.</A>
+<LI><A NAME="TOC8" HREF="globaldoc.html#SEC8">2.3 Applied usage.</A>
+</UL>
+<LI><A NAME="TOC9" HREF="globaldoc.html#SEC9">3. Global facility for Bash</A>
+<UL>
+<LI><A NAME="TOC10" HREF="globaldoc.html#SEC10">3.1 Features.</A>
+<LI><A NAME="TOC11" HREF="globaldoc.html#SEC11">3.2 Preparation.</A>
+<LI><A NAME="TOC12" HREF="globaldoc.html#SEC12">3.3 Basic usage.</A>
+<LI><A NAME="TOC13" HREF="globaldoc.html#SEC13">3.4 Applied usage.</A>
+</UL>
+<LI><A NAME="TOC14" HREF="globaldoc.html#SEC14">4. Extended nvi using global</A>
+<UL>
+<LI><A NAME="TOC15" HREF="globaldoc.html#SEC15">4.1 Features.</A>
+<LI><A NAME="TOC16" HREF="globaldoc.html#SEC16">4.2 Preparation.</A>
+<LI><A NAME="TOC17" HREF="globaldoc.html#SEC17">4.3 Basic usage.</A>
+<LI><A NAME="TOC18" HREF="globaldoc.html#SEC18">4.4 Applied usage.</A>
+</UL>
+<LI><A NAME="TOC19" HREF="globaldoc.html#SEC19">5. Elvis using global</A>
+<UL>
+<LI><A NAME="TOC20" HREF="globaldoc.html#SEC20">5.1 Features.</A>
+<LI><A NAME="TOC21" HREF="globaldoc.html#SEC21">5.2 Preparation.</A>
+<LI><A NAME="TOC22" HREF="globaldoc.html#SEC22">5.3 Basic usage.</A>
+<LI><A NAME="TOC23" HREF="globaldoc.html#SEC23">5.4 Applied usage.</A>
+</UL>
+<LI><A NAME="TOC24" HREF="globaldoc.html#SEC24">6. Vim using global</A>
+<UL>
+<LI><A NAME="TOC25" HREF="globaldoc.html#SEC25">6.1 Features.</A>
+<LI><A NAME="TOC26" HREF="globaldoc.html#SEC26">6.2 Preparation.</A>
+<LI><A NAME="TOC27" HREF="globaldoc.html#SEC27">6.3 Basic usage.</A>
+<LI><A NAME="TOC28" HREF="globaldoc.html#SEC28">6.4 Applied usage.</A>
+</UL>
+<LI><A NAME="TOC29" HREF="globaldoc.html#SEC29">7. Extended emacs using global</A>
+<UL>
+<LI><A NAME="TOC30" HREF="globaldoc.html#SEC30">7.1 Features.</A>
+<LI><A NAME="TOC31" HREF="globaldoc.html#SEC31">7.2 Preparation.</A>
+<LI><A NAME="TOC32" HREF="globaldoc.html#SEC32">7.3 Basic usage.</A>
+<LI><A NAME="TOC33" HREF="globaldoc.html#SEC33">7.4 Applied usage.</A>
+</UL>
+<LI><A NAME="TOC34" HREF="globaldoc.html#SEC34">8. Hypertext generator</A>
+<UL>
+<LI><A NAME="TOC35" HREF="globaldoc.html#SEC35">8.1 Features.</A>
+<LI><A NAME="TOC36" HREF="globaldoc.html#SEC36">8.2 Preparation.</A>
+<LI><A NAME="TOC37" HREF="globaldoc.html#SEC37">8.3 Usage.</A>
+</UL>
+<LI><A NAME="TOC38" HREF="globaldoc.html#SEC38">9. Other topics</A>
+<UL>
+<LI><A NAME="TOC39" HREF="globaldoc.html#SEC39">9.1 How to plug in a parser.</A>
+<LI><A NAME="TOC40" HREF="globaldoc.html#SEC40">9.2 Compact format.</A>
+<LI><A NAME="TOC41" HREF="globaldoc.html#SEC41">9.3 Incremental updating.</A>
+<LI><A NAME="TOC42" HREF="globaldoc.html#SEC42">9.4 Using Postgres.</A>
+</UL>
+<LI><A NAME="TOC43" HREF="globaldoc.html#SEC43">10. Reference manual</A>
+<UL>
+<LI><A NAME="TOC44" HREF="globaldoc.html#SEC44">10.1 gtags - create tag files for global.</A>
+<UL>
+<LI><A NAME="TOC45" HREF="globaldoc.html#SEC45">NAME</A>
+<LI><A NAME="TOC46" HREF="globaldoc.html#SEC46">SYNOPSIS</A>
+<LI><A NAME="TOC47" HREF="globaldoc.html#SEC47">DESCRIPTION</A>
+<LI><A NAME="TOC48" HREF="globaldoc.html#SEC48">FILES</A>
+<LI><A NAME="TOC49" HREF="globaldoc.html#SEC49">ENVIRONMENT</A>
+<LI><A NAME="TOC50" HREF="globaldoc.html#SEC50">EXAMPLES</A>
+<LI><A NAME="TOC51" HREF="globaldoc.html#SEC51">DIAGNOSTICS</A>
+<LI><A NAME="TOC52" HREF="globaldoc.html#SEC52">BUGS</A>
+</UL>
+<LI><A NAME="TOC53" HREF="globaldoc.html#SEC53">10.2 htags - generate hypertext from source code.</A>
+<UL>
+<LI><A NAME="TOC54" HREF="globaldoc.html#SEC54">NAME</A>
+<LI><A NAME="TOC55" HREF="globaldoc.html#SEC55">SYNOPSIS</A>
+<LI><A NAME="TOC56" HREF="globaldoc.html#SEC56">DESCRIPTION</A>
+<LI><A NAME="TOC57" HREF="globaldoc.html#SEC57">EXAMPLES</A>
+<LI><A NAME="TOC58" HREF="globaldoc.html#SEC58">FILES</A>
+<LI><A NAME="TOC59" HREF="globaldoc.html#SEC59">ENVIRONMENT</A>
+<LI><A NAME="TOC60" HREF="globaldoc.html#SEC60">DIAGNOSTICS</A>
+<LI><A NAME="TOC61" HREF="globaldoc.html#SEC61">BUG</A>
+</UL>
+<LI><A NAME="TOC62" HREF="globaldoc.html#SEC62">10.3 global - print the locations of specified object.</A>
+<UL>
+<LI><A NAME="TOC63" HREF="globaldoc.html#SEC63">NAME</A>
+<LI><A NAME="TOC64" HREF="globaldoc.html#SEC64">SYNOPSIS</A>
+<LI><A NAME="TOC65" HREF="globaldoc.html#SEC65">DESCRIPTION</A>
+<LI><A NAME="TOC66" HREF="globaldoc.html#SEC66">COMMANDS</A>
+<LI><A NAME="TOC67" HREF="globaldoc.html#SEC67">OPTIONS</A>
+<LI><A NAME="TOC68" HREF="globaldoc.html#SEC68">FILES</A>
+<LI><A NAME="TOC69" HREF="globaldoc.html#SEC69">ENVIRONMENT</A>
+<LI><A NAME="TOC70" HREF="globaldoc.html#SEC70">EXAMPLES</A>
+<LI><A NAME="TOC71" HREF="globaldoc.html#SEC71">DIAGNOSTICS</A>
+</UL>
+</UL>
+<LI><A NAME="TOC72" HREF="globaldoc.html#SEC72">GNU Free Documentation License</A>
+<UL>
+<LI><A NAME="TOC73" HREF="globaldoc.html#SEC73">Preamble</A>
+<LI><A NAME="TOC74" HREF="globaldoc.html#SEC74">APPLICABILITY AND DEFINITIONS</A>
+<LI><A NAME="TOC75" HREF="globaldoc.html#SEC75">VERBATIM COPYING</A>
+<LI><A NAME="TOC76" HREF="globaldoc.html#SEC76">COPYING IN QUANTITY</A>
+<LI><A NAME="TOC77" HREF="globaldoc.html#SEC77">MODIFICATIONS</A>
+<LI><A NAME="TOC78" HREF="globaldoc.html#SEC78">COMBINING DOCUMENTS</A>
+<LI><A NAME="TOC79" HREF="globaldoc.html#SEC79">COLLECTIONS OF DOCUMENTS</A>
+<LI><A NAME="TOC80" HREF="globaldoc.html#SEC80">AGGREGATION WITH INDEPENDENT WORKS</A>
+<LI><A NAME="TOC81" HREF="globaldoc.html#SEC81">TRANSLATION</A>
+<LI><A NAME="TOC82" HREF="globaldoc.html#SEC82">TERMINATION</A>
+<LI><A NAME="TOC83" HREF="globaldoc.html#SEC83">FUTURE REVISIONS OF THIS LICENSE</A>
+<LI><A NAME="TOC84" HREF="globaldoc.html#SEC84">ADDENDUM: How to use this License for your documents</A>
+</UL>
+<LI><A NAME="TOC85" HREF="globaldoc.html#SEC85">Option Index</A>
+</UL>
+<P><HR><P>
+This document was generated on 21 December 2001 using
+<A HREF="http://wwwinfo.cern.ch/dis/texi2html/">texi2html</A>&nbsp;1.56k.

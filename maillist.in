@@ -1,0 +1,67 @@
+@title Mailing lists
+@link Mailing lists
+@license
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+@body
+There are several mailing lists associated with GNU GLOBAL: 
+
+<h3>Bug report Mailing list</h3>
+
+If you think you have found a bug or a suggestion for improvements in GLOBAL,
+then please send a mail to
+<a href="mailto:bug-global@gnu.org">&lt;bug-global@gnu.org&gt;</a>.
+<p>
+This list distributes, to the active maintainers of GLOBAL,
+bug reports and fixes for, and suggestions for improvements in GLOBAL.
+This list is also for user discussion.
+<p>
+To subscribe this list, please visit
+<a href=http://mail.gnu.org/mailman/listinfo/bug-global>
+http://mail.gnu.org/mailman/listinfo/bug-global</a>.
+<br>
+See also <a href="http://www.gnu.org/prep/mailinglists.html#General Information about bug-* lists and reporting program bugs">
+General Information about bug-* lists and reporting program bugs</a>.
+<br>
+To see the collection of prior postings to the list, visit the
+<a href=http://mail.gnu.org/pipermail/bug-global/>Bug-global Archives</a>. 
+
+<h3>Help Mailing list</h3>
+
+If you need help about GLOBAL, then please send a mail to
+<a href="mailto:help-global@gnu.org">&lt;help-global@gnu.org&gt;</a>.
+<p>
+This list is the place for authors, users and installers of GLOBAL
+to ask for help.
+<p>
+Please obey the following manners:
+<ul>
+<li>Before sending a mail, please read 'FAQ' and tutorial(doc/global.texi) in the GLOBAL package.
+<li>Don't send bug reports or suggestions to this list; mail them to bug-global@gnu.org instead.
+<li>Don't send private mails to the person who answered your questions.
+<li>Don't send HTML mail.
+<li>Please describe the fact of problem <strong>CONCRETELY</strong>.
+</ul>
+To subscribe this list, please visit
+<a href=http://mail.gnu.org/mailman/listinfo/help-global>
+http://mail.gnu.org/mailman/listinfo/help-global</a>.
+<br>
+See also <a href="http://www.gnu.org/prep/mailinglists.html#General Information about help-* lists">
+General Information about help-* lists</a>.
+<br>
+To see the collection of prior postings to the list, visit the
+<a href=http://mail.gnu.org/pipermail/help-global/>Help-global Archives</a>. 
+
+<h3>Announcements Mailing list</h3>
+
+This list distributes announcements and progress reports on GLOBAL.
+<p>
+To subscribe this list, please visit
+<a href=http://mail.gnu.org/mailman/listinfo/info-global>
+http://mail.gnu.org/mailman/listinfo/info-global</a>.
+<br>
+See also <a href="http://www.gnu.org/prep/mailinglists.html#General Information about info-* lists">
+General Information about info-* lists</a>.
+<br>
+To see the collection of prior postings to the list, visit the
+<a href=http://mail.gnu.org/pipermail/info-global/>Info-global Archives</a>. 

@@ -1,40 +1,9 @@
-<!doctype html public "-//W3C//DTD HTML 3.2 Final//EN">
-<html>
-<head>
-<title>GNU GLOBAL source code tag system</title>
-<meta name='keywords' content='gtags,htags,gtags-mode'>
-<meta name='description' content='GNU GLOBAL is a source code tag system that works the same way across diverse environments.'>
-</head>
-<body bgcolor=#ffffff text=#000000 link=#1f00ff alink=#ff0000 vlink=#9900dd>
-<table width='100%' cellpadding=10 cellspacing=0 border=0><tr>
-<td valign=top align=center bgcolor=#dcdcdc width=100>
-<b>
-<p>Top page
-<p><a href=whatsnew.html>What's new</a>
-<p><a href=globaldoc_toc.html>Tutorial</a>
-<p><a href=license.html>License</a>
-<p><a href=links.html>Links</a>
-<p><a href=plans.html>Plans</a>
-<p><a href=contribute.html>Contribution</a>
-<p><a href=museum.html>Museum</a>
-<p><a href=maillist.html>Mailing lists</a>
-<p><a href=download.html>Download</a>
-</b>
-</td>
-<td valign=top>
-<table width='100%' cellpadding=5 cellspacing=0 border=0>
-<tr>
-<td bgcolor=black align=left valign=middle>
-<font color=white size=7><h2>GNU GLOBAL source code tag system</h2></font>
-</td>
-<td bgcolor=black>
-<img src=globe.jpg alt='GLOBE' align=right hspace=15>
-</td>
-</tr>
-</table>
-<p align=right><i><font size=-1>
-Copyright 2000,2001 Tama Communications Corporation. All rights reserved.</font></i></p>
-<hr width=100% size=3 align=left noshade>
+@title GNU GLOBAL source code tag system
+@link Top page
+@license
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+@body
 <p>
 GNU GLOBAL is a source code tag system that works the same way
 across diverse environments.
@@ -84,27 +53,3 @@ You can get the relative path of objects from anywhere within that scope.
 If you have a plan to make a yet another editor with tag facility
 then you can use GLOBAL as the tag system.
 <p align=right><i>May the GLOBAL be under you like the globe!</i></p>
-</td>
-</tr>
-<tr>
-<td valign=center align=center bgcolor=#dcdcdc width=100>
-<a href=#top>[Top of page]</a>
-</td>
-<td>
-<hr width=100% size=3 align=left noshade>
-<table width='100%' cellpadding=5 cellspacing=0 border=0>
-<tr>
-<td bgcolor=black align=left valign=middle>
-<font color=white size=-1>Copyright 2000,2001 Tama Communications Corporation. All rights reserved.<br>Permission is granted to copy, distribute and/or modify this document
-under the terms of the GNU Free Documentation License, Version 1.1</font>
-</td>
-<td bgcolor=black>
-<img src=sglobe.jpg alt='GLOBE' align=right hspace=15>
-</td>
-</tr>
-</table>
-</td>
-</td>
-</tr>
-</table>
-</body></html>

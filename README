@@ -1,0 +1,25 @@
+
+This is the factory of GLOBAL's site.
+
+How to maintain?
+
+1. Modify *.in files.
+	Don't modify *.html files directly because they are generated
+	automatically from *.in by makehtml.pl.
+	You should modify *.in files instead.
+2. Generate *.html files by executing 'make'.
+	When modification has been completed then please type 'make'.
+	It generates *.html files. You should do this before commit
+	your modifications to CVS repository, because repository needs
+	*.html files.
+3. Commit modifications to CVS repository.
+	It will replace the contents of http://www.gnu.org/software/global/.
+
+You need to bring following files from GLOBAL package by hand.
+
+o global.texi as globaldoc.texi (used by tutorial).
+o NEWS (used by What's new).
+o ChangeLog (used by What's new).
+
+	
+Shigio Yamaguchi

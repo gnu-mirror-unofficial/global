@@ -1,0 +1,44 @@
+@title Contribution
+@link Contribution
+@license
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+@body
+Any contributions are appreciated.
+Especially, we hope you to write new parsers which work well with GLOBAL
+to support various languages.
+Besides, there are <a href=plans.html>many jobs</a>
+we should do about GLOBAL.
+<p>
+But I cannot merge your copyrighted code into core GLOBAL.
+I may ask you to write a disclaimer paper like this:
+<pre>
+======================================================================
+
+    I, NAME OF PERSON, hereby disclaim all copyright interest in my
+    changes and enhancements to GLOBAL (herein called
+    the "Program").
+
+    I affirm that I have no other intellectual property interest that
+    would undermine this release, or the use of the Program, and will
+    do nothing to undermine it in the future.  I represent that the
+    changes and enhancements are my own and not a copy of someone
+    else's work.
+
+    &lt;signature and date&gt;
+
+======================================================================
+</pre>
+<p>
+Without it, I would be faced with difficult situation.
+For example,
+<a href=http://www.gnu.org/fsf/fsf.html>FSF</a>
+may issure a new version of
+<a href=http://www.gnu.org/copyleft/licenses.html>GPL</a>
+but I cannot change the GLOBAL's license without asking
+all the contributers. It's a hard work and often impossible.
+In return for writing the paper, your name will be recorded in AUTHORS file.:-)
+<p>
+If you cannot agree with this policy, please remenber that you can freely
+copy, modify and redistribute this program under
+<a href=license.html>GPL</a>.
