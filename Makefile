@@ -23,7 +23,7 @@ all: ${HTMLS} ${MANUAL}.html
 ${HTMLS}: ${FILES} ${TUTOR}
 	@./makehtml.pl -v ${FILES}
 
-${TUTOR}: global.txi version.texi reference.txi fdl.txi btreeop.ref gctags.ref global.ref gtags.ref htags.ref
+${TUTOR}: global.txi version.texi reference.txi fdl.txi gctags.ref global.ref gtags.ref htags.ref
 	@echo "Generating ${MANUAL}.html and ${MANUAL}_toc.html ..."
 	@cp global.txi ${MANUAL}.txi
 	@texi2html -number ${MANUAL}.txi
