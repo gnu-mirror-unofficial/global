@@ -48,7 +48,7 @@ $c_bgcolor	= '#ffffff';
 $c_text		= '#000000';
 $c_link		= '#1f00ff';
 $c_alink	= '#ff0000';
-$c_vlink	= '#9900dd';
+$c_vlink	= '#7B68EE';
 $c_menucolor	= '#dcdcdc';
 $c_titlecolor	= '#660000';
 # Size
