@@ -6,6 +6,9 @@ Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <dl compact>
+<dt>2004/2/1<dd>
+	GLOBAL-4.7 was released.
+	Gtags.vim, plugin script integrates GLOBAL with vim editor added.
 <dt>2003/12/27<dd>
 	Mr.Hideki Iwamoto, an excellent software engineer,
 	became a new member of the GNU GLOBAL project.

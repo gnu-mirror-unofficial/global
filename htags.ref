@@ -246,6 +246,6 @@ In advance, check the space of your disk.
 
 PHP supprt is far from complete.
 @unnumberedsubsec AUTHOR
-Shigio Yamaguchi
+Shigio Yamaguchi, Tama Communications Corporation.
 @unnumberedsubsec HISTORY
 The htags command appeared in FreeBSD 2.2.2.

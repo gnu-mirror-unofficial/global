@@ -1,21 +1,21 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.56k from globaldoc.txi on 3 October 2003 -->
+<!-- Created by texi2html 1.56k from globaldoc.txi on 1 February 2004 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY>
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 4.6.1, for GNU GLOBAL version 4.6.1</H2>
-<H2>3 October 2003</H2>
+<H2>Edition 4.7, for GNU GLOBAL version 4.7</H2>
+<H2>1 February 2004</H2>
 <ADDRESS>by Shigio Yamaguchi</ADDRESS>
 <P>
 <P><HR><P>
 
 <P>
-Copyright (C) 2000, 2001, 2002, 2003 Tama Communications Corporation
+Copyright (C) 2000, 2001, 2002, 2003, 2004 Tama Communications Corporation
 This is the first edition of the GNU GLOBAL documentation,<BR>
-and is consistent with 4.6.1.<BR>
+and is consistent with 4.7.<BR>
 Published by Tama Communications Corporation <BR>
 Tama-shi, Tokyo, Japan.<BR>
 
@@ -1292,12 +1292,10 @@ You must start nvi under the source tree described in See section <A HREF="globa
 
 
 <PRE>
-
     Suggested .nexrc:
     ab gtag perl tag qw(
     ab gta perl tag qw(
     ab gt perl tag qw(
-
 </PRE>
 
 <LI>To go to the referenced point of func1, add the option <KBD>-r</KBD>
@@ -1315,11 +1313,9 @@ You can go to next tag by typing <KBD>:tagnext</KBD> and back by typing <KBD>:ta
 
 
 <PRE>
-
     Suggested .nexrc:
     map ^N :tagnext^M
     map ^P :tagprev^M
-
 </PRE>
 
 <LI>If you don't specify any argument. ':perl tag' command do the followins:
@@ -1620,8 +1616,7 @@ To come back, double click on the right button.
 <H2><A NAME="SEC34" HREF="globaldoc_toc.html#TOC34">3.6 Vim using global</A></H2>
 
 <P>
-Vim 5.2 or later has <CODE>grepprg</CODE> and <CODE>grepformat</CODE> variables for
-running an external grep like search program. You can use them with GLOBAL.
+In vim 6.2 or later, you can use gtags.vim script.
 
 
 
@@ -1635,10 +1630,10 @@ running an external grep like search program. You can use them with GLOBAL.
 You can use most of GLOBAL's facilities from the editor.
 <LI>
 
-No source level patch is needed.
+Intelligent recognition of the current token and its type.
 <LI>
 
-(But tag stack cannot be available.)
+Special charactor '%', '#' and input completion are available.
 </UL>
 
 
@@ -1650,27 +1645,16 @@ First, do the preparation of global. (Please see See section <A HREF="globaldoc.
 
 
 <P>
-Second, write the following set command to the <TT>`.vimrc'</TT> and start vim.
+Second, copy <TT>`gtags.vim'</TT> to your plugin directory or source it
+from your vimrc.
 
 
 
 <PRE>
 
-    $HOME/.vimrc
-    +----------------------------
-    |set grepprg=global\ -t
-    |set grepformat=%m%\\t%f%\\t%l
-or
-    $HOME/.vimrc
-    +----------------------------
-    |set grepprg=global\ -x
-    |set grepformat=%m%\\s%\\+%l%\\s%f%.%#
+    % cp /usr/local/share/gtags/gtags.vim ~/.vim/plugin
 
 </PRE>
-
-<P>
-<A NAME="IDX17"></A>
-
 
 
 
@@ -1678,77 +1662,32 @@ or
 
 
 <UL>
-<LI>To go to func1, you can say
+<LI>To go to main, you can say
 
 
 <PRE>
 
-    :grep func1
+    :Gtags main
 
 </PRE>
 
-Vim execute <CODE>global -t func1</CODE>, parse the output and list located
-objects. You can go to the first entry with <KBD>RET</KBD>.
-
-<LI>To go to the referenced point of func1, add <SAMP>`-r'</SAMP> option.
-
-<A NAME="IDX18"></A>
+Vim execute <CODE>global -t main</CODE>, parse the output, list located
+objects in quickfix window and load the first entry.
+The quickfix windows is like this:
 
 <PRE>
 
-    :grep -r func1
+gctags/gctags.c|119| main
+global/global.c|154| main
+gozilla/gozilla.c|156| main
+gtags/gtags.c|199| main
+libglibc/getopt.c|701| main
+libglibc/getopt1.c|93| main
+[Error List]
 
 </PRE>
 
-vim executes command like <CODE>global -t -r func1</CODE> internally.
-
-<LI>To go to any symbols which are not defined in <TT>`GTAGS'</TT>, try this.
-
-<A NAME="IDX19"></A>
-
-<PRE>
-
-    :grep -s lbolt
-
-</PRE>
-
-<LI>To go to any strings other than symbols, try this.
-
-<A NAME="IDX20"></A>
-
-<PRE>
-
-    :grep -g Copyright
-
-</PRE>
-
-If many objects are located, vim list all of the them.
-
-
-<PRE>
-
-main    /usr/src/sys/i386/linux/linux_genassym.c        14
-main    /usr/src/sys/kern/init_main.c   183
-main    /usr/src/sys/pc98/boot/netboot/main.c   37
-main    /usr/src/sys/pc98/boot/netboot/makerom.c        14
-
-Hit ENTER or type command to continue
-
-</PRE>
-
-You can go to any entry with <KBD>cc</KBD>n command.
-
-<LI>To get list of objects in a file, use -f command.
-
-<A NAME="IDX21"></A>
-
-<PRE>
-
-    :grep -f main.c               &#60;- locate objects in main.c
-
-</PRE>
-
-<LI>Other grep related commands are also available:
+You can go to any entry using quickfix command.
 
 <DL COMPACT>
 
@@ -1765,6 +1704,65 @@ You can go to any entry with <KBD>cc</KBD>n command.
 <DD>
         list all entries.
 </DL>
+
+You can see the help of quickfix like this:
+
+<PRE>
+
+    :h quickfix
+
+</PRE>
+
+<LI>To go to the referenced point of func1, add <SAMP>`-r'</SAMP> option.
+
+<A NAME="IDX17"></A>
+
+<PRE>
+
+    :Gtags -r func1
+
+</PRE>
+
+vim executes command like <CODE>global -t -r func1</CODE> internally.
+
+<LI>To go to any symbols which are not defined in <TT>`GTAGS'</TT>, try this.
+
+<A NAME="IDX18"></A>
+
+<PRE>
+
+    :Gtags -s lbolt
+
+</PRE>
+
+<LI>To go to any strings other than symbols, try this.
+
+<A NAME="IDX19"></A>
+
+<PRE>
+
+    :Gtags -g Copyright
+
+</PRE>
+
+<LI>To get list of objects in a file, use -f command.
+
+<A NAME="IDX20"></A>
+
+<PRE>
+
+    :Gtags -f main.c               &#60;- locate objects in main.c
+
+</PRE>
+
+If you are editing <TT>`main.c'</TT> itself, you can use '%' instead.
+
+<PRE>
+
+    :Gtags -f %                    &#60;- locate objects in main.c
+
+</PRE>
+
 </UL>
 
 
@@ -1775,35 +1773,94 @@ You can go to any entry with <KBD>cc</KBD>n command.
 <UL>
 <LI>You can use POSIX regular expressions.
 
+<A NAME="IDX21"></A>
+
+<PRE>
+
+    :Gtags ^put_                &#60;- locate objects start with 'put_'
+    
+    :Gtags -g fseek(.*SEEK_SET) &#60;- locate fseek() using SEEK_SET
+
+</PRE>
+
+<LI>Input completion is available.
+
+    :Gtags fu<KBD>TAB</KBD>
+
+    :Gtags func1               &#60;- 'nc1' is appended by vim
+
+<LI>You can browse project files whose path includs specified pattern.
+
 <A NAME="IDX22"></A>
 
 <PRE>
 
-    :grep ^put_                  &#60;- locate objects start with 'put_'
-    
-    :grep -g 'fseek(.*L_SET)' &#60;- locate fseek() using L_SET argument
+    :Gtags -P /vm/             &#60;- under vm/ directory
+    :Gtags -P \.h$             &#60;- all include files
+    :Gtags -P init             &#60;- path including 'init'
 
 </PRE>
 
-<LI>You can browse object list of many files.
+<LI>You can use all options of global(1) except for the -c, -p, -u and
 
-<A NAME="IDX23"></A>
+	all long name options. They are sent to global(1) as is.
+	For example,
+
 
 <PRE>
 
-    :grep -f *.c              &#60;- locate objects in *.c
+    :Gtags -gi paTtern         &#60;- match to both 'PATTERN' and 'pattern'.
 
 </PRE>
 
-<LI>You can browse project files whose path includs specified pattern.
+	About the other options, See See section <A HREF="globaldoc.html#SEC55">5.1 global - print the locations of specified object.</A>.
 
-<A NAME="IDX24"></A>
+<LI>The GtagsCursor command brings you to the definition or reference of
+
+	the current token in C language.
+	The GtagsCursor is not perfect though is considerably wise.
+	If current token is not a function then
+	it is equivalent to <KBD>:Gtags -s <VAR>current token</VAR></KBD>.
+	Otherwise, if you are in the first column of a line,
+	it is equivalent to <KBD>:Gtags -r <VAR>current token</VAR></KBD>
+	else it is equivalent to <KBD>:Gtags <VAR>current token</VAR></KBD>.
+
 
 <PRE>
 
-    :grep -P /vm/             &#60;- under vm/ directory
-    :grep -P \.h$             &#60;- all include files
-    :grep -P init             &#60;- path including 'init'
+    :GtagsCursor
+
+</PRE>
+
+
+<PRE>
+    Suggested map:
+    map &#60;C-]&#62; :GtagsCursor&#60;CR&#62;
+</PRE>
+
+<LI>If you have the hypertext generated by htags(1) then you can display
+
+	the same place on mozilla browser. Let's load mozilla and try this:
+
+
+<PRE>
+
+    :Gozilla
+
+</PRE>
+
+
+<PRE>
+    Suggested map:
+    map &#60;C-g&#62; :Gozilla&#60;CR&#62;
+</PRE>
+
+<LI>If you want to load vim with all main()s then following command line is useful.
+
+
+<PRE>
+
+    % vim '+Gtags main'
 
 </PRE>
 
@@ -2241,8 +2298,8 @@ Or if you would like to use exuberant ctags (included by Vim editor),
 <P>
 <TT>`GRTAGS'</TT> and <TT>`GSYMS'</TT> don't exist, simply because
 these parsers don't support the <SAMP>`-r'</SAMP> option and <SAMP>`-s'</SAMP> option like gctags(1) does.
-<A NAME="IDX25"></A>
-<A NAME="IDX26"></A>
+<A NAME="IDX23"></A>
+<A NAME="IDX24"></A>
 All plugged-in parsers must print tag information to standard output
 in the same style as <CODE>ctags -x</CODE>, ie.:
 
@@ -2278,7 +2335,7 @@ You can save disk space with the compact format.
 <LI>To specify the use of the compact format on the command line,
 
      add the <SAMP>`-c'</SAMP> option:
-<A NAME="IDX27"></A>
+<A NAME="IDX25"></A>
 
 <PRE>
 
@@ -2301,7 +2358,7 @@ You can save disk space with the compact format.
 <LI>If you will publish hypertext generated by htags then use the <SAMP>`-c'</SAMP> option
 
      of htags too:
-<A NAME="IDX28"></A>
+<A NAME="IDX26"></A>
 
 <PRE>
 
@@ -2339,7 +2396,7 @@ You need to set up an HTTP server so that gzipped files can be read
 <P>
 Modifying some source files, you need not remake whole tag files.
 Instead, you can use incremental updating facility (<SAMP>`-u'</SAMP> option).
-<A NAME="IDX29"></A>
+<A NAME="IDX27"></A>
 
 <PRE>
 
@@ -2375,7 +2432,7 @@ with @option{--with-postgres}, build it and make a database so that you can
 access to it. You need a database for a project.
 At the first time of creating tag files, you need specify info string with
 @option{--info}. The info string is passed to PQconnectdb(3) as is.
-<A NAME="IDX30"></A>
+<A NAME="IDX28"></A>
 
 <PRE>
 
@@ -2422,7 +2479,7 @@ global -f[anqrstvx] files<BR>
 global -g[aGilnoqtvx][-e] pattern<BR>
 global -I[ailnqtvx][-e] pattern<BR>
 global -p[qrv]<BR>
-global -P[aGilnqtvx][-e] pattern<BR>
+global -P[aGilnoqtvx][-e] pattern<BR>
 global -u[qv]<BR>
 </BLOCKQUOTE>
 
@@ -2524,7 +2581,7 @@ Suppress sort filter and path conversion filter.
 <DD>
 Search pattern in not only source files but also other files
 like <TT>`README'</TT>.
-This option is valid only with <SAMP>`-g'</SAMP> command.
+This option is valid only with <SAMP>`-g'</SAMP> or <SAMP>`-P'</SAMP> command.
 <DT><SAMP>`-q'</SAMP>, <SAMP>`--quiet'</SAMP>
 <DD>
 Quiet mode.
@@ -2678,7 +2735,7 @@ GNU GLOBAL source code tag system<BR>
 
 <H3><A NAME="SEC67" HREF="globaldoc_toc.html#TOC67">AUTHOR</A></H3>
 <P>
-Shigio Yamaguchi
+Shigio Yamaguchi, Tama Communications Corporation.
 
 
 <H3><A NAME="SEC68" HREF="globaldoc_toc.html#TOC68">HISTORY</A></H3>
@@ -2933,7 +2990,7 @@ If you mistake the value then program may abort with core dump.
 
 <H3><A NAME="SEC82" HREF="globaldoc_toc.html#TOC82">AUTHOR</A></H3>
 <P>
-Shigio Yamaguchi
+Shigio Yamaguchi, Tama Communications Corporation.
 
 
 <H3><A NAME="SEC83" HREF="globaldoc_toc.html#TOC83">HISTORY</A></H3>
@@ -3315,7 +3372,7 @@ PHP supprt is far from complete.
 
 <H3><A NAME="SEC97" HREF="globaldoc_toc.html#TOC97">AUTHOR</A></H3>
 <P>
-Shigio Yamaguchi
+Shigio Yamaguchi, Tama Communications Corporation.
 
 
 <H3><A NAME="SEC98" HREF="globaldoc_toc.html#TOC98">HISTORY</A></H3>
@@ -3466,7 +3523,7 @@ Probably valid only for FreeBSD and Linux kernel source.
 
 <H3><A NAME="SEC107" HREF="globaldoc_toc.html#TOC107">AUTHOR</A></H3>
 <P>
-Shigio Yamaguchi
+Shigio Yamaguchi, Tama Communications Corporation.
 
 
 <H3><A NAME="SEC108" HREF="globaldoc_toc.html#TOC108">HISTORY</A></H3>
@@ -3638,7 +3695,7 @@ environment.
 
 <H3><A NAME="SEC121" HREF="globaldoc_toc.html#TOC121">AUTHORS</A></H3>
 <P>
-Shigio Yamaguchi
+Shigio Yamaguchi, Tama Communications Corporation.
 
 
 <H3><A NAME="SEC122" HREF="globaldoc_toc.html#TOC122">HISTORY</A></H3>
@@ -4149,7 +4206,7 @@ to permit their use in free software.
 Jump to:
 <P>
 <P><HR><P>
-This document was generated on 3 October 2003 using
+This document was generated on 1 February 2004 using
 <A HREF="http://wwwinfo.cern.ch/dis/texi2html/">texi2html</A>&nbsp;1.56k.
 </BODY>
 </HTML>

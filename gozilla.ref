@@ -96,7 +96,7 @@ directory, HTML file and even URL, because it is omnivorous.
 I don't know whether or not gozilla works well in Windows32
 environment.
 @unnumberedsubsec AUTHORS
-Shigio Yamaguchi
+Shigio Yamaguchi, Tama Communications Corporation.
 @unnumberedsubsec HISTORY
 The gozilla command appeared in FreeBSD 2.2.2 but did not
 installed by default.

@@ -10,7 +10,7 @@ global -f[anqrstvx] files@*
 global -g[aGilnoqtvx][-e] pattern@*
 global -I[ailnqtvx][-e] pattern@*
 global -p[qrv]@*
-global -P[aGilnqtvx][-e] pattern@*
+global -P[aGilnoqtvx][-e] pattern@*
 global -u[qv]@*
 @end quotation
 @unnumberedsubsec DESCRIPTION
@@ -81,7 +81,7 @@ Suppress sort filter and path conversion filter.
 @item @samp{-o}, @samp{--other}
 Search pattern in not only source files but also other files
 like @file{README}.
-This option is valid only with @samp{-g} command.
+This option is valid only with @samp{-g} or @samp{-P} command.
 @item @samp{-q}, @samp{--quiet}
 Quiet mode.
 @item @samp{-r}, @samp{--reference}, @samp{--rootdir}
@@ -189,6 +189,6 @@ less(1).
 GNU GLOBAL source code tag system@*
 (http://www.gnu.org/software/global/).
 @unnumberedsubsec AUTHOR
-Shigio Yamaguchi
+Shigio Yamaguchi, Tama Communications Corporation.
 @unnumberedsubsec HISTORY
 The global command appeared in FreeBSD 2.2.2.
