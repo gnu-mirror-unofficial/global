@@ -20,7 +20,7 @@ CVS utility</a> to obtain anonymous read-only access.
 The module name is <strong>global</strong>.
 <p>
 You can get and build CVS version of GLOBAL like this:
-<br>(You need automake and autoconf installed in your machine.
+<br>(You need automake, autoconf, gperf and flex installed in your machine.
 <br>Hit return when prompted for the login password.)
 <p>
 <pre>
