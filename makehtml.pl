@@ -33,7 +33,7 @@
 #
 # String
 #
-$l_year = '2000,2001';
+$l_year = '2000,2001,2002';
 $l_company = 'Tama Communications Corporation';
 $l_name = 'Shigio Yamaguchi';
 $l_copyright = 'Copyright';
