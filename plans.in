@@ -9,6 +9,7 @@ Plans of the highest priority are listed first.
 <p>
 <ul>
 <li>Write vim script 'gtags.vim' to use GLOBAL from vim editor.
+<li>Rewrite htags(1) using C or Scheme.
 <li>Support new languages.
 	Here is a list of candidates:
         <ul>
@@ -19,7 +20,6 @@ Plans of the highest priority are listed first.
 	union name and struct name. Finally, remove GSYMS. (gctags, gtags)
 <li>The --dynamic option generates not only index files but also hypertext
 	of source code itself.
-<li>Rewrite htags(1) using C or Scheme.
 <li>Include external parsers (gctags).<br>
 	Here is a list of candidates:
         <ul>
