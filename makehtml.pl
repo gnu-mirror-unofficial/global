@@ -158,6 +158,10 @@ for ($i = 0; $i < $total; $i++) {
 
 	# (1) Print prologue.
 	print OUTFILE start_html($title{$infile});
+	print OUTFILE "<small>\n";
+	print OUTFILE "<a href=http://www.gnu.org/>GNU Project</a> -\n";
+	print OUTFILE "<a href=http://www.gnu.org/software/>Software</a>\n";
+	print OUTFILE "</small>\n";
 	print OUTFILE "<table width='100%' cellpadding=10 cellspacing=0 border=0>";
 	print OUTFILE "<tr>\n";
 
