@@ -82,42 +82,21 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	written by Claudio Fleiner.
 </dl>
 
-<H3>Documentation system for source code</H3>
-<dl>
-<dt><a href=http://www.zib.de/Visual/software/doc++/>DOC++</a><dd>
-	DOC++ is a documentation system for C/C++ and Java generating both,
-	LaTeX output for high quality hardcopies and HTML output for
-	sophisticated online browsing of your documentation.
-<dt><a href=http://www.xs4all.nl/~rfsber/Robo/robodoc.html>ROBODoc</a><dd>
-	ROBODoc is a documentation tool. It extracts specially formated
-	comment headers from the source file and puts them in a separate file.
-	ROBODoc thus allows you to include the program documentation
-	in the source code and avoid having to maintain two separate documents.
-<dt><a href=http://www.sylvantech.com/~talin/projects/scandoc/scandoc.html>ScanDoc</a><dd>
-	ScanDoc is a Perl script which scans C++ source code for
-	specially-formatted comments and produces attractive, organized,
-	indexed documentation. 
-<dt><a href=http://www.stack.nl/~dimitri/doxygen/>Doxygen</a><dd>
-	Doxygen is a documentation system for C++, Java, IDL
-	(Corba, Microsoft and KDE-DCOP flavors) and C. 
-	You can select output format in HTML, LaTeX, RTF (MS-Word),
-	PostScript, hyperlinked PDF, compressed HTML, and Unix man pages.
-<dt><a href=http://synopsis.sourceforge.net/>Synopsis</a><dd>
-	Synopsis is a general source code documentation tool.
-	By means of a modular structure it adapts to different styles of
-	embedded documentation, different programming languages and various
-	output formats. It scales well with the size of the project
-	by allowing processing to be controlled by Makefiles.
-<dt><a href=http://www-cs-faculty.stanford.edu/~knuth/cweb.html>CWEB</a><dd>
-	CWEB is a version of WEB for documenting C, C++, and Java programs.
-	WEB was adapted to C by Silvio Levy in 1987, and since then both
-	Knuth and Levy have revised and enhanced the system in many ways,
-	notably to support C++ and ANSI C. Thus CWEB combines TeX with
-	today's most widely used professional programming languages. 
-</dl>
-
 <H3>Source code browsing Tools</H3>
 <dl>
+<dt><a href=http://sourceforge.net/projects/tagsearch/>TagSearch</a><dd>
+	TagSearch is a command line tool for searching Tags in Exuberant
+	ctags Files. - Search for special tag kind (classes, variable
+	definitions ...) - configurable output format - search case
+	sensitiv/insensitiv - search for partial or full Match.
+<dt><a href=http://freescope.sourceforge.net/>Freescope</a><dd>
+	Freescope is a programmer tool that provides source code browsing on
+	UNIX-like operating systems. It is a clone of the cscope program
+	but has its own unique features such as symbol completion and easy
+	result browsing.
+<dt><a href=http://kscope.sourceforge.net/>KScope</a><dd>
+	KScope is a KDE front-end to Cscope. It provides a source-editing
+	environment for large C projects, such as the Linux kernel.
 <dt><a href=http://www.geocities.com/yegappan/taglist/>Taglist</a><dd>
 	The "Tag List" plugin is a source code browser for the Vim editor.
 	It provides an overview of the structure of source code files and
@@ -172,6 +151,40 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	highlighting. This package can handle Java, Javascript, C,C+, Prolog,
 	Perl, Php3, Python, Flex, ChangeLog and Ruby as source languages, and
 	HTML, XHTML and ANSI color escape sequences as output formats.
+</dl>
+
+<H3>Documentation system for source code</H3>
+<dl>
+<dt><a href=http://www.zib.de/Visual/software/doc++/>DOC++</a><dd>
+	DOC++ is a documentation system for C/C++ and Java generating both,
+	LaTeX output for high quality hardcopies and HTML output for
+	sophisticated online browsing of your documentation.
+<dt><a href=http://www.xs4all.nl/~rfsber/Robo/robodoc.html>ROBODoc</a><dd>
+	ROBODoc is a documentation tool. It extracts specially formated
+	comment headers from the source file and puts them in a separate file.
+	ROBODoc thus allows you to include the program documentation
+	in the source code and avoid having to maintain two separate documents.
+<dt><a href=http://www.sylvantech.com/~talin/projects/scandoc/scandoc.html>ScanDoc</a><dd>
+	ScanDoc is a Perl script which scans C++ source code for
+	specially-formatted comments and produces attractive, organized,
+	indexed documentation. 
+<dt><a href=http://www.stack.nl/~dimitri/doxygen/>Doxygen</a><dd>
+	Doxygen is a documentation system for C++, Java, IDL
+	(Corba, Microsoft and KDE-DCOP flavors) and C. 
+	You can select output format in HTML, LaTeX, RTF (MS-Word),
+	PostScript, hyperlinked PDF, compressed HTML, and Unix man pages.
+<dt><a href=http://synopsis.sourceforge.net/>Synopsis</a><dd>
+	Synopsis is a general source code documentation tool.
+	By means of a modular structure it adapts to different styles of
+	embedded documentation, different programming languages and various
+	output formats. It scales well with the size of the project
+	by allowing processing to be controlled by Makefiles.
+<dt><a href=http://www-cs-faculty.stanford.edu/~knuth/cweb.html>CWEB</a><dd>
+	CWEB is a version of WEB for documenting C, C++, and Java programs.
+	WEB was adapted to C by Silvio Levy in 1987, and since then both
+	Knuth and Levy have revised and enhanced the system in many ways,
+	notably to support C++ and ANSI C. Thus CWEB combines TeX with
+	today's most widely used professional programming languages. 
 </dl>
 
 <h3>Hypertext of source code</h3>
