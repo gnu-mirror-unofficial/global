@@ -6,9 +6,14 @@ Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <dl compact>
+<dt>2005/2/26<dd>
+	GLOBAL-4.8.3 was released.
+	See <a href=http://savannah.gnu.org/forum/forum.php?forum_id=3645>release note</a>.
+	<br>
+	New config variable 'langmap' is available.
 <dt>2004/11/11<dd>
 	GLOBAL-4.8.2 was released.
-	See <a href=https://savannah.gnu.org/forum/forum.php?forum_id=3390>release note</a>.
+	See <a href=http://savannah.gnu.org/forum/forum.php?forum_id=3390>release note</a>.
 	<br>
 	Dependence on external commands has been decreased.
 <dt>2004/10/6<dd>

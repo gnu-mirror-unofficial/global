@@ -62,10 +62,10 @@ Print warning messages.
 @end table
 @unnumberedsubsec EXAMPLES
 @example
-	% ls -F
+	$ ls -F
 	Makefile      src/    lib/
-	% gtags -v
-	% global -x main
+	$ gtags -v
+	$ global -x main
 	main              10 src/main.c  main (argc, argv) @{
 @end example
 @unnumberedsubsec FILES
@@ -100,13 +100,13 @@ You can see the default value for each variable with @samp{--config} option.
 @table @asis
 @item @code{GTAGS}(string)
 If this variable is set, its value is used as the
-command line of parser for GTAGS. The default is @file{gctags -dt %s}.
+command line of parser for GTAGS. The default is @file{gtags-parser -dt %s}.
 @item @code{GRTAGS}(string)
 If this variable is set, its value is used as the
-command line of parser for GRTAGS. The default is @file{gctags -dtr %s}.
+command line of parser for GRTAGS. The default is @file{gtags-parser -dtr %s}.
 @item @code{GSYMS}(string)
 If this variable is set, its value is used as the
-command line of parser for GSYMS. The default is @file{gctags -dts %s}.
+command line of parser for GSYMS. The default is @file{gtags-parser -dts %s}.
 @item @code{skip}(comma separated list)
 Gtags skips files which listed in this list.
 As a special exception, gtags collect values from multiple @code{skip} variables.
@@ -115,12 +115,18 @@ If the value start with '/', it assumed relative path from the root of source di
 @item @code{suffixes}(comma separated list)
 Suffixes of target source file.
 As a special exception, gtags collect values from multiple @code{suffixes} variables.
+This variable is obsoleted. If the langmap variable is defined
+gtags no longer refers this.
 @item @code{format}(standard|compact)
 Format of tag files. The default is @code{standard}.
 Compact format is same to @samp{-c}(@samp{--compact}).
 @item @code{icase_path}(boolean)
 Ignore case distinctions in the path.
 Suffixes check are affected by this capability.
+@item @code{langmap}(comma separated list)
+Language mapping. Each comma-separated map consists of
+the language name, a colon, and a list of file extensions.
+Default mapping is 'c:.c.h,yacc:.y,asm:.s.S,java:.java,cpp:.c++.cc.cpp.cxx.hxx.hpp.C.H,php:.php.php3.phtml'.
 @end table
 @unnumberedsubsec DIAGNOSTICS
 Gtags exits with a non 0 value if an error occurred, 0 otherwise.
@@ -129,7 +135,7 @@ Verbose message has important level. The most important level is 0,
 the second is 1 and so on. All the message has level numbers leading
 blanks.
 @unnumberedsubsec SEE ALSO
-gctags(1),
+gtags-parser(1),
 global(1),
 htags(1).
 

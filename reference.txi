@@ -3,7 +3,7 @@
 * global::         global - print the locations of specified object.
 * gtags::          gtags - create tag files for global.
 * htags::          htags - generate hypertext from source code.
-* gctags::         gctags - print cross reference list for gtags.
+* gtags-parser::   gtags-parser - print cross reference list for gtags.
 * gozilla::        gozilla - force mozilla to display specified source file.
 @end menu
 
@@ -16,9 +16,9 @@
 @node htags
 @section htags - generate hypertext from source code.
 @include htags.ref
-@node gctags
-@section gctags - print cross reference list for gtags.
-@include gctags.ref
+@node gtags-parser
+@section gtags-parser - print cross reference list for gtags.
+@include gtags-parser.ref
 @node gozilla
 @section gozilla - force mozilla to display specified source file.
 @include gozilla.ref

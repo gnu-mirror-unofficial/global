@@ -1,14 +1,14 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.56k from ../global.txi on 11 November 2004 -->
+<!-- Created by texi2html 1.56k from ../global.txi on 26 February 2005 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY>
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 4.8.2, for GNU GLOBAL version 4.8.2</H2>
-<H2>11 November 2004</H2>
-<ADDRESS>by Shigio Yamaguchi</ADDRESS>
+<H2>Edition 4.8.3, for GNU GLOBAL version 4.8.3</H2>
+<H2>26 February 2005</H2>
+<ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
 <H1>Table of Contents</H1>
@@ -141,7 +141,7 @@
 <LI><A NAME="TOC96" HREF="global.html#SEC96">AUTHOR</A>
 <LI><A NAME="TOC97" HREF="global.html#SEC97">HISTORY</A>
 </UL>
-<LI><A NAME="TOC98" HREF="global.html#SEC98">5.4 gctags - print cross reference list for gtags.</A>
+<LI><A NAME="TOC98" HREF="global.html#SEC98">5.4 gtags-parser - print cross reference list for gtags.</A>
 <UL>
 <LI><A NAME="TOC99" HREF="global.html#SEC99">NAME</A>
 <LI><A NAME="TOC100" HREF="global.html#SEC100">SYNOPSIS</A>
@@ -192,7 +192,7 @@
 <P>
 Copyright (C) 2000, 2001, 2002, 2003, 2004 Tama Communications Corporation
 This is the first edition of the GNU GLOBAL documentation,<BR>
-and is consistent with 4.8.2.<BR>
+and is consistent with 4.8.3.<BR>
 Published by Tama Communications Corporation <BR>
 Tama-shi, Tokyo, Japan.<BR>
 
@@ -332,8 +332,8 @@ For example, if you want to browse vi's source code:
 
 <PRE>
 
-    % cd /usr/src/usr.bin/vi
-    % gtags
+    $ cd /usr/src/usr.bin/vi
+    $ gtags
 
 </PRE>
 
@@ -345,7 +345,7 @@ the source tree.
 
 <PRE>
 
-    % ls G*
+    $ ls G*
     GPATH   GRTAGS  GSYMS   GTAGS
 
 </PRE>
@@ -416,14 +416,14 @@ Global will locate the tag file by itself.
 
 <PRE>
 
-    % cd ROOT
-    % global func1
+    $ cd ROOT
+    $ global func1
     DIR1/fileB.c            # func1() is defined in fileB.c
-    % cd DIR1
-    % global func1
+    $ cd DIR1
+    $ global func1
     fileB.c                 # relative path from DIR1
-    % cd ../DIR2
-    % global func1
+    $ cd ../DIR2
+    $ global func1
     ../DIR1/fileB.c         # relative path from DIR2
 
 </PRE>
@@ -435,7 +435,7 @@ Global will locate the tag file by itself.
 
 <PRE>
 
-    % global -r func2
+    $ global -r func2
     ../DIR1/fileA.c         # func2() is referred from fileA.c
 
 </PRE>
@@ -445,8 +445,8 @@ Global will locate the tag file by itself.
 
 <PRE>
 
-    % cd ROOT
-    % global 'func[1-3]'
+    $ cd ROOT
+    $ global 'func[1-3]'
     DIR1/fileB.c            # func1, func2 and func3 are matched
     DIR2/fileC.c
 
@@ -460,9 +460,9 @@ It is similar to the <SAMP>`-x'</SAMP> option in ctags(1).
 
 <PRE>
 
-    % global func2
+    $ global func2
     DIR2/fileC.c
-    % global -x func2
+    $ global -x func2
     func2              2 DIR2/fileC.c       func2(){ i++; }
     func2              4 DIR2/fileC.c       func2(){ i--; }
 
@@ -475,7 +475,7 @@ It is similar to the <SAMP>`-x'</SAMP> option in ctags(1).
 
 <PRE>
 
-    % global -a func1
+    $ global -a func1
     /home/user/ROOT/DIR1/fileB.c
 
 </PRE>
@@ -487,7 +487,7 @@ It is similar to the <SAMP>`-x'</SAMP> option in ctags(1).
 
 <PRE>
 
-    % global -xs X
+    $ global -xs X
     X                  1 DIR2/fileC.c #ifdef X
 
 </PRE>
@@ -500,7 +500,7 @@ It is similar to grep(1).
 
 <PRE>
 
-    % global -xg '#ifdef'
+    $ global -xg '#ifdef'
     #ifdef             1 DIR2/fileC.c #ifdef X
 
 </PRE>
@@ -513,12 +513,12 @@ string.
 
 <PRE>
 
-    % global -P fileB
+    $ global -P fileB
     DIR1/fileB.c
-    % global -P '1/'
+    $ global -P '1/'
     DIR1/fileA.c
     DIR1/fileB.c
-    % global -P '\.c$'
+    $ global -P '\.c$'
     DIR1/fileA.c
     DIR1/fileB.c
     DIR2/fileC.c
@@ -532,7 +532,7 @@ string.
 
 <PRE>
 
-    % global -f DIR2/fileC.c
+    $ global -f DIR2/fileC.c
     func2              2 DIR2/fileC.c   func2(){ i++; }
     func2              4 DIR2/fileC.c   func2(){ i--; }
     func3              6 DIR2/fileC.c   func3(){
@@ -578,8 +578,8 @@ that are in version1.0.
 
 <PRE>
 
-    % cd ROOT/version1.0
-    % global -x func1
+    $ cd ROOT/version1.0
+    $ global -x func1
     func1              1 file.c          func1(){ i++; }
 
 </PRE>
@@ -591,8 +591,8 @@ are in version2.0.
 
 <PRE>
 
-    % cd ROOT/version2.0
-    % global -x func1
+    $ cd ROOT/version2.0
+    $ global -x func1
     func1              1 file.c          func1(){ i--; }
 
 </PRE>
@@ -604,8 +604,8 @@ then global will locate objects in both directories.
 
 <PRE>
 
-    % cd ROOT
-    % global -x func1
+    $ cd ROOT
+    $ global -x func1
     func1              1 version1.0/file.c  func1(){ i++; }
     func1              1 version2.0/file.c  func1(){ i--; }
 
@@ -628,12 +628,12 @@ In such cases, please do the following:
 
 <PRE>
 
-    % mkdir /var/dbpath
-    % cd /cdrom/src                 # the root of source tree
-    % gtags /var/dbpath             # make tag file in /var/dbpath
-    % setenv GTAGSROOT `pwd`
-    % setenv GTAGSDBPATH /var/dbpath
-    % global func
+    $ mkdir /var/dbpath
+    $ cd /cdrom/src                 # the root of source tree
+    $ gtags /var/dbpath             # make tag file in /var/dbpath
+    $ export GTAGSROOT=`pwd`
+    $ export GTAGSDBPATH=/var/dbpath
+    $ global func
 
 </PRE>
 
@@ -649,20 +649,20 @@ If <TT>`GTAGS'</TT> is not found in a directory, global ignores that directory.
 
 <PRE>
 
-    % pwd
+    $ pwd
     /develop/src/mh                         # this is the source tree
-    % gtags
-    % ls G*TAGS
+    $ gtags
+    $ ls G*TAGS
     GRTAGS  GTAGS
-    % global mhl
+    $ global mhl
     uip/mhlsbr.c                            # mhl() is found
-    % global strlen                         # strlen() is not found
-    % (cd /usr/src/lib; gtags)              # library source
-    % (cd /usr/src/sys; gtags)              # kernel source
-    % setenv GTAGSLIBPATH /usr/src/lib:/usr/src/sys
-    % global strlen
+    $ global strlen                         # strlen() is not found
+    $ (cd /usr/src/lib; gtags)              # library source
+    $ (cd /usr/src/sys; gtags)              # kernel source
+    $ export GTAGSLIBPATH=/usr/src/lib:/usr/src/sys
+    $ global strlen
     ../../../usr/src/lib/libc/string/strlen.c  # found in library
-    % global access
+    $ global access
     ../../../usr/src/sys/kern/vfs_syscalls.c   # found in kernel
 
 </PRE>
@@ -677,7 +677,7 @@ but at least it is useful.
 
 <PRE>
 
-    % global -c kmem                # maybe k..k.. kmem..
+    $ global -c kmem                # maybe k..k.. kmem..
     kmem_alloc
     kmem_alloc_pageable
     kmem_alloc_wait
@@ -686,13 +686,35 @@ but at least it is useful.
     kmem_init
     kmem_malloc
     kmem_suballoc                   # This is what I need!
-    % global kmem_suballoc
+    $ global kmem_suballoc
     ../vm/vm_kern.c
 
 </PRE>
 
-<LI>You can use the -c command with tcsh's complete command.
+<LI>You can use the -c command with complete command in shell.
 
+In bash:
+
+<PRE>
+
+    $ funcs()
+    &#62; {
+    &#62;         local cur
+    &#62;         cur=${COMP_WORDS[COMP_CWORD]}
+    &#62;         COMPREPLY=(`global -c $cur`)
+    &#62; }
+    $ complete -F funcs global
+    $ global kmem_<KBD>TAB</KBD><KBD>TAB</KBD>
+    kmem_alloc           kmem_alloc_wait      kmem_init
+    kmem_alloc_nofault   kmem_free            kmem_malloc
+    kmem_alloc_pageable  kmem_free_wakeup     kmem_suballoc
+    $ global kmem_s<KBD>TAB</KBD>
+    $ global kmem_suballoc
+    ../vm/vm_kern.c
+
+</PRE>
+
+In tcsh:
 
 <PRE>
 
@@ -716,7 +738,7 @@ one command, for example:
 
 <PRE>
 
-    % vi `global func1`     # edit fileB.c
+    $ vi `global func1`     # edit fileB.c
 
 </PRE>
 
@@ -725,7 +747,7 @@ one command, for example:
 
 <PRE>
 
-    % global -xr fork | awk '{printf "view +%s %s\n",$2,$3}'
+    $ global -xr fork | awk '{printf "view +%s %s\n",$2,$3}'
     view +650 ../dev/aic7xxx/aic7xxx_asm.c
     view +250 ibcs2/ibcs2_misc.c
     view +401 linux/linux_misc.c
@@ -733,7 +755,7 @@ one command, for example:
     view +318 ../kern/init_main.c
     view +336 ../kern/init_main.c
     view +351 ../kern/init_main.c
-    % !! | sh            # from now on, go to next tag with 'ZZ'.
+    $ !! | sh            # from now on, go to next tag with 'ZZ'.
 
 </PRE>
 
@@ -784,7 +806,7 @@ And you can invoke bash(1) with --rcfile option.
 
 <PRE>
 
-    % bash --rcfile /usr/local/share/gtags/globash.rc
+    $ bash --rcfile /usr/local/share/gtags/globash.rc
 
 </PRE>
 
@@ -1006,7 +1028,7 @@ Second, to use global from less, you need to set environment variable
 
 <PRE>
 
-    % setenv LESSGLOBALTAGS global
+    $ export LESSGLOBALTAGS=global
 
 </PRE>
 
@@ -1021,7 +1043,7 @@ Second, to use global from less, you need to set environment variable
 
 <PRE>
 
-    % less -t func1
+    $ less -t func1
 
 </PRE>
 
@@ -1032,7 +1054,7 @@ then please specify tag file explicitly like this.
 
 <PRE>
 
-    % less -TGTAGS -t func1
+    $ less -TGTAGS -t func1
 
 </PRE>
 
@@ -1041,7 +1063,7 @@ then please specify tag file explicitly like this.
 
 <PRE>
 
-    % less -TGRTAGS -t func1
+    $ less -TGRTAGS -t func1
 
 </PRE>
 
@@ -1082,7 +1104,7 @@ It is very valuable. You can connect global and less with pipe line.
 
 <PRE>
 
-    % global -x func | less -T-
+    $ global -x func | less -T-
 
 </PRE>
 
@@ -1091,16 +1113,16 @@ In the same way, you can use following command lines.
 
 <PRE>
     # pattern match with grep(1).
-    % global -xg 'lseek(.*)' | less -T-
+    $ global -xg 'lseek(.*)' | less -T-
 
     # pattern match with id-utils(1).
-    % global -xI func | less -T-
+    $ global -xI func | less -T-
 
     # all objects definitions in *.c.
-    % global -f *.c | less -T-
+    $ global -f *.c | less -T-
 
     # all files includes 'init' in its path.
-    % global -Px init | less -T-
+    $ global -Px init | less -T-
 </PRE>
 
 <LI>If your editor doesn't support GLOBAL directly then you can use less
@@ -1110,7 +1132,7 @@ as a footstool.
 
 <PRE>
     # invoke less
-    % less -t main
+    $ less -t main
     main(int argc, char **argv)
     {
     int i;
@@ -1189,7 +1211,7 @@ Start nvi with <SAMP>`-G'</SAMP> option
 
 <PRE>
 
-    % nvi -G file.c
+    $ nvi -G file.c
 
 </PRE>
 
@@ -1200,7 +1222,7 @@ Start nvi and execute <CODE>set gtagsmode</CODE>.
 
 <PRE>
 
-    % nvi file.c
+    $ nvi file.c
     ~
     ~
     ~
@@ -1327,7 +1349,7 @@ Display the tags stack.
 
 <PRE>
 
-    % nvi -G -t main
+    $ nvi -G -t main
 
 </PRE>
 
@@ -1338,7 +1360,7 @@ You can browse all commands sequentially.
 
 <PRE>
 
-    % nvi -G -t '^[sg]et'
+    $ nvi -G -t '^[sg]et'
 
 </PRE>
 
@@ -1356,12 +1378,12 @@ the following:
 
 <PRE>
 
-    % mkdir /var/dbpath             # directory for the tag file
-    % cd /cdrom/src                 # the root of the source tree
-    % gtags /var/dbpath             # make tag files in /var/dbpath
-    % setenv GTAGSROOT `pwd`
-    % setenv GTAGSDBPATH /var/dbpath
-    % nvi -G -t main
+    $ mkdir /var/dbpath             # directory for the tag file
+    $ cd /cdrom/src                 # the root of the source tree
+    $ gtags /var/dbpath             # make tag files in /var/dbpath
+    $ export GTAGSROOT=`pwd`
+    $ export GTAGSDBPATH=/var/dbpath
+    $ nvi -G -t main
 
 </PRE>
 
@@ -1372,11 +1394,11 @@ the following:
 
 <PRE>
 
-    % cd /usr/src/lib
-    % gtags                         # probably as a root
-    % cd /usr/src/sys
-    % gtags
-    % setenv GTAGSLIBPATH /usr/src/lib:/usr/src/sys
+    $ cd /usr/src/lib
+    $ gtags                         # probably as a root
+    $ cd /usr/src/sys
+    $ gtags
+    $ export GTAGSLIBPATH=/usr/src/lib:/usr/src/sys
 
 </PRE>
 
@@ -1385,9 +1407,9 @@ the following:
 
 <PRE>
 
-    % cd /usr/src/usr.bin/vi
-    % gtags
-    % nvi -G -t main
+    $ cd /usr/src/usr.bin/vi
+    $ gtags
+    $ nvi -G -t main
 
 </PRE>
 
@@ -1601,7 +1623,7 @@ Second, start elvis and execute <CODE>set tagprg="global -t $1"</CODE> like this
 
 <PRE>
 
-    % elvis
+    $ elvis
     ~
     ~
     ~
@@ -1827,7 +1849,7 @@ from your vimrc.
 
 <PRE>
 
-    % cp /usr/local/share/gtags/gtags.vim ~/.vim/plugin
+    $ cp /usr/local/share/gtags/gtags.vim $HOME/.vim/plugin
 
 </PRE>
 
@@ -2035,7 +2057,7 @@ If you are editing <TT>`main.c'</TT> itself, you can use '%' instead.
 
 <PRE>
 
-    % vim '+Gtags main'
+    $ vim '+Gtags main'
 
 </PRE>
 
@@ -2098,7 +2120,7 @@ and execute gtags-mode function in it.
     |(setq load-path (cons "/home/owner/global" load-path))
     |(autoload 'gtags-mode "gtags" "" t)
     
-    % emacs
+    $ emacs
     
     |
     |J_:-----Mule: *scratch*       (Lisp Interaction)--L16--All----
@@ -2245,12 +2267,12 @@ otherwise it is equivalent to <KBD>Find tag: <VAR>current token</VAR>RET</KBD>.
 
 <PRE>
 
-    % mkdir /var/dbpath             # directory for the tag file
-    % cd /cdrom/src                 # the root of the source tree
-    % gtags /var/dbpath             # make tag files in /var/dbpath
-    % setenv GTAGSROOT `pwd`
-    % setenv GTAGSDBPATH /var/dbpath
-    % emacs -f gtags-mode
+    $ mkdir /var/dbpath             # directory for the tag file
+    $ cd /cdrom/src                 # the root of the source tree
+    $ gtags /var/dbpath             # make tag files in /var/dbpath
+    $ export GTAGSROOT=`pwd`
+    $ export GTAGSDBPATH=/var/dbpath
+    $ emacs -f gtags-mode
 
 </PRE>
 
@@ -2262,12 +2284,12 @@ otherwise it is equivalent to <KBD>Find tag: <VAR>current token</VAR>RET</KBD>.
 
 <PRE>
 
-    % cd /usr/src/lib
-    % gtags                         &#60;- probably as a root
-    % cd /usr/src/sys
-    % gtags
-    % setenv GTAGSLIBPATH /usr/src/lib:/usr/src/sys
-    % emacs -f gtags-mode
+    $ cd /usr/src/lib
+    $ gtags                         &#60;- probably as a root
+    $ cd /usr/src/sys
+    $ gtags
+    $ export GTAGSLIBPATH=/usr/src/lib:/usr/src/sys
+    $ emacs -f gtags-mode
 
 </PRE>
 
@@ -2341,8 +2363,8 @@ in order like this:
 <PRE>
 
     (at your source directory)
-    % gtags                 # make the tag database(GTAGS,GRTAGS,GSYMS)
-    % htags                 # make the hypertext(HTML/)
+    $ gtags                 # make the tag database(GTAGS,GRTAGS,GSYMS)
+    $ htags                 # make the hypertext(HTML/)
 
 </PRE>
 
@@ -2361,7 +2383,7 @@ Please start a web browser like this:
 
 <PRE>
 
-    % lynx HTML/index.html
+    $ lynx HTML/index.html
 
 </PRE>
 
@@ -2379,10 +2401,10 @@ Using mozilla, you can also utilize hypertext from your command line like this:
 
 <PRE>
 
-    % mozilla				# load mozilla
-    % global -x main
+    $ mozilla				# load mozilla
+    $ global -x main
     main        10 main.c main(int argc, char *argv[]) {
-    % gozilla +10 main.c		# usage is similar to vi editor.
+    $ gozilla +10 main.c		# usage is similar to vi editor.
     (show main.c at 10 on mozilla's screen.)
     
 </PRE>
@@ -2409,8 +2431,8 @@ You can customize GLOBAL using configuration file.
     # cp gtags.conf /etc/gtags.conf         # system wide configuration file.
     # vi /etc/gtags.conf
 
-    % cp gtags.conf $HOME/.globalrc         # personal configuration file.
-    % vi $HOME/.globalrc
+    $ cp gtags.conf $HOME/.globalrc         # personal configuration file.
+    $ vi $HOME/.globalrc
 
 </PRE>
 
@@ -2442,12 +2464,12 @@ by Emacs),
 
 <PRE>
 
-    % cd /<VAR>emacs source directory</VAR>/lib-src
-    % make ctags
+    $ cd /<VAR>emacs source directory</VAR>/lib-src
+    $ make ctags
     # cp ctags /usr/local/bin/ctags-emacs
-    % setenv GTAGSLABEL ctags-emacs         # see gtags.conf
-    % gtags
-    % ls G*
+    $ export GTAGSLABEL=ctags-emacs         # see gtags.conf
+    $ gtags
+    $ ls G*
     GPATH   GTAGS
 
 </PRE>
@@ -2459,20 +2481,20 @@ Or if you would like to use exuberant ctags (included by Vim editor),
 
 <PRE>
 
-    % cd /<VAR>vim source directory</VAR>/src/ctags
-    % cp Makefile.unix Makefile
-    % make
+    $ cd /<VAR>vim source directory</VAR>/src/ctags
+    $ cp Makefile.unix Makefile
+    $ make
     # cp ctags /usr/local/bin/ctags-exuberant
-    % setenv GTAGSLABEL ctags-exuberant     # see gtags.conf
-    % gtags
-    % ls G*
+    $ export GTAGSLABEL=ctags-exuberant     # see gtags.conf
+    $ gtags
+    $ ls G*
     GPATH   GTAGS
 
 </PRE>
 
 <P>
 <TT>`GRTAGS'</TT> and <TT>`GSYMS'</TT> don't exist, simply because
-these parsers don't support the <SAMP>`-r'</SAMP> option and <SAMP>`-s'</SAMP> option like gctags(1) does.
+these parsers don't support the <SAMP>`-r'</SAMP> option and <SAMP>`-s'</SAMP> option like gtags-parser(1) does.
 <A NAME="IDX23"></A>
 <A NAME="IDX24"></A>
 All plugged-in parsers must print tag information to standard output
@@ -2514,7 +2536,7 @@ You can save disk space with the compact format.
 
 <PRE>
 
-    % gtags -c
+    $ gtags -c
 
 </PRE>
 
@@ -2537,7 +2559,7 @@ You can save disk space with the compact format.
 
 <PRE>
 
-    % htags -c
+    $ htags -c
 
 </PRE>
 
@@ -2575,19 +2597,19 @@ Instead, you can use incremental updating facility (<SAMP>`-u'</SAMP> option).
 
 <PRE>
 
-    % gtags
-    % cd kern
-    % vi tty.c                              # modify tty.c
+    $ gtags
+    $ cd kern
+    $ vi tty.c                              # modify tty.c
     ...
     :wq
-    % global -vu                            # -v means verbose
+    $ global -vu                            # -v means verbose
     [Sun Dec  6 16:27:47 JST 1998] Gtags started
      Tag found in '/usr/src/sys'.
      Incremental update.
      Updating tags of 'kern/tty.c' ...GTAGS..GRTAGS..GSYMS.. Done.
      Global databases have been modified.
     [Sun Dec  6 16:28:30 JST 1998] Done.
-    % global -vu                            # try again
+    $ global -vu                            # try again
     [Sun Dec  6 16:28:48 JST 1998] Gtags started
      Tag found in '/usr/src/sys'.
      Incremental update.
@@ -2758,33 +2780,33 @@ the line contents.
 <H3><A NAME="SEC60" HREF="global.html#TOC60">EXAMPLES</A></H3>
 
 <PRE>
-	% ls -F
+	$ ls -F
 	Makefile      src/    lib/
-	% gtags
-	% global main
+	$ gtags
+	$ global main
 	src/main.c
-	% global -x main
+	$ global -x main
 	main              10 src/main.c  main (argc, argv) {
-	% global -x '^[sg]et'
+	$ global -x '^[sg]et'
 	set_num           20 lib/util.c  set_num(values)
 	get_num           30 lib/util.c  get_num() {
-	% global -rx '^[sg]et'
+	$ global -rx '^[sg]et'
 	set_num          113 src/op.c            set_num(32);
 	set_num          225 src/opop.c               if (set_num(0) &#62; 0) {
 	get_num           90 src/op.c            while (get_num() &#62; 0) {
-	% cd lib
-	% global -rx '^[sg]et'
+	$ cd lib
+	$ global -rx '^[sg]et'
 	set_num          113 ../src/op.c            set_num(32);
 	set_num          225 ../src/opop.c               if (set_num(0) &#62; 0) {
 	get_num           90 ../src/op.c            while (get_num() &#62; 0) {
-	% global strlen
-	% (cd /usr/src/sys; gtags)
-	% setenv GTAGSLIBPATH /usr/src/sys
-	% global strlen
+	$ global strlen
+	$ (cd /usr/src/sys; gtags)
+	$ export GTAGSLIBPATH=/usr/src/sys
+	$ global strlen
 	../../../usr/src/sys/libkern/strlen.c
-	% (cd /usr/src/lib; gtags)
-	% setenv GTAGSLIBPATH /usr/src/lib:/usr/src/sys
-	% global strlen
+	$ (cd /usr/src/lib; gtags)
+	$ GTAGSLIBPATH=/usr/src/lib:/usr/src/sys
+	$ global strlen
 	../../../usr/src/lib/libc/string/strlen.c
 </PRE>
 
@@ -2858,7 +2880,7 @@ Global exits with a non 0 value if an error occurred, 0 otherwise.
 
 <H3><A NAME="SEC65" HREF="global.html#TOC65">SEE ALSO</A></H3>
 <P>
-gctags(1),
+gtags-parser(1),
 gtags(1),
 htags(1),
 less(1).
@@ -2974,10 +2996,10 @@ Print warning messages.
 <H3><A NAME="SEC73" HREF="global.html#TOC73">EXAMPLES</A></H3>
 
 <PRE>
-	% ls -F
+	$ ls -F
 	Makefile      src/    lib/
-	% gtags -v
-	% global -x main
+	$ gtags -v
+	$ global -x main
 	main              10 src/main.c  main (argc, argv) {
 </PRE>
 
@@ -3033,15 +3055,15 @@ You can see the default value for each variable with <SAMP>`--config'</SAMP> opt
 <DT><CODE>GTAGS</CODE>(string)
 <DD>
 If this variable is set, its value is used as the
-command line of parser for GTAGS. The default is <TT>`gctags -dt %s'</TT>.
+command line of parser for GTAGS. The default is <TT>`gtags-parser -dt %s'</TT>.
 <DT><CODE>GRTAGS</CODE>(string)
 <DD>
 If this variable is set, its value is used as the
-command line of parser for GRTAGS. The default is <TT>`gctags -dtr %s'</TT>.
+command line of parser for GRTAGS. The default is <TT>`gtags-parser -dtr %s'</TT>.
 <DT><CODE>GSYMS</CODE>(string)
 <DD>
 If this variable is set, its value is used as the
-command line of parser for GSYMS. The default is <TT>`gctags -dts %s'</TT>.
+command line of parser for GSYMS. The default is <TT>`gtags-parser -dts %s'</TT>.
 <DT><CODE>skip</CODE>(comma separated list)
 <DD>
 Gtags skips files which listed in this list.
@@ -3052,6 +3074,8 @@ If the value start with '/', it assumed relative path from the root of source di
 <DD>
 Suffixes of target source file.
 As a special exception, gtags collect values from multiple <CODE>suffixes</CODE> variables.
+This variable is obsoleted. If the langmap variable is defined
+gtags no longer refers this.
 <DT><CODE>format</CODE>(standard|compact)
 <DD>
 Format of tag files. The default is <CODE>standard</CODE>.
@@ -3060,6 +3084,11 @@ Compact format is same to <SAMP>`-c'</SAMP>(<SAMP>`--compact'</SAMP>).
 <DD>
 Ignore case distinctions in the path.
 Suffixes check are affected by this capability.
+<DT><CODE>langmap</CODE>(comma separated list)
+<DD>
+Language mapping. Each comma-separated map consists of
+the language name, a colon, and a list of file extensions.
+Default mapping is 'c:.c.h,yacc:.y,asm:.s.S,java:.java,cpp:.c++.cc.cpp.cxx.hxx.hpp.C.H,php:.php.php3.phtml'.
 </DL>
 
 
@@ -3077,7 +3106,7 @@ blanks.
 
 <H3><A NAME="SEC79" HREF="global.html#TOC79">SEE ALSO</A></H3>
 <P>
-gctags(1),
+gtags-parser(1),
 global(1),
 htags(1).
 
@@ -3265,18 +3294,18 @@ The default is the current directory.
 <H3><A NAME="SEC88" HREF="global.html#TOC88">EXAMPLES</A></H3>
 
 <PRE>
-	% cd /usr/src/sys
+	$ cd /usr/src/sys
 	# gtags -v
 	# htags -fFnvat 'Welcom to FreeBSD kernel source tour!'
-	% lynx HTML/index.html
+	$ lynx HTML/index.html
 
-	% htags -v --gtags
-	% awk '$1 == "main" {print $2}' HTML/MAP
+	$ htags -v --gtags
+	$ awk '$1 == "main" {print $2}' HTML/MAP
 	D/348.html
-	% lynx HTML/D/348.html
+	$ lynx HTML/D/348.html
 
-	% cd global
-	% htags -gv --cvsweb=http://savannah.gnu.org/cgi-bin/viewcvs/global/global/
+	$ cd global
+	$ htags -gv --cvsweb=http://savannah.gnu.org/cgi-bin/viewcvs/global/global/
 
 </PRE>
 
@@ -3466,6 +3495,16 @@ When this function is enabled, you cannot move hypertext from source directory.
 <DT><CODE>include_file_suffixes</CODE>(comma separated list)
 <DD>
 Suffixes of include file. The default is 'h,hxx,hpp,H,inc.php'.
+<DT><CODE>langmap</CODE>(comma separated list)
+<DD>
+Language mapping. Each comma-separated map consists of
+the language name, a colon, and a list of file extensions.
+Default mapping is 'c:.c.h,yacc:.y,asm:.s.S,java:.java,cpp:.c++.cc.cpp.cxx.hxx.hpp.C.H,php:.php.php3.phtml'.
+<DT><CODE>copy_files</CODE>(boolean)
+<DD>
+Copy files instead of linking.
+When the <SAMP>`-f'</SAMP> option is used, htags make links
+of tag files in <TT>`cgi-bin'</TT> directory by default.
 </DL>
 
 
@@ -3483,7 +3522,7 @@ blanks.
 
 <H3><A NAME="SEC94" HREF="global.html#TOC94">SEE ALSO</A></H3>
 <P>
-gctags(1),
+gtags-parser(1),
 global(1),
 gtags(1).
 
@@ -3513,12 +3552,12 @@ Tama Communications Corporation.
 The htags command appeared in FreeBSD 2.2.2.
 
 
-<H2><A NAME="SEC98" HREF="global.html#TOC98">5.4 gctags - print cross reference list for gtags.</A></H2>
+<H2><A NAME="SEC98" HREF="global.html#TOC98">5.4 gtags-parser - print cross reference list for gtags.</A></H2>
 
 
 <H3><A NAME="SEC99" HREF="global.html#TOC99">NAME</A></H3>
 <P>
-gctags - print cross reference list for gtags.
+gtags-parser - print cross reference list for gtags.
 
 
 <H3><A NAME="SEC100" HREF="global.html#TOC100">SYNOPSIS</A></H3>
@@ -3526,14 +3565,14 @@ gctags - print cross reference list for gtags.
 
 <BLOCKQUOTE>
 <P>
-gctags [-bdenrstvw] file ...<BR>
+gtags-parser [-bdenrstvw] file ...<BR>
 </BLOCKQUOTE>
 
 
 
 <H3><A NAME="SEC101" HREF="global.html#TOC101">DESCRIPTION</A></H3>
 <P>
-Gctags print cross reference list for gtags(1)
+Gctags-parser print cross reference list for gtags(1)
 from the specified C, C++, yacc, java, PHP and Assembly source
 to standard output.
 Each line of output contains the object name,
@@ -3543,7 +3582,7 @@ It's same with the output of ctags(1) with <SAMP>`-x'</SAMP> option.
 
 
 <P>
-Depending upon the options provided to gctags,
+Depending upon the options provided to gtags-parser,
 objects will consist of function definitions, function references
 and other symbols.
 
@@ -3626,7 +3665,7 @@ the last one specified determines the method used.
 
 <H3><A NAME="SEC103" HREF="global.html#TOC103">DIAGNOSTICS</A></H3>
 <P>
-Gctags exits with a non 0 value if an error occurred, 0 otherwise.
+Gctags-parser exits with a non 0 value if an error occurred, 0 otherwise.
 Duplicate objects are not considered errors.
 
 
@@ -3644,7 +3683,7 @@ GNU GLOBAL source code tag system<BR>
 
 <H3><A NAME="SEC105" HREF="global.html#TOC105">BUG</A></H3>
 <P>
-Gctags relies on the input being well formed,
+Gctags-parser relies on the input being well formed,
 and any syntactical errors will completely confuse it.
 
 
@@ -3660,7 +3699,7 @@ Tama Communications Corporation.
 
 <H3><A NAME="SEC107" HREF="global.html#TOC107">HISTORY</A></H3>
 <P>
-The gctags command appeared in FreeBSD 2.2.2.
+The gtags-parser(gctags) command appeared in FreeBSD 2.2.2.
 
 
 <H2><A NAME="SEC108" HREF="global.html#TOC108">5.5 gozilla - force mozilla to display specified source file.</A></H2>
@@ -3781,12 +3820,12 @@ browser to use. By default, it is assumed mozilla.
 <H3><A NAME="SEC115" HREF="global.html#TOC115">EXAMPLES</A></H3>
 
 <PRE>
-	% gtags
-	% htags
-	% mozilla &#38;
-	% global -x main
+	$ gtags
+	$ htags
+	$ mozilla &#38;
+	$ global -x main
 	main              82 ctags.c          main(argc, argv)
-	% gozilla +82 ctags.c
+	$ gozilla +82 ctags.c
 </PRE>
 
 
@@ -4338,7 +4377,7 @@ to permit their use in free software.
 Jump to:
 <P>
 <P><HR><P>
-This document was generated on 11 November 2004 using
+This document was generated on 26 February 2005 using
 <A HREF="http://wwwinfo.cern.ch/dis/texi2html/">texi2html</A>&nbsp;1.56k.
 </BODY>
 </HTML>

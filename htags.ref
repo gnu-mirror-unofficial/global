@@ -98,18 +98,18 @@ The default is the current directory.
 @end table
 @unnumberedsubsec EXAMPLES
 @example
-	% cd /usr/src/sys
+	$ cd /usr/src/sys
 	# gtags -v
 	# htags -fFnvat 'Welcom to FreeBSD kernel source tour!'
-	% lynx HTML/index.html
+	$ lynx HTML/index.html
 
-	% htags -v --gtags
-	% awk '$1 == "main" @{print $2@}' HTML/MAP
+	$ htags -v --gtags
+	$ awk '$1 == "main" @{print $2@}' HTML/MAP
 	D/348.html
-	% lynx HTML/D/348.html
+	$ lynx HTML/D/348.html
 
-	% cd global
-	% htags -gv --cvsweb=http://savannah.gnu.org/cgi-bin/viewcvs/global/global/
+	$ cd global
+	$ htags -gv --cvsweb=http://savannah.gnu.org/cgi-bin/viewcvs/global/global/
 
 @end example
 @unnumberedsubsec FILES
@@ -237,6 +237,14 @@ Enable id-utils search using CGI program. The default is false.
 When this function is enabled, you cannot move hypertext from source directory.
 @item @code{include_file_suffixes}(comma separated list)
 Suffixes of include file. The default is 'h,hxx,hpp,H,inc.php'.
+@item @code{langmap}(comma separated list)
+Language mapping. Each comma-separated map consists of
+the language name, a colon, and a list of file extensions.
+Default mapping is 'c:.c.h,yacc:.y,asm:.s.S,java:.java,cpp:.c++.cc.cpp.cxx.hxx.hpp.C.H,php:.php.php3.phtml'.
+@item @code{copy_files}(boolean)
+Copy files instead of linking.
+When the @samp{-f} option is used, htags make links
+of tag files in @file{cgi-bin} directory by default.
 @end table
 @unnumberedsubsec DIAGNOSTICS
 Htags exits with a non 0 value if an error occurred, 0 otherwise.
@@ -245,7 +253,7 @@ Verbose message has important level. The most important level is 0,
 the second it 1 and so on. All the message has level numbers leading
 blanks.
 @unnumberedsubsec SEE ALSO
-gctags(1),
+gtags-parser(1),
 global(1),
 gtags(1).
 
