@@ -31,6 +31,8 @@ ${TUTOR}: global.txi version.texi reference.txi fdl.txi gctags.ref global.ref gt
 	@echo "@title Tutorial" > ${MANUAL}_toc.in
 	@echo "@link Tutorial" >> ${MANUAL}_toc.in
 	@echo "@body" >> ${MANUAL}_toc.in
+	@echo "This manual is available in <a href=http://www.gnu.org/software/global/manual/>various formats</a>." >> ${MANUAL}_toc.in
+	@echo "<hr>" >> ${MANUAL}_toc.in
 	@sed -e '1,/^<BODY.*>/d' -e '/<\/BODY.*>/,$$d' < ${MANUAL}_toc.html >> ${MANUAL}_toc.in
 	@rm -f ${MANUAL}.txi
 clean:
