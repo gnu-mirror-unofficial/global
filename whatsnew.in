@@ -8,8 +8,8 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <dl compact>
 <dt>2003/10/3<dd>
 	GLOBAL-4.6.1 was released.
-	Fixed directory traverse trouble in some GNU/Linux system.
-	Support '.hpp' extension of C++ source file.
+	Directory traverse trouble in some GNU/Linux system was fixed.
+	Supports '.hpp' extension of C++ source file.
 <dt>2003/7/2<dd>
 	GLOBAL-4.6 was released.
 	See <a href=http://savannah.gnu.org/forum/forum.php?forum_id=2139>release note</a>.
