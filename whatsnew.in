@@ -7,6 +7,10 @@ Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <dl compact>
+<dt>2002/2/22<dd>
+	GLOBAL-4.3.1 was released. This is a bug fix version.
+	Htags(1) in GLOBAL-4.3 was not generated correctly.
+	<br>
 <dt>2002/1/13<dd>
 	FreeBSD imported GLOBAL-4.3. See
 	<a href=http://freshports.org/port-description.php3?port=3545>this</a>
