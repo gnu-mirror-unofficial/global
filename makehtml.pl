@@ -37,8 +37,8 @@ $l_company = 'Tama Communications Corporation';
 $l_name = 'Shigio Yamaguchi';
 $l_copyright = 'Copyright (c)';
 $l_statement = "$l_copyright $l_year $l_company";
-$l_biglogo = 'globe.jpg';
-$l_smalllogo = 'sglobe.jpg';
+$l_biglogo = 'globe.png';
+$l_smalllogo = 'sglobe.png';
 $l_GFDL = 'Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1';
 #
