@@ -89,7 +89,7 @@ sub title {
 	"<h2><font color=$c_titlecolor>$_[0]</font></h2>\n";
 }
 sub home_title {
-	logobox("<h2>$_[0]</h2>", 7, $l_biglogo) .
+	logobox("<h2>$_[0]</h2>", 4, $l_biglogo) .
 	"<p align=right><i><font size=-1>\n" .
 	"$l_copyright $l_year $l_company. $l_reserved" .
 	"</font></i></p>\n";
