@@ -14,6 +14,7 @@ Plans of the highest priority are listed first.
 	<li>LaTeX
 	<li>Scheme
         </ul>
+<li>In C++, pickup functions in namespace.
 <li>Pickup definitions of data type, enum name, enum value,
 	union name and struct name. Finally, remove GSYMS. (gctags, gtags)
 <li>The --dynamic option generates not only index files but also hypertext
