@@ -11,27 +11,6 @@ You can download the latest source archive from
 or
 <a href=ftp://ftp.gnu.org/pub/gnu/global/>GNU ftp site</a>.
 
-<h3>CVS repository</h3>
-You can browse the GLOBAL CVS repository via the
-<a href=http://savannah.gnu.org/cgi-bin/viewcvs/global/global/>ViewCVS interface</a>.
-<p>
-You can also use the <a href=http://www.gnu.org/software/cvs/cvs.html>
-CVS utility</a> to obtain anonymous read-only access.
-Please see
-<a href=http://savannah.gnu.org/cvs/?group=global>
-savannah CVS page
-</a>
-for the details.
-<p>
-You can build CVS version of GLOBAL like this:
-<br>(You need automake, autoconf, gperf, bison and flex installed in your machine.)
-<p>
-<pre>
-% sh reconf.sh 
-% ./configure
-% make
-</pre>
-
 <h3>Binary archive</h3>
 DOS and Windows 32 version are distributed by
 <a href=http://www.geocities.com/shankara_c/global.html>Shankar Chakkere</a>
@@ -64,3 +43,23 @@ You can also get binary package from following distributions:
 <li><a href=http://www.freebsd.org/>FreeBSD</a>.
 <li><a href=http://www.netbsd.org/>NetBSD</a>.
 </ul>
+<h3>CVS repository</h3>
+You can browse the GLOBAL CVS repository via the
+<a href=http://savannah.gnu.org/cgi-bin/viewcvs/global/global/>ViewCVS interface</a>.
+<p>
+You can also use the <a href=http://www.gnu.org/software/cvs/cvs.html>
+CVS utility</a> to obtain anonymous read-only access.
+Please see
+<a href=http://savannah.gnu.org/cvs/?group=global>
+savannah CVS page
+</a>
+for the details.
+<p>
+You can build CVS version of GLOBAL like this:
+<br>(You need automake, autoconf, gperf, bison and flex installed in your machine.)
+<p>
+<pre>
+% sh reconf.sh 
+% ./configure
+% make
+</pre>
