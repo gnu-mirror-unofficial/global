@@ -106,6 +106,11 @@ under the terms of the GNU Free Documentation License, Version 1.1
 
 <H3>Source code browsing Tools</H3>
 <dl>
+<dt><a href=http://sourcebase.sourceforge.net/>SourceBase</a><dd>
+	This is a parser library aimed at developers of free IDEs.
+	SourceBase aims to make parsing based features easy to implement.
+	These include intellisense code completion, producing call graphs
+	and dependency trees, etc. 
 <dt><a href=ftp://ftp.netsw.org/softeng/lang/c/tools/cflow/>cflow clone</a><dd>
 	This is a clone of cflow based on ctags.
 <dt><a href=http://www.gedanken.demon.co.uk/cxref/>Cxref</a><dd>
