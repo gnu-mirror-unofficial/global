@@ -1,7 +1,7 @@
 @title Plans for the future
 @link Plans
 @license
-Copyright (c) 2000, 2001
+Copyright (c) 2000, 2001, 2002
 Tama Communications Corporation. All rights reserved.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1
@@ -16,6 +16,7 @@ Plans of the highest priority are listed first.
 <li>Write plugged-in parser writer's guide.
 <li>Pickup definitions of data type, macro with no argument, 
 enum name, enum value, union name and struct name. Finally, remove GSYMS.
+<li>Support glob pattern for path name search (global -P).
 <li>Support of other languages.<br>
         <ul>
 	<li>PHP
