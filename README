@@ -33,7 +33,6 @@ You need to bring following files from GLOBAL package by hand.
 o *.texi and *.ref (used by tutorial).
 o NEWS (used by What's new).
 o ChangeLog (used by What's new).
-o LICENSE (used by license)
 
 -------------------------------------------------------------------------
 Additional copyright notice about JPEG files. (globe.jpg, sglobe.jpg)
