@@ -24,6 +24,11 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	tag storage.
 	See <a href=http://mail.gnu.org/pipermail/info-global/2001-November/000005.html>release note</a>.
 	<br>
+<dt>2001/10/30<dd>
+	Now <a href=http://glimmer.sourceforge.net/>Glimmer</a> supports
+	GLOBAL.
+	See <a href=http://yoda.ing.unibs.it/~cowo/>this</a>.
+	<br>
 <dt>2001/8/1<dd>
 	GLOBAL-4.1.1 was released because 4.1 had some important bugs.
 	<br>
