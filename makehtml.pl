@@ -189,6 +189,7 @@ for ($i = 0; $i < $total; $i++) {
 	if ($infile eq 'global.in') {
 		print OUTFILE home_title($title{$infile});
 	} else {
+		print OUTFILE $hr;
 		print OUTFILE title($title{$infile});
 	}
 	print OUTFILE $hr;
