@@ -166,6 +166,9 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	This tour guides you to the latest FreeBSD-current and FreeBSD-stable
 	source code. These hypertext are generated every day using GLOBAL
 	by The FreeBSD Project (Japan).
+<dt><a href=http://www.tamacom.com/unix/index.html#kernel>UNIX kernel source tour!</a><dd>
+	This tour contains eight kernels: FreeBSD 4.5, NetBSD 1.4.3, OpenBSD 3.0, Linux 2.4.18,
+	GNU Hurd 0.2, Minix 2.0.0, 4.3BSD and UNIX V7(historic UNIX).
 </dl>
 <h3>UNIX and its clone's Kernel source code</h3>
 <dl>
