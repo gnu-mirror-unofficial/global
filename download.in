@@ -48,11 +48,13 @@ is distributed by <a href=http://fink.sourceforge.net/>Fink project</a>
 .
 <p>
 <a href=http://packages.debian.org/stable/devel/global.html>
-GNU/Linux version
+Debian GNU/Linux version
 </a>
-is distributed by 
-<a href=http://www.debian.org/>Debian GNU/Linux</a>
-.
+and
+<a href=http://www.suse.de/us/private/products/suse_linux/i386/packages_professional/global.html>
+SuSE GNU/Linux version
+</a>
+are available.
 <p>
 <a href=http://aixpdslib.seas.ucla.edu/packages/global.html>AIX version</a>
 and
