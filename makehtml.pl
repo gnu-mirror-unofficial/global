@@ -80,7 +80,7 @@ sub logobox {
 			"<font color=white size=$fontsize>$title</font>\n" .
 		"</td>\n" .
 		"<td bgcolor=black>\n" .
-			"<img src=$logo alt='GLOBE' align=right hspace=15>\n" .
+			"<img src=$logo alt='[image of the globe]' align=right hspace=15>\n" .
 		"</td>\n" .
 	"</tr>\n" .
 	"</table>\n";
