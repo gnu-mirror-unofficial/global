@@ -45,8 +45,6 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <dt><a href=http://www.greenwoodsoftware.com/less/>Less</a><dd>
 	Less is a popular file viewer written by Mark Nudelman.
 	In less-370 or the later, you can use GLOBAL from this tool.
-	If you are using less-358 then you can use
-	<a href=http://tamacom.com/unix/index.html#less>this patch</a>.
 <dt><a href=http://www.gnu.org/software/idutils/idutils.html>ID utilities</a><dd>
 	ID utilities is a very powerful token tag system for generic text file.
 	Its index file is very small and searching is very fast.
