@@ -35,16 +35,6 @@ CVS password: [RET]
 % ./configure
 % make
 </pre>
-Currently, following tags are available:
-<pre>
-release		tag
--------------------------------------
-GLOBAL-4.0	VERSION-4_0
-GLOBAL-4.0.1	VERSION-4_0_1
-GLOBAL-4.1	VERSION-4_1
-GLOBAL-4.1.1	VERSION-4_1_1
-GLOBAL-4.2	VERSION-4_2
-</pre>
 <h3>Binary archive</h3>
 Windows9X version compiled by DJGPP is distributed by
 <a href=http://www.geocities.com/shankara_c/global.html>Shankar Chakkere</a>
