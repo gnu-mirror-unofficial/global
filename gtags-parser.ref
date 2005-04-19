@@ -7,7 +7,7 @@ gtags-parser - print cross reference list for gtags.
 gtags-parser [-bdenrstvw] file ...@*
 @end quotation
 @unnumberedsubsec DESCRIPTION
-Gctags-parser print cross reference list for gtags(1)
+Gtags-parser print cross reference list for gtags(1)
 from the specified C, C++, yacc, java, PHP and Assembly source
 to standard output.
 Each line of output contains the object name,
@@ -74,7 +74,7 @@ Default mapping is 'c:.c.h,yacc:.y,asm:.s.S,java:.java,cpp:.c++.cc.cpp.cxx.hxx.h
 The @samp{-r} and @samp{-s} options override each other;
 the last one specified determines the method used.
 @unnumberedsubsec DIAGNOSTICS
-Gctags-parser exits with a non 0 value if an error occurred, 0 otherwise.
+Gtags-parser exits with a non 0 value if an error occurred, 0 otherwise.
 Duplicate objects are not considered errors.
 @unnumberedsubsec SEE ALSO
 global(1),
@@ -84,7 +84,7 @@ htags(1).
 GNU GLOBAL source code tag system@*
 (http://www.gnu.org/software/global/).
 @unnumberedsubsec BUG
-Gctags-parser relies on the input being well formed,
+Gtags-parser relies on the input being well formed,
 and any syntactical errors will completely confuse it.
 
 Assembler support is far from complete.

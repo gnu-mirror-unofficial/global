@@ -7,14 +7,11 @@ gtags - create tag files for global.
 gtags [-c][-i][-I][-o][-P][-q][-v][-w][dbpath]@*
 @end quotation
 @unnumberedsubsec DESCRIPTION
-Gtags makes @file{GTAGS}, @file{GRTAGS}, @file{GSYMS} and @file{GPATH}
-file for global(1).
-Gtags trace subdirectories, read source files,
-locate symbols and save the information into tag files
-in current directory.
+Gtags recursively collect the source files under
+the current directory,
+pickup symbols and write the cross-reference data into tag files
+(@file{GTAGS}, @file{GRTAGS}, @file{GSYMS} and @file{GPATH}).
 You should execute this command at the root of the source tree.
-If your source directory is on a read only device like CDROM,
-specify dbpath of the directory on which make tag files.
 
 C, C++, yacc, java, PHP and Assembly source files are supported.
 Files whose names end in @file{.c} or @file{.h} are assumed to be
@@ -59,6 +56,11 @@ Quiet mode.
 Verbose mode.
 @item @samp{-w}, @samp{--warning}
 Print warning messages.
+@item dbpath
+The directory in which tag files are generated.
+The default is the current directory.
+It is useful when your source directory is on a read only
+device like CDROM.
 @end table
 @unnumberedsubsec EXAMPLES
 @example
@@ -96,7 +98,7 @@ btree cache. The default is 500000 (bytes).
 @end table
 @unnumberedsubsec CONFIGURATION
 The following configuration variables affect the execution of gtags.
-You can see the default value for each variable with @samp{--config} option.
+You can see the default value for each variable with the @samp{--config} option.
 @table @asis
 @item @code{GTAGS}(string)
 If this variable is set, its value is used as the
