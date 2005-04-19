@@ -21,11 +21,11 @@ CLEAN_FILES= global.cp global.cps global.fn global.ky \
 	global.toc global.aux global.log \
 	global.ps global.info*
 
-all: $(TARGET)
+all: index.html $(TARGET)
 
 update: clean all distclean
 
-index.html: index.in
+index.html: $(TARGET)
 	./makehtml.pl index
 global.html: $(SOURCE)
 	texi2html -number -monolithic $(SOURCE)
