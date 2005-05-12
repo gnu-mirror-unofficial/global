@@ -17,7 +17,7 @@ hypertext in it.
 You can start browsing from @file{HTML/index.html}.
 
 Since htags generates static hypertext as long as
-the @samp{-D}, @samp{-f} and @samp{-c} option are not specified,
+the @samp{-D} or @samp{-f} option is not specified,
 you can move it anywhere and browse it with any browser without
 web server.
 
@@ -64,6 +64,10 @@ Load user's configuration from file.
 @item @samp{--gtagslabel} label
 label is used for the label of configuration file.
 The default is @code{default}.
+@item @samp{--insert-header} file
+Insert custom header derived from file after <body> tag.
+@item @samp{--insert-footer} file
+Insert custom footer derived from file before </body> tag.
 @item @samp{-m}, @samp{--main-func} name
 Specify the main function name. The default is @code{main}.
 @item @samp{-n}, @samp{--line-number}
@@ -99,7 +103,9 @@ Print warning messages.
 @item @samp{-x}, @samp{--xhtml}
 Generate XHTML hypertext instead of HTML.
 If the @samp{--frame} option is specified then
-generate XHTML-1.0 Frameset, else if config variable
+generate XHTML-1.0 Frameset for index.html
+and generate XHTML-1.0 Transitional for other files,
+else if config variable
 @code{xhtml_version} is set to @code{1.1} then generate
 XHTML-1.1 else XHTML 1.0 Transitional.
 @item htmldir

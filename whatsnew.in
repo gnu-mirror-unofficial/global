@@ -6,6 +6,11 @@ Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <dl compact>
+<dt>2005/5/12<dd>
+	GLOBAL-4.8.6 was released.
+	See <a href=http://savannah.gnu.org/forum/forum.php?forum_id=3792>release note</a>.
+	<br>
+	New option --insert-header and --insert-footer added.
 <dt>2005/4/19<dd>
 	GLOBAL-4.8.5 was released.
 	See <a href=http://savannah.gnu.org/forum/forum.php?forum_id=3750>release note</a>.

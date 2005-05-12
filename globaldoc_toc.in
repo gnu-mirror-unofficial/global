@@ -4,8 +4,8 @@
 This manual is available in <a href=http://www.gnu.org/software/global/manual/>various formats</a>.
 <hr>
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 4.8.5, for GNU GLOBAL version 4.8.5</H2>
-<H2>19 April 2005</H2>
+<H2>Edition 4.8.6, for GNU GLOBAL version 4.8.6</H2>
+<H2>12 May 2005</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -185,5 +185,5 @@ This manual is available in <a href=http://www.gnu.org/software/global/manual/>v
 <LI><A NAME="TOC135" HREF="globaldoc.html#SEC135">Option Index</A>
 </UL>
 <P><HR><P>
-This document was generated on 19 April 2005 using
+This document was generated on 12 May 2005 using
 <A HREF="http://wwwinfo.cern.ch/dis/texi2html/">texi2html</A>&nbsp;1.56k.

@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.56k from globaldoc.txi on 19 April 2005 -->
+<!-- Created by texi2html 1.56k from globaldoc.txi on 12 May 2005 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY>
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 4.8.5, for GNU GLOBAL version 4.8.5</H2>
-<H2>19 April 2005</H2>
+<H2>Edition 4.8.6, for GNU GLOBAL version 4.8.6</H2>
+<H2>12 May 2005</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -15,7 +15,7 @@
 <P>
 Copyright (C) 2000, 2001, 2002, 2003, 2004 Tama Communications Corporation
 This is the first edition of the GNU GLOBAL documentation,<BR>
-and is consistent with 4.8.5.<BR>
+and is consistent with 4.8.6.<BR>
 Published by Tama Communications Corporation <BR>
 Tama-shi, Tokyo, Japan.<BR>
 
@@ -3006,7 +3006,7 @@ You can start browsing from <TT>`HTML/index.html'</TT>.
 
 <P>
 Since htags generates static hypertext as long as
-the <SAMP>`-D'</SAMP>, <SAMP>`-f'</SAMP> and <SAMP>`-c'</SAMP> option are not specified,
+the <SAMP>`-D'</SAMP> or <SAMP>`-f'</SAMP> option is not specified,
 you can move it anywhere and browse it with any browser without
 web server.
 
@@ -3072,6 +3072,12 @@ Load user's configuration from file.
 <DD>
 label is used for the label of configuration file.
 The default is <CODE>default</CODE>.
+<DT><SAMP>`--insert-header'</SAMP> file
+<DD>
+Insert custom header derived from file after &#60;body&#62; tag.
+<DT><SAMP>`--insert-footer'</SAMP> file
+<DD>
+Insert custom footer derived from file before &#60;/body&#62; tag.
 <DT><SAMP>`-m'</SAMP>, <SAMP>`--main-func'</SAMP> name
 <DD>
 Specify the main function name. The default is <CODE>main</CODE>.
@@ -3119,7 +3125,9 @@ Print warning messages.
 <DD>
 Generate XHTML hypertext instead of HTML.
 If the <SAMP>`--frame'</SAMP> option is specified then
-generate XHTML-1.0 Frameset, else if config variable
+generate XHTML-1.0 Frameset for index.html
+and generate XHTML-1.0 Transitional for other files,
+else if config variable
 <CODE>xhtml_version</CODE> is set to <CODE>1.1</CODE> then generate
 XHTML-1.1 else XHTML 1.0 Transitional.
 <DT>htmldir
@@ -4226,7 +4234,7 @@ to permit their use in free software.
 Jump to:
 <P>
 <P><HR><P>
-This document was generated on 19 April 2005 using
+This document was generated on 12 May 2005 using
 <A HREF="http://wwwinfo.cern.ch/dis/texi2html/">texi2html</A>&nbsp;1.56k.
 </BODY>
 </HTML>
