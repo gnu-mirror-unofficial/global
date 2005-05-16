@@ -6,6 +6,13 @@ Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <dl compact>
+<dt>2005/5/16<dd>
+	<a href=http://www.stack.nl/~dimitri/doxygen/>Doxygen</a>
+	Release 1.4.3 includs new config option USE_HTAGS.
+	When enabled in combination with SOURCE_BROWSER=YES,
+	the source browser of htags(1) is used instead of doxygen's own.
+	<br>
+	Thanks to Dimitri van Heesch for his integration.
 <dt>2005/5/12<dd>
 	GLOBAL-4.8.6 was released.
 	See <a href=http://savannah.gnu.org/forum/forum.php?forum_id=3792>release note</a>.
