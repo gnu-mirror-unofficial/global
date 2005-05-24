@@ -11,6 +11,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	Release 1.4.3 includs new config option USE_HTAGS.
 	When enabled in combination with SOURCE_BROWSER=YES,
 	the source browser of htags(1) is used instead of doxygen's own.
+	You can see the usage <a href=http://savannah.gnu.org/forum/forum.php?forum_id=3800>here</a>.
 	<br>
 	Thanks to Dimitri van Heesch for his integration.
 <dt>2005/5/12<dd>
