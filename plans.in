@@ -50,6 +50,9 @@ Plans of the highest priority are listed first.
         Ttags(1) is similar to htags(1) but makes TeX source for a book
         instead of hypertext.
 <li>Support multi-bytes code set.
+<li>Add support of built-in parser for gtags(1).<br>
+	Since this parser is linked to gtags at function layer, we can make
+	simpler and more efficient gtags without any external commands.
 </ul>
 Any contributions are appreciated.
 Please see <a href=contribute.html>contribution</a>.
