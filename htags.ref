@@ -4,7 +4,7 @@ htags - generate hypertext from source code.
 @unnumberedsubsec SYNOPSIS
 @noindent
 @quotation
-htags [-a][-c][-D][-f][-F][-g][-n][-o][-s][-v][-w][-x][-d dbpath][-m name][-S cgidir][-t title][htmldir]@*
+htags [-acDfFgnosvwx][-d dbpath][-m name][-S cgidir][-t title][htmldir]@*
 @end quotation
 @unnumberedsubsec DESCRIPTION
 Htags makes hypertext of C, C++, Yacc, Java, PHP and Assembly source code.

@@ -20,10 +20,11 @@
 @ifinfo
 This file documents the GNU GLOBAL source code tag system.
 
-Copyright (c) 2000, 2001, 2002, 2003, 2004 Tama Communications Corporation
+Copyright (c) 2000, 2001, 2002, 2003, 2004, 2005
+Tama Communications Corporation
 
 Permission is granted to copy, distribute and/or modify this document
-under the terms of the GNU Free Documentation License, Version 1.1
+under the terms of the GNU Free Documentation License, Version 1.2
 or any later version published by the Free Software Foundation;
 with no Invariant Sections, with no Front-Cover Texts,
 and with no Back-Cover Texts.
@@ -39,7 +40,8 @@ Free Documentation License".
 @c copyright page
 @page
 @vskip 0pt plus 1filll
-Copyright @copyright{} 2000, 2001, 2002, 2003, 2004 Tama Communications Corporation
+Copyright @copyright{} 2000, 2001, 2002, 2003, 2004, 2005
+Tama Communications Corporation
 @sp 2
 This is the first edition of the GNU GLOBAL documentation,@*
 and is consistent with @value{VERSION}.@*
@@ -48,7 +50,7 @@ Published by Tama Communications Corporation @*
 Tama-shi, Tokyo, Japan.@*
 
 Permission is granted to copy, distribute and/or modify this document
-under the terms of the GNU Free Documentation License, Version 1.1
+under the terms of the GNU Free Documentation License, Version 1.2
 or any later version published by the Free Software Foundation;
 with no Invariant Sections, with no Front-Cover Texts,
 and with no Back-Cover Texts.
@@ -57,7 +59,6 @@ Free Documentation License".
 
 @end titlepage
 
-@ifinfo
 @node Top
 @top GNU GLOBAL source code tag system
 
@@ -68,11 +69,10 @@ This manual documents version @value{VERSION} of the GNU GLOBAL source code tag 
 * Global::                              Command line GLOBAL.
 * Applications::			Various applications.
 * Other topics::                        Other topics.
-* Reference::				Reference manual.
-* GNU Free Documentation License::	GNU Free Documentation License.
+* Reference::                           Command References.
+* Copying This Manual::                 Copying This Manual.
 * Index::                               Option index.
 @end menu
-@end ifinfo
 
 @c ***************************************************************************
 @c Introduction
@@ -119,6 +119,7 @@ GNU GLOBAL has following features:
 	@item Emacs editor (emacs, mule, xemacs)
 	@item Glimmer editor
 	@item Web browser
+	@item Doxygen documentation system
 	@end itemize
 @item find the locations of a specified object quickly.
 @item locate not only object definitions but also object references.
@@ -155,7 +156,7 @@ It is a big merit of GLOBAL compared with any other tag system.
 @node   Preparation
 @section Preparation.
 
-First of all, you must execute gtags(1)(See @xref{gtags}.) at the root of source tree.
+First of all, you must execute gtags(1)(@pxref{gtags}) at the root of source tree.
 For example, if you want to browse vi's source code:
 
 @example
@@ -555,6 +556,7 @@ one command, for example:
 * Vim editor::                          Vim using GLOBAL.
 * Emacs editor::                        Extended emacs using GLOBAL.
 * Web browser::                         Hypertext generator.
+* Doxygen documentation system::	Doxygen using GLOBAL.
 @end menu
 
 @c ***************************************************************************
@@ -593,7 +595,7 @@ Yor can manage directory list by cookie facility.
 @node   Preparation(globash)
 @subsection Preparation.
 
-First, do the preparation of global. (Please see @xref{Preparation}.).
+First, do the preparation of global. @xref{Preparation}.
 And you can invoke bash(1) with ---rcfile option.
 @example
 
@@ -631,7 +633,7 @@ If you need help then please type 'ghelp'.
 @subsection Basic usage.
 
 @itemize @bullet
-@item Almost global(1)(See @xref{global}.)'s command character is available as a command.
+@item Almost global(1)(@pxref{global})'s command character is available as a command.
 @example
 
     [/usr/src/sys] x fork               <- @r{(global -x fork)}
@@ -787,7 +789,7 @@ Less viewer support duplicated tag.
 @node   Preparation(less)
 @subsection Preparation.
 
-First, do the preparation of global. (Please see @xref{Preparation}.).
+First, do the preparation of global. @xref{Preparation}.
 
 Second, to use global from less, you need to set environment variable
 @code{LESSGLOBALTAGS} to "global".
@@ -945,7 +947,7 @@ You can use GLOBAL's facilities only in 'gtags mode'.
 @node   Preparation(nvi-1.79)
 @subsection Preparation.
 
-First, do the preparation of global. (Please see @xref{Preparation}.).
+First, do the preparation of global. @xref{Preparation}.
 
 Second, to use global from nvi, you need to get into @dfn{gtagsmode}.
 There are several ways to do this:
@@ -984,7 +986,7 @@ Write the above set command to the @file{.exrc} or @file{.nexrc} and start nvi
 
 @end example
 
-You must start nvi under the source tree described in @xref{Preparation}.
+You must start nvi under the source tree described in @ref{Preparation}.
 @end enumerate
 
 @c ***************************************************************************
@@ -1154,7 +1156,7 @@ Recognition of the current token and its type.
 @node   Preparation(nvi-1.81.5)
 @subsection Preparation.
 
-First, do the preparation of global. (Please see @xref{Preparation}.).
+First, do the preparation of global. @xref{Preparation}.
 
 Second, to use global from nvi, you need write to @file{.nexrc} like this:
 It assumed that gtags.pl is put on @file{$HOME/perl}.
@@ -1174,7 +1176,7 @@ It assumed that gtags.pl is put on @file{$HOME/perl}.
 
 @end example
 
-You must start nvi under the source tree described in @xref{Preparation}.
+You must start nvi under the source tree described in @ref{Preparation}.
 
 @c ***************************************************************************
 @node   Basic usage(nvi-1.81.5)
@@ -1294,7 +1296,7 @@ Mouse events are supported.
 @node   Preparation(elvis)
 @subsection Preparation.
 
-First, do the preparation of global. (Please see @xref{Preparation}.).
+First, do the preparation of global. @xref{Preparation}.
 
 Second, start elvis and execute @code{set tagprg="global -t $1"} like this.
 @opindex -t
@@ -1487,7 +1489,7 @@ Special character '%', '#' and input completion are available.
 @node   Preparation(vim)
 @subsection Preparation.
 
-First, do the preparation of global. (Please see @xref{Preparation}.).
+First, do the preparation of global. @xref{Preparation}.
 
 Second, copy @file{gtags.vim} to your plugin directory or source it
 from your vimrc.
@@ -1628,7 +1630,7 @@ If you are editing @file{main.c} itself, you can use '%' instead.
     :Gtags -gi paTtern         <- @r{match to both 'PATTERN' and 'pattern'.}
 
 @end example
-	About the other options, See @xref{global}.
+	About the other options, @xref{global}.
 
 @item The GtagsCursor command brings you to the definition or reference of
 	the current token in C language.
@@ -1707,7 +1709,7 @@ Mouse events are supported.
 @node   Preparation(emacs)
 @subsection Preparation.
 
-First, do the preparation of global. (Please see @xref{Preparation}.).
+First, do the preparation of global. @xref{Preparation}.
 
 Second, to use global from emacs, you need to load the @file{gtags.el}
 and execute gtags-mode function in it.
@@ -1931,7 +1933,7 @@ of FreeBSD kernel needs:
 
 @end example
 
-Please invoke gtags(1)(See @xref{gtags}.) and htags(1)(See @xref{htags}.)
+Please invoke gtags(1)(@pxref{gtags}) and htags(1)(@pxref{htags})
 in order like this:
 
 @example
@@ -1975,6 +1977,38 @@ Using mozilla, you can also utilize hypertext from your command line like this:
 But in this case, you must not move HTML directory from the source directory.
 
 @c ***************************************************************************
+@c Doxygen documentation system
+@c ***************************************************************************
+@node Doxygen documentation system
+@section Doxygen using global
+
+You can use GLOBAL as a source browser of Doxygen.
+
+Doxygen Release 1.4.3 or later includs config option USE_HTAGS.
+When enabled in combination with SOURCE_BROWSER=YES, htags(1) is
+used as the source browser instead of doxygen's own. 
+
+Here is an example.
+
+@example
+
+(in source directory)
+$ doxygen -g
+$ vi Doxyfile
++---------------------------------
+|...
+|INPUT                  = .
+|RECURSIVE              = YES
+|SOURCE_BROWSER         = YES
+|USE_HTAGS              = YES
+|...
+
+$ doxygen
+$ lynx html/index.html
+
+@end example
+
+@c ***************************************************************************
 @c Other topics
 @c ***************************************************************************
 @node Other topics
@@ -2007,7 +2041,7 @@ If @file{$HOME/.globalrc} exists then GLOBAL use it. Else if @file{/etc/gtags.co
 exists then GLOBAL use it. Otherwise default value will be used.
 The format of @file{gtags.conf} is resemble to termcap(5). By default, 'default'
 target is used.
-About the capabilities, please see each command manual. (See @xref{Reference}.)
+About the capabilities, please see each command manual. @xref{Reference}.
 
 @c ***************************************************************************
 @node   Plugin
@@ -2145,7 +2179,15 @@ Instead, you can use incremental updating facility (@samp{-u} option).
     [Sun Dec  6 16:27:47 JST 1998] Gtags started
      Tag found in '/usr/src/sys'.
      Incremental update.
-     Updating tags of 'kern/tty.c' ...GTAGS..GRTAGS..GSYMS.. Done.
+    [Sun Dec  6 16:28:48 JST 1998] Updating 'GTAGS'.
+     [1/1] deleting tags of kern/tty.c
+     [1/1] adding tags of kern/tty.c
+    [Sun Dec  6 16:28:59 JST 1998] Updating 'GRTAGS'.
+     [1/1] deleting tags of kern/tty.c
+     [1/1] adding tags of kern/tty.c
+    [Sun Dec  6 16:28:14 JST 1998] Updating 'GSYMS'.
+     [1/1] deleting tags of kern/tty.c
+     [1/1] adding tags of kern/tty.c
      Global databases have been modified.
     [Sun Dec  6 16:28:30 JST 1998] Done.
     $ global -vu                            # @r{try again}
@@ -2161,12 +2203,19 @@ Instead, you can use incremental updating facility (@samp{-u} option).
 @c Reference manual.
 @c ***************************************************************************
 @node Reference
-@chapter Reference manual
+@chapter Command References
 @include reference.txi
 
 @c ***************************************************************************
 @c FDL
 @c ***************************************************************************
+@node Copying This Manual
+@appendix Copying This Manual
+
+@menu
+* GNU Free Documentation License::      License for copying this manual.
+@end menu
+
 @include fdl.txi
 
 @node Index
