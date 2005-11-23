@@ -7,11 +7,6 @@ under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <h3>GLOBAL related tools</h3>
 <dl>
-<dt><a href=http://tamacom.com/global/global-w32-borland.tar.gz>GLOBAL Win32kit for Borland compiler</a><dd>
-	This kit was part of GLOBAL package until version 4.7.
-	With some modifications, you will be able to build Win32 version
-	of GLOBAL using Borland Compiler. But please remember that it is
-	not maintained any longer. You had better use cygwin version.
 <dt><a href=http://www.stack.nl/~dimitri/doxygen/>Doxygen Release 1.4.3 or higher</a><dd>
 	Doxygen is a documentation system for C++, Java, IDL and C.
 	<br>
