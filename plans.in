@@ -19,6 +19,8 @@ Plans of the highest priority are listed first.
 	<li>LaTeX
 	<li>Scheme
 	<li>Python
+	<li>Perl
+	<li>Ruby
         </ul>
 <li>Rewrite gtags-parser(1) using flex(1) completely.
 <li>Pickup definitions of data type, enum name, enum value,
