@@ -59,6 +59,17 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	FreeBSD adopted GLOBAL as the standard source code tag system in its
 	build system.
 </dl>
+<h3>Parsers</h3>
+<dl>
+<dt><a href=http://www.gccxml.org/>GCC-XML</a><dd>
+	GCC-XML is a C++ parser, the C++ front-end to GCC, which is
+	currently able to deal with the language in its entirety. 
+<dt><a href=http://sourcebase.sourceforge.net/>SourceBase</a><dd>
+	This is a parser library aimed at developers of free IDEs.
+	SourceBase aims to make parsing based features easy to implement.
+	These include intellisense code completion, producing call graphs
+	and dependency trees, etc. 
+</dl>
 <h3>Tag commands</h3>
 <dl>
 <dt><a href=http://ctags.sourceforge.net/>Exuberant Ctags</a><dd>
@@ -115,11 +126,6 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	It provides an overview of the structure of source code files and
 	allows you to efficiently browse through source code files
 	in different programming languages. 
-<dt><a href=http://sourcebase.sourceforge.net/>SourceBase</a><dd>
-	This is a parser library aimed at developers of free IDEs.
-	SourceBase aims to make parsing based features easy to implement.
-	These include intellisense code completion, producing call graphs
-	and dependency trees, etc. 
 <dt><a href=http://www.gnu.org/software/cflow/>GNU cflow</a><dd>
 	GNU cflow analyzes a collection of C source files and prints a graph,
 	charting control flow within the program.
