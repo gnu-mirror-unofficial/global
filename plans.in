@@ -8,6 +8,13 @@ under the terms of the GNU Free Documentation License, Version 1.1
 Plans of the highest priority are listed first.
 <p>
 <ul>
+<li>Shift to new tag format. The purpose is followings:
+        <ul>
+	<li>Allows path name including blanks.
+	<li>Decrease disk space used.
+	<li>Make tag format simpler.
+	<li>Realize stable performance.
+        </ul>
 <li>Treat enum members as definitions.(C)
 <li>Generate link from 'require', 'require_once' and 'include_once'.(PHP)
 <li>Improve GTAGS SELECT MODE so that long path name can be displayed.(gtags.el)
