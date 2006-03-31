@@ -7,6 +7,13 @@ under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <h3>GLOBAL related tools</h3>
 <dl>
+<dt><a href=http://home.tiscali.de/mgidde/Emacs.html#xgtags>xgtags.el</a><dd>
+	Xgtags.el provides an interface to the GLOBAL cross-refencing tools.
+	While gtags.el, that comes with the GLOBAL distribution, is more a
+	replacement for emacs' own find-tag/pop-tag-mark facility with some
+	extra stuff, xtags.el tries to permit the same functionality as
+	gtags.el, but behaves more like xcscope.el, the emacs interface for
+	cscope (http://cscope.sourceforge.net).
 <dt><a href=http://www.stack.nl/~dimitri/doxygen/>Doxygen Release 1.4.3 or higher</a><dd>
 	Doxygen is a documentation system for C++, Java, IDL and C.
 	<br>
