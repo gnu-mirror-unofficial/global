@@ -4,8 +4,8 @@
 This manual is available in <a href=http://www.gnu.org/software/global/manual/>various formats</a>.
 <hr>
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 4.8.7, for GNU GLOBAL version 4.8.7</H2>
-<H2>30 September 2005</H2>
+<H2>Edition 5.0, for GNU GLOBAL version 5.0</H2>
+<H2>21 April 2006</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -83,100 +83,103 @@ This manual is available in <a href=http://www.gnu.org/software/global/manual/>v
 <LI><A NAME="TOC49" HREF="globaldoc.html#SEC49">4. Other topics</A>
 <UL>
 <LI><A NAME="TOC50" HREF="globaldoc.html#SEC50">4.1 How to config GLOBAL.</A>
-<LI><A NAME="TOC51" HREF="globaldoc.html#SEC51">4.2 How to plug in a parser.</A>
-<LI><A NAME="TOC52" HREF="globaldoc.html#SEC52">4.3 Compact format.</A>
-<LI><A NAME="TOC53" HREF="globaldoc.html#SEC53">4.4 Incremental updating.</A>
-</UL>
-<LI><A NAME="TOC54" HREF="globaldoc.html#SEC54">5. Command References</A>
+<LI><A NAME="TOC51" HREF="globaldoc.html#SEC51">4.2 Plug-in parser.</A>
 <UL>
-<LI><A NAME="TOC55" HREF="globaldoc.html#SEC55">5.1 global - print the locations of specified object.</A>
+<LI><A NAME="TOC52" HREF="globaldoc.html#SEC52">4.2.1 How to plug in a parser.</A>
+<LI><A NAME="TOC53" HREF="globaldoc.html#SEC53">4.2.2 Requirement of plug-in parser.</A>
+</UL>
+<LI><A NAME="TOC54" HREF="globaldoc.html#SEC54">4.3 Incremental updating.</A>
+</UL>
+<LI><A NAME="TOC55" HREF="globaldoc.html#SEC55">5. Command References</A>
 <UL>
-<LI><A NAME="TOC56" HREF="globaldoc.html#SEC56">NAME</A>
-<LI><A NAME="TOC57" HREF="globaldoc.html#SEC57">SYNOPSIS</A>
-<LI><A NAME="TOC58" HREF="globaldoc.html#SEC58">DESCRIPTION</A>
-<LI><A NAME="TOC59" HREF="globaldoc.html#SEC59">COMMANDS</A>
-<LI><A NAME="TOC60" HREF="globaldoc.html#SEC60">OPTIONS</A>
-<LI><A NAME="TOC61" HREF="globaldoc.html#SEC61">EXAMPLES</A>
-<LI><A NAME="TOC62" HREF="globaldoc.html#SEC62">FILES</A>
-<LI><A NAME="TOC63" HREF="globaldoc.html#SEC63">ENVIRONMENT</A>
-<LI><A NAME="TOC64" HREF="globaldoc.html#SEC64">CONFIGURATION</A>
-<LI><A NAME="TOC65" HREF="globaldoc.html#SEC65">DIAGNOSTICS</A>
-<LI><A NAME="TOC66" HREF="globaldoc.html#SEC66">SEE ALSO</A>
-<LI><A NAME="TOC67" HREF="globaldoc.html#SEC67">AUTHOR</A>
-<LI><A NAME="TOC68" HREF="globaldoc.html#SEC68">HISTORY</A>
-</UL>
-<LI><A NAME="TOC69" HREF="globaldoc.html#SEC69">5.2 gtags - create tag files for global.</A>
+<LI><A NAME="TOC56" HREF="globaldoc.html#SEC56">5.1 global - print the locations of specified object.</A>
 <UL>
-<LI><A NAME="TOC70" HREF="globaldoc.html#SEC70">NAME</A>
-<LI><A NAME="TOC71" HREF="globaldoc.html#SEC71">SYNOPSIS</A>
-<LI><A NAME="TOC72" HREF="globaldoc.html#SEC72">DESCRIPTION</A>
-<LI><A NAME="TOC73" HREF="globaldoc.html#SEC73">OPTIONS</A>
-<LI><A NAME="TOC74" HREF="globaldoc.html#SEC74">EXAMPLES</A>
-<LI><A NAME="TOC75" HREF="globaldoc.html#SEC75">FILES</A>
-<LI><A NAME="TOC76" HREF="globaldoc.html#SEC76">ENVIRONMENT</A>
-<LI><A NAME="TOC77" HREF="globaldoc.html#SEC77">CONFIGURATION</A>
-<LI><A NAME="TOC78" HREF="globaldoc.html#SEC78">DIAGNOSTICS</A>
-<LI><A NAME="TOC79" HREF="globaldoc.html#SEC79">MESSAGE FORMAT</A>
-<LI><A NAME="TOC80" HREF="globaldoc.html#SEC80">SEE ALSO</A>
-<LI><A NAME="TOC81" HREF="globaldoc.html#SEC81">BUG</A>
-<LI><A NAME="TOC82" HREF="globaldoc.html#SEC82">AUTHOR</A>
-<LI><A NAME="TOC83" HREF="globaldoc.html#SEC83">HISTORY</A>
+<LI><A NAME="TOC57" HREF="globaldoc.html#SEC57">NAME</A>
+<LI><A NAME="TOC58" HREF="globaldoc.html#SEC58">SYNOPSIS</A>
+<LI><A NAME="TOC59" HREF="globaldoc.html#SEC59">DESCRIPTION</A>
+<LI><A NAME="TOC60" HREF="globaldoc.html#SEC60">COMMANDS</A>
+<LI><A NAME="TOC61" HREF="globaldoc.html#SEC61">OPTIONS</A>
+<LI><A NAME="TOC62" HREF="globaldoc.html#SEC62">EXAMPLES</A>
+<LI><A NAME="TOC63" HREF="globaldoc.html#SEC63">FILES</A>
+<LI><A NAME="TOC64" HREF="globaldoc.html#SEC64">ENVIRONMENT</A>
+<LI><A NAME="TOC65" HREF="globaldoc.html#SEC65">CONFIGURATION</A>
+<LI><A NAME="TOC66" HREF="globaldoc.html#SEC66">DIAGNOSTICS</A>
+<LI><A NAME="TOC67" HREF="globaldoc.html#SEC67">SEE ALSO</A>
+<LI><A NAME="TOC68" HREF="globaldoc.html#SEC68">AUTHOR</A>
+<LI><A NAME="TOC69" HREF="globaldoc.html#SEC69">HISTORY</A>
 </UL>
-<LI><A NAME="TOC84" HREF="globaldoc.html#SEC84">5.3 htags - generate hypertext from source code.</A>
+<LI><A NAME="TOC70" HREF="globaldoc.html#SEC70">5.2 gtags - create tag files for global.</A>
 <UL>
-<LI><A NAME="TOC85" HREF="globaldoc.html#SEC85">NAME</A>
-<LI><A NAME="TOC86" HREF="globaldoc.html#SEC86">SYNOPSIS</A>
-<LI><A NAME="TOC87" HREF="globaldoc.html#SEC87">DESCRIPTION</A>
-<LI><A NAME="TOC88" HREF="globaldoc.html#SEC88">OPTIONS</A>
-<LI><A NAME="TOC89" HREF="globaldoc.html#SEC89">EXAMPLES</A>
-<LI><A NAME="TOC90" HREF="globaldoc.html#SEC90">FILES</A>
-<LI><A NAME="TOC91" HREF="globaldoc.html#SEC91">ENVIRONMENT</A>
-<LI><A NAME="TOC92" HREF="globaldoc.html#SEC92">CONFIGURATION</A>
-<LI><A NAME="TOC93" HREF="globaldoc.html#SEC93">DIAGNOSTICS</A>
-<LI><A NAME="TOC94" HREF="globaldoc.html#SEC94">MESSAGE FORMAT</A>
-<LI><A NAME="TOC95" HREF="globaldoc.html#SEC95">SEE ALSO</A>
-<LI><A NAME="TOC96" HREF="globaldoc.html#SEC96">BUG</A>
-<LI><A NAME="TOC97" HREF="globaldoc.html#SEC97">AUTHOR</A>
-<LI><A NAME="TOC98" HREF="globaldoc.html#SEC98">HISTORY</A>
+<LI><A NAME="TOC71" HREF="globaldoc.html#SEC71">NAME</A>
+<LI><A NAME="TOC72" HREF="globaldoc.html#SEC72">SYNOPSIS</A>
+<LI><A NAME="TOC73" HREF="globaldoc.html#SEC73">DESCRIPTION</A>
+<LI><A NAME="TOC74" HREF="globaldoc.html#SEC74">OPTIONS</A>
+<LI><A NAME="TOC75" HREF="globaldoc.html#SEC75">EXAMPLES</A>
+<LI><A NAME="TOC76" HREF="globaldoc.html#SEC76">FILES</A>
+<LI><A NAME="TOC77" HREF="globaldoc.html#SEC77">ENVIRONMENT</A>
+<LI><A NAME="TOC78" HREF="globaldoc.html#SEC78">CONFIGURATION</A>
+<LI><A NAME="TOC79" HREF="globaldoc.html#SEC79">DIAGNOSTICS</A>
+<LI><A NAME="TOC80" HREF="globaldoc.html#SEC80">MESSAGE FORMAT</A>
+<LI><A NAME="TOC81" HREF="globaldoc.html#SEC81">SEE ALSO</A>
+<LI><A NAME="TOC82" HREF="globaldoc.html#SEC82">BUG</A>
+<LI><A NAME="TOC83" HREF="globaldoc.html#SEC83">AUTHOR</A>
+<LI><A NAME="TOC84" HREF="globaldoc.html#SEC84">HISTORY</A>
 </UL>
-<LI><A NAME="TOC99" HREF="globaldoc.html#SEC99">5.4 gtags-parser - print cross reference list for gtags.</A>
+<LI><A NAME="TOC85" HREF="globaldoc.html#SEC85">5.3 htags - generate hypertext from source code.</A>
 <UL>
-<LI><A NAME="TOC100" HREF="globaldoc.html#SEC100">NAME</A>
-<LI><A NAME="TOC101" HREF="globaldoc.html#SEC101">SYNOPSIS</A>
-<LI><A NAME="TOC102" HREF="globaldoc.html#SEC102">DESCRIPTION</A>
-<LI><A NAME="TOC103" HREF="globaldoc.html#SEC103">OPTIONS</A>
-<LI><A NAME="TOC104" HREF="globaldoc.html#SEC104">DIAGNOSTICS</A>
-<LI><A NAME="TOC105" HREF="globaldoc.html#SEC105">SEE ALSO</A>
-<LI><A NAME="TOC106" HREF="globaldoc.html#SEC106">BUG</A>
-<LI><A NAME="TOC107" HREF="globaldoc.html#SEC107">AUTHOR</A>
-<LI><A NAME="TOC108" HREF="globaldoc.html#SEC108">HISTORY</A>
+<LI><A NAME="TOC86" HREF="globaldoc.html#SEC86">NAME</A>
+<LI><A NAME="TOC87" HREF="globaldoc.html#SEC87">SYNOPSIS</A>
+<LI><A NAME="TOC88" HREF="globaldoc.html#SEC88">DESCRIPTION</A>
+<LI><A NAME="TOC89" HREF="globaldoc.html#SEC89">OPTIONS</A>
+<LI><A NAME="TOC90" HREF="globaldoc.html#SEC90">EXAMPLES</A>
+<LI><A NAME="TOC91" HREF="globaldoc.html#SEC91">FILES</A>
+<LI><A NAME="TOC92" HREF="globaldoc.html#SEC92">ENVIRONMENT</A>
+<LI><A NAME="TOC93" HREF="globaldoc.html#SEC93">CONFIGURATION</A>
+<LI><A NAME="TOC94" HREF="globaldoc.html#SEC94">DIAGNOSTICS</A>
+<LI><A NAME="TOC95" HREF="globaldoc.html#SEC95">MESSAGE FORMAT</A>
+<LI><A NAME="TOC96" HREF="globaldoc.html#SEC96">SEE ALSO</A>
+<LI><A NAME="TOC97" HREF="globaldoc.html#SEC97">BUG</A>
+<LI><A NAME="TOC98" HREF="globaldoc.html#SEC98">AUTHOR</A>
+<LI><A NAME="TOC99" HREF="globaldoc.html#SEC99">HISTORY</A>
 </UL>
-<LI><A NAME="TOC109" HREF="globaldoc.html#SEC109">5.5 gozilla - force mozilla to display specified source file.</A>
+<LI><A NAME="TOC100" HREF="globaldoc.html#SEC100">5.4 gtags-parser - print cross reference list for gtags.</A>
 <UL>
-<LI><A NAME="TOC110" HREF="globaldoc.html#SEC110">NAME</A>
-<LI><A NAME="TOC111" HREF="globaldoc.html#SEC111">SYNOPSIS</A>
-<LI><A NAME="TOC112" HREF="globaldoc.html#SEC112">DESCRIPTION</A>
-<LI><A NAME="TOC113" HREF="globaldoc.html#SEC113">OPTIONS</A>
-<LI><A NAME="TOC114" HREF="globaldoc.html#SEC114">FILES</A>
-<LI><A NAME="TOC115" HREF="globaldoc.html#SEC115">ENVIRONMENT</A>
-<LI><A NAME="TOC116" HREF="globaldoc.html#SEC116">EXAMPLES</A>
-<LI><A NAME="TOC117" HREF="globaldoc.html#SEC117">DIAGNOSTICS</A>
-<LI><A NAME="TOC118" HREF="globaldoc.html#SEC118">SEE ALSO</A>
-<LI><A NAME="TOC119" HREF="globaldoc.html#SEC119">NOTES</A>
-<LI><A NAME="TOC120" HREF="globaldoc.html#SEC120">BUGS</A>
-<LI><A NAME="TOC121" HREF="globaldoc.html#SEC121">AUTHORS</A>
-<LI><A NAME="TOC122" HREF="globaldoc.html#SEC122">HISTORY</A>
+<LI><A NAME="TOC101" HREF="globaldoc.html#SEC101">NAME</A>
+<LI><A NAME="TOC102" HREF="globaldoc.html#SEC102">SYNOPSIS</A>
+<LI><A NAME="TOC103" HREF="globaldoc.html#SEC103">DESCRIPTION</A>
+<LI><A NAME="TOC104" HREF="globaldoc.html#SEC104">OPTIONS</A>
+<LI><A NAME="TOC105" HREF="globaldoc.html#SEC105">DIAGNOSTICS</A>
+<LI><A NAME="TOC106" HREF="globaldoc.html#SEC106">SEE ALSO</A>
+<LI><A NAME="TOC107" HREF="globaldoc.html#SEC107">BUG</A>
+<LI><A NAME="TOC108" HREF="globaldoc.html#SEC108">AUTHOR</A>
+<LI><A NAME="TOC109" HREF="globaldoc.html#SEC109">HISTORY</A>
 </UL>
-</UL>
-<LI><A NAME="TOC123" HREF="globaldoc.html#SEC123">A. Copying This Manual</A>
+<LI><A NAME="TOC110" HREF="globaldoc.html#SEC110">5.5 gozilla - force mozilla to display specified source file.</A>
 <UL>
-<LI><A NAME="TOC124" HREF="globaldoc.html#SEC124">A.1 GNU Free Documentation License</A>
+<LI><A NAME="TOC111" HREF="globaldoc.html#SEC111">NAME</A>
+<LI><A NAME="TOC112" HREF="globaldoc.html#SEC112">SYNOPSIS</A>
+<LI><A NAME="TOC113" HREF="globaldoc.html#SEC113">DESCRIPTION</A>
+<LI><A NAME="TOC114" HREF="globaldoc.html#SEC114">OPTIONS</A>
+<LI><A NAME="TOC115" HREF="globaldoc.html#SEC115">FILES</A>
+<LI><A NAME="TOC116" HREF="globaldoc.html#SEC116">ENVIRONMENT</A>
+<LI><A NAME="TOC117" HREF="globaldoc.html#SEC117">EXAMPLES</A>
+<LI><A NAME="TOC118" HREF="globaldoc.html#SEC118">DIAGNOSTICS</A>
+<LI><A NAME="TOC119" HREF="globaldoc.html#SEC119">SEE ALSO</A>
+<LI><A NAME="TOC120" HREF="globaldoc.html#SEC120">NOTES</A>
+<LI><A NAME="TOC121" HREF="globaldoc.html#SEC121">BUGS</A>
+<LI><A NAME="TOC122" HREF="globaldoc.html#SEC122">AUTHORS</A>
+<LI><A NAME="TOC123" HREF="globaldoc.html#SEC123">HISTORY</A>
+</UL>
+</UL>
+<LI><A NAME="TOC124" HREF="globaldoc.html#SEC124">A. Copying This Manual</A>
 <UL>
-<LI><A NAME="TOC125" HREF="globaldoc.html#SEC125">A.1.1 ADDENDUM: How to use this License for your documents</A>
+<LI><A NAME="TOC125" HREF="globaldoc.html#SEC125">A.1 GNU Free Documentation License</A>
+<UL>
+<LI><A NAME="TOC126" HREF="globaldoc.html#SEC126">A.1.1 ADDENDUM: How to use this License for your documents</A>
 </UL>
 </UL>
-<LI><A NAME="TOC126" HREF="globaldoc.html#SEC126">Option Index</A>
+<LI><A NAME="TOC127" HREF="globaldoc.html#SEC127">Option Index</A>
 </UL>
 <P><HR><P>
-This document was generated on 30 September 2005 using
+This document was generated on 21 April 2006 using
 <A HREF="http://wwwinfo.cern.ch/dis/texi2html/">texi2html</A>&nbsp;1.56k.

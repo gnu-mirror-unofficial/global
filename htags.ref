@@ -80,10 +80,6 @@ Pick up not only source files but also other files except for
 binary files.
 @item @samp{--statistics}
 Print statistics information.
-@item @samp{--style-sheet} file
-Load style sheet file and insert it into <head> tag.
-If you use the @samp{--xhtml} option, you should use
-@file{style.css} instead.
 @item @samp{-s}, @samp{--symbol}
 Make anchors not only for functions but also other symbols.
 @file{GSYMS} tag file needed.
@@ -125,7 +121,7 @@ The default is the current directory.
 	$ lynx HTML/D/348.html
 
 	$ cd global
-	$ htags -gv --cvsweb=http://savannah.gnu.org/cgi-bin/viewcvs/global/global/
+	$ htags -gv --cvsweb=http://cvs.savannah.gnu.org/viewcvs/global/ --cvsweb-cvsroot=global
 
 @end example
 @unnumberedsubsec FILES
@@ -186,7 +182,7 @@ the head of arguments.
 @item @code{xhtml_version}(1.0|1.1)
 XHTML version. 1.0 and 1.1 are acceptable. The default is 1.0.
 @item @code{body_begin}(string)
-Begin tag for body. The default is '<body>'.
+Begin tag for body. The default is '<body text=#191970 bgcolor=#f5f5dc vlink=gray>'.
 @item @code{body_end}(string)
 End tag for body. The default is '</body>'.
 @item @code{table_begin}(string)
@@ -247,9 +243,6 @@ Suffix for compressed html file. The default is 'ghtml'.
 Script alias for safe cgi script (@samp{-S}).
 @item @code{show_position}(boolean)
 Show position per function definition. The default is false.
-@item @code{symbol}(boolean)
-Make anchors not only for functions but also other symbols.
-@file{GSYMS} tag file needed.
 @item @code{definition_header}(no|before|right|after)
 Position of link header. The default is 'no'.
 @item @code{other_files}(boolean)

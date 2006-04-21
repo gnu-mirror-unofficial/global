@@ -88,6 +88,12 @@ Quiet mode.
 Print the locations of object references.
 By default, print object definitions.
 With the @samp{-p} option, print the root directory of source tree.
+@item @samp{--result} format
+format may be 'path', `ctags', `ctags-x', or `grep'.
+The @samp{--result=ctags} and @samp{--result=ctags-x} are
+equivalent to the @samp{-t} and @samp{-x} respectively.
+The @samp{-t} and @samp{-x} are given to priority
+more than the @samp{--result} option.
 @item @samp{-s}, @samp{--symbol}
 Print the locations of specified symbol other than function names.
 You need @file{GSYMS} tags file. See gtags(1).

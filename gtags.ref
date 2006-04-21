@@ -4,7 +4,7 @@ gtags - create tag files for global.
 @unnumberedsubsec SYNOPSIS
 @noindent
 @quotation
-gtags [-ciIoqvw][-f file][-n number][dbpath]@*
+gtags [-iIqvw][-f file][-n number][dbpath]@*
 @end quotation
 @unnumberedsubsec DESCRIPTION
 Gtags recursively collect the source files under
@@ -29,8 +29,6 @@ Other files are searched for C style definitions.
 @unnumberedsubsec OPTIONS
 The following options are available:
 @table @asis
-@item @samp{-c}, @samp{--compact}
-Make tag files with compact format.
 @item @samp{--config} name
 Show the value of config variable name.
 If name is not specified then show whole of config entry.
@@ -55,9 +53,6 @@ Make index files for id-utils(1).
 Maximum number of arguments for gtags-parser(1).
 By default, gtags invokes the parser with arguments
 as a lot as possible to decrease the frequency of invoking.
-@item @samp{-o}, @samp{--omit-gsyms}
-Suppress making @file{GSYMS} file.
-Use this option if you don't use -s option of global(1).
 @item @samp{-q}, @samp{--quiet}
 Quiet mode.
 @item @samp{-v}, @samp{--verbose}
@@ -127,9 +122,6 @@ Suffixes of target source file.
 As a special exception, gtags collect values from multiple @code{suffixes} variables.
 This variable is obsoleted. If the langmap variable is defined
 gtags no longer refers this.
-@item @code{format}(standard|compact)
-Format of tag files. The default is @code{standard}.
-Compact format is same to @samp{-c}(@samp{--compact}).
 @item @code{icase_path}(boolean)
 Ignore case distinctions in the path.
 Suffixes check are affected by this capability.
