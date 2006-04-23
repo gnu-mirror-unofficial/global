@@ -20,7 +20,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	Doxygen Release 1.4.3 includs new config option USE_HTAGS.
 	When enabled in combination with SOURCE_BROWSER=YES,
 	the source browser of htags(1) is used instead of doxygen's own. 
-	This facility needs GLOBAL-4.8.6.
+	This facility needs GLOBAL-4.8.6 or the later.
 <dt><a href=http://glimmer.sourceforge.net/>Glimmer</a><dd>
 	Glimmer is a simple code editor for use with just about any
 	programming language, written by Chris Phelps.
