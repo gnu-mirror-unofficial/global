@@ -89,20 +89,11 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	written by Claudio Fleiner.
 </dl>
 
-<h3>Source code search engine</h3>
-<dl>
-<dt><a href=http://koders.com/>Koders</a><dd>
-	Koders makes it easy for software developers to find existing
-	source code that solves many common development problems
-	with our vast index of working source code from a variety of
-	open source projects.
-<dt><a href=http://gonzui.sourceforge.net/index.html.en>gonzui</a><dd>
-	Gonzui is a source code search engine for accelerating open source
-	software development.
-</dl>
-
 <H3>Source code browsing Tools</H3>
 <dl>
+<dt><a href=http://gonzui.sourceforge.net/index.html.en>gonzui</a><dd>
+	Gonzui is a source code search engine for accelerating open source
+	software development. You can use this tool for your local source code.
 <dt><a href=http://phpxref.sourceforge.net/>PHPXref</a><dd>
 	PHPXref is a developer tool that's designed to ease the process
 	of working on large PHP projects by making it very fast and
