@@ -29,7 +29,7 @@ How to maintain?
 
 You need to bring following files from GLOBAL package by hand.
 
-o *.texi *.txi and *.ref (used by tutorial).
+o *.texi *.texi and *.ref (used by tutorial).
 
 -------------------------------------------------------------------------
 Additional copyright notice about graphic files.

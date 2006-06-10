@@ -4,8 +4,8 @@
 This manual is available in <a href=http://www.gnu.org/software/global/manual/>various formats</a>.
 <hr>
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 5.0, for GNU GLOBAL version 5.0</H2>
-<H2>21 April 2006</H2>
+<H2>Edition 5.1, for GNU GLOBAL version 5.1</H2>
+<H2>10 June 2006</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -170,16 +170,29 @@ This manual is available in <a href=http://www.gnu.org/software/global/manual/>v
 <LI><A NAME="TOC122" HREF="globaldoc.html#SEC122">AUTHORS</A>
 <LI><A NAME="TOC123" HREF="globaldoc.html#SEC123">HISTORY</A>
 </UL>
-</UL>
-<LI><A NAME="TOC124" HREF="globaldoc.html#SEC124">A. Copying This Manual</A>
+<LI><A NAME="TOC124" HREF="globaldoc.html#SEC124">5.6 gtags-cscope - pseudo cscope which implements the line-oriented interface</A>
 <UL>
-<LI><A NAME="TOC125" HREF="globaldoc.html#SEC125">A.1 GNU Free Documentation License</A>
+<LI><A NAME="TOC125" HREF="globaldoc.html#SEC125">NAME</A>
+<LI><A NAME="TOC126" HREF="globaldoc.html#SEC126">SYNOPSIS</A>
+<LI><A NAME="TOC127" HREF="globaldoc.html#SEC127">DESCRIPTION</A>
+<LI><A NAME="TOC128" HREF="globaldoc.html#SEC128">OPTIONS</A>
+<LI><A NAME="TOC129" HREF="globaldoc.html#SEC129">EXAMPLES</A>
+<LI><A NAME="TOC130" HREF="globaldoc.html#SEC130">DIAGNOSTICS</A>
+<LI><A NAME="TOC131" HREF="globaldoc.html#SEC131">SEE ALSO</A>
+<LI><A NAME="TOC132" HREF="globaldoc.html#SEC132">BUG</A>
+<LI><A NAME="TOC133" HREF="globaldoc.html#SEC133">AUTHOR</A>
+<LI><A NAME="TOC134" HREF="globaldoc.html#SEC134">HISTORY</A>
+</UL>
+</UL>
+<LI><A NAME="TOC135" HREF="globaldoc.html#SEC135">A. Copying This Manual</A>
 <UL>
-<LI><A NAME="TOC126" HREF="globaldoc.html#SEC126">A.1.1 ADDENDUM: How to use this License for your documents</A>
+<LI><A NAME="TOC136" HREF="globaldoc.html#SEC136">A.1 GNU Free Documentation License</A>
+<UL>
+<LI><A NAME="TOC137" HREF="globaldoc.html#SEC137">A.1.1 ADDENDUM: How to use this License for your documents</A>
 </UL>
 </UL>
-<LI><A NAME="TOC127" HREF="globaldoc.html#SEC127">Option Index</A>
+<LI><A NAME="TOC138" HREF="globaldoc.html#SEC138">Option Index</A>
 </UL>
 <P><HR><P>
-This document was generated on 21 April 2006 using
+This document was generated on 10 June 2006 using
 <A HREF="http://wwwinfo.cern.ch/dis/texi2html/">texi2html</A>&nbsp;1.56k.

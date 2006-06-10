@@ -9,7 +9,7 @@
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
-SOURCE = ../global.txi
+SOURCE = ../global.texi
 DVI = global.dvi
 
 TARGET= global.html.gz global-html.tar.gz global-info.tar.gz \
@@ -49,7 +49,7 @@ global.ps: $(DVI)
 global.ps.gz: global.ps
 	gzip -c global.ps > global.ps.gz
 global-texinfo.tar.gz:
-	cd .. && tar czvf manual/global-texinfo.tar.gz *.txi version.texi *.ref
+	cd .. && tar czvf manual/global-texinfo.tar.gz *.texi version.texi *.ref
 distclean:
 	rm -f $(CLEAN_FILES) $(DVI) global_toc.html
 clean:

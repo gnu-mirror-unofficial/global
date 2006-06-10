@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.56k from ../global.txi on 21 April 2006 -->
+<!-- Created by texi2html 1.56k from ../global.texi on 10 June 2006 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY>
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 5.0, for GNU GLOBAL version 5.0</H2>
-<H2>21 April 2006</H2>
+<H2>Edition 5.1, for GNU GLOBAL version 5.1</H2>
+<H2>10 June 2006</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -173,15 +173,28 @@
 <LI><A NAME="TOC122" HREF="global.html#SEC122">AUTHORS</A>
 <LI><A NAME="TOC123" HREF="global.html#SEC123">HISTORY</A>
 </UL>
-</UL>
-<LI><A NAME="TOC124" HREF="global.html#SEC124">A. Copying This Manual</A>
+<LI><A NAME="TOC124" HREF="global.html#SEC124">5.6 gtags-cscope - pseudo cscope which implements the line-oriented interface</A>
 <UL>
-<LI><A NAME="TOC125" HREF="global.html#SEC125">A.1 GNU Free Documentation License</A>
+<LI><A NAME="TOC125" HREF="global.html#SEC125">NAME</A>
+<LI><A NAME="TOC126" HREF="global.html#SEC126">SYNOPSIS</A>
+<LI><A NAME="TOC127" HREF="global.html#SEC127">DESCRIPTION</A>
+<LI><A NAME="TOC128" HREF="global.html#SEC128">OPTIONS</A>
+<LI><A NAME="TOC129" HREF="global.html#SEC129">EXAMPLES</A>
+<LI><A NAME="TOC130" HREF="global.html#SEC130">DIAGNOSTICS</A>
+<LI><A NAME="TOC131" HREF="global.html#SEC131">SEE ALSO</A>
+<LI><A NAME="TOC132" HREF="global.html#SEC132">BUG</A>
+<LI><A NAME="TOC133" HREF="global.html#SEC133">AUTHOR</A>
+<LI><A NAME="TOC134" HREF="global.html#SEC134">HISTORY</A>
+</UL>
+</UL>
+<LI><A NAME="TOC135" HREF="global.html#SEC135">A. Copying This Manual</A>
 <UL>
-<LI><A NAME="TOC126" HREF="global.html#SEC126">A.1.1 ADDENDUM: How to use this License for your documents</A>
+<LI><A NAME="TOC136" HREF="global.html#SEC136">A.1 GNU Free Documentation License</A>
+<UL>
+<LI><A NAME="TOC137" HREF="global.html#SEC137">A.1.1 ADDENDUM: How to use this License for your documents</A>
 </UL>
 </UL>
-<LI><A NAME="TOC127" HREF="global.html#SEC127">Option Index</A>
+<LI><A NAME="TOC138" HREF="global.html#SEC138">Option Index</A>
 </UL>
 <P><HR><P>
 
@@ -2743,7 +2756,7 @@ By default, print object definitions.
 With the <SAMP>`-p'</SAMP> option, print the root directory of source tree.
 <DT><SAMP>`--result'</SAMP> format
 <DD>
-format may be 'path', `ctags', `ctags-x', or `grep'.
+format may be 'path', `ctags', `ctags-x', `grep' or 'cscope'.
 The <SAMP>`--result=ctags'</SAMP> and <SAMP>`--result=ctags-x'</SAMP> are
 equivalent to the <SAMP>`-t'</SAMP> and <SAMP>`-x'</SAMP> respectively.
 The <SAMP>`-t'</SAMP> and <SAMP>`-x'</SAMP> are given to priority
@@ -3892,13 +3905,132 @@ The gozilla command appeared in FreeBSD 2.2.2 but did not
 installed by default.
 
 
+<H2><A NAME="SEC124" HREF="global.html#TOC124">5.6 gtags-cscope - pseudo cscope which implements the line-oriented interface</A></H2>
 
 
-<H1><A NAME="SEC124" HREF="global.html#TOC124">A. Copying This Manual</A></H1>
+<H3><A NAME="SEC125" HREF="global.html#TOC125">NAME</A></H3>
+<P>
+gtags-cscope - pseudo cscope which implements the line-oriented interface
+
+
+<H3><A NAME="SEC126" HREF="global.html#TOC126">SYNOPSIS</A></H3>
+<P>
+
+<BLOCKQUOTE>
+<P>
+gtags-cscope [-Cqv]<BR>
+</BLOCKQUOTE>
 
 
 
-<H2><A NAME="SEC125" HREF="global.html#TOC125">A.1 GNU Free Documentation License</A></H2>
+<H3><A NAME="SEC127" HREF="global.html#TOC127">DESCRIPTION</A></H3>
+<P>
+Gtags-cscope is a pseudo cscope which implements the
+line-oriented interface.
+You can use this command for various clients instead of true cscope.
+
+
+<P>
+Since gtags-cscope is intended to make GLOBAL available
+through cscope interface, the output is not necessarily the same
+as cscope.
+
+
+<H3><A NAME="SEC128" HREF="global.html#TOC128">OPTIONS</A></H3>
+<P>
+The following options are available:
+<DL COMPACT>
+
+<DT><SAMP>`-C'</SAMP>, <SAMP>`--ignore-case'</SAMP>
+<DD>
+Ignore letter case when searching.
+<DT><SAMP>`-q'</SAMP>, <SAMP>`--quiet'</SAMP>
+<DD>
+Quiet mode.
+<DT><SAMP>`-v'</SAMP>, <SAMP>`--verbose'</SAMP>
+<DD>
+Verbose mode.
+</DL>
+
+
+<H3><A NAME="SEC129" HREF="global.html#TOC129">EXAMPLES</A></H3>
+
+<PRE>
+	$ gtags-cscope
+	&#62;&#62; help
+	0&#60;arg&#62;: Find this C symbol
+	1&#60;arg&#62;: Find this definition
+	2&#60;arg&#62;: Find functions called by this function
+		(Not implemented yet.)
+	3&#60;arg&#62;: Find functions calling this function
+	4&#60;arg&#62;: Find this text string
+	6&#60;arg&#62;: Find this egrep pattern
+	7&#60;arg&#62;: Find this file
+	8&#60;arg&#62;: Find files #including this file
+	c: Toggle ignore/use letter case
+	r: Rebuild the database
+	q: Quit the session
+	h: Show help
+	&#62;&#62; 1main
+	cscope: 9 lines
+	global/global.c main 158 main(int argc, char **argv)
+	gozilla/gozilla.c main 155 main(int argc, char **argv)
+	gtags-parser/gctags.c main 158 main(int argc, char **argv)
+	gtags-cscope/gtags-cscope.c main 115 main(int argc, char **argv)
+	gtags/gtags.c main 150 main(int argc, char **argv)
+	htags-refkit/htags_path2url.c main 281 main(int argc, char **argv)
+	htags/htags.c main 1400 main(int argc, char **argv)
+	libglibc/getopt.c main 704 main (argc, argv)
+	libglibc/getopt1.c main 93 main (argc, argv)
+	&#62;&#62; q
+	$ _
+</PRE>
+
+
+
+<H3><A NAME="SEC130" HREF="global.html#TOC130">DIAGNOSTICS</A></H3>
+<P>
+Gtags-cscope exits with a non 0 value if an error occurred, 0 otherwise.
+
+
+<H3><A NAME="SEC131" HREF="global.html#TOC131">SEE ALSO</A></H3>
+<P>
+cscope(1),
+gtags-parser(1),
+gtags(1),
+global(1),
+htags(1).
+
+
+<P>
+GNU GLOBAL source code tag system<BR>
+(http://www.gnu.org/software/global/).
+
+
+<H3><A NAME="SEC132" HREF="global.html#TOC132">BUG</A></H3>
+<P>
+The second field of the output is almost &#60;unknown&#62; since
+GLOBAL doesn't recognize it.
+Command 2 (Find functions called by this function) is not implemented.
+
+
+<H3><A NAME="SEC133" HREF="global.html#TOC133">AUTHOR</A></H3>
+<P>
+Tama Communications Corporation.
+
+
+<H3><A NAME="SEC134" HREF="global.html#TOC134">HISTORY</A></H3>
+<P>
+The gtags-cscope command appeared in 2006.
+
+
+
+
+<H1><A NAME="SEC135" HREF="global.html#TOC135">A. Copying This Manual</A></H1>
+
+
+
+<H2><A NAME="SEC136" HREF="global.html#TOC136">A.1 GNU Free Documentation License</A></H2>
 
 <P>
 <A NAME="IDX26"></A>
@@ -4338,7 +4470,7 @@ as a draft) by the Free Software Foundation.
 
 
 
-<H3><A NAME="SEC126" HREF="global.html#TOC126">A.1.1 ADDENDUM: How to use this License for your documents</A></H3>
+<H3><A NAME="SEC137" HREF="global.html#TOC137">A.1.1 ADDENDUM: How to use this License for your documents</A></H3>
 
 <P>
 To use this License in a document you have written, include a copy of
@@ -4384,7 +4516,7 @@ to permit their use in free software.
 
 
 
-<H1><A NAME="SEC127" HREF="global.html#TOC127">Option Index</A></H1>
+<H1><A NAME="SEC138" HREF="global.html#TOC138">Option Index</A></H1>
 <P>
 Jump to:
 <A HREF="#cindex_f">f</A>
@@ -4394,7 +4526,7 @@ Jump to:
 <LI><A HREF="global.html#IDX26">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on 21 April 2006 using
+This document was generated on 10 June 2006 using
 <A HREF="http://wwwinfo.cern.ch/dis/texi2html/">texi2html</A>&nbsp;1.56k.
 </BODY>
 </HTML>

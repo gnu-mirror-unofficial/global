@@ -5,6 +5,7 @@
 * htags::          htags - generate hypertext from source code.
 * gtags-parser::   gtags-parser - print cross reference list for gtags.
 * gozilla::        gozilla - force mozilla to display specified source file.
+* gtags-cscope::   gtags-cscope - pseudo cscope which implements the line-oriented interface
 @end menu
 
 @node global
@@ -22,3 +23,6 @@
 @node gozilla
 @section gozilla - force mozilla to display specified source file.
 @include gozilla.ref
+@node gtags-cscope
+@section gtags-cscope - pseudo cscope which implements the line-oriented interface
+@include gtags-cscope.ref

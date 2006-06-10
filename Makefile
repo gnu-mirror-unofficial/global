@@ -23,10 +23,10 @@ all: ${HTMLS} ${MANUAL}.html
 ${HTMLS}: makehtml.pl ${FILES} ${TUTOR}
 	@./makehtml.pl -v ${FILES}
 
-${TUTOR}: global.txi version.texi reference.txi fdl.txi gtags-parser.ref global.ref gtags.ref htags.ref
+${TUTOR}: global.texi version.texi reference.texi fdl.texi gtags-parser.ref global.ref gtags.ref htags.ref
 	@echo "Generating ${MANUAL}.html and ${MANUAL}_toc.html ..."
-	@cp global.txi ${MANUAL}.txi
-	@texi2html -number ${MANUAL}.txi
+	@cp global.texi ${MANUAL}.texi
+	@texi2html -number ${MANUAL}.texi
 	@echo "Generating ${MANUAL}_toc.in ..."
 	@echo "@title Tutorial" > ${MANUAL}_toc.in
 	@echo "@link Tutorial" >> ${MANUAL}_toc.in
@@ -34,6 +34,6 @@ ${TUTOR}: global.txi version.texi reference.txi fdl.txi gtags-parser.ref global.
 	@echo "This manual is available in <a href=http://www.gnu.org/software/global/manual/>various formats</a>." >> ${MANUAL}_toc.in
 	@echo "<hr>" >> ${MANUAL}_toc.in
 	@sed -e '1,/^<BODY.*>/d' -e '/<\/BODY.*>/,$$d' < ${MANUAL}_toc.html >> ${MANUAL}_toc.in
-	@rm -f ${MANUAL}.txi
+	@rm -f ${MANUAL}.texi
 clean:
 	rm -f ${HTMLS} ${TUTOR}
