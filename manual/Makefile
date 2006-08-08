@@ -28,24 +28,34 @@ update: clean all distclean
 index.html: $(TARGET)
 	./makehtml.pl index
 global.html: $(SOURCE)
-	texi2html -number -monolithic $(SOURCE)
+	rm -rf tmp; mkdir tmp && cp ../*.texi ../*.ref tmp
+	(cd tmp && texi2html -number -monolithic global.texi)
+	mv tmp/global.html .
+	rm -rf tmp
 global.html.gz: global.html
 	gzip -c global.html >global.html.gz
 global-html.tar.gz: $(SOURCE)
-	rm -rf tmp
-	mkdir tmp && cd tmp && texi2html -number -split_chapter ../$(SOURCE) && tar czvf ../global-html.tar.gz global_*.html
+	rm -rf tmp; mkdir tmp && cp ../*.texi ../*.ref tmp
+	(cd tmp && texi2html -number -split_chapter global.texi)
+	(cd tmp && tar czvf ../global-html.tar.gz global_*.html)
 	rm -rf tmp
 global-info.tar.gz: $(SOURCE)
 	makeinfo -I.. $(SOURCE)
 	tar czvf global-info.tar.gz global.info*
 $(DVI): $(SOURCE)
-	texi2dvi $(SOURCE)
+	rm -rf tmp; mkdir tmp && cp ../*.texi ../*.ref tmp
+	(cd tmp && texi2dvi global.texi)
+	mv tmp/global.dvi .
+	rm -rf tmp
 $(DVI).gz: $(DVI)
 	gzip -c $(DVI) >$(DVI).gz
 global.pdf: $(DVI)
-	texi2pdf $(SOURCE)
+	rm -rf tmp; mkdir tmp && cp ../*.texi ../*.ref tmp
+	(cd tmp && texi2pdf global.texi)
+	mv tmp/global.pdf .
+	rm -rf tmp
 global.ps: $(DVI)
-	dvi2ps $(DVI) > global.ps
+	dvips $(DVI) > global.ps
 global.ps.gz: global.ps
 	gzip -c global.ps > global.ps.gz
 global-texinfo.tar.gz:
@@ -55,3 +65,4 @@ distclean:
 clean:
 	rm -f $(CLEAN_FILES) $(DVI) global_toc.html \
 		global.html $(TARGET) index.html
+	rm -rf tmp
