@@ -8,8 +8,9 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <dl compact>
 <dt>2006/8/8<dd>
 	GLOBAL-5.2 was released.
+	See <a href=http://lists.gnu.org/archive/html/info-global/2006-08/msg00000.html>release note</a>.
 	In this release, some small functions were added to htags(1).
-	Try the following command line: htags -vsanohIT
+	Try the following command line: htags -vsanohIT.
 <dt>2006/6/10<dd>
 	GLOBAL-5.1 was released.
 	See <a href=http://lists.gnu.org/archive/html/info-global/2006-06/msg00000.html>release note</a>.
