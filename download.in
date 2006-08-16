@@ -21,7 +21,10 @@ is also distributed by Shankar Chakkere.
 <a href=http://fink.sourceforge.net/pdb/package.php/global>
 Mac OSX version
 </a>
-is distributed by <a href=http://fink.sourceforge.net/>Fink project</a>
+is distributed by
+<a href=http://www.darwinports.org/>DarwinPorts</a>
+and
+<a href=http://fink.sourceforge.net/>Fink project</a>
 .
 <p>
 <a href=http://packages.debian.org/stable/devel/global.html>
