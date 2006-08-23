@@ -1,7 +1,7 @@
 @title Getting GLOBAL
 @link Download
 @license
-Copyright (c) 2000, 2001 Tama Communications Corporation
+Copyright (c) 2000, 2001, 2006 Tama Communications Corporation
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1
 @body
@@ -75,6 +75,9 @@ Powered icon for GLOBAL is now available.
 <pre>
 <img src=pglobe.png>
 </pre>
+This file is placed into the public domain by the author,
+2006 Tama Communications Corporation.
+<p>
 Recommended HTML:
 <pre>
 &lt;a href=http://www.gnu.org/software/global/&gt;
@@ -82,17 +85,4 @@ Recommended HTML:
 &lt;/a&gt;
 </pre>
 Please don't link to the icon on this site.
-Instead, please copy it to your site and use locally.<br>
-This icon is distributed under the following license:
-<pre>
-
-Copyright(c) 2001 Tama Communications Corporation
-
- This file is free software; as a special exception the author gives
- unlimited permission to copy and/or distribute it, with or without
- modifications, as long as this notice is preserved.
-
- This program is distributed in the hope that it will be useful, but
- WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-</pre>
+Instead, please copy it to your site and link locally.<br>
