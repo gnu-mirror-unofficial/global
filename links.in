@@ -216,6 +216,10 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <dt><a href=http://www.ibiblio.org/linux-source/>The Linux Source Navigator</a><dd>
 	This is a CGI interface to browse the entire Linux kernel source,
 	written by Ben Walter.
+<dt><a href=http://fxr.watson.org/>FreeBSD and Linux Kernel Cross-Reference</a><dd>
+	This site provides experimental source code browsing for the FreeBSD and
+	Linux kernels by Robert Watson, based on the software provided by the
+	<a href=http://sourceforge.net/projects/lxr>LXR</a> Project.
 <dt><a href=http://lxr.linux.no/>Cross-Referencing Linux</a><dd>
 	A hypertext presentation of the Linux source code by 
 	Arne Georg Gleditsch and Per Kristian Gjermshus
