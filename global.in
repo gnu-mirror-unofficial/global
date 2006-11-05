@@ -6,7 +6,7 @@ Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <p>
-<a href=http://www.tamacom.com/tour/daily/linux/>
+<a href=http://www.tamacom.com/tour/kernel/linux/>
 <img src=htags.png align=right>
 </a>
 GNU GLOBAL is a source code tag system that works the same way
@@ -38,7 +38,7 @@ GNU GLOBAL has following features:
 	<li> Glimmer editor
 	<li> Less viewer
         <li> Web browser
-		(See <a href=http://www.tamacom.com/tour/daily/linux/>UNIX kernel source tour!</a>.)
+		(See <a href=http://www.tamacom.com/tour/kernel/linux/>UNIX kernel source tour!</a>.)
 	<li> Doxygen documentation system
         </ul>
 <li> find the locations of a specified object quickly.
