@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.57 from globaldoc.texi on November, 20  2006 -->
+<!-- Created by texi2html 1.57 from globaldoc.texi on January, 29  2007 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY >
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 5.3, for GNU GLOBAL version 5.3</H2>
-<H2>20 November 2006</H2>
+<H2>Edition 5.4, for GNU GLOBAL version 5.4</H2>
+<H2>29 January 2007</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -165,6 +165,23 @@ the source tree.
 
         database of path names
 </UL>
+
+<P>
+You should prepare for considerable disk space for tag files.
+For example, FreeBSD 7.0 kernel source code requires:
+
+
+
+<PRE>
+    source code(/usr/src/sys)       123MB
+
+    GPATH                             1MB
+    GTAGS                            24MB
+    GRTAGS                           28MB
+    GSYMS                            32MB
+    -------------------------------------
+    total of tag files               85MB
+</PRE>
 
 
 
@@ -2136,23 +2153,22 @@ You can use GLOBAL's facilities from WWW browser.
 <H3><A NAME="SEC46">3.8.2 Preparation.</A></H3>
 
 <P>
-At first, you must ensure that you have a lot of disk space. Hypertext
-needs a great amount of disk space. For example, the source code
-of FreeBSD kernel needs:
+At first, you must ensure that you have a lot of disk space for hypertext.
+For example, FreeBSD 7.0 kernel source code (123MB) requires disk space
+from 600 to 1200MB.
 
 
 
 <PRE>
 
-    source code(/usr/src/sys)       14.0MB
-    
-    GTAGS                            1.5MB
-    GRTAGS                           8.0MB
-    GSYMS                           12.0MB
-    HTML/                           55MB(!!!)
-    -------------------------------------------------
-    total                           77MB
+    source code(/usr/src/sys)            123MB
+    GPATH,GTAGS,GRTAGS,GSYMS              86MB
 
+    hypertext (with no option)           645MB
+    hypertext (with -s option)          1168MB
+    hypertext (with -D option)           383MB
+    hypertext (with -s and -D option)    616MB
+   
 </PRE>
 
 <P>
@@ -2164,13 +2180,24 @@ in order like this:
 <PRE>
 
     (at your source directory)
-    $ gtags                 # make the tag database(GTAGS,GRTAGS,GSYMS)
-    $ htags                 # make the hypertext(HTML/)
+    $ gtags                 # make tag files(GTAGS,GRTAGS,GSYMS)
+    $ htags                 # make hypertext(HTML/)
 
 </PRE>
 
 <P>
 Then you will find an <TT>`HTML'</TT> subdirectory in the current directory.
+Htags has many options.
+
+
+
+<PRE>
+    Suggested option:
+    $ htags -vsanohIT
+</PRE>
+
+<P>
+If http server is available then the -D and -f option are also useful.
 
 
 
@@ -2770,7 +2797,7 @@ Other files are searched for C style definitions.
 The following options are available:
 <DL COMPACT>
 
-<DT><SAMP>`--config'</SAMP> name
+<DT><SAMP>`--config'</SAMP>[=name]
 <DD>
 Show the value of config variable name.
 If name is not specified then show whole of config entry.
@@ -3067,7 +3094,7 @@ By default, list just the last component of a path.
 <DD>
 Execute gtags(1) before creating hypertext.
 The <SAMP>`-v'</SAMP>, <SAMP>`-w'</SAMP> and dbpath are passed to gtags.
-<DT><SAMP>`-h'</SAMP>, <SAMP>`--func-header'</SAMP> [position]
+<DT><SAMP>`-h'</SAMP>, <SAMP>`--func-header'</SAMP>[=position]
 <DD>
 Insert function header for each function.
 By default, htags doesn't generates it.
@@ -3096,7 +3123,7 @@ Insert custom footer derived from file before &#60;/body&#62; tag.
 <DT><SAMP>`-m'</SAMP>, <SAMP>`--main-func'</SAMP> name
 <DD>
 Specify the main function name. The default is <CODE>main</CODE>.
-<DT><SAMP>`-n'</SAMP>, <SAMP>`--line-number'</SAMP> [columns]
+<DT><SAMP>`-n'</SAMP>, <SAMP>`--line-number'</SAMP>[=columns]
 <DD>
 Print line numbers. By default, doesn't print them.
 The default value of columns is 4.
@@ -3126,7 +3153,7 @@ You can overwrite this value using config variable
 <DD>
 The title of this hypertext. The default is the last
 component of the current directory.
-<DT><SAMP>`-T'</SAMP>, <SAMP>`--table-flist'</SAMP> [fields]
+<DT><SAMP>`-T'</SAMP>, <SAMP>`--table-flist'</SAMP>[=fields]
 <DD>
 Generate file list using &#60;table&#62; tag.
 The fields is used for field number in a line. The default is 5.
@@ -3142,7 +3169,7 @@ Verbose mode.
 <DT><SAMP>`-w'</SAMP>, <SAMP>`--warning'</SAMP>
 <DD>
 Print warning messages.
-<DT><SAMP>`-x'</SAMP>, <SAMP>`--xhtml'</SAMP> [version]
+<DT><SAMP>`-x'</SAMP>, <SAMP>`--xhtml'</SAMP>[=version]
 <DD>
 Generate XHTML hypertext instead of HTML.
 If the <SAMP>`--frame'</SAMP> option is specified then
@@ -4374,7 +4401,7 @@ Jump to:
 <LI><A HREF="globaldoc.html#IDX26">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on November, 20  2006 using
+This document was generated on January, 29  2007 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
 </BODY>

@@ -64,7 +64,7 @@ By default, list just the last component of a path.
 @item @samp{-g}, @samp{--gtags}
 Execute gtags(1) before creating hypertext.
 The @samp{-v}, @samp{-w} and dbpath are passed to gtags.
-@item @samp{-h}, @samp{--func-header} [position]
+@item @samp{-h}, @samp{--func-header}[=position]
 Insert function header for each function.
 By default, htags doesn't generates it.
 You can specify the position using position argument,
@@ -85,7 +85,7 @@ Insert custom header derived from file after <body> tag.
 Insert custom footer derived from file before </body> tag.
 @item @samp{-m}, @samp{--main-func} name
 Specify the main function name. The default is @code{main}.
-@item @samp{-n}, @samp{--line-number} [columns]
+@item @samp{-n}, @samp{--line-number}[=columns]
 Print line numbers. By default, doesn't print them.
 The default value of columns is 4.
 @item @samp{--no-map-file}
@@ -108,7 +108,7 @@ You can overwrite this value using config variable
 @item @samp{-t}, @samp{--title} title
 The title of this hypertext. The default is the last
 component of the current directory.
-@item @samp{-T}, @samp{--table-flist} [fields]
+@item @samp{-T}, @samp{--table-flist}[=fields]
 Generate file list using <table> tag.
 The fields is used for field number in a line. The default is 5.
 @item @samp{--table-list}
@@ -119,7 +119,7 @@ Tab stop. The default is 8.
 Verbose mode.
 @item @samp{-w}, @samp{--warning}
 Print warning messages.
-@item @samp{-x}, @samp{--xhtml} [version]
+@item @samp{-x}, @samp{--xhtml}[=version]
 Generate XHTML hypertext instead of HTML.
 If the @samp{--frame} option is specified then
 generate XHTML-1.0 Frameset for index.html

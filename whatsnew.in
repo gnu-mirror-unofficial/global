@@ -6,6 +6,9 @@ Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <dl compact>
+<dt>2007/1/29<dd>
+	GLOBAL-5.4 was released.
+	In this release, compressed tag files further, and improved the performance of global(1).
 <dt>2006/11/20<dd>
 	GLOBAL-5.3 was released.
 	In this release, updated gtags.el and added new options to htags(1).

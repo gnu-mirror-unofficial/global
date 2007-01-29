@@ -29,7 +29,7 @@ Other files are searched for C style definitions.
 @unnumberedsubsec OPTIONS
 The following options are available:
 @table @asis
-@item @samp{--config} name
+@item @samp{--config}[=name]
 Show the value of config variable name.
 If name is not specified then show whole of config entry.
 @item @samp{-f}, @samp{--file} file
