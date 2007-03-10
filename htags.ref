@@ -83,6 +83,13 @@ The default is @code{default}.
 Insert custom header derived from file after <body> tag.
 @item @samp{--insert-footer} file
 Insert custom footer derived from file before </body> tag.
+@item @samp{--item-order} spec
+Specify order of items in the top page.
+The spec is a string consists of item signs in order.
+Each sign means as follows:
+c: caution, s: search form,
+m: mains, d: definition, f: files.
+The default is csmdf.
 @item @samp{-m}, @samp{--main-func} name
 Specify the main function name. The default is @code{main}.
 @item @samp{-n}, @samp{--line-number}[=columns]

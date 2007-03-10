@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.57 from globaldoc.texi on January, 29  2007 -->
+<!-- Created by texi2html 1.57 from globaldoc.texi on March, 10  2007 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY >
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 5.4, for GNU GLOBAL version 5.4</H2>
-<H2>29 January 2007</H2>
+<H2>Edition 5.4.1, for GNU GLOBAL version 5.4.1</H2>
+<H2>10 March 2007</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -3120,6 +3120,14 @@ Insert custom header derived from file after &#60;body&#62; tag.
 <DT><SAMP>`--insert-footer'</SAMP> file
 <DD>
 Insert custom footer derived from file before &#60;/body&#62; tag.
+<DT><SAMP>`--item-order'</SAMP> spec
+<DD>
+Specify order of items in the top page.
+The spec is a string consists of item signs in order.
+Each sign means as follows:
+c: caution, s: search form,
+m: mains, d: definition, f: files.
+The default is csmdf.
 <DT><SAMP>`-m'</SAMP>, <SAMP>`--main-func'</SAMP> name
 <DD>
 Specify the main function name. The default is <CODE>main</CODE>.
@@ -4401,7 +4409,7 @@ Jump to:
 <LI><A HREF="globaldoc.html#IDX26">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on January, 29  2007 using
+This document was generated on March, 10  2007 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
 </BODY>
