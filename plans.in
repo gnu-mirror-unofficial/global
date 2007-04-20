@@ -1,13 +1,16 @@
 @title Plans for the future
 @link Plans
 @license
-Copyright (c) 2000, 2001, 2002, 2005, 2006 Tama Communications Corporation
+Copyright (c) 2000, 2001, 2002, 2005, 2006, 2007 Tama Communications Corporation
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1
 @body
 Plans of the highest priority are listed first.
 <p>
 <ul>
+<li>Rewrite cgi program with C language instead of Perl.
+<li>Remote tag server. This enables users to read remote tag files
+	instead of local tag files.
 <li>Treat enum members as definitions.(C)
 <li>Generate link from 'require', 'require_once' and 'include_once'.(PHP)
 <li>Support of PHP language in the following commands in gtags.el.
