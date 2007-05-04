@@ -6,6 +6,9 @@ Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <dl compact>
+<dt>2007/5/5<dd>
+	GLOBAL-5.5 was released.
+	GNU GLOBAL became a BOKINware. The other modifications are trivial.
 <dt>2007/3/10<dd>
 	GLOBAL-5.4.1 was released.
 	This release is trivial. The purpose of this is to save the people

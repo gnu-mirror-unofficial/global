@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.57 from globaldoc.texi on March, 10  2007 -->
+<!-- Created by texi2html 1.57 from globaldoc.texi on May, 5  2007 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY >
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 5.4.1, for GNU GLOBAL version 5.4.1</H2>
-<H2>10 March 2007</H2>
+<H2>Edition 5.5, for GNU GLOBAL version 5.5</H2>
+<H2>5 May 2007</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -3310,7 +3310,7 @@ Begin tag for comments. The default is '&#60;i&#62;&#60;font color=green&#62;'.
 <DT><CODE>comment_end</CODE>(string)
 <DD>
 End tag for comments. The default is '&#60;/font&#62;&#60;/i&#62;'.
-<DT><CODE>dynamic</CODE>(bool)
+<DT><CODE>dynamic</CODE>(boolean)
 <DD>
 Generate object list dynamically.
 <DT><CODE>sharp_begin</CODE>(string)
@@ -4399,7 +4399,271 @@ to permit their use in free software.
 
 
 
-<H1><A NAME="SEC138">Option Index</A></H1>
+<H1><A NAME="SEC138">B. Business Model</A></H1>
+
+
+
+<H2><A NAME="SEC139">B.1 The BOKIN Model Definition</A></H2>
+
+<PRE>
+Version 1.0, December 17, 2005
+Copyright (C) 2005 Tama Communications Corporation
+
+Everyone is permitted to copy and distribute verbatim copies
+of this document, but changing it is not allowed.
+</PRE>
+
+
+
+<H3><A NAME="SEC140">Introduction</A></H3>
+
+<P>
+<EM>BOKIN Model</EM> is a business model to obtain proceeds by widely collecting
+donations while developing and distributing free software.
+This model is constructed not to take away consumer's freedom of software.
+
+
+<P>
+The business which comply with the following criteria can be called
+<EM>a business based on BOKIN Model</EM>.
+
+
+
+
+<H3><A NAME="SEC141">Criteria</A></H3>
+
+
+<OL>
+<LI>CORPORATION<BR>
+
+The person who start a business based on BOKIN Model must be a business
+corporation registered in the home country.
+(Herein after called <EM>the corporation</EM>)
+
+<LI>FREE SOFTWARE<BR>
+
+The corporation develops free software. (Herein after called <EM>the BOKINware</EM>)
+
+<LI>LICENSE<BR>
+
+The corporation distributes the BOKINware under GNU GPL (GNU General Public
+License) and GNU FDL (GNU Free Documentation License). Exceptionally,
+external packages which the BOKINware uses, small supporting files,
+short manuals and rough documentation can use
+simple all-permissive license, compatible with GNU GPL.
+
+<LI>COPYRIGHT MANAGEMENT<BR>
+
+The corporation manages copyright on the BOKINware for consumers to
+keep on using it at ease.
+
+
+<UL>
+<LI>
+
+Every file in the BOKINware should have a legally valid copyright notice
+and a license notice.
+<LI>
+
+To include program which is assigned from another developer, the corporation
+receives a disclaimer paper or assignment paper signed by the author.
+<LI>
+
+To include program which is not assigned, the corporation confirms its license
+is GNU GPL or compatible with GNU GPL, lists the files and authors in a file
+named <TT>`AUTHORS'</TT>, and lists the license in a file named <TT>`LICENSE'</TT>.
+The BOKINware should contain these two files.
+</UL>
+
+<LI>MAILING LIST<BR>
+
+The corporation maintains mailing lists for consumers to cooperate
+one another.
+
+The list members, including the corporation, don't owe any duty.
+
+The mailing lists should include the following two at least.
+
+
+<UL>
+<LI>Bug mailing list<BR>
+
+This list distributes, to the active maintainers of the BOKINware,
+bug reports and fixes for, and suggestions for improvements in the
+BOKINware. This list is also for user discussion.
+<LI>Help mailing list<BR>
+
+This list is the place for authors, users and installers of the
+BOKINware to ask for help.
+</UL>
+
+The mailing lists can be replaced with a similar communication tool.
+
+The corporation can decide the operation policy of the list, but must not
+obstruct the list members to cooperate one another.
+
+<LI>COLLECTING DONATIONS<BR>
+
+The corporation collects donations widely as its proceeds.
+
+The corporation must not offer the donor an individual supply of profit.
+
+<LI>DONOR LIST<BR>
+
+The corporation open the donor list to the public.
+
+The donor list includes the following information.
+
+
+<UL>
+<LI>
+
+Date of donation (The date when the corporation received the donation)
+<LI>
+
+Amount of donation (Amount which the corporation received)
+<LI>
+
+Donor's name
+<LI>
+
+Donor's nationality
+</UL>
+
+When donor's name and nationality are unknown or the donor prefers to
+remain anonymous, they are treated as <EM>anonymous</EM>.
+
+The BOKINware should contain the donor list as a file named <TT>`DONORS'</TT>.
+It is preferable that the list is open to the public even on the Internet.
+
+<LI>BOKIN MODEL DEFINITION<BR>
+
+The BOKINware should contain the present definition as a file named
+<TT>`BOKIN_MODEL'</TT>.
+
+</OL>
+
+
+
+<H3><A NAME="SEC142">Renewal</A></H3>
+
+<P>
+The author may publish revised and/or new versions of the BOKIN Model
+Definition from time to time. Such new versions will be similar in spirit
+to the present version, but may differ in detail to address new problems
+or concerns.
+
+
+<H2><A NAME="SEC143">B.2 Frequently Asked Questions</A></H2>
+
+<PRE>
+Version 1.0, December 17, 2005
+Copyright (C) 2005 Tama Communications Corporation
+
+Everyone is permitted to copy and distribute verbatim copies
+of this document, but changing it is not allowed.
+</PRE>
+
+
+
+<H3><A NAME="SEC144">BOKIN Model Frequently Asked Questions</A></H3>
+
+
+<OL>
+<LI>What does <EM>BOKIN</EM> mean?<BR>
+
+<EM>BOKIN</EM> means collecting donations in Japanese.
+(<EM>BO</EM>=collect, <EM>KIN</EM>=money)
+
+<LI>What is the purpose to require the person who start a BOKIN model business being a registered corporation?<BR>
+
+The purpose is to prevent people from donating to the person who does not
+exist actually.
+
+<LI>Is annoying copyright management necessary?<BR>
+
+Yes, it is.
+Copyright management is absolutely necessary for consumers
+to keep on using the BOKINware at ease.
+
+It is dangerous to use the software whose copyright is not neatly managed.
+If you use such software, you might suddenly be prohibited to use it,
+or be claimed a license fee of high priced. These are not imaginary fears
+but troubles of reality.
+
+<LI>Why is program license limited to GNU GPL?<BR>
+
+Because GNU GPL defends consumers in two points.
+
+<UL>
+<LI>Copyleft License<BR>
+
+Since GNU GPL is copyleft license, it makes a program free,
+and requiring all modified and extended versions of the program
+to be free as well. As a result, consumer can keep on using the
+BOKINware at ease in the future.
+<LI>Widely Known<BR>
+
+Since GNU GPL is widely known, and is explained frequently,
+it does not become the load to consumer. It is troublesome
+for consumer to understand new licenses.
+</UL>
+
+<LI>What is the purpose of the donor list?<BR>
+
+There are two purposes.
+
+<UL>
+<LI>To defend freedom of donation.<BR>
+
+The consumer can decide whether to donate after understanding
+the situation of the donation.
+If nothing being informed, freedom does not exist there.
+In BOKIN model, consumers are not isolated existence.
+<LI>To praise donation.<BR>
+
+To praise donation brings new donors.
+Since BOKIN model owes all to people's free wills, we cannot praise
+the donation too much.
+</UL>
+
+<LI>Is donation spent on the BOKINware?<BR>
+
+It depends on the management of the corporation.
+Since donations become the proceeds of the corporation, the corporation
+itself decides the usage under its freedom.
+
+<LI>Is the donor list kept true?<BR>
+
+It is very difficult to mix lies in the public information, because
+it is checked by various methods.
+
+
+<UL>
+<LI>
+
+Donors can confirm whether they are listed.
+<LI>
+
+People can ask whether to have donated to the donors in the list.
+<LI>
+
+The tax office can examine the contradiction between the content
+of the list and the content of the declaration of the corporation's
+taxation business.
+</UL>
+
+<LI>Why is the corporation prohibited from doing an individual supply of profit for the donors?<BR>
+
+When individual supply of profit becomes ordinary, donation fall into
+the payment for the profit. We cannot call it donation.
+BOKIN Model business should be supported only by people's free will.
+
+</OL>
+
+
+
+<H1><A NAME="SEC145">Option Index</A></H1>
 <P>
 Jump to:
 <A HREF="#cindex_f">f</A>
@@ -4409,7 +4673,7 @@ Jump to:
 <LI><A HREF="globaldoc.html#IDX26">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on March, 10  2007 using
+This document was generated on May, 5  2007 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
 </BODY>
