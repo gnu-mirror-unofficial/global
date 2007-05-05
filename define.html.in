@@ -1,0 +1,116 @@
+<h1>The BOKIN Model Definition</h1>
+<blockquote>
+Version 1.0, December 17, 2005<br>
+Copyright (c) 2005 Tama Communications Corporation<br>
+<br>
+Everyone is permitted to copy and distribute verbatim copies
+of this document, but changing it is not allowed.
+</blockquote>
+<p>
+<h2>Introduction</h2>
+<p>
+<i>BOKIN Model</i> is a business model to obtain proceeds by widely collecting
+donations while developing and distributing free software.
+This model is constructed not to take away consumer's freedom of software.
+<p>
+The business which comply with the following criteria can be called
+<i>a business based on BOKIN Model</i>.
+<p>
+<h2>Criteria</h2>
+<p>
+<ol>
+<li>CORPORATION<br>
+The person who start a business based on BOKIN Model must be a business
+corporation registered in the home country.
+(Herein after called <i>the corporation</i>)
+<p>
+<li>FREE SOFTWARE<br>
+The corporation develops free software. (Herein after called <i>the BOKINware</i>)
+<p>
+<li>LICENSE<br>
+The corporation distributes the BOKINware under GNU GPL (GNU General Public
+License) and GNU FDL (GNU Free Documentation License). Exceptionally,
+external packages which the BOKINware uses, small supporting files,
+short manuals and rough documentation can use
+simple all-permissive license, compatible with GNU GPL.
+<p>
+<li>COPYRIGHT MANAGEMENT<br>
+The corporation manages copyright on the BOKINware for consumers to
+keep on using it at ease.
+<p>
+<ul>
+<li>
+Every file in the BOKINware should have a legally valid copyright notice
+and a license notice.
+<li>
+To include program which is assigned from another developer, the corporation
+receives a disclaimer paper or assignment paper signed by the author.
+<li>
+To include program which is not assigned, the corporation confirms its license
+is GNU GPL or compatible with GNU GPL, lists the files and authors in a file
+named <b>AUTHORS</b>, and lists the license in a file named <b>LICENSE</b>.
+The BOKINware should contain these two files.
+</ul>
+<p>
+<li>MAILING LIST<br>
+The corporation maintains mailing lists for consumers to cooperate
+one another.
+<p>
+The list members, including the corporation, don't owe any duty.
+<p>
+The mailing lists should include the following two at least.
+<p>
+<ul>
+<li>Bug mailing list<br>
+This list distributes, to the active maintainers of the BOKINware,
+bug reports and fixes for, and suggestions for improvements in the
+BOKINware. This list is also for user discussion.
+<li>Help mailing list<br>
+This list is the place for authors, users and installers of the
+BOKINware to ask for help.
+</ul>
+<p>
+The mailing lists can be replaced with a similar communication tool.
+<p>
+The corporation can decide the operation policy of the list, but must not
+obstruct the list members to cooperate one another.
+<p>
+<li>COLLECTING DONATIONS<br>
+The corporation collects donations widely as its proceeds.
+<p>
+The corporation must not offer the donor an individual supply of profit.
+<p>
+<li>DONOR LIST<br>
+The corporation open the donor list to the public.
+<p>
+The donor list includes the following information.
+<p>
+<ul>
+<li>
+Date of donation (The date when the corporation received the donation)
+<li>
+Amount of donation (Amount which the corporation received)
+<li>
+Donor's name
+<li>
+Donor's nationality
+</ul>
+<p>
+When donor's name and nationality are unknown or the donor prefers to
+remain anonymous, they are treated as <i>anonymous</i>.
+<p>
+The BOKINware should contain the donor list as a file named <b>DONORS</b>.
+It is preferable that the list is open to the public even on the Internet.
+<p>
+<li>BOKIN MODEL DEFINITION<br>
+The BOKINware should contain the present definition as a file named
+<b>BOKIN_MODEL</b>.
+<p>
+</ol>
+<p>
+<h2>Renewal</h2>
+<p>
+The author may publish revised and/or new versions of the BOKIN Model
+Definition from time to time. Such new versions will be similar in spirit
+to the present version, but may differ in detail to address new problems
+or concerns.

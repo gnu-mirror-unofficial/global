@@ -1,0 +1,30 @@
+@title Donation
+@link Donation
+@license
+Copyright (c) 2007 Tama Communications Corporation
+@body
+<h3>Donation</h3>
+
+We ask for donations for money.
+Your donation is open to the public on this page and
+in the DONORS file of GNU GLOBAL package, and is
+distributed all over the world.
+<p>
+If you will make a donation, please send mail to
+<a href=mail:zbokin@tamacom.com>
+zbokin@tamacom.com
+</a>
+(Please remove the leading "z" of the address).<br>
+<p>
+Please note that GNU GLOBAL is commercial (for-profit) software. For the detail,
+see <a href='model.html'>BOKIN model definition</a>.
+
+<h3>Donors List</h3>
+
+<p>
+<table>
+<tr><th>name</th><th>nationality</th><th>amount</th><th>date</th></tr>
+<tr><td>*****</td><td>*****</td><td>*****</td><td>*****</td></tr>
+</table>
+
+There is no donation yet.

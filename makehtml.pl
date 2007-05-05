@@ -194,6 +194,7 @@ for ($i = 0; $i < $total; $i++) {
 	print OUTFILE "<b>\n";
 	foreach $f (@ARGV) {
 		print OUTFILE "<p>";
+		print OUTFILE "<hr><p>\n" if ($f eq 'model.in');
 		print OUTFILE "<a href=$outfile{$f}>" if ($f ne $infile);
 		print OUTFILE $link{$f};
 		print OUTFILE "</a>" if ($f ne $infile);
