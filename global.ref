@@ -5,7 +5,7 @@ global - print the locations of specified object.
 @noindent
 @quotation
 global [-aGilnqrstTvx][-e] pattern@*
-global -c[qsv] prefix@*
+global -c[qrsv] prefix@*
 global -f[anqrstvx] files@*
 global -g[aGilnoOqtvx][-e] pattern@*
 global -I[ailnqtvx][-e] pattern@*
