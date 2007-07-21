@@ -68,7 +68,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 </dl>
 <h3>Parsers</h3>
 <dl>
-<dt><a href=http://gonzui.sourceforge.net/langscan/>LangScan</a><dd>
+<dt><a href='http://gonzui.sourceforge.net/langscan/index.html.en'>LangScan</a><dd>
 	LangScan is a library to parse various languages.
 	It is also part of Gonzui source code search engine.
 <dt><a href=http://www.gccxml.org/>GCC-XML</a><dd>
