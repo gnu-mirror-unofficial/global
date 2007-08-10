@@ -96,8 +96,7 @@ With the @samp{-p} option, print the root directory of source tree.
 format may be 'path', `ctags', `ctags-x', `grep' or 'cscope'.
 The @samp{--result=ctags} and @samp{--result=ctags-x} are
 equivalent to the @samp{-t} and @samp{-x} respectively.
-The @samp{-t} and @samp{-x} are given to priority
-more than the @samp{--result} option.
+The --result option is given to priority more than the -t and -x option.
 @item @samp{-s}, @samp{--symbol}
 Print the locations of specified symbol other than definitions.
 @item @samp{-t}, @samp{--tags}
