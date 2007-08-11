@@ -8,9 +8,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <dl compact>
 <dt>2007/8/11<dd>
 	GLOBAL-5.6.1 was released. This is a bug fix version.
-	[FIXED BUG] Global(1) with the -t option didn't print correct line number.
-	Gtags.vim also didn't work correctly due to this bug.
-	This bug was introduced in GLOBAL-5.4.
+	See <a href='http://lists.gnu.org/archive/html/info-global/2007-08/msg00000.html'>release note</a>.
 <dt>2007/7/6<dd>
 	GLOBAL-5.6 was released.
 	The license was changed to GPL3.
