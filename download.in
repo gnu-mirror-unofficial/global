@@ -1,7 +1,7 @@
 @title Getting GLOBAL
 @link Download
 @license
-Copyright (c) 2000, 2001, 2006 Tama Communications Corporation
+Copyright (c) 2000, 2001, 2006, 2007 Tama Communications Corporation
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1
 @body
@@ -13,7 +13,8 @@ or
 
 <h3>Binary archive</h3>
 
-GNU GLOBAL project only distribute source package.
+GNU GLOBAL project only distributes source package, and GNU GLOBAL only supports
+UNIX(POSIX) environment.
 Following packages are due to outside projects.
 <p>
 <a href=http://www.geocities.com/jadoxa/global/index.html>DOS and Windows 32 version</a>
