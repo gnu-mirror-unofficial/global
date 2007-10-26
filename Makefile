@@ -11,10 +11,10 @@
 #
 MANUAL=	globaldoc
 FILES=	global.in whatsnew.in ${MANUAL}_toc.in license.in links.in \
-	plans.in contribute.in maillist.in download.in \
+	plans.in bugs.in contribute.in maillist.in download.in \
 	model.in donation.in
 HTMLS=	global.html whatsnew.html ${MANUAL}_toc.html license.html links.html \
-	plans.html contribute.html maillist.html download.html \
+	plans.html bugs.html contribute.html maillist.html download.html \
 	model.html donation.html
 
 TUTOR=	${MANUAL}_toc.in ${MANUAL}.html

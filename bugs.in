@@ -1,0 +1,18 @@
+@title Known bugs
+@link Known bugs
+@license
+Copyright (c) 2007 Tama Communications Corporation
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+@body
+Known bugs in the latest GNU GLOBAL.
+<p>
+<ul>
+<li>GLOBAL cannot treat 'extern "C" { ... }'.
+	<a href="http://lists.gnu.org/archive/html/bug-global/2007-07/msg00003.html">[report]</a>
+<li>Parsing error at function definitions with comment.
+	<a href="http://lists.gnu.org/archive/html/bug-global/2007-10/msg00002.html">[report]</a>
+<li>C++ parsing problem with constructors and destructors.
+	<a href="http://lists.gnu.org/archive/html/bug-global/2007-10/msg00004.html">[report]</a>
+</ul>
+If you can fix the bugs then please send it to us. Thank you in advance.
