@@ -132,7 +132,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <dt><a href=http://kscope.sourceforge.net/>KScope</a><dd>
 	KScope is a KDE front-end to Cscope. It provides a source-editing
 	environment for large C projects, such as the Linux kernel.
-<dt><a href=http://www.geocities.com/yegappan/taglist/>Taglist</a><dd>
+<dt><a href=http://vim-taglist.sourceforge.net/>Taglist</a><dd>
 	The "Tag List" plugin is a source code browser for the Vim editor.
 	It provides an overview of the structure of source code files and
 	allows you to efficiently browse through source code files
@@ -186,19 +186,23 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	phpDocumentor is the world standard auto-documentation tool for PHP.
 	Written in PHP, phpDocumentor can be used directly from the
 	command-line, or through an easy to use web interface. 
+<!--
 <dt><a href=http://www.zib.de/Visual/software/doc++/>DOC++</a><dd>
 	DOC++ is a documentation system for C/C++ and Java generating both,
 	LaTeX output for high quality hardcopies and HTML output for
 	sophisticated online browsing of your documentation.
+-->
 <dt><a href=http://www.xs4all.nl/~rfsber/Robo/robodoc.html>ROBODoc</a><dd>
 	ROBODoc is a documentation tool. It extracts specially formated
 	comment headers from the source file and puts them in a separate file.
 	ROBODoc thus allows you to include the program documentation
 	in the source code and avoid having to maintain two separate documents.
+<!--
 <dt><a href=http://www.sylvantech.com/~talin/projects/scandoc/scandoc.html>ScanDoc</a><dd>
 	ScanDoc is a Perl script which scans C++ source code for
 	specially-formatted comments and produces attractive, organized,
 	indexed documentation. 
+-->
 <dt><a href=http://www.stack.nl/~dimitri/doxygen/>Doxygen</a><dd>
 	Doxygen is a documentation system for C++, Java, IDL
 	(Corba, Microsoft and KDE-DCOP flavors) and C. 
