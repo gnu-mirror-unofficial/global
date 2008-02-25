@@ -9,11 +9,13 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <a href=http://www.tamacom.com/tour/kernel/linux/>
 <img src=htags2.png align=right alt='Linux source code'>
 </a>
-GNU GLOBAL is a source code tagging system (like ctags/etags) that is
-compatible with numerous application environments including vi, emacs, less, bash.
+GNU GLOBAL is a source code tagging system that works the same way
+across diverse environments (emacs, vi, less, bash, web browser, etc).
 You can locate a specified object in the source files and move there easily.
 It is useful for hacking a large project containing many subdirectories,
 many <CODE>#ifdef</CODE> and many <CODE>main()</CODE> functions.
+It is similar to ctags or etags but is different from them at the point of
+independence of any editor.
 It runs on a UNIX(POSIX) compatible operating system like GNU and BSD.
 
 <p>
