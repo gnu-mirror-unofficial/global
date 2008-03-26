@@ -10,6 +10,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	GLOBAL-5.7 was released.
 	This version allows the symbolic links which point to directories, and
 	treats the names of struct, union, enum and enum member as definitions.
+	See <a href='http://lists.gnu.org/archive/html/info-global/2008-03/msg00000.html'>release note</a>.
 <dt>2007/10/26<dd>
 	GLOBAL-5.6.2 was released. This is a minor update version.
 	See <a href='http://lists.gnu.org/archive/html/info-global/2007-10/msg00000.html'>release note</a>.
