@@ -1,52 +1,52 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.57 from globaldoc.texi on October, 26  2007 -->
+<!-- Created by texi2html 1.57 from globaldoc.texi on March, 26  2008 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY >
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 5.6.2, for GNU GLOBAL version 5.6.2</H2>
-<H2>26 October 2007</H2>
+<H2>Edition 5.7, for GNU GLOBAL version 5.7</H2>
+<H2>26 March 2008</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
 
 
-<H1><A NAME="SEC1">1. Overview of the tools</A></H1>
+<H1><A NAME="SEC1">1. Overview of this tool</A></H1>
 
 
 
-<H2><A NAME="SEC2">1.1 What is this?</A></H2>
+<H2><A NAME="SEC2">1.1 What is GNU GLOBAL?</A></H2>
 
 <P>
-GLOBAL is a source code tagging system (like ctags/etags) that is
-compatible with numerous application environments including vi, emacs, less, bash.
-You can locate specified object in source files and move there easily.
-It is useful for hacking a large project containing many subdirectories,
+GNU GLOBAL is a source code tag system that works the same way
+across diverse environments such as Emacs editor, Vi editor,
+Less viewer, Bash shell, various web browsers, etc.
+You can locate specified objects such as functions, macros, structs, classes
+in your source files and move there easily.
+It is useful for hacking large projects which contain many sub-directories,
 many <CODE>#ifdef</CODE> and many <CODE>main()</CODE> functions.
+It is similar to ctags or etags, but is different from them at the point of
+independence of any editor.
 
 
 
 
-<H2><A NAME="SEC3">1.2 Concept of project.</A></H2>
-
-<P>
-GNU GLOBAL can treat a source tree containing subdirectories as a project.
-It is similar to CVS.
-You need not specify where the tag file is.
-Instead, global(1) will locate the tag file by itself.
-If tag file isn't found in the current directory, global(1) search parent
-directories for tag file. 
-
+<H2><A NAME="SEC3">1.2 Concept of project</A></H2>
 
 <P>
-User's position (current directory) is the first argument for GLOBAL's command.
+GNU GLOBAL can treat a source tree containing sub-directories as a project.
+Anywhere in the project, you can utilize high performance tag database.
+You need not specify where the database is.
+Instead, global(1) locates it by itself.
+Because of this feature, you can move freely in a project,
+and in and out of many projects.
 
 
 
 
-<H2><A NAME="SEC4">1.3 Features.</A></H2>
+<H2><A NAME="SEC4">1.3 Features</A></H2>
 
 <P>
 GNU GLOBAL has following features:
@@ -56,21 +56,19 @@ GNU GLOBAL has following features:
 <UL>
 <LI>support C, C++, Yacc, Java, PHP4 and assembly.
 
-<LI>work the same way across diverse environments. Currently, support followings:
+<LI>work the same way across diverse environments like follows:
 
 
 <UL>
 <LI>Shell command line
 
-<LI>Bash shell.
+<LI>Bash shell
 
-<LI>Vi editor clone (nvi, elvis, vim)
+<LI>Vi editor (Nvi, Elvis, vim)
 
 <LI>Less viewer
 
-<LI>Emacs editor (emacs, mule, xemacs)
-
-<LI>Glimmer editor
+<LI>Emacs editor (Emacs, Mule, Xemacs)
 
 <LI>Web browser
 
@@ -84,25 +82,31 @@ GNU GLOBAL has following features:
 
 <LI>allows duplicate objects.
 
-<LI>locate also path which includes specified pattern.
+<LI>locate path names which include specified pattern.
 
-<LI>search not only in a source tree but also in library paths.
+<LI>hierarchical search is available.
 
-<LI>understand POSIX 1003.2 regular expressions.
+<LI>search not only in a source project but also in library projects.
 
-<LI>support external search engine (grep and idutils).
+<LI>generate completion list for completing input method.
 
-<LI>generate hypertext of source code.
+<LI>support various output format.
+
+<LI>allows customizing of the set of candidate files to be tagged.
+
+<LI>understand POSIX 1003.2 regular expression.
+
+<LI>support idutils as an external search engine.
 
 <LI>tag files are independent of machine architecture.
 
-<LI>plugin parser is available to treat new language.
-
 <LI>support incremental updating of tag files.
 
-<LI>support customizing with gtags.conf.
+<LI>plug-in parser is available to treat new language.
 
-<LI>generate completion list for completing input method.
+<LI>support customizing with <TT>`gtags.conf'</TT>.
+
+<LI>generate a hypertext of source code.
 
 </UL>
 
@@ -111,17 +115,18 @@ GNU GLOBAL has following features:
 <H1><A NAME="SEC5">2. Command line GLOBAL</A></H1>
 
 <P>
-You can use tag facilities from shell command line.
-It is a big merit of GLOBAL compared with any other tag system.
+You can use the tag facilities from shell command line.
+It is a big merit of GLOBAL compared with any other tag systems.
 
 
 
 
-<H2><A NAME="SEC6">2.1 Preparation.</A></H2>
+<H2><A NAME="SEC6">2.1 Preparation</A></H2>
 
 <P>
-First of all, you must execute gtags(1)(see section <A HREF="globaldoc.html#SEC70">5.2 gtags - create tag files for global.</A>) at the root of source tree.
-For example, if you want to browse vi's source code:
+First of all, you must execute gtags(1)(see section <A HREF="globaldoc.html#SEC61">5.2 gtags - create tag files for global.</A>) at the root of source tree.
+For example, if you want to browse the source code of Vi editor in FreeBSD,
+please move to the source directory and invoke gtags(1).
 
 
 
@@ -133,8 +138,9 @@ For example, if you want to browse vi's source code:
 </PRE>
 
 <P>
-Gtags traverse subdirectories and makes four databases at the root of
-the source tree.
+Gtags traverses sub-directories, picks up source files and makes four tag files
+at the current directory.
+After this, the whole files under this directory is treated as a project.
 
 
 
@@ -149,21 +155,25 @@ the source tree.
 <UL>
 <LI><TT>`GTAGS'</TT>
 
-        database of object definitions
+        definition database
 <LI><TT>`GRTAGS'</TT>
 
-        database of object references
+        reference database
 <LI><TT>`GSYMS'</TT>
 
-        database of other symbols
+        symbol database
 <LI><TT>`GPATH'</TT>
 
-        database of path names
+        path name database
 </UL>
 
 <P>
-You should prepare for considerable disk space for tag files.
-For example, FreeBSD 7.0 kernel source code requires:
+The <TT>`GSYMS'</TT> is for the symbols which are not defined in <TT>`GTAGS'</TT>.
+
+
+<P>
+You should prepare for considerable disk space for the tag files.
+For example, FreeBSD 7.0 kernel source code requires the following disk space.
 
 
 
@@ -171,16 +181,16 @@ For example, FreeBSD 7.0 kernel source code requires:
     source code(/usr/src/sys)       123MB
 
     GPATH                             1MB
-    GTAGS                            24MB
-    GRTAGS                           28MB
-    GSYMS                            32MB
+    GTAGS                            26MB
+    GRTAGS                           22MB
+    GSYMS                            23MB
     -------------------------------------
-    total of tag files               85MB
+    total of tag files               72MB
 </PRE>
 
 
 
-<H2><A NAME="SEC7">2.2 Basic usage.</A></H2>
+<H2><A NAME="SEC7">2.2 Basic usage</A></H2>
 
 <P>
 Consider the following source tree:
@@ -189,8 +199,13 @@ Consider the following source tree:
 
 <PRE>
 
-    ROOT/           &#60;- the root of source tree (GTAGS,GRTAGS,...)
+/home/user/
+ |
+ |-ROOT/      &#60;- the root of source tree (GTAGS,GRTAGS,...)
     |
+    |- README       .....   +---------------+
+    |                       |The function of|
+    |                       +---------------+
     |- DIR1/
     |  |
     |  |- fileA.c   .....   +---------------+
@@ -220,15 +235,16 @@ Consider the following source tree:
 
 
 <UL>
-<LI>You can get the relative path of your object from anywhere in
+<LI>Once you make tag files at the root directory of the source tree,
 
-the source tree. You need not specify where the tag file is.
-Global will locate the tag file by itself.
+you can execute global(1) from anywhere in the tree.
+By default, you get the relative path of the located files.
+You need not specify where the tag file is. Instead, global(1) locates it by itself.
 
 
 <PRE>
 
-    $ cd ROOT
+    $ cd /home/user/ROOT
     $ global func1
     DIR1/fileB.c            # func1() is defined in fileB.c
     $ cd DIR1
@@ -237,6 +253,18 @@ Global will locate the tag file by itself.
     $ cd ../DIR2
     $ global func1
     ../DIR1/fileB.c         # relative path from DIR2
+
+</PRE>
+
+Global command is possible to use only when you are in a project.
+If you are out of any project, it brings an error message like follows:
+
+
+<PRE>
+
+    $ cd /home/user
+    $ global func1
+    global: GTAGS not found.
 
 </PRE>
 
@@ -257,7 +285,7 @@ Global will locate the tag file by itself.
 
 <PRE>
 
-    $ cd ROOT
+    $ cd /home/user/ROOT
     $ global 'func[1-3]'
     DIR1/fileB.c            # func1, func2 and func3 are matched
     DIR2/fileC.c
@@ -292,7 +320,7 @@ It is similar to the <SAMP>`-x'</SAMP> option in ctags(1).
 
 </PRE>
 
-<LI>The -s command locates any symbols which are not defined in <TT>`GTAGS'</TT>.
+<LI>The <SAMP>`-s'</SAMP> command locates symbols which are not defined in <TT>`GTAGS'</TT>.
 
 <A NAME="IDX4"></A>
 
@@ -304,9 +332,8 @@ It is similar to the <SAMP>`-x'</SAMP> option in ctags(1).
 
 </PRE>
 
-<LI>The -g command locates any patterns including symbols.
+<LI>The <SAMP>`-g'</SAMP> command locates the lines which have specified pattern.
 
-It is similar to grep(1).
 <A NAME="IDX5"></A>
 
 
@@ -317,10 +344,37 @@ It is similar to grep(1).
 
 </PRE>
 
-<LI>The -P command enables you to locate path which includes specified
+It is similar to egrep(1) but is far more convenient for source code reading,
+because it allows you to search through a project, and only in the source files.
 
-string.
+Additionally, you can use various options:
+<DL COMPACT>
+
+<DT><CODE><KBD>-O</KBD></CODE>
+<DD>
 <A NAME="IDX6"></A>
+search only in the text files.
+<DT><CODE><KBD>-o</KBD></CODE>
+<DD>
+<A NAME="IDX7"></A>
+search in both the source files and text files.
+<DT><CODE><KBD>-l</KBD></CODE>
+<DD>
+<A NAME="IDX8"></A>
+search only under the current directory.
+</DL>
+
+The <KBD>-e</KBD>, <KBD>-G</KBD> and <KBD>-i</KBD> options are available too.
+The usage is the same as egrep(1).
+
+You can even change the output format of global(1) to the grep style
+using the <SAMP>`--result=grep'</SAMP> option.
+<A NAME="IDX9"></A>
+Of course, these options can be used even by other commands.
+
+<LI>The <SAMP>`-P'</SAMP> command locates path names which include specified pattern.
+
+<A NAME="IDX10"></A>
 
 
 <PRE>
@@ -337,9 +391,9 @@ string.
 
 </PRE>
 
-<LI>The -f command enables you see the list of objects of specified file.
+<LI>The <SAMP>`-f'</SAMP> command print a list of objects in specified file.
 
-<A NAME="IDX7"></A>
+<A NAME="IDX11"></A>
 
 
 <PRE>
@@ -351,118 +405,86 @@ string.
 
 </PRE>
 
-</UL>
+<LI>The <SAMP>`-l'</SAMP> option limits the range of the retrieval under the current directory.
 
-
-
-<H2><A NAME="SEC8">2.3 Applied usage.</A></H2>
-
-<P>
-You can make multiple tag files.
-For example, you can execute gtags at ROOT/, version1.0/ and version2.0/.
-
-
+<A NAME="IDX12"></A>
 
 <PRE>
 
-    ROOT/                   &#60;- the root of source tree      (GTAGS,...)
-    |
-    |- version1.0/          &#60;- the root of version1.0       (GTAGS,...)
-    |  |
-    |  |- file.c    .....   +---------------+
-    |                       |func1(){ i++; }|
-    |                       +---------------+
-    |
-    |- version2.0/          &#60;- the root of version2.0       (GTAGS,...)
-       |
-       |- file.c    .....   +---------------+
-                            |func1(){ i--; }|
-                            +---------------+
-
-</PRE>
-
-
-<UL>
-<LI>When you are in the version1.0 directory, global will only locate objects
-
-that are in version1.0.
-
-
-<PRE>
-
-    $ cd ROOT/version1.0
-    $ global -x func1
-    func1              1 file.c          func1(){ i++; }
-
-</PRE>
-
-<LI>When you are in the version2.0, global will only locate objects that
-
-are in version2.0.
-
-
-<PRE>
-
-    $ cd ROOT/version2.0
-    $ global -x func1
-    func1              1 file.c          func1(){ i--; }
-
-</PRE>
-
-<LI>If you are at ROOT/, or you set the <CODE>GTAGSROOT</CODE> environment variable to ROOT,
-
-then global will locate objects in both directories.
-
-
-<PRE>
-
-    $ cd ROOT
-    $ global -x func1
-    func1              1 version1.0/file.c  func1(){ i++; }
-    func1              1 version2.0/file.c  func1(){ i--; }
+    $ cd DIR1
+    $ global -xl func[1-3]
+    func1        1 fileB.c      func1(){...}
 
 </PRE>
 
 </UL>
 
-<P>
-There is another usage of <CODE>GTAGSROOT</CODE>.
 
+
+<H2><A NAME="SEC8">2.3 Applied usage</A></H2>
 
 
 <UL>
+<LI>You can customize a set of candidate files to be tagged.
+
+<A NAME="IDX13"></A>
+
+
+<PRE>
+
+    $ find . -type f -print &#62;/tmp/list     # make a file set
+    $ vi /tmp/list                         # customize the file set
+    $ gtags -f /tmp/list
+
+</PRE>
 
 <LI>If your source files are on a read-only device, such as CDROM,
 
-then you cannot make databases at the root of the source tree.
-In such cases, please do the following:
+then you cannot make tag files at the root of the source tree.
+In such case, you can make tag files in another place using
+the <CODE>GTAGSROOT</CODE> environment variable.
 
 
 <PRE>
 
     $ mkdir /var/dbpath
     $ cd /cdrom/src                 # the root of source tree
-    $ gtags /var/dbpath             # make tag file in /var/dbpath
+    $ gtags /var/dbpath             # make tag files in /var/dbpath
     $ export GTAGSROOT=`pwd`
     $ export GTAGSDBPATH=/var/dbpath
     $ global func
 
 </PRE>
 
-<LI>If you want all references to an object that is not defined in the source
+There is another method for it. Since global(1) locates tag files also in
+<TT>`/usr/obj'</TT> + &#60;current directory&#62;, you can setup like follows:
 
-tree to be treated as calls to library functions or system calls, then
-you can specify library directories with the <CODE>GTAGSLIBPATH</CODE> environment
-variable.
+
+<PRE>
+
+    $ mkdir -p /usr/obj/cdrom/src
+    $ cd /cdrom/src                 # the root of source tree
+    $ gtags /usr/obj/cdrom/src      # make tag files in /usr/obj/cdrom/src
+    $ global func
+
+</PRE>
+
+The value <TT>`/usr/obj'</TT> can be changed by environment variable
+<CODE>MAKEOBJDIRPREFIX</CODE>.
+
+<LI>If you want to locate objects that are not defined in the source tree,
+
+then you can specify library directories with the <CODE>GTAGSLIBPATH</CODE>
+environment variable.
 
 You should execute gtags at each directory of the path.
-If <TT>`GTAGS'</TT> is not found in a directory, global ignores that directory.
+If <TT>`GTAGS'</TT> is not found there, global ignores it.
 
 
 <PRE>
 
     $ pwd
-    /develop/src/mh                         # this is the source tree
+    /develop/src/mh                         # this is a source project
     $ gtags
     $ ls G*TAGS
     GRTAGS  GTAGS
@@ -479,12 +501,26 @@ If <TT>`GTAGS'</TT> is not found in a directory, global ignores that directory.
 
 </PRE>
 
-Of course, the user program does not call kernel functions directly,
-but at least it is useful.
+Or, you can take a more straightforward way to do the same thing.
+In the following example, we treat as if the system library and the kernel
+are part of our project.
 
-<LI>If you forget a object name, you can use the -c (complete) command.
 
-<A NAME="IDX8"></A>
+<PRE>
+
+    $ ln -s /usr/src/lib .
+    $ ln -s /usr/src/sys .
+    $ gtags
+    $ global strlen
+    lib/libc/string/strlen.c
+    $ global access
+    sys/kern/vfs_syscalls.c
+
+</PRE>
+
+<LI>If you forget object names, you can use the <SAMP>`-c'</SAMP> (complete) command.
+
+<A NAME="IDX14"></A>
 
 
 <PRE>
@@ -503,9 +539,9 @@ but at least it is useful.
 
 </PRE>
 
-<LI>You can use the -c command with complete command in shell.
+<LI>You can use the <SAMP>`-c'</SAMP> command with the complete command in the shell.
 
-In bash:
+In Bash:
 
 <PRE>
 
@@ -526,7 +562,7 @@ In bash:
 
 </PRE>
 
-In tcsh:
+In Tcsh:
 
 <PRE>
 
@@ -543,7 +579,10 @@ In tcsh:
 
 </PRE>
 
-<LI>You can edit all files that include specified object by typing
+If you like input completion, you had better try globash(See section <A HREF="globaldoc.html#SEC10">3.1 Global facility for Bash</A>).
+It support you in a suitable way without any preparation.
+
+<LI>You can edit all files which have specified objects by typing
 
 one command, for example:
 
@@ -582,12 +621,12 @@ one command, for example:
 <H2><A NAME="SEC10">3.1 Global facility for Bash</A></H2>
 
 <P>
-Special support for bash is available.
+Special support for Bash is available.
 
 
 
 
-<H3><A NAME="SEC11">3.1.1 Features.</A></H3>
+<H3><A NAME="SEC11">3.1.1 Features</A></H3>
 
 
 <UL>
@@ -599,22 +638,22 @@ Vi-like tag stack is available.
 Emacs-like tag name completion is available.
 <LI>
 
-Editor or viewer is automatically invoked.
+Automatic invoking of editor.
 <LI>
 
 Tag mark facility is available.
 <LI>
 
-Yor can manage directory list by cookie facility.
+Yoo can manage a directory list by cookie facility.
 </UL>
 
 
 
-<H3><A NAME="SEC12">3.1.2 Preparation.</A></H3>
+<H3><A NAME="SEC12">3.1.2 Preparation</A></H3>
 
 <P>
-First, do the preparation of global. See section <A HREF="globaldoc.html#SEC6">2.1 Preparation.</A>.
-And you can invoke bash(1) with --rcfile option.
+First, do the preparation of global. See section <A HREF="globaldoc.html#SEC6">2.1 Preparation</A>.
+And you can invoke Bash(1) with <SAMP>`--rcfile'</SAMP> option.
 
 <PRE>
 
@@ -633,37 +672,38 @@ You will see a prompt like this:
 
 <P>
 This prompt means that the current directory is '/usr/src/sys/kern' and
-the root of the source tree is '/usr/src/sys'.
+the root directory of the project is '/usr/src/sys'.
 Tag and marker are valid only in a project.
 
 
 <P>
-When you get out of the project, globash warns like:
+When you try to go out of the project, globash warns like:
 
 <PRE>
 
     [/usr/src/sys] cd ..
-    You are going to get out of current project.
+    You are going to get out of the current project.
     Tag stack and marker will be removed. Sure? ([y]/n)_
 
 </PRE>
 
 <P>
-If you answer 'y' and <KBD>RET</KBD>
-or just <KBD>RET</KBD> in above example then tag stack and marker will be removed.
+If you answer <KBD>y</KBD> and <KBD>RET</KBD>
+or just <KBD>RET</KBD> in the above prompt then the tag stack and marker
+(described later) will be removed.
 
 
 <P>
-If you need help then please type 'ghelp'.
+If you need help then please type <KBD>ghelp</KBD>.
 
 
 
 
-<H3><A NAME="SEC13">3.1.3 Basic usage.</A></H3>
+<H3><A NAME="SEC13">3.1.3 Usage</A></H3>
 
 
 <UL>
-<LI>Almost global(1)(see section <A HREF="globaldoc.html#SEC56">5.1 global - print the locations of specified object.</A>)'s command character is available as a command.
+<LI>Almost global(1)(see section <A HREF="globaldoc.html#SEC47">5.1 global - print the locations of specified object.</A>)'s command characters are available as a command.
 
 
 <PRE>
@@ -693,9 +733,22 @@ If you need help then please type 'ghelp'.
 
 </PRE>
 
-If no tag name is specified then it is assumed the latest tag name.
+If no argument is specified then the latest argument is used.
 
-<LI>You can select a tag by show command.
+<LI>Input completion facility is available. For each command, suitable completion is applied.
+
+
+<PRE>
+    [/usr/src/sys] x kmem_<KBD>TAB</KBD><KBD>TAB</KBD>
+    kmem_alloc          kmem_free           kmem_malloc         
+    kmem_alloc_nofault  kmem_free_wakeup    kmem_object         
+    kmem_alloc_wait     kmem_init           kmem_suballoc       
+    [/usr/src/sys] x kmem_s<KBD>TAB</KBD>
+    [/usr/src/sys] x kmem_suballoc
+
+</PRE>
+
+<LI>You can select a tag by the <KBD>show</KBD> command.
 
 
 <PRE>
@@ -711,7 +764,7 @@ If no tag name is specified then it is assumed the latest tag name.
 </PRE>
 
 The default editor is vi(1) but you can specify it statically by <CODE>EDITOR</CODE>
-environment variable or temporarily by option.
+environment variable or temporarily by options.
 
 
 <PRE>
@@ -725,9 +778,32 @@ environment variable or temporarily by option.
 
 </PRE>
 
-<LI>You can use vi-like tag stack. You can return previous tag list by
+Otherwise, you can use the following commands (and abbreviated form):
+<DL COMPACT>
 
-pop or <KBD>CTL-T</KBD> command.
+<DT><CODE>list (<KBD>l</KBD>)</CODE>
+<DD>
+print tag list.
+<DT><CODE>first</CODE>
+<DD>
+go to the first tag.
+<DT><CODE>last</CODE>
+<DD>
+go to the last tag.
+<DT><CODE>next (<KBD>n</KBD>)</CODE>
+<DD>
+go to next tag.
+<DT><CODE>prev (<KBD>p</KBD>)</CODE>
+<DD>
+go to previous tag.
+<DT><CODE>show n (<KBD>1,2,3,..,999</KBD>)</CODE>
+<DD>
+go to nth tag
+</DL>
+
+<LI>You can use vi-like tag stack. You can return the previous tag list
+
+by the <KBD>pop</KBD> or <KBD>CTL-T</KBD> command.
 
 <PRE>
 
@@ -738,7 +814,7 @@ pop or <KBD>CTL-T</KBD> command.
     ....
     [/usr/src/sys] show 3
     (Load editor and show boot/alpha/boot1/boot1.c at line 227.)
-    [/usr/src/sys] x fork          &#60;- push new tag on tag stack.
+    [/usr/src/sys] x fork          &#60;- push new tag on the tag stack.
     &#62;    1  fork              94 kern/kern_fork.c fork(p, uap)
     [/usr/src/sys] pop             &#60;- pop tag stack.
     [/usr/src/sys] show
@@ -746,15 +822,9 @@ pop or <KBD>CTL-T</KBD> command.
 
 </PRE>
 
-</UL>
+You can print the tag stack by <KBD>tags</KBD> command.
 
-
-
-<H3><A NAME="SEC14">3.1.4 Applied usage.</A></H3>
-
-
-<UL>
-<LI>You can memory tags using 'mark' command.
+<LI>You can memory tags using the <KBD>mark</KBD> command.
 
 
 <PRE>
@@ -776,24 +846,26 @@ pop or <KBD>CTL-T</KBD> command.
          2  main             1500 alpha/alpha/ieee_float.c main(i
          3  main             227 boot/alpha/boot1/boot1.c main()
     ....
+
 </PRE>
 
-Marked tags are valid until you get out of current project or quit
-current bash session.
+Marked tags are valid until you go out of the current project or quit
+the current Bash session.
 
-<LI>You can memory directories using 'cookie' command.
+<LI>You can memory directories using the <KBD>cookie</KBD> command,
 
+and return there using the <KBD>warp</KBD> command.
 
 <PRE>
 
-    [/usr/src/sys] cookie               &#60;- drop cookie.
+    [/usr/src/sys] cookie               &#60;- drop a cookie.
     [/usr/src/sys] cd kern
-    [/usr/src/sys]/kern cookie          &#60;- drop cookie again.
+    [/usr/src/sys]/kern cookie          &#60;- drop a cookie again.
     [/usr/src/sys]/kern cd ../i386
     [/usr/src/sys]/i386 cookie -l       &#60;- show cookie list.
          1  /usr/src/sys/kern
          2  /usr/src/sys
-    [/usr/src/sys]/i386 warp 2          &#60;- warp to selected cookie.
+    [/usr/src/sys]/i386 warp 2          &#60;- warp to the selected cookie.
     [/usr/src/sys] _
 
 </PRE>
@@ -804,21 +876,21 @@ Cookie directories are valid until you delete them.
 
 
 
-<H2><A NAME="SEC15">3.2 Less using GLOBAL.</A></H2>
+<H2><A NAME="SEC14">3.2 Less using GLOBAL</A></H2>
 
 <P>
-You can use GLOBAL as a tag system of less instead of ctags.
+You can use GLOBAL as the tag system of Less(1) viewer instead of ctags.
 
 
 
 
-<H3><A NAME="SEC16">3.2.1 Features.</A></H3>
+<H3><A NAME="SEC15">3.2.1 Features</A></H3>
 
 
 <UL>
 <LI>
 
-You can use most of GLOBAL's facilities from less-370 or the later.
+You can use most of GLOBAL's facilities from Less viewer.
 <LI>
 
 Less viewer support duplicated tag.
@@ -826,14 +898,14 @@ Less viewer support duplicated tag.
 
 
 
-<H3><A NAME="SEC17">3.2.2 Preparation.</A></H3>
+<H3><A NAME="SEC16">3.2.2 Preparation</A></H3>
 
 <P>
-First, do the preparation of global. See section <A HREF="globaldoc.html#SEC6">2.1 Preparation.</A>.
+First, do the preparation of global. See section <A HREF="globaldoc.html#SEC6">2.1 Preparation</A>.
 
 
 <P>
-Second, to use global from less, you need to set environment variable
+Second, to use global from Less, you need to set environment variable
 <CODE>LESSGLOBALTAGS</CODE> to "global".
 
 
@@ -846,7 +918,7 @@ Second, to use global from less, you need to set environment variable
 
 
 
-<H3><A NAME="SEC18">3.2.3 Basic usage.</A></H3>
+<H3><A NAME="SEC17">3.2.3 Usage</A></H3>
 
 
 <UL>
@@ -859,9 +931,9 @@ Second, to use global from less, you need to set environment variable
 
 </PRE>
 
-Please note that if <TT>`tags'</TT> exist then less use it.
-If you want to use <TT>`GTAGS'</TT> even if <TT>`tags'</TT> exist
-then please specify tag file explicitly like this.
+Please note that if <TT>`tags'</TT> exists in the current directory then Less use it.
+If you want to use <TT>`GTAGS'</TT> even if <TT>`tags'</TT> exists
+then please specify the tag file explicitly like this:
 
 
 <PRE>
@@ -880,9 +952,9 @@ then please specify tag file explicitly like this.
 </PRE>
 
 In the same way, you can use <TT>`GTAGS'</TT>, <TT>`GRTAGS'</TT>, <TT>`GSYMS'</TT>,
-<TT>`GPATH'</TT> as tag file.
+<TT>`GPATH'</TT> as tag files.
 
-<LI>If a number of objects are located, less goes to the first tag.
+<LI>If a number of objects are located, Less goes to the first tag.
 
 You can go to next tag by typing <KBD>t</KBD> and back by typing <KBD>T</KBD>.
 
@@ -898,21 +970,14 @@ go to previous tag.
 
 <LI>
 
-From less session, you can use <KBD>:t</KBD> command to locate new symbol.
+In a Less session, you can use <KBD>:t</KBD> command to locate new symbol.
 But in this case, you cannot change tag file from one specified by
-<KBD>-T</KBD> option.
+<SAMP>`-T'</SAMP> option.
 
-</UL>
+<LI>With the <SAMP>`-T-'</SAMP> option, Less read standard input as a tag file.
 
+You can connect global and Less with a pipe. It is very convenient.
 
-
-<H3><A NAME="SEC19">3.2.4 Applied usage.</A></H3>
-
-
-<UL>
-<LI>With <KBD>-T-</KBD> option, less read standard input as tag file.
-
-It is very valuable. You can connect global and less with pipe line.
 
 <PRE>
 
@@ -920,10 +985,11 @@ It is very valuable. You can connect global and less with pipe line.
 
 </PRE>
 
-In the same way, you can use following command lines.
+In the same way, you can use the following command lines:
 
 
 <PRE>
+
     # pattern match with grep(1).
     $ global -xg 'lseek(.*)' | less -T-
 
@@ -935,14 +1001,16 @@ In the same way, you can use following command lines.
 
     # all files includes 'init' in its path.
     $ global -Px init | less -T-
+
 </PRE>
 
-<LI>If your editor doesn't support GLOBAL directly then you can use less
+<LI>If your editor doesn't support GLOBAL directly then you can use Less
 
 as a footstool.
 
 
 <PRE>
+
     # invoke less
     $ less -t main
     main(int argc, char **argv)
@@ -971,297 +1039,44 @@ as a footstool.
     int i;
     .....
     [xxx/main.c (tag 1 of 55)]
+
 </PRE>
 
 </UL>
 
 
 
-<H2><A NAME="SEC20">3.3 Extended nvi-1.79 using GLOBAL.</A></H2>
+<H2><A NAME="SEC18">3.3 Nvi-1.81.5 using GLOBAL</A></H2>
 
 <P>
-You can use GLOBAL as a tag system of Nvi editor instead of ctags.
+You can use GLOBAL as the tag system of Nvi editor instead of ctags.
 
 
 
 
-<H3><A NAME="SEC21">3.3.1 Features.</A></H3>
+<H3><A NAME="SEC19">3.3.1 Features</A></H3>
 
 
 <UL>
 <LI>
 
-You can use most of GLOBAL's facilities from the editor.
+You can use most of GLOBAL's facilities from Nvi.
 <LI>
 
-Recognition of the current token and its type.
-<LI>
-
-Extended nvi is completely backward-compatible with the original nvi.
-You can use GLOBAL's facilities only in 'gtags mode'.
+Intelligent recognition of the current token and its type.
 </UL>
 
 
 
-<H3><A NAME="SEC22">3.3.2 Preparation.</A></H3>
+<H3><A NAME="SEC20">3.3.2 Preparation</A></H3>
 
 <P>
-First, do the preparation of global. See section <A HREF="globaldoc.html#SEC6">2.1 Preparation.</A>.
-
-
-<P>
-Second, to use global from nvi, you need to get into <EM>gtagsmode</EM>.
-There are several ways to do this:
-
-
-
-<OL>
-<LI>
-
-Start nvi with <SAMP>`-G'</SAMP> option
-
-
-<PRE>
-
-    $ nvi -G file.c
-
-</PRE>
-
-<LI>
-
-Start nvi and execute <CODE>set gtagsmode</CODE>.
-
-
-<PRE>
-
-    $ nvi file.c
-    ~
-    ~
-    ~
-    :set gtagsmode
-
-</PRE>
-
-<LI>
-
-Write the above set command to the <TT>`.exrc'</TT> or <TT>`.nexrc'</TT> and start nvi
-
-
-<PRE>
-
-    $HOME/.exrc
-    +----------------------------
-    |set gtagsmode
-
-</PRE>
-
-You must start nvi under the source tree described in section <A HREF="globaldoc.html#SEC6">2.1 Preparation.</A>.
-</OL>
-
-
-
-<H3><A NAME="SEC23">3.3.3 Basic usage.</A></H3>
-
-
-<UL>
-<LI>To go to func1, you can say
-
-
-<PRE>
-
-    :tag func1
-
-</PRE>
-
-It seemes the same as original nvi, but extended nvi use <TT>`GTAGS'</TT>
-instead of <TT>`tags'</TT>.
-
-<LI>To go to the referenced point of func1, add the option <KBD>-r</KBD>
-
-
-<PRE>
-
-    :tag -r func1
-
-</PRE>
-
-Extended nvi use <TT>`GRTAGS'</TT>.
-
-<LI>If a number of objects are located, extended nvi goes to the first tag.
-
-You can go to next tag by typing <KBD>:tagnext</KBD> and back by typing <KBD>:tagprev</KBD>.
-
-
-<PRE>
-
-    Suggested .nexrc:
-    set gtagsmode
-    map ^N :tagnext^M
-    map ^P :tagprev^M
-
-</PRE>
-
-<LI><KBD>CTL-]</KBD> command is available.
-
-In gtags mode, if current token is not a function then it is equivalent to
-<KBD>:tag -s <VAR>current token</VAR></KBD>.
-Otherwise, if you are in the first column of a line,
-it is equivalent to <KBD>:tag -r <VAR>current token</VAR></KBD> else it is equivalent
-to <KBD>:tag <VAR>current token</VAR></KBD>.
-
-<LI>You can use the <KBD>-s</KBD> option. It locates any symbols which are not
-
-defined in <TT>`GTAGS'</TT>.
-
-<PRE>
-
-    :tag -s pat
-
-</PRE>
-
-Extended nvi use <TT>`GSYMS'</TT>.
-
-<LI>The <KBD>-g</KBD>, <KBD>-f</KBD> and <KBD>-P</KBD> option are also available.
-
-It works like command line. Extended nvi use no index file.
-
-<PRE>
-
-    :tag -g pat
-
-</PRE>
-
-<LI>Other tag commands are also available:
-
-<DL COMPACT>
-
-<DT><CODE><KBD>CTL-T</KBD></CODE>
-<DD>
-Return to the most recent tag context.
-<DT><CODE><KBD>:tagpop</KBD></CODE>
-<DD>
-Go to the specified tag in the tags stack.
-<DT><CODE><KBD>:tagtop</KBD></CODE>
-<DD>
-Go to the top tag in the tags stack.
-<DT><CODE><KBD>:display tags</KBD></CODE>
-<DD>
-Display the tags stack.
-</DL>
-</UL>
-
-
-
-<H3><A NAME="SEC24">3.3.4 Applied usage.</A></H3>
-
-
-<UL>
-<LI>In large projects that include many main() function like MH, you can start nvi like this:
-
-
-<PRE>
-
-    $ nvi -G -t main
-
-</PRE>
-
-You can browse all commands sequentially.
-
-<LI>When you want to check objects the name of which start with "set" or "get", use:
-
-
-<PRE>
-
-    $ nvi -G -t '^[sg]et'
-
-</PRE>
-
-Of course, the following command is also available:
-
-<PRE>
-
-    :tag ^[sg]et
-
-</PRE>
-
-<LI>If your source files are on a read only device like a CD-ROM, please do
-
-the following:
-
-<PRE>
-
-    $ mkdir /var/dbpath             # directory for the tag file
-    $ cd /cdrom/src                 # the root of the source tree
-    $ gtags /var/dbpath             # make tag files in /var/dbpath
-    $ export GTAGSROOT=`pwd`
-    $ export GTAGSDBPATH=/var/dbpath
-    $ nvi -G -t main
-
-</PRE>
-
-<LI>If you want all references to an object that is not defined in the source
-
-        tree to be treated as references to library functions or as system calls,
-        do the following:
-
-<PRE>
-
-    $ cd /usr/src/lib
-    $ gtags                         # probably as a root
-    $ cd /usr/src/sys
-    $ gtags
-    $ export GTAGSLIBPATH=/usr/src/lib:/usr/src/sys
-
-</PRE>
-
-<LI>If you examine vi's source,
-
-
-<PRE>
-
-    $ cd /usr/src/usr.bin/vi
-    $ gtags
-    $ nvi -G -t main
-
-</PRE>
-
-You can start from nvi and browse the whole unix world as if you were
-using hypertext.
-</UL>
-
-
-
-<H2><A NAME="SEC25">3.4 nvi-1.81.5 using GLOBAL.</A></H2>
-
-<P>
-You can use GLOBAL as a tag system of Nvi editor instead of ctags.
-
-
-
-
-<H3><A NAME="SEC26">3.4.1 Features.</A></H3>
-
-
-<UL>
-<LI>
-
-You can use most of GLOBAL's facilities from the editor.
-<LI>
-
-Recognition of the current token and its type.
-</UL>
-
-
-
-<H3><A NAME="SEC27">3.4.2 Preparation.</A></H3>
-
-<P>
-First, do the preparation of global. See section <A HREF="globaldoc.html#SEC6">2.1 Preparation.</A>.
+First, do the preparation of global. See section <A HREF="globaldoc.html#SEC6">2.1 Preparation</A>.
 
 
 <P>
-Second, to use global from nvi, you need write to <TT>`.nexrc'</TT> like this:
-It assumed that gtags.pl is put on <TT>`$HOME/perl'</TT>.
+Second, to use global from Nvi, you need write to <TT>`.nexrc'</TT> like this:
+It assumed that <TT>`gtags.pl'</TT> is put on <TT>`$HOME/perl'</TT>.
 
 
 
@@ -1281,12 +1096,12 @@ It assumed that gtags.pl is put on <TT>`$HOME/perl'</TT>.
 </PRE>
 
 <P>
-You must start nvi under the source tree described in section <A HREF="globaldoc.html#SEC6">2.1 Preparation.</A>.
+You must start Nvi in a project described in section <A HREF="globaldoc.html#SEC6">2.1 Preparation</A>.
 
 
 
 
-<H3><A NAME="SEC28">3.4.3 Basic usage.</A></H3>
+<H3><A NAME="SEC21">3.3.3 Usage</A></H3>
 
 
 <UL>
@@ -1301,13 +1116,15 @@ You must start nvi under the source tree described in section <A HREF="globaldoc
 
 
 <PRE>
+
     Suggested .nexrc:
     ab gtag perl tag qw(
     ab gta perl tag qw(
     ab gt perl tag qw(
+
 </PRE>
 
-<LI>To go to the referenced point of func1, add the option <KBD>-r</KBD>
+<LI>To go to the referenced point of func1, add the option <SAMP>`-r'</SAMP>
 
 
 <PRE>
@@ -1316,24 +1133,26 @@ You must start nvi under the source tree described in section <A HREF="globaldoc
 
 </PRE>
 
-<LI>If a number of objects are located, nvi goes to the first tag.
+<LI>If a number of objects are located, Nvi goes to the first tag.
 
 You can go to next tag by typing <KBD>:tagnext</KBD> and back by typing <KBD>:tagprev</KBD>.
 
 
 <PRE>
+
     Suggested .nexrc:
     map ^N :tagnext^M
     map ^P :tagprev^M
+
 </PRE>
 
-<LI>If you don't specify any argument. ':perl tag' command do the followins:
+<LI>If you don't specify any argument. ':perl tag' command do the followings:
 
-If current token is not a function then it is equivalent to
-<KBD>:perl tag qw(-s <VAR>current token</VAR>)</KBD>.
-Otherwise, if you are in the first column of a line,
-it is equivalent to <KBD>:perl tag qw(-r <VAR>current token</VAR>)</KBD> else it is equivalent
-to <KBD>:perl tag qw(<VAR>current token</VAR>)</KBD>.
+If the context of the current token is a definition then it is equivalent to
+<KBD>:perl tag qw(-r <VAR>current token</VAR>)</KBD>.
+Otherwise, if it is a reference to some definitions then it is equivalent to
+<KBD>:perl tag qw(<VAR>current token</VAR>)</KBD> else it is equivalent
+to <KBD>:perl tag qw(-s <VAR>current token</VAR>)</KBD>.
 
 
 <PRE>
@@ -1345,7 +1164,7 @@ to <KBD>:perl tag qw(<VAR>current token</VAR>)</KBD>.
 
 It is similar to <KBD>CTL-]</KBD> command.
 
-<LI>You can use the <KBD>-s</KBD> option. It locates any symbols which are not
+<LI>You can use the <SAMP>`-s'</SAMP> option. It locates symbols which are not
 
 defined in <TT>`GTAGS'</TT>.
 
@@ -1355,7 +1174,7 @@ defined in <TT>`GTAGS'</TT>.
 
 </PRE>
 
-<LI>The <KBD>-g</KBD>, <KBD>-f</KBD> and <KBD>-P</KBD> option are also available.
+<LI>The <SAMP>`-g'</SAMP>, <SAMP>`-f'</SAMP> and <SAMP>`-P'</SAMP> option are also available.
 
 It works like command line.
 
@@ -1365,7 +1184,7 @@ It works like command line.
 
 </PRE>
 
-<LI>When you want to check objects the name of which start with "set" or "get", use:
+<LI>When you want to locate objects the name of which start with "set" or "get", use:
 
 
 <PRE>
@@ -1380,56 +1199,53 @@ It works like command line.
 
 <DT><CODE><KBD>CTL-T</KBD></CODE>
 <DD>
-Return to the most recent tag context.
+returns to the most recent tag location.
 <DT><CODE><KBD>:tagpop</KBD></CODE>
 <DD>
-Go to the specified tag in the tags stack.
+returns to the most recent tag location.
 <DT><CODE><KBD>:tagtop</KBD></CODE>
 <DD>
-Go to the top tag in the tags stack.
+returns to the top of the tag stack.
 <DT><CODE><KBD>:display tags</KBD></CODE>
 <DD>
-Display the tags stack.
+display the tags stack.
 </DL>
 </UL>
 
 
 
-<H2><A NAME="SEC29">3.5 Elvis using global</A></H2>
+<H2><A NAME="SEC22">3.4 Elvis using GLOBAL</A></H2>
 
 <P>
-Elvis 2.1 has new <CODE>tagprg</CODE> and <CODE>tagprgonce</CODE> variables for
-running an external tag search program. You can use them with GLOBAL.
+Elvis 2.1 or the later has two variables, <CODE>tagprg</CODE> and <CODE>tagprgonce</CODE> for
+running an external tag search program. You can use them for GLOBAL.
 
 
 
 
-<H3><A NAME="SEC30">3.5.1 Features.</A></H3>
+<H3><A NAME="SEC23">3.4.1 Features</A></H3>
 
 
 <UL>
 <LI>
 
-You can use most of GLOBAL's facilities from the editor.
+You can use most of GLOBAL's facilities from Elvis.
 <LI>
 
-No source level patch is needed.
-<LI>
-
-Mouse events are supported.
+Mouse is supported.
 </UL>
 
 
 
-<H3><A NAME="SEC31">3.5.2 Preparation.</A></H3>
+<H3><A NAME="SEC24">3.4.2 Preparation</A></H3>
 
 <P>
-First, do the preparation of global. See section <A HREF="globaldoc.html#SEC6">2.1 Preparation.</A>.
+First, do the preparation of global. See section <A HREF="globaldoc.html#SEC6">2.1 Preparation</A>.
 
 
 <P>
-Second, start elvis and execute <CODE>set tagprg="global -t $1"</CODE> like this.
-<A NAME="IDX9"></A>
+Second, start Elvis and execute <CODE>set tagprg="global -t $1"</CODE> like this:
+<A NAME="IDX15"></A>
 
 
 
@@ -1448,7 +1264,7 @@ Second, start elvis and execute <CODE>set tagprg="global -t $1"</CODE> like this
 
 
 
-<H3><A NAME="SEC32">3.5.3 Basic usage.</A></H3>
+<H3><A NAME="SEC25">3.4.3 Usage</A></H3>
 
 
 <UL>
@@ -1461,12 +1277,12 @@ Second, start elvis and execute <CODE>set tagprg="global -t $1"</CODE> like this
 
 </PRE>
 
-It seemes the same as original elvis, but elvis execute <CODE>global -t func1</CODE>
-internally and read it instead of tags file.
+It seems same as original Elvis, but Elvis execute <CODE>global -t func1</CODE>
+internally and read the output instead of tags file.
 
 <LI>To go to the referenced point of func1, add <SAMP>`-r'</SAMP> option.
 
-<A NAME="IDX10"></A>
+<A NAME="IDX16"></A>
 
 <PRE>
 
@@ -1474,11 +1290,9 @@ internally and read it instead of tags file.
 
 </PRE>
 
-Elvis executes command like <CODE>global -t -r func1</CODE> internally.
+<LI>To locate symbols which are not defined in <TT>`GTAGS'</TT>, try this.
 
-<LI>To go to any symbols which are not defined in <TT>`GTAGS'</TT>, try this.
-
-<A NAME="IDX11"></A>
+<A NAME="IDX17"></A>
 
 <PRE>
 
@@ -1486,9 +1300,9 @@ Elvis executes command like <CODE>global -t -r func1</CODE> internally.
 
 </PRE>
 
-<LI>To go to any strings other than symbols, try this.
+<LI>To locate strings, try this.
 
-<A NAME="IDX12"></A>
+<A NAME="IDX18"></A>
 
 <PRE>
 
@@ -1496,7 +1310,7 @@ Elvis executes command like <CODE>global -t -r func1</CODE> internally.
 
 </PRE>
 
-<LI>When using -r, -s or -g, you had better to use browse command.
+<LI>When a lot of results are expected, you had better use the browse command.
 
 
 <PRE>
@@ -1505,7 +1319,7 @@ Elvis executes command like <CODE>global -t -r func1</CODE> internally.
 
 </PRE>
 
-It brings a following selection list. You can select tag and go to
+It brings a following selection list. You can select a tag line and go to
 the point.
 
 
@@ -1521,9 +1335,9 @@ the point.
 
 </PRE>
 
-<LI>To get list of objects in a file, use -f command.
+<LI>To get a list of objects in specified files, use <SAMP>`-f'</SAMP> command.
 
-<A NAME="IDX13"></A>
+<A NAME="IDX19"></A>
 
 <PRE>
 
@@ -1555,19 +1369,12 @@ the point.
         creates a new window and moves its cursor to the tag's definition point.
 <DT><CODE><KBD>:sbrowse</KBD></CODE>
 <DD>
-        same with 'browse' but show in a new window.
+        same with <KBD>browse</KBD> but show in a new window.
 </DL>
-</UL>
 
-
-
-<H3><A NAME="SEC33">3.5.4 Applied usage.</A></H3>
-
-
-<UL>
 <LI>You can use POSIX regular expressions.
 
-<A NAME="IDX14"></A>
+<A NAME="IDX20"></A>
 
 <PRE>
 
@@ -1577,9 +1384,9 @@ the point.
 
 </PRE>
 
-<LI>You can browse object list of many files.
+<LI>You can browse an object list of many files.
 
-<A NAME="IDX15"></A>
+<A NAME="IDX21"></A>
 
 <PRE>
 
@@ -1587,9 +1394,9 @@ the point.
 
 </PRE>
 
-<LI>You can browse project files whose path includs specified pattern.
+<LI>You can browse the files whose path includes specified pattern.
 
-<A NAME="IDX16"></A>
+<A NAME="IDX22"></A>
 
 <PRE>
 
@@ -1599,44 +1406,35 @@ the point.
 
 </PRE>
 
-<LI>You can use mouse to select tag.
+<LI>You can use mouse for tag operations.
 
+If you have a mouse, then you can use the left button to double-click
+on a word in the text, to have Elvis perform a <KBD>:tag</KBD> search on that word.
+Double-clicking the right button anywhere in the text will perform
+a <KBD>:pop</KBD> command.
 
-<PRE>
-
-    +----------------+----------------+--------------------
-    | TAG NAME       | SOURCE FILE    | SOURCE LINE                   
-    +----------------+----------------+--------------------
-    |fork            |ux/linux_misc.c | (line 565)                    
-    |fork            |ern/init_main.c | (line 191)                    
-    +----------------+----------------+--------------------
-
-</PRE>
-
-Please select tag name with mouse cursor and double click on the left
-button and you go to the tag's point.
-In source screen, also select an object name and double click on the
-left button and you can go to the point that the object is defined.
-To come back, double click on the right button.
+In the selection list by the <KBD>browse</KBD> command, you can use the left button
+to double-click on a tag name, to have Elvis select the tag.
+To come back, double-click on the right button.
 </UL>
 
 
 
-<H2><A NAME="SEC34">3.6 Vim using global</A></H2>
+<H2><A NAME="SEC26">3.5 Vim using GLOBAL</A></H2>
 
 <P>
-In vim 6.2 or later, you can use gtags.vim script.
+In Vim 6.2 or later, you can use <TT>`gtags.vim'</TT> script.
 
 
 
 
-<H3><A NAME="SEC35">3.6.1 Features.</A></H3>
+<H3><A NAME="SEC27">3.5.1 Features</A></H3>
 
 
 <UL>
 <LI>
 
-You can use most of GLOBAL's facilities from the editor.
+You can use most of GLOBAL's facilities from Vim.
 <LI>
 
 Intelligent recognition of the current token and its type.
@@ -1645,16 +1443,20 @@ Intelligent recognition of the current token and its type.
 Special character '%', '#' and input completion are available.
 </UL>
 
+<P>
+To our regret, tag stack facility is not available.
+If you want to use the facility, please try gtags-cscope
+See section <A HREF="globaldoc.html#SEC34">3.7 Gtags-cscope (fake cscope)</A>.
 
 
-<H3><A NAME="SEC36">3.6.2 Preparation.</A></H3>
+<H3><A NAME="SEC28">3.5.2 Preparation</A></H3>
 
 <P>
-First, do the preparation of global. See section <A HREF="globaldoc.html#SEC6">2.1 Preparation.</A>.
+First, do the preparation of global. See section <A HREF="globaldoc.html#SEC6">2.1 Preparation</A>.
 
 
 <P>
-Second, copy <TT>`gtags.vim'</TT> to your plugin directory or source it
+Second, copy <TT>`gtags.vim'</TT> to your plug-in directory or source it
 from your vimrc.
 
 
@@ -1667,7 +1469,7 @@ from your vimrc.
 
 
 
-<H3><A NAME="SEC37">3.6.3 Basic usage.</A></H3>
+<H3><A NAME="SEC29">3.5.3 Usage</A></H3>
 
 
 <UL>
@@ -1680,19 +1482,19 @@ from your vimrc.
 
 </PRE>
 
-Vim execute <CODE>global -t main</CODE>, parse the output, list located
-objects in quickfix window and load the first entry.
+Vim execute global(1), parse the output, list located objects
+in quickfix window and load the first entry.
 The quickfix windows is like this:
 
 <PRE>
 
-gctags/gctags.c|119| main
-global/global.c|154| main
-gozilla/gozilla.c|156| main
-gtags/gtags.c|199| main
-libglibc/getopt.c|701| main
-libglibc/getopt1.c|93| main
-[Error List]
+gozilla/gozilla.c|200| main(int argc, char **argv)
+gtags-cscope/gtags-cscope.c|124| main(int argc, char **argv)
+gtags-parser/asm_scan.c|2056| int main()
+gtags-parser/gctags.c|157| main(int argc, char **argv)
+gtags-parser/php.c|2116| int main()
+gtags/gtags.c|152| main(int argc, char **argv)
+[Quickfix List]
 
 </PRE>
 
@@ -1722,9 +1524,16 @@ You can see the help of quickfix like this:
 
 </PRE>
 
+
+<PRE>
+    Suggested map:
+    map &#60;C-n&#62; :cn&#60;CR&#62;
+    map &#60;C-p&#62; :cp&#60;CR&#62;
+</PRE>
+
 <LI>To go to the referenced point of func1, add <SAMP>`-r'</SAMP> option.
 
-<A NAME="IDX17"></A>
+<A NAME="IDX23"></A>
 
 <PRE>
 
@@ -1732,11 +1541,9 @@ You can see the help of quickfix like this:
 
 </PRE>
 
-vim executes command like <CODE>global -t -r func1</CODE> internally.
+<LI>To locate symbols which are not defined in <TT>`GTAGS'</TT>, try this.
 
-<LI>To go to any symbols which are not defined in <TT>`GTAGS'</TT>, try this.
-
-<A NAME="IDX18"></A>
+<A NAME="IDX24"></A>
 
 <PRE>
 
@@ -1744,19 +1551,23 @@ vim executes command like <CODE>global -t -r func1</CODE> internally.
 
 </PRE>
 
-<LI>To go to any strings other than symbols, try this.
+<LI>To locate strings, try this.
 
-<A NAME="IDX19"></A>
+<A NAME="IDX25"></A>
 
 <PRE>
 
-    :Gtags -g Copyright
+    :Gtags -g int argc
+
+    :Gtags -g "root"
+
+    :Gtags -ge -C		&#60;- locate '-C'
 
 </PRE>
 
-<LI>To get list of objects in a file, use -f command.
+<LI>To get a list of objects in specified files, use -f command.
 
-<A NAME="IDX20"></A>
+<A NAME="IDX26"></A>
 
 <PRE>
 
@@ -1772,17 +1583,9 @@ If you are editing <TT>`main.c'</TT> itself, you can use '%' instead.
 
 </PRE>
 
-</UL>
-
-
-
-<H3><A NAME="SEC38">3.6.4 Applied usage.</A></H3>
-
-
-<UL>
 <LI>You can use POSIX regular expressions.
 
-<A NAME="IDX21"></A>
+<A NAME="IDX27"></A>
 
 <PRE>
 
@@ -1794,13 +1597,21 @@ If you are editing <TT>`main.c'</TT> itself, you can use '%' instead.
 
 <LI>Input completion is available.
 
+In the command line, press <KBD>CTL-D</KBD> after some typings
+and Vim will show a list of tag names that start with the string.
+Press <KBD>TAB</KBD> and Vim will complete the tag name.
+
+
+<PRE>
     :Gtags fu<KBD>TAB</KBD>
 
     :Gtags func1               &#60;- 'nc1' is appended by vim
+</PRE>
 
-<LI>You can browse project files whose path includes specified pattern.
+<LI>You can browse files whose path includes specified pattern.
 
-<A NAME="IDX22"></A>
+<A NAME="IDX28"></A>
+
 
 <PRE>
 
@@ -1810,7 +1621,7 @@ If you are editing <TT>`main.c'</TT> itself, you can use '%' instead.
 
 </PRE>
 
-<LI>You can use all options of global(1) except for the -c, -p, -u and
+<LI>You can use all options of global(1) except for the -c, -n, -p, -q, -u, -v and
 
 	all long name options. They are sent to global(1) as is.
 	For example,
@@ -1818,21 +1629,21 @@ If you are editing <TT>`main.c'</TT> itself, you can use '%' instead.
 
 <PRE>
 
-    :Gtags -gi paTtern         &#60;- match to both 'PATTERN' and 'pattern'.
+    :Gtags -gi paTtern    &#60;- match to both 'PATTERN' and 'pattern'.
+
+    :Gtags -POi make      &#60;- match to Makefile but doesn't match to makeit.c.
 
 </PRE>
 
-	About the other options, See section <A HREF="globaldoc.html#SEC56">5.1 global - print the locations of specified object.</A>.
+	About the other options, please see See section <A HREF="globaldoc.html#SEC47">5.1 global - print the locations of specified object.</A>.
 
-<LI>The GtagsCursor command brings you to the definition or reference of
+<LI>The GtagsCursor command brings you to the definition or reference of the current token.
 
-	the current token in C language.
-	The GtagsCursor is not perfect though is considerably wise.
-	If current token is not a function then
-	it is equivalent to <KBD>:Gtags -s <VAR>current token</VAR></KBD>.
-	Otherwise, if you are in the first column of a line,
-	it is equivalent to <KBD>:Gtags -r <VAR>current token</VAR></KBD>
-	else it is equivalent to <KBD>:Gtags <VAR>current token</VAR></KBD>.
+	If the context of the current token is a definition then it is equivalent to
+	<KBD>:Gtags -r <VAR>current token</VAR></KBD>.
+	Otherwise, if it is a reference to some definitions then it is equivalent to
+	<KBD>:Gtags <VAR>current token</VAR></KBD> else it is equivalent
+	to <KBD>:Gtags -s <VAR>current token</VAR></KBD>.
 
 
 <PRE>
@@ -1843,13 +1654,19 @@ If you are editing <TT>`main.c'</TT> itself, you can use '%' instead.
 
 
 <PRE>
+
     Suggested map:
-    map &#60;C-]&#62; :GtagsCursor&#60;CR&#62;
+    map &#60;C-\&#62;^] :GtagsCursor&#60;CR&#62;
+
 </PRE>
+
+Though the mapping ':GtagsCursor' to '^]' seems suitable,
+it will bring an inconvenience in the help screen.
 
 <LI>If you have the hypertext generated by htags(1) then you can display
 
-	the same place on mozilla browser. Let's load mozilla and try this:
+	the same part of the source code on the mozilla browser.
+	Let's load mozilla and try this:
 
 
 <PRE>
@@ -1860,11 +1677,13 @@ If you are editing <TT>`main.c'</TT> itself, you can use '%' instead.
 
 
 <PRE>
+
     Suggested map:
     map &#60;C-g&#62; :Gozilla&#60;CR&#62;
+
 </PRE>
 
-<LI>If you want to load vim with all main()s then following command line is useful.
+<LI>If you want to load Vim with all main()s then following command line is useful.
 
 
 <PRE>
@@ -1877,15 +1696,15 @@ If you are editing <TT>`main.c'</TT> itself, you can use '%' instead.
 
 
 
-<H2><A NAME="SEC39">3.7 Extended emacs using global</A></H2>
+<H2><A NAME="SEC30">3.6 Extended Emacs using GLOBAL</A></H2>
 
 <P>
-You can use GLOBAL as a tag system of Emacs editor instead of etags.
+You can use GLOBAL as the tag system of Emacs editor instead of etags.
 
 
 
 
-<H3><A NAME="SEC40">3.7.1 Features.</A></H3>
+<H3><A NAME="SEC31">3.6.1 Features</A></H3>
 
 
 <UL>
@@ -1900,29 +1719,28 @@ More intelligent recognition of the current token and its type.
 Tag completion is available for input tag name.
 <LI>
 
-Mouse events are supported.
+Mouse is supported.
 </UL>
 
 
 
-<H3><A NAME="SEC41">3.7.2 Preparation.</A></H3>
+<H3><A NAME="SEC32">3.6.2 Preparation</A></H3>
 
 <P>
-First, do the preparation of global. See section <A HREF="globaldoc.html#SEC6">2.1 Preparation.</A>.
+First, do the preparation of global. See section <A HREF="globaldoc.html#SEC6">2.1 Preparation</A>.
 
 
 <P>
-Second, to use global from emacs, you need to load the <TT>`gtags.el'</TT>
+Second, to use global from Emacs, you need to load the <TT>`gtags.el'</TT>
 and execute gtags-mode function in it.
 
 
+<P>
+Write the call to autoload function to your <TT>`$HOME/.emacs'</TT>,
+start Emacs and execute gtags-mode function.
+If you put <TT>`gtags.el'</TT> in a directory other than the standard
+macro directory, you need to add it to <CODE>load-path</CODE>.
 
-<OL>
-<LI>Write the autoload function to the <TT>`$HOME/.emacs'</TT>, start emacs
-
-       and execute the gtags-mode function. If you don't put <TT>`gtags.el'</TT>
-       in standard macro directory, you need to add the directory to
-       <CODE>load-path</CODE>.
 
 
 <PRE>
@@ -1941,8 +1759,11 @@ and execute gtags-mode function in it.
 
 </PRE>
 
-If you want to get into gtags-mode on c-mode then you can append
-followings into the <TT>`$HOME/.emacs'</TT>.
+<P>
+If you want to get into gtags-mode whenever you get into c-mode
+then you can append the following code to your <TT>`$HOME/.emacs'</TT>.
+
+
 
 <PRE>
 
@@ -1953,29 +1774,15 @@ followings into the <TT>`$HOME/.emacs'</TT>.
 
 </PRE>
 
-    
-<LI>Specify the root directory of the source tree using
-
-<CODE>gtags-visit-rootdir</CODE>.
-If you have tag files in /usr/src/sys then please do like this:
-
-<PRE>
-
-    Visit root directory: /usr/src/sys
-
-</PRE>
-
-</OL>
 
 
-
-<H3><A NAME="SEC42">3.7.3 Basic usage.</A></H3>
+<H3><A NAME="SEC33">3.6.3 Usage</A></H3>
 
 
 <UL>
 <LI>To go to func1, invoke <CODE>gtags-find-tag</CODE>
 
-and you can see a prompt in mini-buffer. Then input the tag name.
+and you can see a prompt in the mini-buffer. Then input the tag name.
 
 <PRE>
 
@@ -1983,7 +1790,7 @@ and you can see a prompt in mini-buffer. Then input the tag name.
 
 </PRE>
 
-<LI>To go to a point that references func1, invoke <CODE>gtags-find-rtag</CODE>.
+<LI>To go to the referenced point of func1, invoke <CODE>gtags-find-rtag</CODE>.
 
 
 <PRE>
@@ -1996,6 +1803,7 @@ and you can see a prompt in mini-buffer. Then input the tag name.
 
      You need to execute <CODE>gtags-make-complete-list</CODE> command before it.
 
+
 <PRE>
 
     Find tag: fu<KBD>TAB</KBD>
@@ -2004,9 +1812,8 @@ and you can see a prompt in mini-buffer. Then input the tag name.
 
 </PRE>
 
-<LI>If a number of objects are located, emacs goes into <EM>GTAGS SELECT MODE</EM>
+<LI>If a number of objects are located, Emacs goes into <EM>GTAGS SELECT MODE</EM> like this:
 
-     like this:
 
 <PRE>
 
@@ -2026,20 +1833,54 @@ and you can see a prompt in mini-buffer. Then input the tag name.
 
 </PRE>
 
-You can select a tag line by using any emacs command and pressing <KBD>RET</KBD>,
+Please select a tag line by any Emacs command and press <KBD>RET</KBD>,
 and you can go to the tag's point. When you want to go to the next or
-the previous tag, you can return to 'GTAGS SELECT MODE' with <CODE>gtags-pop-stack</CODE>
+the previous tag, please return to the above mode with <CODE>gtags-pop-stack</CODE>
 and reselect.
+
+You can customize the path style in this mode by setting <CODE>gtags-path-style</CODE>
+variable.
+
+<DL COMPACT>
+
+<DT><CODE><CODE>root</CODE></CODE>
+<DD>
+relative from the root of the project (Default)
+<DT><CODE><CODE>relative</CODE></CODE>
+<DD>
+relative from the current directory
+<DT><CODE><CODE>absolute</CODE></CODE>
+<DD>
+absolute (relative from the system root directory)
+</DL>
+
+There are two method to set this variable:
+
+<UL>
+<LI>You can change it dynamically using the <CODE>customize</CODE> command of Emacs.
+
+You will find the entry in the Programming/Tools/Gtags group.
+
+<LI>You can change it when Emacs is loaded using <TT>`.emacs'</TT> file like this:
+
+
+<PRE>
+
+    (setq gtags-mode-hook
+      '(lambda ()
+        (setq gtags-path-style 'relative)))
+
+</PRE>
+
+</UL>
 
 <LI><CODE>gtags-find-tag-from-here</CODE> command is available.
 
 If current token is a definition, it is equivalent to
 <KBD>Find tag (reference): <VAR>current token</VAR>RET</KBD>,
 otherwise it is equivalent to <KBD>Find tag: <VAR>current token</VAR>RET</KBD>.
-(This facility is supported only in C language.
-GLOBAL decides this intelligentlly, but may sometimes misunderstand.)
 
-<LI>To go to any symbols which are not defined in <TT>`GTAGS'</TT>, try <CODE>gtags-find-symbol</CODE>.
+<LI>To locate symbols which are not defined in <TT>`GTAGS'</TT>, try <CODE>gtags-find-symbol</CODE>.
 
 
 <PRE>
@@ -2048,7 +1889,7 @@ GLOBAL decides this intelligentlly, but may sometimes misunderstand.)
 
 </PRE>
 
-<LI>To go to any strings other than symbols, try <CODE>gtags-find-with-grep</CODE>.
+<LI>To locate strings, try <CODE>gtags-find-with-grep</CODE>.
 
 
 <PRE>
@@ -2057,14 +1898,6 @@ GLOBAL decides this intelligentlly, but may sometimes misunderstand.)
 
 </PRE>
 
-</UL>
-
-
-
-<H3><A NAME="SEC43">3.7.4 Applied usage.</A></H3>
-
-
-<UL>
 <LI>You can use POSIX regular expressions.
 
 
@@ -2074,44 +1907,12 @@ GLOBAL decides this intelligentlly, but may sometimes misunderstand.)
 
 </PRE>
 
-<LI>If your source files are on a read-only device like a CDROM, please do
+<LI>Mouse command is available.
 
-     the following:
+If you use X version Emacs, try the following:
 
-<PRE>
-
-    $ mkdir /var/dbpath             # directory for the tag file
-    $ cd /cdrom/src                 # the root of the source tree
-    $ gtags /var/dbpath             # make tag files in /var/dbpath
-    $ export GTAGSROOT=`pwd`
-    $ export GTAGSDBPATH=/var/dbpath
-    $ emacs -f gtags-mode
-
-</PRE>
-
-<LI>If you want all references to an object that is not defined in the
-
-     source tree to be treated as references to library functions or
-     as system calls, do the following:
- 
-
-<PRE>
-
-    $ cd /usr/src/lib
-    $ gtags                         &#60;- probably as a root
-    $ cd /usr/src/sys
-    $ gtags
-    $ export GTAGSLIBPATH=/usr/src/lib:/usr/src/sys
-    $ emacs -f gtags-mode
-
-</PRE>
-
-<LI>Mouse command is avalable.
-
-If you use X version emacs, try the following
-
-Move the mouse cursor to an object name and click the middle button.
-You will then go to the object's definition, or to its references,
+Move the mouse cursor to an object name and click the middle button,
+and you can go to the point of the definitions, or to its references,
 depending on the context. In 'GTAGS SELECT MODE', move the mouse cursor
 to a line and click the center button.
 
@@ -2120,32 +1921,56 @@ To return to the previous position, click the right button.
 
 
 
-<H2><A NAME="SEC44">3.8 Hypertext generator</A></H2>
+<H2><A NAME="SEC34">3.7 Gtags-cscope (fake cscope)</A></H2>
 
 <P>
-You can use GLOBAL's facilities from WWW browser.
+You can use gtags-cscope(1) instead of cscope(1).
+For example, you can deceive Vim editor using the following commands:
+
+
+
+<PRE>
+
+:set csprg=gtags-cscope
+:cs add GTAGS
+
+</PRE>
+
+<P>
+After this, you can use built-in 'cs find' commands in the Vim editor.
+Though the deceit is not perfect ('cs find d' is not implemented),
+this method might be more convenient than <TT>`gtags.vim'</TT> in the point that
+you can use the tag stack facility of Vim.
 
 
 
 
-<H3><A NAME="SEC45">3.8.1 Features.</A></H3>
+<H2><A NAME="SEC35">3.8 Hypertext generator</A></H2>
+
+<P>
+You can use GLOBAL's facilities from web browsers.
+
+
+
+
+<H3><A NAME="SEC36">3.8.1 Features</A></H3>
 
 
 <UL>
-<LI>Htags makes hypertext from C, C++, Yacc and Java source files.
+<LI>Htags makes a hypertext from C, C++, Yacc and Java source files.
 
-<LI>Once the hypertext is generated, you need nothing other than a WWW browser.
+<LI>Once the hypertext is generated, you need nothing other than a web browser.
 
 <LI>You can move the hypertext to anywhere. It is independent of the source code.
 
 <LI>You can use all of your browser's functions, such as search,
 
-     history, bookmark, save, frames, windows.
+     history, bookmark, save, frames, windows, etc.
 </UL>
 
 
 
-<H3><A NAME="SEC46">3.8.2 Preparation.</A></H3>
+<H3><A NAME="SEC37">3.8.2 Preparation</A></H3>
 
 <P>
 At first, you must ensure that you have a lot of disk space for hypertext.
@@ -2157,7 +1982,7 @@ from 600 to 1200MB.
 <PRE>
 
     source code(/usr/src/sys)            123MB
-    GPATH,GTAGS,GRTAGS,GSYMS              86MB
+    GPATH,GTAGS,GRTAGS,GSYMS              72MB
 
     hypertext (with no option)           645MB
     hypertext (with -s option)          1168MB
@@ -2167,37 +1992,43 @@ from 600 to 1200MB.
 </PRE>
 
 <P>
-Please invoke gtags(1)(see section <A HREF="globaldoc.html#SEC70">5.2 gtags - create tag files for global.</A>) and htags(1)(see section <A HREF="globaldoc.html#SEC85">5.3 htags - generate hypertext from source code.</A>)
+Please invoke gtags(1)(see section <A HREF="globaldoc.html#SEC61">5.2 gtags - create tag files for global.</A>) and htags(1)(see section <A HREF="globaldoc.html#SEC76">5.3 htags - generate hypertext from source code.</A>)
 in order like this:
 
 
 
 <PRE>
 
-    (at your source directory)
+    (at the root directory of your source project)
     $ gtags                 # make tag files(GTAGS,GRTAGS,GSYMS)
     $ htags                 # make hypertext(HTML/)
 
 </PRE>
 
 <P>
-Then you will find an <TT>`HTML'</TT> subdirectory in the current directory.
-Htags has many options.
+Then you will find a directory named <TT>`HTML'</TT> in the current directory.
+
+
+<P>
+Htags has rich options. If you are new on htags then you are recommended to use
+the <SAMP>`--suggest'</SAMP> option. This option makes some popular options effective,
+and invokes gtags(1) if there is no tag files.
 
 
 
 <PRE>
-    Suggested option:
-    $ htags -vsanohIT
+
+    $ htags --suggest
+
 </PRE>
 
 <P>
-If http server is available then the -D and -f option are also useful.
+If HTTP server is available then the -D and -f option are also useful.
 
 
 
 
-<H3><A NAME="SEC47">3.8.3 Usage.</A></H3>
+<H3><A NAME="SEC38">3.8.3 Usage</A></H3>
 
 <P>
 Please start a web browser like this:
@@ -2216,11 +2047,13 @@ You will understand the usage by looking at the examples.
 
 <P>
 You can move the HTML directory to anywhere. It is independent of the
-source code.
+source code as long as CGI facility is not used.
 
 
 <P>
-Using mozilla, you can also utilize hypertext from your command line like this:
+Using mozilla, you can also utilize the hypertext from your command line like this:
+
+
 
 <PRE>
 
@@ -2233,21 +2066,21 @@ Using mozilla, you can also utilize hypertext from your command line like this:
 </PRE>
 
 <P>
-But in this case, you must not move HTML directory from the source directory.
+But in this case, you must not move the HTML directory from the source directory.
 
 
 
 
-<H2><A NAME="SEC48">3.9 Doxygen using global</A></H2>
-
-<P>
-You can use GLOBAL as a source browser of Doxygen.
-
+<H2><A NAME="SEC39">3.9 Doxygen using GLOBAL</A></H2>
 
 <P>
-Doxygen Release 1.4.3 or later includs config option USE_HTAGS.
+You can use GLOBAL as the source browser of Doxygen.
+
+
+<P>
+Doxygen Release 1.4.3 or later has config option USE_HTAGS.
 When enabled in combination with SOURCE_BROWSER=YES, htags(1) is
-used as the source browser instead of doxygen's own. 
+used as the source browser instead of Doxygen's own. 
 
 
 <P>
@@ -2275,11 +2108,11 @@ $ lynx html/index.html
 
 
 
-<H1><A NAME="SEC49">4. Other topics</A></H1>
+<H1><A NAME="SEC40">4. Other topics</A></H1>
 
 
 
-<H2><A NAME="SEC50">4.1 How to config GLOBAL.</A></H2>
+<H2><A NAME="SEC41">4.1 How to config GLOBAL</A></H2>
 
 <P>
 You can customize GLOBAL using configuration file.
@@ -2297,24 +2130,24 @@ You can customize GLOBAL using configuration file.
 </PRE>
 
 <P>
-If <TT>`$HOME/.globalrc'</TT> exists then GLOBAL use it. Else if <TT>`/etc/gtags.conf'</TT>
-exists then GLOBAL use it. Otherwise default value will be used.
+If <TT>`$HOME/.globalrc'</TT> exists then GLOBAL use it, else if <TT>`/etc/gtags.conf'</TT>
+exists then GLOBAL use it. Otherwise default value is used.
 The format of <TT>`gtags.conf'</TT> is resemble to termcap(5). By default, 'default'
 target is used.
-About the capabilities, please see each command manual. See section <A HREF="globaldoc.html#SEC55">5. Command References</A>.
+About the capabilities, please see each command manual. See section <A HREF="globaldoc.html#SEC46">5. Command References</A>.
 
 
 
 
-<H2><A NAME="SEC51">4.2 Plug-in parser.</A></H2>
+<H2><A NAME="SEC42">4.2 Plug-in parser</A></H2>
 
 <P>
-You can write new parser and use as a plugin parser.
+You can write new parser for gtags(1).
 
 
 
 
-<H3><A NAME="SEC52">4.2.1 How to plug in a parser.</A></H3>
+<H3><A NAME="SEC43">4.2.1 How to plug in a parser</A></H3>
 
 <P>
 Copy <TT>`gtags.conf'</TT> to <TT>`/etc/gtags.conf'</TT> or <TT>`$HOME/.globalrc'</TT>.
@@ -2341,13 +2174,14 @@ If you would like to use exuberant ctags included by Vim editor,
 <P>
 <TT>`GRTAGS'</TT> and <TT>`GSYMS'</TT> don't exist, simply because
 these parsers don't support the <SAMP>`-r'</SAMP> option and <SAMP>`-s'</SAMP> option like gtags-parser(1) does.
-<A NAME="IDX23"></A>
-<A NAME="IDX24"></A>
+If you prepare the parser which support both option, you can use all functions of global(1).
+<A NAME="IDX29"></A>
+<A NAME="IDX30"></A>
 
 
 
 
-<H3><A NAME="SEC53">4.2.2 Requirement of plugin parser.</A></H3>
+<H3><A NAME="SEC44">4.2.2 Requirement of plug-in parser</A></H3>
 
 <P>
 Plug-in parser must print tag information to standard output
@@ -2358,7 +2192,7 @@ in the same style as <CODE>ctags -x</CODE>, ie.:
 <PRE>
 
     [1]    [2] [3]          [4]
-    ----------------------------------------------------------------
+    ------------------------------------------------------------------
     main    20 ./main.c     main(argc, argv)        /* xxx */
     
     [1] tag name
@@ -2377,7 +2211,7 @@ in the argument. In each file, any order is acceptable.
 <UL>
 <LI>Good example
 
-The following <CODE>good-prog</CODE> does correct operation as a plugin parser.
+The following <CODE>good-prog</CODE> does correct operation as a plug-in parser.
 
 
 <PRE>
@@ -2390,11 +2224,12 @@ The following <CODE>good-prog</CODE> does correct operation as a plugin parser.
                           ^
                           |
                          *** order: a.c -&#62; b.c (Good!)
+
 </PRE>
 
 <LI>Bad example
 
-The following <CODE>bad-prog</CODE> does wrong operation as a plugin parser.
+The following <CODE>bad-prog</CODE> does wrong operation as a plug-in parser.
 
 
 <PRE>
@@ -2405,19 +2240,20 @@ The following <CODE>bad-prog</CODE> does wrong operation as a plugin parser.
         func          45 a.c  func(int a) {
                           ^
                           |
-                         *** order: b.c -&#62; a.c (BAD!!!)
+                         *** order: b.c -&#62; a.c (BAD)
+
 </PRE>
 
 </UL>
 
 
 
-<H2><A NAME="SEC54">4.3 Incremental updating.</A></H2>
+<H2><A NAME="SEC45">4.3 Incremental updating</A></H2>
 
 <P>
-Modifying some source files, you need not remake whole tag files.
+Modifying some source files, you need not remake the whole tag files.
 Instead, you can use incremental updating facility (<SAMP>`-u'</SAMP> option).
-<A NAME="IDX25"></A>
+<A NAME="IDX31"></A>
 
 <PRE>
 
@@ -2452,19 +2288,19 @@ Instead, you can use incremental updating facility (<SAMP>`-u'</SAMP> option).
 
 
 
-<H1><A NAME="SEC55">5. Command References</A></H1>
+<H1><A NAME="SEC46">5. Command References</A></H1>
 
 
 
-<H2><A NAME="SEC56">5.1 global - print the locations of specified object.</A></H2>
+<H2><A NAME="SEC47">5.1 global - print the locations of specified object.</A></H2>
 
 
-<H3><A NAME="SEC57">NAME</A></H3>
+<H3><A NAME="SEC48">NAME</A></H3>
 <P>
 global - print the locations of specified object.
 
 
-<H3><A NAME="SEC58">SYNOPSIS</A></H3>
+<H3><A NAME="SEC49">SYNOPSIS</A></H3>
 <P>
 
 <BLOCKQUOTE>
@@ -2474,80 +2310,79 @@ global -c[qrsv] prefix<BR>
 global -f[anqrstvx] files<BR>
 global -g[aGilnoOqtvx][-e] pattern<BR>
 global -I[ailnqtvx][-e] pattern<BR>
-global -p[qrv]<BR>
 global -P[aGilnoOqtvx][-e] pattern<BR>
+global -p[qrv]<BR>
 global -u[qv]<BR>
 </BLOCKQUOTE>
 
 
 
-<H3><A NAME="SEC59">DESCRIPTION</A></H3>
+<H3><A NAME="SEC50">DESCRIPTION</A></H3>
 <P>
 Global find the locations of specified object
 in C, C++, Yacc, Java, PHP and Assembly source files.
 Global can treat a source tree, that is, a directory that
-has subdirectories and source files.
-You can get the relative path of objects from anywhere within the tree.
+has sub-directories and source files as a project.
+You can get the relative path of objects from anywhere within the project.
 Global can locate not only object definitions but also object
 references and other symbols.
-Duplicate entries are allowed.
 
 
 <P>
 In advance of using this command, you must execute gtags(1)
-at the root directory of the source tree to make tag files.
-Then you can execute at anywhere in the source tree.
+at the root directory of the project to make tag files.
+Then you can execute this command at anywhere in the project.
 
 
-<H3><A NAME="SEC60">COMMANDS</A></H3>
+<H3><A NAME="SEC51">COMMANDS</A></H3>
 <P>
 The following commands are available:
 <DL COMPACT>
 
-<DT>pattern
+<DT>&#60;no command&#62; pattern
 <DD>
 Print object which match to the pattern.
 Extended regular expressions which are the same as those
 accepted by egrep(1) are available.
 <DT><SAMP>`-c'</SAMP>, <SAMP>`--completion'</SAMP> [prefix]
 <DD>
-Print candidate definition names which start with specified
+Print the candidates of object names which start with the specified
 prefix. Prefix is not specified,
-print all definition names.
+print all object names.
 <DT><SAMP>`-f'</SAMP>, <SAMP>`--file'</SAMP> files
 <DD>
 Print all tags in the files.
-This option implies -x option.
-<DT><SAMP>`-g'</SAMP>, <SAMP>`--grep'</SAMP>
+This option implies the -x option.
+<DT><SAMP>`-g'</SAMP>, <SAMP>`--grep'</SAMP> pattern
 <DD>
 Print all lines which match to the pattern.
-<DT><SAMP>`-I'</SAMP>, <SAMP>`--idutils'</SAMP>
+<DT><SAMP>`--help'</SAMP>
+<DD>
+Show help.
+<DT><SAMP>`-I'</SAMP>, <SAMP>`--idutils'</SAMP> pattern
 <DD>
 Print all lines which match to the pattern.
 This function use idutils(1) as a search engine.
 To use this command, you need to install idutils(1)
 in your system and you must execute gtags(1)
-with <SAMP>`-I'</SAMP> option.
+with the <SAMP>`-I'</SAMP> option.
+<DT><SAMP>`-P'</SAMP>, <SAMP>`--path'</SAMP> [pattern]
+<DD>
+Print the paths which match to the pattern.
+If no pattern specified, print all paths in the project.
 <DT><SAMP>`-p'</SAMP>, <SAMP>`--print-dbpath'</SAMP>
 <DD>
 Print the location of <TT>`GTAGS'</TT>.
-<DT><SAMP>`-P'</SAMP>, <SAMP>`--path'</SAMP> [pattern]
-<DD>
-Print the path which match to the pattern.
-If no pattern specified, print all.
 <DT><SAMP>`-u'</SAMP>, <SAMP>`--update'</SAMP>
 <DD>
 Locate tag files and update them incrementally.
 <DT><SAMP>`--version'</SAMP>
 <DD>
 Show version number.
-<DT><SAMP>`--help'</SAMP>
-<DD>
-Show help.
 </DL>
 
 
-<H3><A NAME="SEC61">OPTIONS</A></H3>
+<H3><A NAME="SEC52">OPTIONS</A></H3>
 <P>
 The following options are available:
 <DL COMPACT>
@@ -2555,15 +2390,22 @@ The following options are available:
 <DT><SAMP>`-a'</SAMP>, <SAMP>`--absolute'</SAMP>
 <DD>
 Print absolute path name. By default, print relative path name.
+<DT><SAMP>`--from-here'</SAMP> context
+<DD>
+Decide tag type by the context. The context must be 'lineno:path'.
+If this option is specified then the <SAMP>`-s'</SAMP> and <SAMP>`-r'</SAMP>
+are ignored.
+Regular expression is not allowed in the pattern.
+This option is assumes use in conversational environments such as
+editors and IDEs.
 <DT><SAMP>`-e'</SAMP>, <SAMP>`--regexp'</SAMP> pattern
 <DD>
 Use pattern as the pattern; useful to protect  patterns
-beginning with -.
+beginning with <TT>`-'</TT>.
 <DT><SAMP>`-G'</SAMP>, <SAMP>`--basic-regexp'</SAMP>
 <DD>
 Interpret pattern as a  basic regular expression.
 The default is extended regular expression.
-This option is valid for the <SAMP>`-g'</SAMP> and <SAMP>`-P'</SAMP> command.
 <DT><SAMP>`-i'</SAMP>, <SAMP>`--ignore-case'</SAMP>
 <DD>
 ignore case distinctions in pattern.
@@ -2573,16 +2415,16 @@ Print just objects which exist under the current directory.
 <DT><SAMP>`-n'</SAMP>, <SAMP>`--nofilter'</SAMP>
 <DD>
 Suppress sort filter and path conversion filter.
+<DT><SAMP>`-O'</SAMP>, <SAMP>`--only-other'</SAMP>
+<DD>
+Search pattern only in other than source files like <TT>`README'</TT>.
+This option is valid only with <SAMP>`-g'</SAMP> or <SAMP>`-P'</SAMP> command.
+This option override the <SAMP>`-o'</SAMP> option.
 <DT><SAMP>`-o'</SAMP>, <SAMP>`--other'</SAMP>
 <DD>
 Search pattern in not only source files but also other files
 like <TT>`README'</TT>.
 This option is valid only with <SAMP>`-g'</SAMP> or <SAMP>`-P'</SAMP> command.
-<DT><SAMP>`-O'</SAMP>, <SAMP>`--only-other'</SAMP>
-<DD>
-Search pattern only in other files like <TT>`README'</TT>.
-This option is valid only with <SAMP>`-g'</SAMP> or <SAMP>`-P'</SAMP> command.
-This option override the <SAMP>`-o'</SAMP> option.
 <DT><SAMP>`-q'</SAMP>, <SAMP>`--quiet'</SAMP>
 <DD>
 Quiet mode.
@@ -2596,19 +2438,19 @@ With the <SAMP>`-p'</SAMP> option, print the root directory of source tree.
 format may be 'path', `ctags', `ctags-x', `grep' or 'cscope'.
 The <SAMP>`--result=ctags'</SAMP> and <SAMP>`--result=ctags-x'</SAMP> are
 equivalent to the <SAMP>`-t'</SAMP> and <SAMP>`-x'</SAMP> respectively.
-The --result option is given to priority more than the -t and -x option.
+The <SAMP>`--result'</SAMP> option is given to priority more than the -t and -x option.
 <DT><SAMP>`-s'</SAMP>, <SAMP>`--symbol'</SAMP>
 <DD>
 Print the locations of specified symbol other than definitions.
-<DT><SAMP>`-t'</SAMP>, <SAMP>`--tags'</SAMP>
-<DD>
-Print with standard ctags format.
 <DT><SAMP>`-T'</SAMP>, <SAMP>`--through'</SAMP>
 <DD>
 Go through all the tag files listed in <VAR>GTAGSLIBPATH</VAR>.
 By default, stop searching when tag is found.
 This option is ignored when either <SAMP>`-s'</SAMP>, <SAMP>`-r'</SAMP>
 or <SAMP>`-l'</SAMP> option is specified.
+<DT><SAMP>`-t'</SAMP>, <SAMP>`--tags'</SAMP>
+<DD>
+Print with standard ctags format.
 <DT><SAMP>`-v'</SAMP>, <SAMP>`--verbose'</SAMP>
 <DD>
 Verbose mode.
@@ -2619,7 +2461,7 @@ the line contents.
 </DL>
 
 
-<H3><A NAME="SEC62">EXAMPLES</A></H3>
+<H3><A NAME="SEC53">EXAMPLES</A></H3>
 
 <PRE>
 	$ ls -F
@@ -2654,7 +2496,7 @@ the line contents.
 
 
 
-<H3><A NAME="SEC63">FILES</A></H3>
+<H3><A NAME="SEC54">FILES</A></H3>
 <DL COMPACT>
 
 <DT><TT>`GTAGS'</TT>
@@ -2680,14 +2522,14 @@ Configuration file.
 </DL>
 
 
-<H3><A NAME="SEC64">ENVIRONMENT</A></H3>
+<H3><A NAME="SEC55">ENVIRONMENT</A></H3>
 <P>
 The following environment variables affect the execution of global:
 <DL COMPACT>
 
 <DT><VAR>GTAGSROOT</VAR>
 <DD>
-The directory which is the root of source tree.
+The directory which is the root of source code.
 <DT><VAR>GTAGSDBPATH</VAR>
 <DD>
 The directory on which gtags database exist.
@@ -2696,15 +2538,19 @@ This value is ignored when <VAR>GTAGSROOT</VAR> is not defined.
 <DD>
 If this variable is set, it is used as the path to search
 for library functions. If the specified function is not
-found in a source tree, global also search in these paths.
+found in the source project, global also search in these paths.
 <DT><VAR>GTAGSLABEL</VAR>
 <DD>
 If this variable is set, its value is used as the label
 of configuration file. The default is <CODE>default</CODE>.
+<DT><VAR>MAKEOBJDIRPREFIX</VAR>
+<DD>
+If this variable is set, <TT>`$MAKEOBJDIRPREFIX&#60;current directory&#62;'</TT>
+is used as the candidate directory for tag files.
 </DL>
 
 
-<H3><A NAME="SEC65">CONFIGURATION</A></H3>
+<H3><A NAME="SEC56">CONFIGURATION</A></H3>
 <P>
 The following configuration variables affect the execution of global:
 <DL COMPACT>
@@ -2715,12 +2561,12 @@ Ignore case distinctions in the pattern.
 </DL>
 
 
-<H3><A NAME="SEC66">DIAGNOSTICS</A></H3>
+<H3><A NAME="SEC57">DIAGNOSTICS</A></H3>
 <P>
 Global exits with a non 0 value if an error occurred, 0 otherwise.
 
 
-<H3><A NAME="SEC67">SEE ALSO</A></H3>
+<H3><A NAME="SEC58">SEE ALSO</A></H3>
 <P>
 gtags-parser(1),
 gtags(1),
@@ -2733,25 +2579,25 @@ GNU GLOBAL source code tag system<BR>
 (http://www.gnu.org/software/global/).
 
 
-<H3><A NAME="SEC68">AUTHOR</A></H3>
+<H3><A NAME="SEC59">AUTHOR</A></H3>
 <P>
 Tama Communications Corporation.
 
 
-<H3><A NAME="SEC69">HISTORY</A></H3>
+<H3><A NAME="SEC60">HISTORY</A></H3>
 <P>
 The global command appeared in FreeBSD 2.2.2.
 
 
-<H2><A NAME="SEC70">5.2 gtags - create tag files for global.</A></H2>
+<H2><A NAME="SEC61">5.2 gtags - create tag files for global.</A></H2>
 
 
-<H3><A NAME="SEC71">NAME</A></H3>
+<H3><A NAME="SEC62">NAME</A></H3>
 <P>
 gtags - create tag files for global.
 
 
-<H3><A NAME="SEC72">SYNOPSIS</A></H3>
+<H3><A NAME="SEC63">SYNOPSIS</A></H3>
 <P>
 
 <BLOCKQUOTE>
@@ -2761,7 +2607,7 @@ gtags [-iIqvw][-f file][-n number][dbpath]<BR>
 
 
 
-<H3><A NAME="SEC73">DESCRIPTION</A></H3>
+<H3><A NAME="SEC64">DESCRIPTION</A></H3>
 <P>
 Gtags recursively collect the source files under
 the current directory,
@@ -2773,8 +2619,7 @@ You should execute this command at the root of the source tree.
 <P>
 C, C++, yacc, java, PHP and Assembly source files are supported.
 Files whose names end in <TT>`.c'</TT> or <TT>`.h'</TT> are assumed to be
-C source files and are searched for C style routine and macro
-definitions.
+C source files.
 Files whose names end in <TT>`.c++'</TT> <TT>`.cc'</TT> <TT>`.cpp'</TT> <TT>`.cxx'</TT>
 <TT>`.hxx'</TT> <TT>`.hpp'</TT> <TT>`.C'</TT> <TT>`.H'</TT> are assumed to be C++ source files.
 Files whose names end in <TT>`.y'</TT> are assumed to be YACC source files.
@@ -2782,11 +2627,11 @@ Files whose names end in <TT>`.java'</TT> are assumed to be Java source files.
 Files whose names end in <TT>`.php'</TT> <TT>`.php3'</TT> <TT>`.phtml'</TT> are
 assumed to be PHP source files.
 Files whose names end in <TT>`.s'</TT> or <TT>`.S'</TT>
-are assumed to be Assembler source files.
-Other files are searched for C style definitions.
+are assumed to be Assembly source files.
+Other files are assumed to be text files.
 
 
-<H3><A NAME="SEC74">OPTIONS</A></H3>
+<H3><A NAME="SEC65">OPTIONS</A></H3>
 <P>
 The following options are available:
 <DL COMPACT>
@@ -2810,18 +2655,18 @@ Load user's configuration from file.
 <DD>
 label is used as the label of configuration file.
 The default is <CODE>default</CODE>.
+<DT><SAMP>`-I'</SAMP>, <SAMP>`--idutils'</SAMP>
+<DD>
+Make index files for idutils(1) too.
 <DT><SAMP>`-i'</SAMP>, <SAMP>`--incremental'</SAMP>
 <DD>
 Update tag files incrementally. You had better use
 global(1) with the -u option.
-<DT><SAMP>`-I'</SAMP>, <SAMP>`--idutils'</SAMP>
-<DD>
-Make index files for idutils(1).
 <DT><SAMP>`-n'</SAMP>, <SAMP>`--max-args'</SAMP> number
 <DD>
 Maximum number of arguments for gtags-parser(1).
-By default, gtags invokes the parser with arguments
-as a lot as possible to decrease the frequency of invoking.
+By default, gtags invokes gtags-parser with arguments
+as many as possible to decrease the frequency of invoking.
 <DT><SAMP>`-q'</SAMP>, <SAMP>`--quiet'</SAMP>
 <DD>
 Quiet mode.
@@ -2840,7 +2685,7 @@ device like CDROM.
 </DL>
 
 
-<H3><A NAME="SEC75">EXAMPLES</A></H3>
+<H3><A NAME="SEC66">EXAMPLES</A></H3>
 
 <PRE>
 	$ ls -F
@@ -2852,7 +2697,7 @@ device like CDROM.
 
 
 
-<H3><A NAME="SEC76">FILES</A></H3>
+<H3><A NAME="SEC67">FILES</A></H3>
 <DL COMPACT>
 
 <DT><TT>`GTAGS'</TT>
@@ -2873,7 +2718,7 @@ Configuration file.
 </DL>
 
 
-<H3><A NAME="SEC77">ENVIRONMENT</A></H3>
+<H3><A NAME="SEC68">ENVIRONMENT</A></H3>
 <P>
 The following environment variables affect the execution of gtags:
 <DL COMPACT>
@@ -2889,11 +2734,15 @@ of configuration file. The default is <CODE>default</CODE>.
 <DT><VAR>GTAGSCACHE</VAR>
 <DD>
 If this variable is set, its value is used as the size of
-btree cache. The default is 500000 (bytes).
+B-tree cache. The default is 5000000 (bytes).
+<DT><VAR>GTAGSFORCECPP</VAR>
+<DD>
+If this variable is set, each file whose suffix is 'h' is treated
+as a C++ source file.
 </DL>
 
 
-<H3><A NAME="SEC78">CONFIGURATION</A></H3>
+<H3><A NAME="SEC69">CONFIGURATION</A></H3>
 <P>
 The following configuration variables affect the execution of gtags.
 You can see the default value for each variable with the <SAMP>`--config'</SAMP> option.
@@ -2902,27 +2751,15 @@ You can see the default value for each variable with the <SAMP>`--config'</SAMP>
 <DT><CODE>GTAGS</CODE>(string)
 <DD>
 If this variable is set, its value is used as the
-command line of parser for GTAGS. The default is <TT>`gtags-parser -dt %s'</TT>.
+command line of the parser for GTAGS. The default is <TT>`gtags-parser %s'</TT>.
 <DT><CODE>GRTAGS</CODE>(string)
 <DD>
 If this variable is set, its value is used as the
-command line of parser for GRTAGS. The default is <TT>`gtags-parser -dtr %s'</TT>.
+command line of the parser for GRTAGS. The default is <TT>`gtags-parser -r %s'</TT>.
 <DT><CODE>GSYMS</CODE>(string)
 <DD>
 If this variable is set, its value is used as the
-command line of parser for GSYMS. The default is <TT>`gtags-parser -dts %s'</TT>.
-<DT><CODE>skip</CODE>(comma separated list)
-<DD>
-Gtags skips files which listed in this list.
-As a special exception, gtags collect values from multiple <CODE>skip</CODE> variables.
-If the value ends with '/', it assumed as a directory and gtags skips all files under it.
-If the value start with '/', it assumed relative path from the root of source directory.
-<DT><CODE>suffixes</CODE>(comma separated list)
-<DD>
-Suffixes of target source file.
-As a special exception, gtags collect values from multiple <CODE>suffixes</CODE> variables.
-This variable is obsoleted. If the langmap variable is defined
-gtags no longer refers this.
+command line of the parser for GSYMS. The default is <TT>`gtags-parser -s %s'</TT>.
 <DT><CODE>icase_path</CODE>(boolean)
 <DD>
 Ignore case distinctions in the path.
@@ -2932,22 +2769,34 @@ Suffixes check are affected by this capability.
 Language mapping. Each comma-separated map consists of
 the language name, a colon, and a list of file extensions.
 Default mapping is 'c:.c.h,yacc:.y,asm:.s.S,java:.java,cpp:.c++.cc.cpp.cxx.hxx.hpp.C.H,php:.php.php3.phtml'.
+<DT><CODE>skip</CODE>(comma separated list)
+<DD>
+Gtags skips files which are listed in this list.
+As a special exception, gtags collect values from multiple <CODE>skip</CODE> variables.
+If the value ends with '/', it assumed as a directory and gtags skips all files under it.
+If the value start with '/', it assumed relative path from the root of source directory.
+<DT><CODE>suffixes</CODE>(comma separated list)
+<DD>
+Suffixes of target source file.
+As a special exception, gtags collect values from multiple <CODE>suffixes</CODE> variables.
+This variable is obsoleted. If the langmap variable is defined
+gtags no longer refers this.
 </DL>
 
 
-<H3><A NAME="SEC79">DIAGNOSTICS</A></H3>
+<H3><A NAME="SEC70">DIAGNOSTICS</A></H3>
 <P>
 Gtags exits with a non 0 value if an error occurred, 0 otherwise.
 
 
-<H3><A NAME="SEC80">MESSAGE FORMAT</A></H3>
+<H3><A NAME="SEC71">MESSAGE FORMAT</A></H3>
 <P>
 Verbose message has important level. The most important level is 0,
 the second is 1 and so on. All the message has level numbers leading
 blanks.
 
 
-<H3><A NAME="SEC81">SEE ALSO</A></H3>
+<H3><A NAME="SEC72">SEE ALSO</A></H3>
 <P>
 gtags-parser(1),
 global(1),
@@ -2959,14 +2808,14 @@ GNU GLOBAL source code tag system<BR>
 (http://www.gnu.org/software/global/).
 
 
-<H3><A NAME="SEC82">BUG</A></H3>
+<H3><A NAME="SEC73">BUG</A></H3>
 <P>
 <TT>`GTAGS'</TT>, <TT>`GRTAGS'</TT> and <TT>`GSYMS'</TT> are very large.
 In advance of using this command, check the space of your disk.
 
 
 <P>
-Assembler support is far from complete.
+Assembly support is far from complete.
 It extracts only ENTRY() and ALTENTRY() from source file.
 Probably valid only for FreeBSD and Linux kernel source.
 
@@ -2979,25 +2828,25 @@ There is no concurrency control about tag files.
 Symbols in Assembly source files are not extracted for <TT>`GSYMS'</TT>.
 
 
-<H3><A NAME="SEC83">AUTHOR</A></H3>
+<H3><A NAME="SEC74">AUTHOR</A></H3>
 <P>
 Tama Communications Corporation.
 
 
-<H3><A NAME="SEC84">HISTORY</A></H3>
+<H3><A NAME="SEC75">HISTORY</A></H3>
 <P>
 The gtags command appeared in FreeBSD 2.2.2.
 
 
-<H2><A NAME="SEC85">5.3 htags - generate hypertext from source code.</A></H2>
+<H2><A NAME="SEC76">5.3 htags - generate hypertext from source code.</A></H2>
 
 
-<H3><A NAME="SEC86">NAME</A></H3>
+<H3><A NAME="SEC77">NAME</A></H3>
 <P>
 htags - generate hypertext from source code.
 
 
-<H3><A NAME="SEC87">SYNOPSIS</A></H3>
+<H3><A NAME="SEC78">SYNOPSIS</A></H3>
 <P>
 
 <BLOCKQUOTE>
@@ -3007,7 +2856,7 @@ htags [-acDfFghInosTvwx][-d dbpath][-m name][-S cgidir][-t title][dir]<BR>
 
 
 
-<H3><A NAME="SEC88">DESCRIPTION</A></H3>
+<H3><A NAME="SEC79">DESCRIPTION</A></H3>
 <P>
 Htags makes hypertext of C, C++, Yacc, Java, PHP and Assembly source code.
 
@@ -3024,7 +2873,7 @@ You can start browsing from <TT>`HTML/index.html'</TT>.
 <P>
 Since htags generates static hypertext as long as
 the <SAMP>`-D'</SAMP> or <SAMP>`-f'</SAMP> option is not specified,
-you can move it anywhere and browse it with any browser without
+you can move it anywhere and browse it by any browser without
 web server.
 
 
@@ -3035,8 +2884,10 @@ If you use the default parser, it is not necessary to consider for it.
 
 
 
-<H3><A NAME="SEC89">OPTIONS</A></H3>
+<H3><A NAME="SEC80">OPTIONS</A></H3>
 <P>
+If you are new on htags, it is recommended to invoke with the <SAMP>`--suggest'</SAMP> option.
+With the option, htags use popular options instead of you.<BR>
 The following options are available:
 <DL COMPACT>
 
@@ -3057,7 +2908,7 @@ See <TT>`HTML/.htaccess'</TT> that is generated by htags.
 <DD>
 Include cvsweb URL. url is used as base of URL.
 When directory <TT>`CVS'</TT> exists in the root directory of source project,
-content of <TT>`CVS/Repository'</TT> is used as relative path from the base.
+the content of <TT>`CVS/Repository'</TT> is used as the relative path from the base.
 <DT><SAMP>`--cvsweb-cvsroot'</SAMP> cvsroot
 <DD>
 Specifies cvsroot in cvsweb URL.
@@ -3067,27 +2918,37 @@ Generate object lists dynamically using CGI program.
 By default, object lists are generated statically.
 Though this option decrease both the size and the generation
 time of the hypertext, you need to set up a web server, and 
-you cannot move the hypertext from the source directroy.
+you cannot move the hypertext from the source directory.
 <DT><SAMP>`-d'</SAMP>, <SAMP>`--dbpath'</SAMP> dbpath
 <DD>
 Specifies the directory in which <TT>`GTAGS'</TT> and <TT>`GRTAGS'</TT>
 exist. The default is the current directory.
+<DT><SAMP>`--disable-grep'</SAMP>
+<DD>
+Disable grep in the search form(-f,--form).
+<DT><SAMP>`-F'</SAMP>, <SAMP>`--frame'</SAMP>
+<DD>
+Use frame for each part of the contents.
 <DT><SAMP>`-f'</SAMP>, <SAMP>`--form'</SAMP>
 <DD>
 Support search form using CGI program.
 You need to set up a web server, and you cannot move
-the hypertext from the source directroy.
-<DT><SAMP>`-F'</SAMP>, <SAMP>`--frame'</SAMP>
-<DD>
-Use frame for each part of the contents.
+the hypertext from the source directory.
 <DT><SAMP>`--full-path'</SAMP>
 <DD>
-List file names with full path in file index.
+List file names with full path in the file index.
 By default, list just the last component of a path.
 <DT><SAMP>`-g'</SAMP>, <SAMP>`--gtags'</SAMP>
 <DD>
 Execute gtags(1) before creating hypertext.
 The <SAMP>`-v'</SAMP>, <SAMP>`-w'</SAMP> and dbpath are passed to gtags.
+<DT><SAMP>`--gtagsconf'</SAMP> file
+<DD>
+Load user's configuration from file.
+<DT><SAMP>`--gtagslabel'</SAMP> label
+<DD>
+label is used for the label of configuration file.
+The default is <CODE>default</CODE>.
 <DT><SAMP>`-h'</SAMP>, <SAMP>`--func-header'</SAMP>[=position]
 <DD>
 Insert function header for each function.
@@ -3098,22 +2959,12 @@ The default position is <CODE>after</CODE>.
 <DT><SAMP>`-I'</SAMP>, <SAMP>`--icon'</SAMP>
 <DD>
 Use icons instead of text for some links.
-<DT><SAMP>`--disable-grep'</SAMP>
-<DD>
-Disable grep in search form(-f,--form).
-<DT><SAMP>`--gtagsconf'</SAMP> file
-<DD>
-Load user's configuration from file.
-<DT><SAMP>`--gtagslabel'</SAMP> label
-<DD>
-label is used for the label of configuration file.
-The default is <CODE>default</CODE>.
-<DT><SAMP>`--insert-header'</SAMP> file
-<DD>
-Insert custom header derived from file after &#60;body&#62; tag.
 <DT><SAMP>`--insert-footer'</SAMP> file
 <DD>
 Insert custom footer derived from file before &#60;/body&#62; tag.
+<DT><SAMP>`--insert-header'</SAMP> file
+<DD>
+Insert custom header derived from file after &#60;body&#62; tag.
 <DT><SAMP>`--item-order'</SAMP> spec
 <DD>
 Specify order of items in the top page.
@@ -3127,7 +2978,7 @@ The default is csmdf.
 Specify the main function name. The default is <CODE>main</CODE>.
 <DT><SAMP>`-n'</SAMP>, <SAMP>`--line-number'</SAMP>[=columns]
 <DD>
-Print line numbers. By default, doesn't print them.
+Print line numbers. By default, doesn't print line numbers.
 The default value of columns is 4.
 <DT><SAMP>`--no-map-file'</SAMP>
 <DD>
@@ -3137,13 +2988,6 @@ By default, htags generates them.
 <DD>
 Pick up not only source files but also other files except for
 binary files.
-<DT><SAMP>`--statistics'</SAMP>
-<DD>
-Print statistics information.
-<DT><SAMP>`-s'</SAMP>, <SAMP>`--symbol'</SAMP>
-<DD>
-Make anchors not only for functions but also other symbols.
-<TT>`GSYMS'</TT> tag file needed.
 <DT><SAMP>`-S'</SAMP>, <SAMP>`--secure-cgi'</SAMP> cgidir
 <DD>
 Write CGI programs into the cgidir to realize
@@ -3151,14 +2995,24 @@ a centralised CGI program.
 Script alias is <TT>`/cgi-bin'</TT> by default.
 You can overwrite this value using config variable
 <CODE>script_alias</CODE> in <TT>`gtags.conf'</TT>.
-<DT><SAMP>`-t'</SAMP>, <SAMP>`--title'</SAMP> title
+<DT><SAMP>`-s'</SAMP>, <SAMP>`--symbol'</SAMP>
 <DD>
-The title of this hypertext. The default is the last
-component of the current directory.
+Make anchors not only for object definitions and references but also other symbols.
+<DT><SAMP>`--statistics'</SAMP>
+<DD>
+Print statistics information.
+<DT><SAMP>`--suggest'</SAMP>
+<DD>
+Htags selects popular options instead of beginners.
+It is equivalent to '-afghInosTxv --show-position' now.
 <DT><SAMP>`-T'</SAMP>, <SAMP>`--table-flist'</SAMP>[=fields]
 <DD>
 Generate file list using &#60;table&#62; tag.
 The fields is used for field number in a line. The default is 5.
+<DT><SAMP>`-t'</SAMP>, <SAMP>`--title'</SAMP> title
+<DD>
+The title of this hypertext. The default is the last
+component of the current directory.
 <DT><SAMP>`--table-list'</SAMP>
 <DD>
 List tags using &#60;table&#62; tag.
@@ -3187,26 +3041,28 @@ The default is the current directory.
 </DL>
 
 
-<H3><A NAME="SEC90">EXAMPLES</A></H3>
+<H3><A NAME="SEC81">EXAMPLES</A></H3>
 
 <PRE>
 	$ gtags -v
-	$ htags -sanohITvt 'Welcom to XXX source tour!'
+	$ htags -sanohITvt 'Welcome to XXX source tour!'
 	$ firefox HTML/index.html
+
+	$ htags --suggest
 
 </PRE>
 
 
 
-<H3><A NAME="SEC91">FILES</A></H3>
+<H3><A NAME="SEC82">FILES</A></H3>
 <DL COMPACT>
 
 <DT><TT>`GTAGS'</TT>
 <DD>
-Tag file for function definitions.
+Tag file for object definitions.
 <DT><TT>`GRTAGS'</TT>
 <DD>
-Tag file for function references.
+Tag file for object references.
 <DT><TT>`GSYMS'</TT>
 <DD>
 Tag file for other symbols.
@@ -3222,11 +3078,11 @@ Index file for hypertext.
 <DT><TT>`HTML/MAP'</TT>
 <DD>
 Mapping file for converting tag into path of hypertext.
-External system utilize this file.
+External systems can utilize this file.
 <DT><TT>`HTML/FILEMAP'</TT>
 <DD>
 Mapping file for converting file name into path of hypertext.
-External system utilize this file.
+External systems can utilize this file.
 <DT><TT>`HTML/style.css'</TT>
 <DD>
 Style sheet file. This file is generated when the <SAMP>`--xhtml'</SAMP>
@@ -3234,7 +3090,7 @@ option is specified.
 </DL>
 
 
-<H3><A NAME="SEC92">ENVIRONMENT</A></H3>
+<H3><A NAME="SEC83">ENVIRONMENT</A></H3>
 <P>
 The following environment variables affect the execution of htags:
 <DL COMPACT>
@@ -3254,11 +3110,15 @@ of configuration file. The default is <CODE>default</CODE>.
 <DT><VAR>GTAGSCACHE</VAR>
 <DD>
 If this variable is set, its value is used as the size of
-btree cache. The default is 500000 (bytes).
+B-tree cache. The default is 5000000 (bytes).
+<DT><VAR>GTAGSFORCECPP</VAR>
+<DD>
+If this variable is set, each file whose suffix is 'h' is treated
+as a C++ source file.
 </DL>
 
 
-<H3><A NAME="SEC93">CONFIGURATION</A></H3>
+<H3><A NAME="SEC84">CONFIGURATION</A></H3>
 <P>
 The following configuration variables affect the execution of htags:
 If the <SAMP>`--xhtml'</SAMP> option is specified then all definitions of
@@ -3267,89 +3127,51 @@ Instead, you can customize the appearance using style sheet file
 (<TT>`style.css'</TT>).
 <DL COMPACT>
 
-<DT><CODE>datadir</CODE>(string)
-<DD>
-Shared data directory. The default is '/usr/local/share' but
-you can change the value using configure script.
-Htags lookup template files in the 'gtags' directory
-in this data directory.
-<DT><CODE>htags_options</CODE>(string)
-<DD>
-Default options for htags. This value is inserted into
-the head of arguments.
-<DT><CODE>xhtml_version</CODE>(1.0|1.1)
-<DD>
-XHTML version. 1.0 and 1.1 are acceptable. The default is 1.0.
 <DT><CODE>body_begin</CODE>(string)
 <DD>
 Begin tag for body. The default is '&#60;body text=#191970 bgcolor=#f5f5dc vlink=gray&#62;'.
 <DT><CODE>body_end</CODE>(string)
 <DD>
 End tag for body. The default is '&#60;/body&#62;'.
-<DT><CODE>table_begin</CODE>(string)
-<DD>
-Begin tag for table. The default is '&#60;table&#62;'.
-<DT><CODE>table_end</CODE>(string)
-<DD>
-End tag for table. The default is '&#60;/table&#62;'.
-<DT><CODE>title_begin</CODE>(string)
-<DD>
-Begin tag for Title. The default is '&#60;h1&#62;&#60;font color=#cc0000&#62;'.
-<DT><CODE>title_end</CODE>(string)
-<DD>
-End tag for Title. The default is '&#60;/font&#62;&#60;/h1&#62;'.
-<DT><CODE>comment_begin</CODE>(string)
-<DD>
-Begin tag for comments. The default is '&#60;i&#62;&#60;font color=green&#62;'.
-<DT><CODE>comment_end</CODE>(string)
-<DD>
-End tag for comments. The default is '&#60;/font&#62;&#60;/i&#62;'.
-<DT><CODE>dynamic</CODE>(boolean)
-<DD>
-Generate object list dynamically.
-<DT><CODE>sharp_begin</CODE>(string)
-<DD>
-Begin tag for 'define'. The default is '&#60;font color=darkred&#62;'.
-<DT><CODE>sharp_end</CODE>(string)
-<DD>
-End tag for 'define'. The default is '&#60;/font&#62;'.
 <DT><CODE>brace_begin</CODE>(string)
 <DD>
 Begin tag for brace. The default is '&#60;font color=red&#62;'.
 <DT><CODE>brace_end</CODE>(string)
 <DD>
 End tag for brace. The default is '&#60;/font&#62;'.
-<DT><CODE>reserved_begin</CODE>(string)
-<DD>
-Begin tag for reserved word. The default is '&#60;b&#62;'.
-<DT><CODE>reserved_end</CODE>(string)
-<DD>
-End tag for reserved word. The default is '&#60;/b&#62;'.
-<DT><CODE>position_begin</CODE>(string)
-<DD>
-Begin tag for posiotion mark. The default is '&#60;font color=gray&#62;'.
-<DT><CODE>position_end</CODE>(string)
-<DD>
-End tag for posiotion mark. The default is '&#60;/font&#62;'.
 <DT><CODE>colorize_warned_line</CODE>(boolean)
 <DD>
 Colorize warned line using <CODE>warned_line_begin</CODE> and <CODE>warned_line_end</CODE>.
 The default is false.
-<DT><CODE>warned_line_begin</CODE>(string)
+<DT><CODE>comment_begin</CODE>(string)
 <DD>
-Begin tag for line which htags warned. The default is '&#60;span style="background-color:yellow"&#62;'.
-<DT><CODE>warned_line_end</CODE>(string)
+Begin tag for comments. The default is '&#60;i&#62;&#60;font color=green&#62;'.
+<DT><CODE>comment_end</CODE>(string)
 <DD>
-End tag for line which htags warned. The default is '&#60;/span&#62;'.
-<DT><CODE>hr</CODE>(string)
+End tag for comments. The default is '&#60;/font&#62;&#60;/i&#62;'.
+<DT><CODE>copy_files</CODE>(boolean)
 <DD>
-Horizontal rules. The default is '&#60;hr&#62;'.
-<DT><CODE>ncol</CODE>(number)
+Copy files instead of linking.
+When the <SAMP>`-f'</SAMP> option is used, htags make links
+of tag files in <TT>`cgi-bin'</TT> directory by default.
+<DT><CODE>datadir</CODE>(string)
 <DD>
-Columns of line number. The default is 4.
-<DT><CODE>tabs</CODE>(number)
+Shared data directory. The default is '/usr/local/share' but
+you can change the value using configure script.
+Htags look up template files in the 'gtags' directory
+in this data directory.
+<DT><CODE>definition_header</CODE>(no|before|right|after)
 <DD>
-Tab stop. The default is 8.
+Position of function header. The default is 'no'.
+<DT><CODE>disable_grep</CODE>(boolean)
+<DD>
+Disable grep in search form(-f,--form). The default is false.
+<DT><CODE>dynamic</CODE>(boolean)
+<DD>
+Generate object list dynamically.
+<DT><CODE>enable_idutils</CODE>(boolean)
+<DD>
+Enable idutils in search form(-f,--form). The default is false.
 <DT><CODE>flist_fields</CODE>(number)
 <DD>
 Field number of file index. The default is 5.
@@ -3357,39 +3179,16 @@ Field number of file index. The default is 5.
 <DD>
 List file names with full path in file index.
 By default, list just the last component of a path.
-<DT><CODE>table_list</CODE>(boolean)
-<DD>
-List tags using &#60;table&#62; tag. The default is false.
-<DT><CODE>table_flist</CODE>(boolean)
-<DD>
-Use &#60;table&#62; tag for file index. The default is false.
-<DT><CODE>normal_suffix</CODE>(string)
-<DD>
-Suffix for normal html file. The default is 'html'.
-<DT><CODE>no_map_file</CODE>(boolean)
-<DD>
-Doesn't generate <TT>`MAP'</TT> file. The default is false.
 <DT><CODE>gzipped_suffix</CODE>(string)
 <DD>
 Suffix for compressed html file. The default is 'ghtml'.
-<DT><CODE>script_alias</CODE>(string)
+<DT><CODE>hr</CODE>(string)
 <DD>
-Script alias for safe cgi script (<SAMP>`-S'</SAMP>).
-<DT><CODE>show_position</CODE>(boolean)
+Horizontal rules. The default is '&#60;hr&#62;'.
+<DT><CODE>htags_options</CODE>(string)
 <DD>
-Show position per function definition. The default is false.
-<DT><CODE>definition_header</CODE>(no|before|right|after)
-<DD>
-Position of function header. The default is 'no'.
-<DT><CODE>other_files</CODE>(boolean)
-<DD>
-File index includes not only source files but also other files. The default is false.
-<DT><CODE>disable_grep</CODE>(boolean)
-<DD>
-Disable grep in search form(-f,--form). The default is false.
-<DT><CODE>enable_idutils</CODE>(boolean)
-<DD>
-Enable idutils in search form(-f,--form). The default is false.
+Default options for htags. This value is inserted into
+the head of arguments.
 <DT><CODE>include_file_suffixes</CODE>(comma separated list)
 <DD>
 Suffixes of include file. The default is 'h,hxx,hpp,H,inc.php'.
@@ -3398,27 +3197,88 @@ Suffixes of include file. The default is 'h,hxx,hpp,H,inc.php'.
 Language mapping. Each comma-separated map consists of
 the language name, a colon, and a list of file extensions.
 Default mapping is 'c:.c.h,yacc:.y,asm:.s.S,java:.java,cpp:.c++.cc.cpp.cxx.hxx.hpp.C.H,php:.php.php3.phtml'.
-<DT><CODE>copy_files</CODE>(boolean)
+<DT><CODE>ncol</CODE>(number)
 <DD>
-Copy files instead of linking.
-When the <SAMP>`-f'</SAMP> option is used, htags make links
-of tag files in <TT>`cgi-bin'</TT> directory by default.
+Columns of line number. The default is 4.
+<DT><CODE>normal_suffix</CODE>(string)
+<DD>
+Suffix for normal html file. The default is 'html'.
+<DT><CODE>no_map_file</CODE>(boolean)
+<DD>
+Doesn't generate <TT>`MAP'</TT> and <TT>`FILEMAP'</TT> file. The default is false.
+<DT><CODE>other_files</CODE>(boolean)
+<DD>
+File index includes not only source files but also other files. The default is false.
+<DT><CODE>position_begin</CODE>(string)
+<DD>
+Begin tag for position mark. The default is '&#60;font color=gray&#62;'.
+<DT><CODE>position_end</CODE>(string)
+<DD>
+End tag for position mark. The default is '&#60;/font&#62;'.
+<DT><CODE>reserved_begin</CODE>(string)
+<DD>
+Begin tag for reserved word. The default is '&#60;b&#62;'.
+<DT><CODE>reserved_end</CODE>(string)
+<DD>
+End tag for reserved word. The default is '&#60;/b&#62;'.
+<DT><CODE>script_alias</CODE>(string)
+<DD>
+Script alias for safe cgi script (<SAMP>`-S'</SAMP>).
+<DT><CODE>sharp_begin</CODE>(string)
+<DD>
+Begin tag for 'define'. The default is '&#60;font color=darkred&#62;'.
+<DT><CODE>sharp_end</CODE>(string)
+<DD>
+End tag for 'define'. The default is '&#60;/font&#62;'.
+<DT><CODE>show_position</CODE>(boolean)
+<DD>
+Show position per function definition. The default is false.
+<DT><CODE>table_begin</CODE>(string)
+<DD>
+Begin tag for table. The default is '&#60;table&#62;'.
+<DT><CODE>table_end</CODE>(string)
+<DD>
+End tag for table. The default is '&#60;/table&#62;'.
+<DT><CODE>table_flist</CODE>(boolean)
+<DD>
+Use &#60;table&#62; tag for file index. The default is false.
+<DT><CODE>table_list</CODE>(boolean)
+<DD>
+List tags using &#60;table&#62; tag. The default is false.
+<DT><CODE>tabs</CODE>(number)
+<DD>
+Tab stop. The default is 8.
+<DT><CODE>title_begin</CODE>(string)
+<DD>
+Begin tag for Title. The default is '&#60;h1&#62;&#60;font color=#cc0000&#62;'.
+<DT><CODE>title_end</CODE>(string)
+<DD>
+End tag for Title. The default is '&#60;/font&#62;&#60;/h1&#62;'.
+<DT><CODE>warned_line_begin</CODE>(string)
+<DD>
+Begin tag for line which htags warned. The default is '&#60;span style="background-color:yellow"&#62;'.
+<DT><CODE>warned_line_end</CODE>(string)
+<DD>
+End tag for line which htags warned. The default is '&#60;/span&#62;'.
+<DT><CODE>xhtml_version</CODE>(1.0|1.1)
+<DD>
+XHTML version. 1.0 and 1.1 are acceptable. The default is 1.0.
 </DL>
 
 
-<H3><A NAME="SEC94">DIAGNOSTICS</A></H3>
+<H3><A NAME="SEC85">DIAGNOSTICS</A></H3>
 <P>
 Htags exits with a non 0 value if an error occurred, 0 otherwise.
 
 
-<H3><A NAME="SEC95">MESSAGE FORMAT</A></H3>
+<H3><A NAME="SEC86">MESSAGE FORMAT</A></H3>
 <P>
 Verbose message has important level. The most important level is 0,
 the second it 1 and so on. All the message has level numbers leading
 blanks.
 
 
-<H3><A NAME="SEC96">SEE ALSO</A></H3>
+<H3><A NAME="SEC87">SEE ALSO</A></H3>
 <P>
 gtags-parser(1),
 global(1),
@@ -3430,35 +3290,35 @@ GNU GLOBAL source code tag system<BR>
 (http://www.gnu.org/software/global/).
 
 
-<H3><A NAME="SEC97">BUG</A></H3>
+<H3><A NAME="SEC88">BUG</A></H3>
 <P>
 Generated hypertext is VERY LARGE.
 In advance, check the space of your disk.
 
 
 <P>
-PHP supprt is far from complete.
+PHP support is far from complete.
 
 
-<H3><A NAME="SEC98">AUTHOR</A></H3>
+<H3><A NAME="SEC89">AUTHOR</A></H3>
 <P>
 Tama Communications Corporation.
 
 
-<H3><A NAME="SEC99">HISTORY</A></H3>
+<H3><A NAME="SEC90">HISTORY</A></H3>
 <P>
 The htags command appeared in FreeBSD 2.2.2.
 
 
-<H2><A NAME="SEC100">5.4 gtags-parser - print cross reference list for gtags.</A></H2>
+<H2><A NAME="SEC91">5.4 gtags-parser - print cross reference list for gtags.</A></H2>
 
 
-<H3><A NAME="SEC101">NAME</A></H3>
+<H3><A NAME="SEC92">NAME</A></H3>
 <P>
 gtags-parser - print cross reference list for gtags.
 
 
-<H3><A NAME="SEC102">SYNOPSIS</A></H3>
+<H3><A NAME="SEC93">SYNOPSIS</A></H3>
 <P>
 
 <BLOCKQUOTE>
@@ -3468,7 +3328,7 @@ gtags-parser [-bdenqrstvw] file ...<BR>
 
 
 
-<H3><A NAME="SEC103">DESCRIPTION</A></H3>
+<H3><A NAME="SEC94">DESCRIPTION</A></H3>
 <P>
 Gtags-parser print cross reference list for gtags(1)
 from the specified C, C++, yacc, java, PHP and Assembly source
@@ -3481,13 +3341,13 @@ It's same with the output of ctags(1) with <SAMP>`-x'</SAMP> option.
 
 <P>
 Depending upon the options provided to gtags-parser,
-objects will consist of function definitions, function references
+objects will consist of object definitions, object references
 and other symbols.
 
 
 <P>
 Files whose names end in <TT>`.c'</TT> or <TT>`.h'</TT> are assumed to be C
-source files and are searched for C style routine and macro definitions.
+source files.
 Files whose names end in <TT>`.c++'</TT> <TT>`.cc'</TT> <TT>`.cpp'</TT>
 <TT>`.cxx'</TT> <TT>`.hxx'</TT> <TT>`.hpp'</TT> <TT>`.C'</TT> <TT>`.H'</TT> are assumed to be C++
 source files.
@@ -3496,7 +3356,7 @@ Files whose names end in <TT>`.java'</TT> are assumed to be Java source files.
 Files whose names end in <TT>`.php'</TT> <TT>`.php3'</TT> <TT>`.phtml'</TT> are
 assumed to be PHP source files.
 Files whose names end in <TT>`.s'</TT> or <TT>`.S'</TT> are assumed to be
-Assembler source files.
+Assembly source files.
 Other files are searched for C style definitions.
 
 
@@ -3509,22 +3369,18 @@ of the second section of the yacc file.
 This command is the default parser of GLOBAL source code tag system.
 
 
-<H3><A NAME="SEC104">OPTIONS</A></H3>
+<H3><A NAME="SEC95">OPTIONS</A></H3>
 <P>
 The following options are available:
 <DL COMPACT>
 
 <DT><SAMP>`-b'</SAMP>, <SAMP>`--begin-block'</SAMP>
 <DD>
-Force level 1 block to begin when reach a left brace at the first column.
+Force level 1 block to begin when reach the left brace at the first column.
 (C only)
-<DT><SAMP>`-d'</SAMP>, <SAMP>`--define'</SAMP>
-<DD>
-Pick up not only function but also macro without argument
-as a definition.
 <DT><SAMP>`-e'</SAMP>, <SAMP>`--end-block'</SAMP>
 <DD>
-Force level 1 block to end when reach a right brace at the first column.
+Force level 1 block to end when reach the right brace at the first column.
 (C only)
 <DT><SAMP>`-n'</SAMP>, <SAMP>`--no-tags'</SAMP>
 <DD>
@@ -3534,18 +3390,14 @@ Suppress output of tags. It is useful to use with <SAMP>`-w'</SAMP> option.
 Quiet mode.
 <DT><SAMP>`-r'</SAMP>, <SAMP>`--reference'</SAMP>
 <DD>
-Locate function references instead of function definitions.
+Locate object references instead of object definitions.
 <TT>`GTAGS'</TT> is needed at the current directory.
 (C, C++ and Java source only)
-By default, locate function definitions.
+By default, locate object definitions.
 <DT><SAMP>`-s'</SAMP>, <SAMP>`--symbol'</SAMP>
 <DD>
-Collect symbols other than functions.
-By default, locate function definitions.
-<DT><SAMP>`-t'</SAMP>, <SAMP>`--typedef'</SAMP>
-<DD>
-Pick up not only function but also typedef name and enum member
-as a definition.
+Collect symbols other than object definitions and references.
+By default, locate object definitions.
 <DT><SAMP>`-v'</SAMP>, <SAMP>`--verbose'</SAMP>
 <DD>
 Verbose mode.
@@ -3564,13 +3416,25 @@ The <SAMP>`-r'</SAMP> and <SAMP>`-s'</SAMP> options override each other;
 the last one specified determines the method used.
 
 
-<H3><A NAME="SEC105">DIAGNOSTICS</A></H3>
+<H3><A NAME="SEC96">ENVIRONMENT</A></H3>
+<P>
+The following environment variables affect the execution of gtags-parser:
+<DL COMPACT>
+
+<DT><VAR>GTAGSFORCECPP</VAR>
+<DD>
+If this variable is set, each file whose suffix is 'h' is treated
+as a C++ source file.
+</DL>
+
+
+<H3><A NAME="SEC97">DIAGNOSTICS</A></H3>
 <P>
 Gtags-parser exits with a non 0 value if an error occurred, 0 otherwise.
 Duplicate objects are not considered errors.
 
 
-<H3><A NAME="SEC106">SEE ALSO</A></H3>
+<H3><A NAME="SEC98">SEE ALSO</A></H3>
 <P>
 global(1),
 gtags(1),
@@ -3582,36 +3446,31 @@ GNU GLOBAL source code tag system<BR>
 (http://www.gnu.org/software/global/).
 
 
-<H3><A NAME="SEC107">BUG</A></H3>
+<H3><A NAME="SEC99">BUG</A></H3>
 <P>
 Gtags-parser relies on the input being well formed,
 and any syntactical errors will completely confuse it.
 
 
-<P>
-Assembler support is far from complete.
-Probably valid only for FreeBSD and Linux kernel source.
-
-
-<H3><A NAME="SEC108">AUTHOR</A></H3>
+<H3><A NAME="SEC100">AUTHOR</A></H3>
 <P>
 Tama Communications Corporation.
 
 
-<H3><A NAME="SEC109">HISTORY</A></H3>
+<H3><A NAME="SEC101">HISTORY</A></H3>
 <P>
 The gtags-parser(gctags) command appeared in FreeBSD 2.2.2.
 
 
-<H2><A NAME="SEC110">5.5 gozilla - force mozilla to display specified source file.</A></H2>
+<H2><A NAME="SEC102">5.5 gozilla - force mozilla to display specified source file.</A></H2>
 
 
-<H3><A NAME="SEC111">NAME</A></H3>
+<H3><A NAME="SEC103">NAME</A></H3>
 <P>
 gozilla - force mozilla to display specified source file.
 
 
-<H3><A NAME="SEC112">SYNOPSIS</A></H3>
+<H3><A NAME="SEC104">SYNOPSIS</A></H3>
 <P>
 
 <BLOCKQUOTE>
@@ -3622,7 +3481,7 @@ gozilla [-b browser][-p] -d name<BR>
 
 
 
-<H3><A NAME="SEC113">DESCRIPTION</A></H3>
+<H3><A NAME="SEC105">DESCRIPTION</A></H3>
 <P>
 Gozilla force mozilla to display specified source
 file as a hypertext. Gozilla can be used with other
@@ -3653,7 +3512,7 @@ Whether or not gozilla waits for exiting of browser depends
 on browser.
 
 
-<H3><A NAME="SEC114">OPTIONS</A></H3>
+<H3><A NAME="SEC106">OPTIONS</A></H3>
 <P>
 The following options are available:
 <DL COMPACT>
@@ -3666,15 +3525,18 @@ with <SAMP>`-l'</SAMP> option, you can specify any line.
 <DT><SAMP>`-b'</SAMP> browser
 <DD>
 browser to use. By default, it is assumed mozilla.
+<DT><SAMP>`-d'</SAMP> name
+<DD>
+print function.
+<DT><SAMP>`--help'</SAMP>
+<DD>
+Show help.
 <DT><SAMP>`-p'</SAMP>
 <DD>
 just print generated target URL.
 <DT>file
 <DD>
 path of source file or alias name.
-<DT><SAMP>`-d'</SAMP> name
-<DD>
-print function.
 <DT><SAMP>`-q'</SAMP>, <SAMP>`--quiet'</SAMP>
 <DD>
 Quiet mode.
@@ -3684,13 +3546,10 @@ Verbose mode.
 <DT><SAMP>`--version'</SAMP>
 <DD>
 Show version number.
-<DT><SAMP>`--help'</SAMP>
-<DD>
-Show help.
 </DL>
 
 
-<H3><A NAME="SEC115">FILES</A></H3>
+<H3><A NAME="SEC107">FILES</A></H3>
 <DL COMPACT>
 
 <DT><TT>`HTML/'</TT>
@@ -3705,7 +3564,7 @@ alias file. Please read source code for the detail.
 </DL>
 
 
-<H3><A NAME="SEC116">ENVIRONMENT</A></H3>
+<H3><A NAME="SEC108">ENVIRONMENT</A></H3>
 <DL COMPACT>
 
 <DT><VAR>GTAGSROOT</VAR>
@@ -3721,7 +3580,7 @@ browser to use. By default, it is assumed mozilla.
 </DL>
 
 
-<H3><A NAME="SEC117">EXAMPLES</A></H3>
+<H3><A NAME="SEC109">EXAMPLES</A></H3>
 
 <PRE>
 	$ gtags
@@ -3741,12 +3600,12 @@ browser to use. By default, it is assumed mozilla.
 
 
 
-<H3><A NAME="SEC118">DIAGNOSTICS</A></H3>
+<H3><A NAME="SEC110">DIAGNOSTICS</A></H3>
 <P>
 Gozilla exits with a non 0 value if an error occurred, 0 otherwise.
 
 
-<H3><A NAME="SEC119">SEE ALSO</A></H3>
+<H3><A NAME="SEC111">SEE ALSO</A></H3>
 <P>
 global(1),
 gtags(1),
@@ -3761,37 +3620,37 @@ GNU GLOBAL source code tag system<BR>
 (http://www.gnu.org/software/global/).
 
 
-<H3><A NAME="SEC120">NOTES</A></H3>
+<H3><A NAME="SEC112">NOTES</A></H3>
 <P>
 Gozilla means 'Global for mozilla'.
 
 
-<H3><A NAME="SEC121">BUGS</A></H3>
+<H3><A NAME="SEC113">BUGS</A></H3>
 <P>
 Gozilla can treat not only source file but also normal file,
 directory, HTML file and even URL, because it is omnivorous.
 
 
-<H3><A NAME="SEC122">AUTHORS</A></H3>
+<H3><A NAME="SEC114">AUTHORS</A></H3>
 <P>
 Tama Communications Corporation.
 
 
-<H3><A NAME="SEC123">HISTORY</A></H3>
+<H3><A NAME="SEC115">HISTORY</A></H3>
 <P>
 The gozilla command appeared in FreeBSD 2.2.2 but did not
 installed by default.
 
 
-<H2><A NAME="SEC124">5.6 gtags-cscope - pseudo cscope which implements the line-oriented interface</A></H2>
+<H2><A NAME="SEC116">5.6 gtags-cscope - pseudo cscope which implements the line-oriented interface</A></H2>
 
 
-<H3><A NAME="SEC125">NAME</A></H3>
+<H3><A NAME="SEC117">NAME</A></H3>
 <P>
 gtags-cscope - pseudo cscope which implements the line-oriented interface
 
 
-<H3><A NAME="SEC126">SYNOPSIS</A></H3>
+<H3><A NAME="SEC118">SYNOPSIS</A></H3>
 <P>
 
 <BLOCKQUOTE>
@@ -3801,7 +3660,7 @@ gtags-cscope [-Cqv]<BR>
 
 
 
-<H3><A NAME="SEC127">DESCRIPTION</A></H3>
+<H3><A NAME="SEC119">DESCRIPTION</A></H3>
 <P>
 Gtags-cscope is a pseudo cscope which implements the
 line-oriented interface.
@@ -3814,7 +3673,7 @@ through cscope interface, the output is not necessarily the same
 as cscope.
 
 
-<H3><A NAME="SEC128">OPTIONS</A></H3>
+<H3><A NAME="SEC120">OPTIONS</A></H3>
 <P>
 The following options are available:
 <DL COMPACT>
@@ -3831,7 +3690,7 @@ Verbose mode.
 </DL>
 
 
-<H3><A NAME="SEC129">EXAMPLES</A></H3>
+<H3><A NAME="SEC121">EXAMPLES</A></H3>
 
 <PRE>
 	$ gtags-cscope
@@ -3866,12 +3725,12 @@ Verbose mode.
 
 
 
-<H3><A NAME="SEC130">DIAGNOSTICS</A></H3>
+<H3><A NAME="SEC122">DIAGNOSTICS</A></H3>
 <P>
 Gtags-cscope exits with a non 0 value if an error occurred, 0 otherwise.
 
 
-<H3><A NAME="SEC131">SEE ALSO</A></H3>
+<H3><A NAME="SEC123">SEE ALSO</A></H3>
 <P>
 cscope(1),
 gtags-parser(1),
@@ -3885,33 +3744,33 @@ GNU GLOBAL source code tag system<BR>
 (http://www.gnu.org/software/global/).
 
 
-<H3><A NAME="SEC132">BUG</A></H3>
+<H3><A NAME="SEC124">BUG</A></H3>
 <P>
 The second field of the output is almost &#60;unknown&#62; since
 GLOBAL doesn't recognize it.
 Command 2 (Find functions called by this function) is not implemented.
 
 
-<H3><A NAME="SEC133">AUTHOR</A></H3>
+<H3><A NAME="SEC125">AUTHOR</A></H3>
 <P>
 Tama Communications Corporation.
 
 
-<H3><A NAME="SEC134">HISTORY</A></H3>
+<H3><A NAME="SEC126">HISTORY</A></H3>
 <P>
 The gtags-cscope command appeared in 2006.
 
 
 
 
-<H1><A NAME="SEC135">A. Copying This Manual</A></H1>
+<H1><A NAME="SEC127">A. Copying This Manual</A></H1>
 
 
 
-<H2><A NAME="SEC136">A.1 GNU Free Documentation License</A></H2>
+<H2><A NAME="SEC128">A.1 GNU Free Documentation License</A></H2>
 
 <P>
-<A NAME="IDX26"></A>
+<A NAME="IDX32"></A>
 <center>
  Version 1.2, November 2002
 </center>
@@ -4350,7 +4209,7 @@ as a draft) by the Free Software Foundation.
 
 
 
-<H3><A NAME="SEC137">A.1.1 ADDENDUM: How to use this License for your documents</A></H3>
+<H3><A NAME="SEC129">A.1.1 ADDENDUM: How to use this License for your documents</A></H3>
 
 <P>
 To use this License in a document you have written, include a copy of
@@ -4396,11 +4255,11 @@ to permit their use in free software.
 
 
 
-<H1><A NAME="SEC138">B. Business Model</A></H1>
+<H1><A NAME="SEC130">B. Business Model</A></H1>
 
 
 
-<H2><A NAME="SEC139">B.1 The BOKIN Model Definition</A></H2>
+<H2><A NAME="SEC131">B.1 The BOKIN Model Definition</A></H2>
 
 <PRE>
 Version 1.0, December 17, 2005
@@ -4412,7 +4271,7 @@ of this document, but changing it is not allowed.
 
 
 
-<H3><A NAME="SEC140">Introduction</A></H3>
+<H3><A NAME="SEC132">Introduction</A></H3>
 
 <P>
 <EM>BOKIN Model</EM> is a business model to obtain proceeds by widely collecting
@@ -4427,7 +4286,7 @@ The business which comply with the following criteria can be called
 
 
 
-<H3><A NAME="SEC141">Criteria</A></H3>
+<H3><A NAME="SEC133">Criteria</A></H3>
 
 
 <OL>
@@ -4542,7 +4401,7 @@ The BOKINware should contain the present definition as a file named
 
 
 
-<H3><A NAME="SEC142">Renewal</A></H3>
+<H3><A NAME="SEC134">Renewal</A></H3>
 
 <P>
 The author may publish revised and/or new versions of the BOKIN Model
@@ -4551,7 +4410,7 @@ to the present version, but may differ in detail to address new problems
 or concerns.
 
 
-<H2><A NAME="SEC143">B.2 Frequently Asked Questions</A></H2>
+<H2><A NAME="SEC135">B.2 Frequently Asked Questions</A></H2>
 
 <PRE>
 Version 1.0, December 17, 2005
@@ -4563,7 +4422,7 @@ of this document, but changing it is not allowed.
 
 
 
-<H3><A NAME="SEC144">BOKIN Model Frequently Asked Questions</A></H3>
+<H3><A NAME="SEC136">BOKIN Model Frequently Asked Questions</A></H3>
 
 
 <OL>
@@ -4660,17 +4519,17 @@ BOKIN Model business should be supported only by people's free will.
 
 
 
-<H1><A NAME="SEC145">Option Index</A></H1>
+<H1><A NAME="SEC137">Option Index</A></H1>
 <P>
 Jump to:
 <A HREF="#cindex_f">f</A>
 <P>
 <H2><A NAME="cindex_f">f</A></H2>
 <DIR>
-<LI><A HREF="globaldoc.html#IDX26">FDL, GNU Free Documentation License</A>
+<LI><A HREF="globaldoc.html#IDX32">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on October, 26  2007 using
+This document was generated on March, 26  2008 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
 </BODY>
