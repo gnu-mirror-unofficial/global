@@ -9,6 +9,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <dt>2008/4/21<dd>
 	GLOBAL-5.7.1 was released.
 	This is bug fix version of GLOBAL-5.7.
+	See <a href='http://lists.gnu.org/archive/html/info-global/2008-04/msg00000.html'>release note</a>.
 <dt>2008/3/26<dd>
 	GLOBAL-5.7 was released.
 	This version allows the symbolic links which point to directories, and
