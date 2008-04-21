@@ -154,8 +154,6 @@ It extracts only ENTRY() and ALTENTRY() from source file.
 Probably valid only for FreeBSD and Linux kernel source.
 
 There is no concurrency control about tag files.
-
-Symbols in Assembly source files are not extracted for @file{GSYMS}.
 @unnumberedsubsec AUTHOR
 Tama Communications Corporation.
 @unnumberedsubsec HISTORY
