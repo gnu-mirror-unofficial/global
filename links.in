@@ -7,6 +7,10 @@ under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <h3>GLOBAL related tools</h3>
 <dl>
+<dt><a href=http://www.emacswiki.org/cgi-bin/wiki/Anything>anything-gtags.el</a><dd>
+	`anything-gtags-select' is `anything' interface of `gtags-find-tag'.
+	`anything-c-source-gtags-select' is a source for `gtags-find-tag'.
+	Replace *GTAGS SELECT* buffer with `anything' interface.
 <dt><a href=http://home.tiscali.de/mgidde/Emacs.html#xgtags>xgtags.el</a><dd>
 	Xgtags.el provides an interface to the GLOBAL cross-refencing tools.
 	While gtags.el, that comes with the GLOBAL distribution, is more a
