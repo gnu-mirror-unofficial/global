@@ -4,7 +4,7 @@ gtags - create tag files for global.
 @unnumberedsubsec SYNOPSIS
 @noindent
 @quotation
-gtags [-iIqvw][-f file][-n number][dbpath]@*
+gtags [-iIOqvw][-f file][-n number][dbpath]@*
 @end quotation
 @unnumberedsubsec DESCRIPTION
 Gtags recursively collect the source files under
@@ -52,6 +52,12 @@ global(1) with the -u option.
 Maximum number of arguments for gtags-parser(1).
 By default, gtags invokes gtags-parser with arguments
 as many as possible to decrease the frequency of invoking.
+@item @samp{-O}, @samp{--objdir}
+Use objdir as dbpath.
+If @file{$MAKEOBJDIRPREFIX} directory exists, gtags creates
+@file{$MAKEOBJDIRPREFIX/<current directory>} directory and makes
+tag files in it.
+If dbpath is specified, this options is ignored.
 @item @samp{-q}, @samp{--quiet}
 Quiet mode.
 @item @samp{-v}, @samp{--verbose}
@@ -96,10 +102,13 @@ If this variable is set, its value is used as the label
 of configuration file. The default is @code{default}.
 @item @var{GTAGSCACHE}
 If this variable is set, its value is used as the size of
-B-tree cache. The default is 5000000 (bytes).
+B-tree cache. The default is 50000000 (bytes).
 @item @var{GTAGSFORCECPP}
 If this variable is set, each file whose suffix is 'h' is treated
 as a C++ source file.
+@item @var{MAKEOBJDIRPREFIX}
+If this variable is set, @file{$MAKEOBJDIRPREFIX} is used as an object
+prefix directory. The default is @file{/usr/obj}.
 @end table
 @unnumberedsubsec CONFIGURATION
 The following configuration variables affect the execution of gtags.

@@ -6,6 +6,10 @@ Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <dl compact>
+<dt>2008/9/30<dd>
+	GLOBAL-5.7.2 was released.
+	New -O(--objdir) option (gtags) and new two commands gtags-select-tag-other-window and
+	gtags-find-tag-other-window(gtags.el) were added.
 <dt>2008/4/21<dd>
 	GLOBAL-5.7.1 was released.
 	This is bug fix version of GLOBAL-5.7.

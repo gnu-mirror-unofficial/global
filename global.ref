@@ -183,6 +183,7 @@ of configuration file. The default is @code{default}.
 @item @var{MAKEOBJDIRPREFIX}
 If this variable is set, @file{$MAKEOBJDIRPREFIX<current directory>}
 is used as the candidate directory for tag files.
+The default is @file{/usr/obj}.
 @end table
 @unnumberedsubsec CONFIGURATION
 The following configuration variables affect the execution of global:

@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.57 from globaldoc.texi on April, 21  2008 -->
+<!-- Created by texi2html 1.57 from globaldoc.texi on September, 30  2008 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY >
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 5.7.1, for GNU GLOBAL version 5.7.1</H2>
-<H2>21 April 2008</H2>
+<H2>Edition 5.7.2, for GNU GLOBAL version 5.7.2</H2>
+<H2>30 September 2008</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -462,8 +462,8 @@ There is another method for it. Since global(1) locates tag files also in
 
 <PRE>
 
-    $ mkdir -p /usr/obj/cdrom/src
     $ cd /cdrom/src                 # the root of source tree
+    $ mkdir -p /usr/obj/cdrom/src
     $ gtags /usr/obj/cdrom/src      # make tag files in /usr/obj/cdrom/src
     $ global func
 
@@ -471,6 +471,8 @@ There is another method for it. Since global(1) locates tag files also in
 
 The value <TT>`/usr/obj'</TT> can be changed by environment variable
 <CODE>MAKEOBJDIRPREFIX</CODE>.
+The <SAMP>`-O, --objdir'</SAMP> option do it automatically instead of you.
+<A NAME="IDX14"></A>
 
 <LI>If you want to locate objects that are not defined in the source tree,
 
@@ -520,7 +522,7 @@ are part of our project.
 
 <LI>If you forget object names, you can use the <SAMP>`-c'</SAMP> (complete) command.
 
-<A NAME="IDX14"></A>
+<A NAME="IDX15"></A>
 
 
 <PRE>
@@ -1245,7 +1247,7 @@ First, do the preparation of global. See section <A HREF="globaldoc.html#SEC6">2
 
 <P>
 Second, start Elvis and execute <CODE>set tagprg="global -t $1"</CODE> like this:
-<A NAME="IDX15"></A>
+<A NAME="IDX16"></A>
 
 
 
@@ -1282,7 +1284,7 @@ internally and read the output instead of tags file.
 
 <LI>To go to the referenced point of func1, add <SAMP>`-r'</SAMP> option.
 
-<A NAME="IDX16"></A>
+<A NAME="IDX17"></A>
 
 <PRE>
 
@@ -1292,7 +1294,7 @@ internally and read the output instead of tags file.
 
 <LI>To locate symbols which are not defined in <TT>`GTAGS'</TT>, try this.
 
-<A NAME="IDX17"></A>
+<A NAME="IDX18"></A>
 
 <PRE>
 
@@ -1302,7 +1304,7 @@ internally and read the output instead of tags file.
 
 <LI>To locate strings, try this.
 
-<A NAME="IDX18"></A>
+<A NAME="IDX19"></A>
 
 <PRE>
 
@@ -1337,7 +1339,7 @@ the point.
 
 <LI>To get a list of objects in specified files, use <SAMP>`-f'</SAMP> command.
 
-<A NAME="IDX19"></A>
+<A NAME="IDX20"></A>
 
 <PRE>
 
@@ -1374,7 +1376,7 @@ the point.
 
 <LI>You can use POSIX regular expressions.
 
-<A NAME="IDX20"></A>
+<A NAME="IDX21"></A>
 
 <PRE>
 
@@ -1386,7 +1388,7 @@ the point.
 
 <LI>You can browse an object list of many files.
 
-<A NAME="IDX21"></A>
+<A NAME="IDX22"></A>
 
 <PRE>
 
@@ -1396,7 +1398,7 @@ the point.
 
 <LI>You can browse the files whose path includes specified pattern.
 
-<A NAME="IDX22"></A>
+<A NAME="IDX23"></A>
 
 <PRE>
 
@@ -1533,7 +1535,7 @@ You can see the help of quickfix like this:
 
 <LI>To go to the referenced point of func1, add <SAMP>`-r'</SAMP> option.
 
-<A NAME="IDX23"></A>
+<A NAME="IDX24"></A>
 
 <PRE>
 
@@ -1543,7 +1545,7 @@ You can see the help of quickfix like this:
 
 <LI>To locate symbols which are not defined in <TT>`GTAGS'</TT>, try this.
 
-<A NAME="IDX24"></A>
+<A NAME="IDX25"></A>
 
 <PRE>
 
@@ -1553,7 +1555,7 @@ You can see the help of quickfix like this:
 
 <LI>To locate strings, try this.
 
-<A NAME="IDX25"></A>
+<A NAME="IDX26"></A>
 
 <PRE>
 
@@ -1567,7 +1569,7 @@ You can see the help of quickfix like this:
 
 <LI>To get a list of objects in specified files, use -f command.
 
-<A NAME="IDX26"></A>
+<A NAME="IDX27"></A>
 
 <PRE>
 
@@ -1585,7 +1587,7 @@ If you are editing <TT>`main.c'</TT> itself, you can use '%' instead.
 
 <LI>You can use POSIX regular expressions.
 
-<A NAME="IDX27"></A>
+<A NAME="IDX28"></A>
 
 <PRE>
 
@@ -1610,7 +1612,7 @@ Press <KBD>TAB</KBD> and Vim will complete the tag name.
 
 <LI>You can browse files whose path includes specified pattern.
 
-<A NAME="IDX28"></A>
+<A NAME="IDX29"></A>
 
 
 <PRE>
@@ -2175,8 +2177,8 @@ If you would like to use exuberant ctags included by Vim editor,
 <TT>`GRTAGS'</TT> and <TT>`GSYMS'</TT> don't exist, simply because
 these parsers don't support the <SAMP>`-r'</SAMP> option and <SAMP>`-s'</SAMP> option like gtags-parser(1) does.
 If you prepare the parser which support both option, you can use all functions of global(1).
-<A NAME="IDX29"></A>
 <A NAME="IDX30"></A>
+<A NAME="IDX31"></A>
 
 
 
@@ -2253,7 +2255,7 @@ The following <CODE>bad-prog</CODE> does wrong operation as a plug-in parser.
 <P>
 Modifying some source files, you need not remake the whole tag files.
 Instead, you can use incremental updating facility (<SAMP>`-u'</SAMP> option).
-<A NAME="IDX31"></A>
+<A NAME="IDX32"></A>
 
 <PRE>
 
@@ -2547,6 +2549,7 @@ of configuration file. The default is <CODE>default</CODE>.
 <DD>
 If this variable is set, <TT>`$MAKEOBJDIRPREFIX&#60;current directory&#62;'</TT>
 is used as the candidate directory for tag files.
+The default is <TT>`/usr/obj'</TT>.
 </DL>
 
 
@@ -2602,7 +2605,7 @@ gtags - create tag files for global.
 
 <BLOCKQUOTE>
 <P>
-gtags [-iIqvw][-f file][-n number][dbpath]<BR>
+gtags [-iIOqvw][-f file][-n number][dbpath]<BR>
 </BLOCKQUOTE>
 
 
@@ -2667,6 +2670,13 @@ global(1) with the -u option.
 Maximum number of arguments for gtags-parser(1).
 By default, gtags invokes gtags-parser with arguments
 as many as possible to decrease the frequency of invoking.
+<DT><SAMP>`-O'</SAMP>, <SAMP>`--objdir'</SAMP>
+<DD>
+Use objdir as dbpath.
+If <TT>`$MAKEOBJDIRPREFIX'</TT> directory exists, gtags creates
+<TT>`$MAKEOBJDIRPREFIX/&#60;current directory&#62;'</TT> directory and makes
+tag files in it.
+If dbpath is specified, this options is ignored.
 <DT><SAMP>`-q'</SAMP>, <SAMP>`--quiet'</SAMP>
 <DD>
 Quiet mode.
@@ -2734,11 +2744,15 @@ of configuration file. The default is <CODE>default</CODE>.
 <DT><VAR>GTAGSCACHE</VAR>
 <DD>
 If this variable is set, its value is used as the size of
-B-tree cache. The default is 5000000 (bytes).
+B-tree cache. The default is 50000000 (bytes).
 <DT><VAR>GTAGSFORCECPP</VAR>
 <DD>
 If this variable is set, each file whose suffix is 'h' is treated
 as a C++ source file.
+<DT><VAR>MAKEOBJDIRPREFIX</VAR>
+<DD>
+If this variable is set, <TT>`$MAKEOBJDIRPREFIX'</TT> is used as an object
+prefix directory. The default is <TT>`/usr/obj'</TT>.
 </DL>
 
 
@@ -3106,7 +3120,7 @@ of configuration file. The default is <CODE>default</CODE>.
 <DT><VAR>GTAGSCACHE</VAR>
 <DD>
 If this variable is set, its value is used as the size of
-B-tree cache. The default is 5000000 (bytes).
+B-tree cache. The default is 50000000 (bytes).
 <DT><VAR>GTAGSFORCECPP</VAR>
 <DD>
 If this variable is set, each file whose suffix is 'h' is treated
@@ -3766,7 +3780,7 @@ The gtags-cscope command appeared in 2006.
 <H2><A NAME="SEC128">A.1 GNU Free Documentation License</A></H2>
 
 <P>
-<A NAME="IDX32"></A>
+<A NAME="IDX33"></A>
 <center>
  Version 1.2, November 2002
 </center>
@@ -4522,10 +4536,10 @@ Jump to:
 <P>
 <H2><A NAME="cindex_f">f</A></H2>
 <DIR>
-<LI><A HREF="globaldoc.html#IDX32">FDL, GNU Free Documentation License</A>
+<LI><A HREF="globaldoc.html#IDX33">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on April, 21  2008 using
+This document was generated on September, 30  2008 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
 </BODY>
