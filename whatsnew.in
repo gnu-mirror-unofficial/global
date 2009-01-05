@@ -7,7 +7,8 @@ under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <dl compact>
 <dt>2009/1/5<dd>
-	GLOBAL-5.7.4 was released.
+	GLOBAL-5.7.4 was released. Some serious bugs about C++ were fixed.
+	See <a href='http://lists.gnu.org/archive/html/info-global/2009-01/msg00000.html'>release note</a>.
 <dt>2008/10/29<dd>
 	GLOBAL-5.7.3 was released.
 	This is a bug-fix version.
@@ -26,6 +27,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	This version allows the symbolic links which point to directories, and
 	treats the names of struct, union, enum and enum member as definitions.
 	See <a href='http://lists.gnu.org/archive/html/info-global/2008-03/msg00000.html'>release note</a>.
+<!--
 <dt>2007/10/26<dd>
 	GLOBAL-5.6.2 was released. This is a minor update version.
 	See <a href='http://lists.gnu.org/archive/html/info-global/2007-10/msg00000.html'>release note</a>.
@@ -55,7 +57,6 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	GLOBAL-5.4 was released.
 	In this release, compressed tag files further, and improved the performance of global(1).
 	See <a href='http://lists.gnu.org/archive/html/info-global/2007-01/msg00000.html'>release note</a>.
-<!--
 <dt>2006/11/20<dd>
 	GLOBAL-5.3 was released.
 	In this release, updated gtags.el and added new options to htags(1).
