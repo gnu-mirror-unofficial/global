@@ -7,6 +7,9 @@ under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <h3>GLOBAL related tools</h3>
 <dl>
+<dt><a href="http://www.opendesktop.org/content/show.php/Kate+Gtags?content=49360&PHPSESSID=0266f910f489d2a865de5621bed641bb">Kate Gtags</a><dd>
+	KateGtags is a plugin for kate that uses the GNU Global source tagging system
+	to provide function definition and reference location.
 <dt><a href=http://www.emacswiki.org/cgi-bin/wiki/Anything>anything-gtags.el</a><dd>
 	`anything-gtags-select' is `anything' interface of `gtags-find-tag'.
 	`anything-c-source-gtags-select' is a source for `gtags-find-tag'.
