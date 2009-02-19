@@ -1,10 +1,16 @@
 @title Related sites
 @link Links
 @license
-Copyright (c) 2000, 2001 Tama Communications Corporation
+Copyright (c) 2000, 2001, 2009 Tama Communications Corporation
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1
 @body
+<h3>Related articles</h3>
+<dl>
+<dt><a href="http://queue.acm.org/detail.cfm?id=945136">Code Spelunking: Exploring Cavernous Code Bases</a><dd>
+	Code diving through unfamiliar source bases is something we do far more often than
+	write new code from scratch--make sure you have the right gear for the job. (by George V. Neville-Neil)
+</dl>
 <h3>GLOBAL related tools</h3>
 <dl>
 <dt><a href="http://www.opendesktop.org/content/show.php/Kate+Gtags?content=49360&PHPSESSID=0266f910f489d2a865de5621bed641bb">Kate Gtags</a><dd>
