@@ -1,20 +1,18 @@
 @title Plans for the future
 @link Plans
 @license
-Copyright (c) 2000, 2001, 2002, 2005, 2006, 2007 Tama Communications Corporation
+Copyright (c) 2000, 2001, 2002, 2005, 2006, 2007, 2009 Tama Communications Corporation
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1
 @body
 Plans of the highest priority are listed first.
 <p>
 <ul>
+<li>Support tag stack per window. Currently tag stack is only one per emacs. (gtags.el).
 <li>Pickup definitions of data type, enum name, enum value, struct member name,
 	union name and struct name in C language.
 	Finally, remove GSYMS. (gtags-parser, gtags)
 <li>Rewrite cgi program with C language instead of Perl.
-<li>Remote tag server. This enables users to read remote tag files
-	instead of local tag files.
-<li>Generate link from 'require', 'require_once' and 'include_once'.(PHP)
 <li>Support of PHP language in the following commands in gtags.el.
 	<ul>
         <li>gtags-find-tag-by-event
