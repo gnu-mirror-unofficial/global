@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.57 from global.texi on January, 5  2009 -->
+<!-- Created by texi2html 1.57 from global.texi on March, 14  2009 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY >
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 5.7.4, for GNU GLOBAL version 5.7.4</H2>
-<H2>5 January 2009</H2>
+<H2>Edition 5.7.5, for GNU GLOBAL version 5.7.5</H2>
+<H2>14 March 2009</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -2587,7 +2587,7 @@ Decide tag type by the context. The context must be 'lineno:path'.
 If this option is specified then the <SAMP>`-s'</SAMP> and <SAMP>`-r'</SAMP>
 are ignored.
 Regular expression is not allowed in the pattern.
-This option is assumes use in conversational environments such as
+This option assumes use in conversational environments such as
 editors and IDEs.
 <DT><SAMP>`-e'</SAMP>, <SAMP>`--regexp'</SAMP> pattern
 <DD>
@@ -2728,8 +2728,10 @@ This value is ignored when <VAR>GTAGSROOT</VAR> is not defined.
 <DT><VAR>GTAGSLIBPATH</VAR>
 <DD>
 If this variable is set, it is used as the path to search
-for library functions. If the specified function is not
+for library functions. If the specified object is not
 found in the source project, global also search in these paths.
+Since only <TT>`GTAGS'</TT> is targeted in the retrieval, this variable is
+ignored when the <SAMP>`-r'</SAMP> or <SAMP>`-s'</SAMP> is specified.
 <DT><VAR>GTAGSLABEL</VAR>
 <DD>
 If this variable is set, its value is used as the label
@@ -2794,7 +2796,7 @@ gtags - create tag files for global.
 
 <BLOCKQUOTE>
 <P>
-gtags [-iIOqvw][-f file][-n number][dbpath]<BR>
+gtags [-ciIOqvw][-f file][-n number][dbpath]<BR>
 </BLOCKQUOTE>
 
 
@@ -2828,6 +2830,11 @@ Other files are assumed to be text files.
 The following options are available:
 <DL COMPACT>
 
+<DT><SAMP>`-c'</SAMP>, <SAMP>`--compact'</SAMP>
+<DD>
+Make GTAGS in compact format.
+This option does not influence GRTAGS and GSYMS,
+because they are always made in compact format.
 <DT><SAMP>`--config'</SAMP>[=name]
 <DD>
 Show the value of config variable name.
@@ -2901,10 +2908,10 @@ device like CDROM.
 
 <DT><TT>`GTAGS'</TT>
 <DD>
-Tag file for function definitions.
+Tag file for object definitions.
 <DT><TT>`GRTAGS'</TT>
 <DD>
-Tag file for function references.
+Tag file for object references.
 <DT><TT>`GSYMS'</TT>
 <DD>
 Tag file for other symbols.
@@ -4728,7 +4735,7 @@ Jump to:
 <LI><A HREF="global.html#IDX33">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on January, 5  2009 using
+This document was generated on March, 14  2009 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
 </BODY>

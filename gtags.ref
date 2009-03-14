@@ -4,7 +4,7 @@ gtags - create tag files for global.
 @unnumberedsubsec SYNOPSIS
 @noindent
 @quotation
-gtags [-iIOqvw][-f file][-n number][dbpath]@*
+gtags [-ciIOqvw][-f file][-n number][dbpath]@*
 @end quotation
 @unnumberedsubsec DESCRIPTION
 Gtags recursively collect the source files under
@@ -28,6 +28,10 @@ Other files are assumed to be text files.
 @unnumberedsubsec OPTIONS
 The following options are available:
 @table @asis
+@item @samp{-c}, @samp{--compact}
+Make GTAGS in compact format.
+This option does not influence GRTAGS and GSYMS,
+because they are always made in compact format.
 @item @samp{--config}[=name]
 Show the value of config variable name.
 If name is not specified then show whole of config entry.
@@ -81,9 +85,9 @@ device like CDROM.
 @unnumberedsubsec FILES
 @table @asis
 @item @file{GTAGS}
-Tag file for function definitions.
+Tag file for object definitions.
 @item @file{GRTAGS}
-Tag file for function references.
+Tag file for object references.
 @item @file{GSYMS}
 Tag file for other symbols.
 @item @file{GPATH}

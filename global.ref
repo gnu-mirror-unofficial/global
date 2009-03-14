@@ -69,7 +69,7 @@ Decide tag type by the context. The context must be 'lineno:path'.
 If this option is specified then the @samp{-s} and @samp{-r}
 are ignored.
 Regular expression is not allowed in the pattern.
-This option is assumes use in conversational environments such as
+This option assumes use in conversational environments such as
 editors and IDEs.
 @item @samp{-e}, @samp{--regexp} pattern
 Use pattern as the pattern; useful to protect  patterns
@@ -175,8 +175,10 @@ The directory on which gtags database exist.
 This value is ignored when @var{GTAGSROOT} is not defined.
 @item @var{GTAGSLIBPATH}
 If this variable is set, it is used as the path to search
-for library functions. If the specified function is not
+for library functions. If the specified object is not
 found in the source project, global also search in these paths.
+Since only @file{GTAGS} is targeted in the retrieval, this variable is
+ignored when the @samp{-r} or @samp{-s} is specified.
 @item @var{GTAGSLABEL}
 If this variable is set, its value is used as the label
 of configuration file. The default is @code{default}.
