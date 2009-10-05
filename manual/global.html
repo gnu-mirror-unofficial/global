@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.57 from global.texi on March, 14  2009 -->
+<!-- Created by texi2html 1.57 from global.texi on October, 6  2009 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY >
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 5.7.5, for GNU GLOBAL version 5.7.5</H2>
-<H2>14 March 2009</H2>
+<H2>Edition 5.7.6, for GNU GLOBAL version 5.7.6</H2>
+<H2>6 October 2009</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -2796,7 +2796,7 @@ gtags - create tag files for global.
 
 <BLOCKQUOTE>
 <P>
-gtags [-ciIOqvw][-f file][-n number][dbpath]<BR>
+gtags [-ciIOqvw][-d tag-file][-f file][-n number][dbpath]<BR>
 </BLOCKQUOTE>
 
 
@@ -2839,6 +2839,10 @@ because they are always made in compact format.
 <DD>
 Show the value of config variable name.
 If name is not specified then show whole of config entry.
+<DT><SAMP>`-d'</SAMP>, <SAMP>`--dump'</SAMP> tag-file
+<DD>
+Dump a tag file. The output format is 'key&#60;tab&#62;data'.
+This is for debugging.
 <DT><SAMP>`-f'</SAMP>, <SAMP>`--file'</SAMP> file
 <DD>
 Read from file a list of file names which should be
@@ -2873,6 +2877,14 @@ If <TT>`$MAKEOBJDIRPREFIX'</TT> directory exists, gtags creates
 <TT>`$MAKEOBJDIRPREFIX/&#60;current directory&#62;'</TT> directory and makes
 tag files in it.
 If dbpath is specified, this options is ignored.
+<DT><SAMP>`--single-update'</SAMP> file
+<DD>
+Update tag files for single file.
+It is considered that file was updated, and other files were not
+updated.  The file must be relative path name from the current directory.
+This option implies the -i option.
+If the file is new then <SAMP>`--single-update'</SAMP> is ignored,
+and the processing is automatically switched to the normal incremental updating.
 <DT><SAMP>`-q'</SAMP>, <SAMP>`--quiet'</SAMP>
 <DD>
 Quiet mode.
@@ -4735,7 +4747,7 @@ Jump to:
 <LI><A HREF="global.html#IDX33">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on March, 14  2009 using
+This document was generated on October, 6  2009 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
 </BODY>
