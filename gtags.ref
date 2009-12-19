@@ -72,6 +72,9 @@ updated.  The file must be relative path name from the current directory.
 This option implies the -i option.
 If the file is new then @samp{--single-update} is ignored,
 and the processing is automatically switched to the normal incremental updating.
+@item @samp{--statistics}
+Print statistics information.
+This option is valid only for normal creation of tag files.
 @item @samp{-q}, @samp{--quiet}
 Quiet mode.
 @item @samp{-v}, @samp{--verbose}
@@ -178,6 +181,6 @@ Probably valid only for FreeBSD and Linux kernel source.
 
 There is no concurrency control about tag files.
 @unnumberedsubsec AUTHOR
-Tama Communications Corporation.
+Shigio YAMAGUCHI, Hideki IWAMOTO and others.
 @unnumberedsubsec HISTORY
 The gtags command appeared in FreeBSD 2.2.2.

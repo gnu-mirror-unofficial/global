@@ -71,6 +71,6 @@ The second field of the output is almost <unknown> since
 GLOBAL doesn't recognize it.
 Command 2 (Find functions called by this function) is not implemented.
 @unnumberedsubsec AUTHOR
-Tama Communications Corporation.
+Shigio YAMAGUCHI.
 @unnumberedsubsec HISTORY
 The gtags-cscope command appeared in 2006.

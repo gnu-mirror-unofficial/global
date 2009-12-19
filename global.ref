@@ -5,7 +5,7 @@ global - print the locations of specified object.
 @noindent
 @quotation
 global [-aGilnqrstTvx][-e] pattern@*
-global -c[qrsv] prefix@*
+global -c[qsv] prefix@*
 global -f[anqrstvx] files@*
 global -g[aGilnoOqtvx][-e] pattern@*
 global -I[ailnqtvx][-e] pattern@*
@@ -204,6 +204,6 @@ less(1).
 GNU GLOBAL source code tag system@*
 (http://www.gnu.org/software/global/).
 @unnumberedsubsec AUTHOR
-Tama Communications Corporation.
+Shigio YAMAGUCHI, Hideki IWAMOTO and others.
 @unnumberedsubsec HISTORY
 The global command appeared in FreeBSD 2.2.2.

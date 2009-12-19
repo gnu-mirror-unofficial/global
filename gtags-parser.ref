@@ -90,6 +90,6 @@ GNU GLOBAL source code tag system@*
 Gtags-parser relies on the input being well formed,
 and any syntactical errors will completely confuse it.
 @unnumberedsubsec AUTHOR
-Tama Communications Corporation.
+Shigio YAMAGUCHI, Hideki IWAMOTO and others.
 @unnumberedsubsec HISTORY
 The gtags-parser(gctags) command appeared in FreeBSD 2.2.2.

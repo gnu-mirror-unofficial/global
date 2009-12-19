@@ -315,6 +315,6 @@ In advance, check the space of your disk.
 
 PHP support is far from complete.
 @unnumberedsubsec AUTHOR
-Tama Communications Corporation.
+Shigio YAMAGUCHI, Hideki IWAMOTO and others.
 @unnumberedsubsec HISTORY
 The htags command appeared in FreeBSD 2.2.2.
