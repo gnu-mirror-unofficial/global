@@ -25,9 +25,6 @@ Plans of the highest priority are listed first.
 	<li>C#
 	<li>Scheme
         </ul>
-<li>Add support of built-in parser for gtags(1).<br>
-	Since this parser is linked to gtags at function layer, we can make
-	simpler and more efficient gtags without any external commands.
 <li>Rewrite function header using Doxygen style.
 <li>The --dynamic option generates not only index files but also hypertext
 	of source code itself.

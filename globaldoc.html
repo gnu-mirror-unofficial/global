@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.57 from globaldoc.texi on December, 19  2009 -->
+<!-- Created by texi2html 1.57 from globaldoc.texi on February, 5  2010 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY >
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 5.7.7, for GNU GLOBAL version 5.7.7</H2>
-<H2>19 December 2009</H2>
+<H2>Edition 5.8, for GNU GLOBAL version 5.8</H2>
+<H2>5 February 2010</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -2818,6 +2818,11 @@ Suffixes of target source file.
 As a special exception, gtags collect values from multiple <CODE>suffixes</CODE> variables.
 This variable is obsoleted. If the langmap variable is defined
 gtags no longer refers this.
+<DT><CODE>use_builtin_parser</CODE>(boolean)
+<DD>
+Use built-in parser instead of external command.
+The following restrictions are in incremental updating with built-in parser:
+If <TT>`GRTAGS'</TT> or <TT>`GSYMS'</TT> exists, both of them exist and the format should be the same.
 </DL>
 
 
@@ -3706,6 +3711,11 @@ through cscope interface, the output is not necessarily the same
 as cscope.
 
 
+<P>
+Command 2 is not available.
+This command is used as a internal command for context search.
+
+
 <H3><A NAME="SEC120">OPTIONS</A></H3>
 <P>
 The following options are available:
@@ -3730,8 +3740,7 @@ Verbose mode.
 	&#62;&#62; help
 	0&#60;arg&#62;: Find this C symbol
 	1&#60;arg&#62;: Find this definition
-	2&#60;arg&#62;: Find functions called by this function
-		(Not implemented yet.)
+	2&#60;arg&#62;: &#60;NA&#62;(This command is used by gtags-cscope.vim internally)
 	3&#60;arg&#62;: Find functions calling this function
 	4&#60;arg&#62;: Find this text string
 	6&#60;arg&#62;: Find this egrep pattern
@@ -4562,7 +4571,7 @@ Jump to:
 <LI><A HREF="globaldoc.html#IDX33">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on December, 19  2009 using
+This document was generated on February, 5  2010 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
 </BODY>
