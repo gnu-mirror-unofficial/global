@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.57 from global.texi on February, 5  2010 -->
+<!-- Created by texi2html 1.57 from global.texi on March, 6  2010 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY >
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 5.8, for GNU GLOBAL version 5.8</H2>
-<H2>5 February 2010</H2>
+<H2>Edition 5.8.1, for GNU GLOBAL version 5.8.1</H2>
+<H2>6 March 2010</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -2994,7 +2994,15 @@ Suffixes check are affected by this capability.
 <DD>
 Language mapping. Each comma-separated map consists of
 the language name, a colon, and a list of file extensions.
+As a special exception, gtags collect values from multiple <CODE>langmap</CODE> variables.
 Default mapping is 'c:.c.h,yacc:.y,asm:.s.S,java:.java,cpp:.c++.cc.cpp.cxx.hxx.hpp.C.H,php:.php.php3.phtml'.
+<DT><CODE>gtags_parser</CODE>(comma separated list)
+<DD>
+Specify the mapping of funtion layer plugin parser.
+Each part delimited by the comma consists of the language name, a colon,
+the shared object path, an optional colon followed by a function name.
+If the function name is not specified, 'parser' is assumed.
+As a special exception, gtags collect values from multiple <CODE>gtags_parser</CODE> variables.
 <DT><CODE>skip</CODE>(comma separated list)
 <DD>
 Gtags skips files which are listed in this list.
@@ -3125,6 +3133,11 @@ for a large project.
 <DT><SAMP>`--caution'</SAMP>
 <DD>
 Include caution message to prohibit downloading.
+<DT><SAMP>`--cflow'</SAMP> cflowfile
+<DD>
+Add a call tree by cflow(1). cflowfile must be posix format.
+If you use GNU cflow, invoke cflow at the root of the project with
+the <SAMP>`--format=posix'</SAMP> option. See EXAMPLES.
 <DT><SAMP>`-c'</SAMP>, <SAMP>`--compact'</SAMP>
 <DD>
 Compress html files  by gzip(1).
@@ -3158,7 +3171,7 @@ Disable grep in the search form(-f,--form).
 Use frame for each part of the contents.
 <DT><SAMP>`-f'</SAMP>, <SAMP>`--form'</SAMP>
 <DD>
-Support search form using CGI program.
+Add a search form using CGI program.
 You need to set up a web server, and you cannot move
 the hypertext from the source directory.
 <DT><SAMP>`--full-path'</SAMP>
@@ -3198,7 +3211,7 @@ Specify order of items in the top page.
 The spec is a string consists of item signs in order.
 Each sign means as follows:
 c: caution, s: search form,
-m: mains, d: definition, f: files.
+m: mains, d: definition, f: files, t: call tree.
 The default is csmdf.
 <DT><SAMP>`-m'</SAMP>, <SAMP>`--main-func'</SAMP> name
 <DD>
@@ -3276,6 +3289,9 @@ The default is the current directory.
 	$ firefox HTML/index.html
 
 	$ htags --suggest
+
+	$ cflow --tree --format=posix *.[ch] &#62;cflow.out
+	$ htags --cflow=cflow.out
 
 </PRE>
 
@@ -4760,7 +4776,7 @@ Jump to:
 <LI><A HREF="global.html#IDX33">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on February, 5  2010 using
+This document was generated on March, 6  2010 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
 </BODY>

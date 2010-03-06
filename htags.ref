@@ -34,6 +34,10 @@ Make an alphabetical function index which is suitable
 for a large project.
 @item @samp{--caution}
 Include caution message to prohibit downloading.
+@item @samp{--cflow} cflowfile
+Add a call tree by cflow(1). cflowfile must be posix format.
+If you use GNU cflow, invoke cflow at the root of the project with
+the @samp{--format=posix} option. See EXAMPLES.
 @item @samp{-c}, @samp{--compact}
 Compress html files  by gzip(1).
 You need to set up a web server so that gzip(1)
@@ -59,7 +63,7 @@ Disable grep in the search form(-f,--form).
 @item @samp{-F}, @samp{--frame}
 Use frame for each part of the contents.
 @item @samp{-f}, @samp{--form}
-Support search form using CGI program.
+Add a search form using CGI program.
 You need to set up a web server, and you cannot move
 the hypertext from the source directory.
 @item @samp{--full-path}
@@ -90,7 +94,7 @@ Specify order of items in the top page.
 The spec is a string consists of item signs in order.
 Each sign means as follows:
 c: caution, s: search form,
-m: mains, d: definition, f: files.
+m: mains, d: definition, f: files, t: call tree.
 The default is csmdf.
 @item @samp{-m}, @samp{--main-func} name
 Specify the main function name. The default is @code{main}.
@@ -149,6 +153,9 @@ The default is the current directory.
 	$ firefox HTML/index.html
 
 	$ htags --suggest
+
+	$ cflow --tree --format=posix *.[ch] >cflow.out
+	$ htags --cflow=cflow.out
 
 @end example
 @unnumberedsubsec FILES
