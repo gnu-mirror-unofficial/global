@@ -7,8 +7,10 @@ under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <dl compact>
 <dt>2010/3/6<dd>
-	GLOBAL-5.8.1 was released. Added support of function layer plug-in parser for gtags(1).
+	GLOBAL-5.8.1 was released. Added support of function layer plug-in parser for gtags(1),
+	and call-tree facility using cflow(1) for htags(1).
 	See <a href='http://lists.gnu.org/archive/html/info-global/2010-03/msg00000.html'>release note</a>.
+	Sample call-tree is shown <a href='http://tamacom.com/tour/ctags/cflow.html'>here</a>.
 <dt>2010/2/5<dd>
 	GLOBAL-5.8 was released. New gtags(1) which using built-in parser is available.
 	This improvement has shortened the processing time to about 1/3.
