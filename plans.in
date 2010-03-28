@@ -21,9 +21,12 @@ Plans of the highest priority are listed first.
 <li>Support new languages.
 	Here is a list of candidates:
         <ul>
-	<li>Lex
+	<li>lex
+	<li>ruby
+	<li>python
+	<li>perl
+	<li>scheme
 	<li>C#
-	<li>Scheme
         </ul>
 <li>Rewrite function header using Doxygen style.
 <li>The --dynamic option generates not only index files but also hypertext
