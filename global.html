@@ -51,7 +51,7 @@ Copyright (c) 2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010 Tama Commun
 </a>
 GNU GLOBAL is a source code tagging system that works the same way
 across diverse environments (emacs, vi, less, bash, web browser, etc).
-You can locate specified objects in source files and move there easily.
+You can locate objects in source files and move there easily.
 It is useful for hacking a large project containing many subdirectories,
 many <CODE>#ifdef</CODE> and many <CODE>main()</CODE> functions.
 It is similar to ctags or etags but is different from them at the point of
@@ -73,7 +73,7 @@ GNU GLOBAL has following features:
 <ul>
 <li> support C, C++, Yacc, Java and PHP4.
 <li> work the same way across diverse environments.
-        Currently, support followings:
+        Currently, the following environments are supported:
         <ul>
         <li> Generic shell command line
         <li> Bash shell
@@ -85,26 +85,25 @@ GNU GLOBAL has following features:
 		(See <a href=http://www.tamacom.com/tour/kernel/linux/>UNIX kernel source tour!</a>.)
 	<li> Doxygen documentation system
         </ul>
-<li> find the locations of a specified object quickly.
+<li> find locations of the specified object quickly.
 <li> locate not only object definitions but also object references.
-<li> allows duplicate objects.
-<li> locate also path which includes specified pattern.
-<li> treat a source tree containing subdirectories as a logical scope.
-You can get the relative path of objects from anywhere within that scope.
-<li> search not only in a source tree but also in library paths.
+<li> allow duplicate objects.
+<li> locate paths which matches to the specified pattern.
+<li> treat a source tree containing subdirectories as a project.
+<li> search not only in a project but also in library paths.
 <li> understand POSIX 1003.2 regular expressions.
-<li> support external search engine (grep and idutils).
-<li> generate hypertext of source code (XHTML ready).
+<li> external search engine (grep and idutils) is available.
+<li> generate a hypertext of source code (XHTML ready).
 <li> tag files are independent of machine architecture.
 <li> plugged-in parser is available to treat new language.
-<li> compact format is available to save disk space.
-<li> support incremental updating of tag files.
-<li> support customizing with gtags.conf.
+<li> compact format to save disk space.
+<li> incremental updating of tag files.
+<li> customizing with a configuration file (gtags.conf).
 <li> generate completion list for completing input method.
 </ul>
 
-If you have a plan to make a yet another editor with tag facility
-then you can use GLOBAL as the tag system.
+If you have a plan to make a yet another editor with tag facility,
+you can use GLOBAL as the tag system.
 <p align=right><i>May the GLOBAL be under you like the globe!</i></p>
 </td>
 </tr>
