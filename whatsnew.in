@@ -6,6 +6,8 @@ Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <dl compact>
+<dt>2010/4/1<dd>
+	GLOBAL-5.8.2 was released. Function layer plug-in parser has become the default of gtags(1).
 <dt>2010/3/6<dd>
 	GLOBAL-5.8.1 was released. Added support of function layer plug-in parser for gtags(1),
 	and call-tree facility using cflow(1) for htags(1).

@@ -1,41 +1,34 @@
 @c This file is generated automatically by convert.pl from gtags-parser/manual.in.
 @unnumberedsubsec NAME
-gtags-parser - print cross reference list for gtags.
+gtags-parser - print cross reference for gtags.
 @unnumberedsubsec SYNOPSIS
 @noindent
 @quotation
 gtags-parser [-bdenqrstvw] file ...@*
 @end quotation
 @unnumberedsubsec DESCRIPTION
-Gtags-parser print cross reference list for gtags(1)
-from the specified C, C++, yacc, java, PHP and Assembly source
-to standard output.
-Each line of output contains the object name,
-the line number which it appears, the file in which it is defined,
-and a line image separated by white-space.
+Gtags-parser prints cross reference of the specified
+C, C++, yacc, java, PHP and Assembly source files to the standard output.
+
+Each line of output contains the object name, line number, file name and line image
+separated by white-space.
 It's same with the output of ctags(1) with @samp{-x} option.
 
-Depending upon the options provided to gtags-parser,
-objects will consist of object definitions, object references
-and other symbols.
-
-Files whose names end in @file{.c} or @file{.h} are assumed to be C
-source files.
-Files whose names end in @file{.c++} @file{.cc} @file{.cpp}
+Files whose name end in @file{.c} or @file{.h} are assumed to be C source files.
+Files whose name end in @file{.c++} @file{.cc} @file{.cpp}
 @file{.cxx} @file{.hxx} @file{.hpp} @file{.C} @file{.H} are assumed to be C++
 source files.
-Files whose names end in @file{.y} are assumed to be YACC source files.
-Files whose names end in @file{.java} are assumed to be Java source files.
-Files whose names end in @file{.php} @file{.php3} @file{.phtml} are
+Files whose name end in @file{.y} are assumed to be YACC source files.
+Files whose name end in @file{.java} are assumed to be Java source files.
+Files whose name end in @file{.php} @file{.php3} @file{.phtml} are
 assumed to be PHP source files.
-Files whose names end in @file{.s} or @file{.S} are assumed to be
-Assembly source files.
-Other files are searched for C style definitions.
+Files whose name end in @file{.s} or @file{.S} are assumed to be Assembly source files.
+Other files are assumed to be C source files.
 
 Yacc files each have a special tag. yyparse is the start
 of the second section of the yacc file.
 
-This command is the default parser of GLOBAL source code tag system.
+This command is obsolete.
 @unnumberedsubsec OPTIONS
 The following options are available:
 @table @asis
@@ -51,7 +44,7 @@ Suppress output of tags. It is useful to use with @samp{-w} option.
 Quiet mode.
 @item @samp{-r}, @samp{--reference}
 Locate object references instead of object definitions.
-@file{GTAGS} is needed at the current directory.
+@file{GTAGS} should exist in the current directory.
 (C, C++ and Java source only)
 By default, locate object definitions.
 @item @samp{-s}, @samp{--symbol}
@@ -62,7 +55,7 @@ Verbose mode.
 @item @samp{-w}, @samp{--warning}
 Print warning message.
 @item @samp{--langmap}=map
-Language mapping. Each comma-separated  map  consists of
+Language mapping. Each comma-separated map  consists of
 the language name, a colon, and a list of file extensions.
 Default mapping is 'c:.c.h,yacc:.y,asm:.s.S,java:.java,cpp:.c++.cc.cpp.cxx.hxx.hpp.C.H,php:.php.php3.phtml'.
 @end table

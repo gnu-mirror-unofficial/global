@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.57 from globaldoc.texi on March, 6  2010 -->
+<!-- Created by texi2html 1.57 from globaldoc.texi on April, 1  2010 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY >
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 5.8.1, for GNU GLOBAL version 5.8.1</H2>
-<H2>6 March 2010</H2>
+<H2>Edition 5.8.2, for GNU GLOBAL version 5.8.2</H2>
+<H2>1 April 2010</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -705,7 +705,7 @@ If you need help then please type <KBD>ghelp</KBD>.
 
 
 <UL>
-<LI>Almost global(1)(see section <A HREF="globaldoc.html#SEC47">5.1 global - print the locations of specified object.</A>)'s command characters are available as a command.
+<LI>Almost global(1)(see section <A HREF="globaldoc.html#SEC47">5.1 global - print locations of the specified object.</A>)'s command characters are available as a command.
 
 
 <PRE>
@@ -1637,7 +1637,7 @@ Press <KBD>TAB</KBD> and Vim will complete the tag name.
 
 </PRE>
 
-	About the other options, please see See section <A HREF="globaldoc.html#SEC47">5.1 global - print the locations of specified object.</A>.
+	About the other options, please see See section <A HREF="globaldoc.html#SEC47">5.1 global - print locations of the specified object.</A>.
 
 <LI>The GtagsCursor command brings you to the definition or reference of the current token.
 
@@ -1994,7 +1994,7 @@ from 600 to 1200MB.
 </PRE>
 
 <P>
-Please invoke gtags(1)(see section <A HREF="globaldoc.html#SEC61">5.2 gtags - create tag files for global.</A>) and htags(1)(see section <A HREF="globaldoc.html#SEC76">5.3 htags - generate hypertext from source code.</A>)
+Please invoke gtags(1)(see section <A HREF="globaldoc.html#SEC61">5.2 gtags - create tag files for global.</A>) and htags(1)(see section <A HREF="globaldoc.html#SEC75">5.3 htags - generate a hypertext from a set of source files.</A>)
 in order like this:
 
 
@@ -2147,6 +2147,11 @@ About the capabilities, please see each command manual. See section <A HREF="glo
 You can write new parser for gtags(1).
 
 
+<P>
+Command layer plug-in parser is obsolete.
+Please see <TT>`plugin-example/'</TT> to know function layer plug-in parser.
+
+
 
 
 <H3><A NAME="SEC43">4.2.1 How to plug in a parser</A></H3>
@@ -2294,12 +2299,12 @@ Instead, you can use incremental updating facility (<SAMP>`-u'</SAMP> option).
 
 
 
-<H2><A NAME="SEC47">5.1 global - print the locations of specified object.</A></H2>
+<H2><A NAME="SEC47">5.1 global - print locations of the specified object.</A></H2>
 
 
 <H3><A NAME="SEC48">NAME</A></H3>
 <P>
-global - print the locations of specified object.
+global - print locations of the specified object.
 
 
 <H3><A NAME="SEC49">SYNOPSIS</A></H3>
@@ -2308,7 +2313,7 @@ global - print the locations of specified object.
 <BLOCKQUOTE>
 <P>
 global [-aGilnqrstTvx][-e] pattern<BR>
-global -c[qsv] prefix<BR>
+global -c[iqsv] prefix<BR>
 global -f[anqrstvx] files<BR>
 global -g[aGilnoOqtvx][-e] pattern<BR>
 global -I[ailnqtvx][-e] pattern<BR>
@@ -2321,19 +2326,27 @@ global -u[qv]<BR>
 
 <H3><A NAME="SEC50">DESCRIPTION</A></H3>
 <P>
-Global find the locations of specified object
-in C, C++, Yacc, Java, PHP and Assembly source files.
-Global can treat a source tree, that is, a directory that
-has sub-directories and source files as a project.
-You can get the relative path of objects from anywhere within the project.
+Global finds locations of the specified object
+in C, C++, Yacc, Java, PHP and Assembly source files,
+and print the path name, line number and line image of the locations.
 Global can locate not only object definitions but also object
 references and other symbols.
 
 
 <P>
+Global can treat a source tree, that is, a directory that
+has sub-directories and source files as a project.
 In advance of using this command, you must execute gtags(1)
-at the root directory of the project to make tag files.
-Then you can execute this command at anywhere in the project.
+at the root directory of a project to make tag files.
+Then you can execute this command anywhere in the project.
+You need not specify where the tag file is.
+Instead, global locates it by itself.
+
+
+<P>
+You can specify a regular expression for the pattern.
+Global understands two different versions of regular expression
+syntax: basic and extended. The default is extended.
 
 
 <H3><A NAME="SEC51">COMMANDS</A></H3>
@@ -2343,18 +2356,16 @@ The following commands are available:
 
 <DT>&#60;no command&#62; pattern
 <DD>
-Print object which match to the pattern.
-Extended regular expressions which are the same as those
-accepted by egrep(1) are available.
+Print objects which match to the pattern.
+By default, print object definitions.
 <DT><SAMP>`-c'</SAMP>, <SAMP>`--completion'</SAMP> [prefix]
 <DD>
-Print the candidates of object names which start with the specified
-prefix. Prefix is not specified,
-print all object names.
+Print object names which start with the specified prefix.
+If prefix is not specified, print all object names.
 <DT><SAMP>`-f'</SAMP>, <SAMP>`--file'</SAMP> files
 <DD>
-Print all tags in the files.
-This option implies the -x option.
+Print all objects in the files.
+This option implies the <SAMP>`-x'</SAMP> option.
 <DT><SAMP>`-g'</SAMP>, <SAMP>`--grep'</SAMP> pattern
 <DD>
 Print all lines which match to the pattern.
@@ -2366,18 +2377,20 @@ Show help.
 Print all lines which match to the pattern.
 This function use idutils(1) as a search engine.
 To use this command, you need to install idutils(1)
-in your system and you must execute gtags(1)
-with the <SAMP>`-I'</SAMP> option.
+in your system and execute gtags(1) with the <SAMP>`-I'</SAMP> option.
 <DT><SAMP>`-P'</SAMP>, <SAMP>`--path'</SAMP> [pattern]
 <DD>
-Print the paths which match to the pattern.
-If no pattern specified, print all paths in the project.
+Print path names which match to the pattern.
+If no pattern specified, print all path names in the project.
 <DT><SAMP>`-p'</SAMP>, <SAMP>`--print-dbpath'</SAMP>
 <DD>
 Print the location of <TT>`GTAGS'</TT>.
 <DT><SAMP>`-u'</SAMP>, <SAMP>`--update'</SAMP>
 <DD>
-Locate tag files and update them incrementally.
+Update tag files incrementally.
+This command internally invokes gtags(1).
+You can execute this command anywhere in the project
+differing from gtags(1).
 <DT><SAMP>`--version'</SAMP>
 <DD>
 Show version number.
@@ -2397,53 +2410,54 @@ Print absolute path name. By default, print relative path name.
 Decide tag type by the context. The context must be 'lineno:path'.
 If this option is specified then the <SAMP>`-s'</SAMP> and <SAMP>`-r'</SAMP>
 are ignored.
-Regular expression is not allowed in the pattern.
+Regular expression is not allowed for the pattern.
 This option assumes use in conversational environments such as
 editors and IDEs.
 <DT><SAMP>`-e'</SAMP>, <SAMP>`--regexp'</SAMP> pattern
 <DD>
-Use pattern as the pattern; useful to protect  patterns
+Use pattern as the pattern; useful to protect patterns
 beginning with <TT>`-'</TT>.
 <DT><SAMP>`-G'</SAMP>, <SAMP>`--basic-regexp'</SAMP>
 <DD>
-Interpret pattern as a  basic regular expression.
+Interpret pattern as a basic regular expression.
 The default is extended regular expression.
 <DT><SAMP>`-i'</SAMP>, <SAMP>`--ignore-case'</SAMP>
 <DD>
-ignore case distinctions in pattern.
+Ignore case distinctions in the pattern.
 <DT><SAMP>`-l'</SAMP>, <SAMP>`--local'</SAMP>
 <DD>
-Print just objects which exist under the current directory.
+Print only objects which exist under the current directory.
 <DT><SAMP>`-n'</SAMP>, <SAMP>`--nofilter'</SAMP>
 <DD>
 Suppress sort filter and path conversion filter.
 <DT><SAMP>`-O'</SAMP>, <SAMP>`--only-other'</SAMP>
 <DD>
-Search pattern only in other than source files like <TT>`README'</TT>.
-This option is valid only with <SAMP>`-g'</SAMP> or <SAMP>`-P'</SAMP> command.
+Treat only text files other than source code like <TT>`README'</TT>.
+This option is valid only with the <SAMP>`-g'</SAMP> or <SAMP>`-P'</SAMP> command.
 This option override the <SAMP>`-o'</SAMP> option.
 <DT><SAMP>`-o'</SAMP>, <SAMP>`--other'</SAMP>
 <DD>
-Search pattern in not only source files but also other files
+Treat not only source files but also text files other than source code
 like <TT>`README'</TT>.
-This option is valid only with <SAMP>`-g'</SAMP> or <SAMP>`-P'</SAMP> command.
+This option is valid only with the <SAMP>`-g'</SAMP> or <SAMP>`-P'</SAMP> command.
 <DT><SAMP>`-q'</SAMP>, <SAMP>`--quiet'</SAMP>
 <DD>
 Quiet mode.
 <DT><SAMP>`-r'</SAMP>, <SAMP>`--reference'</SAMP>, <SAMP>`--rootdir'</SAMP>
 <DD>
-Print the locations of object references.
-By default, print object definitions.
-With the <SAMP>`-p'</SAMP> option, print the root directory of source tree.
+Print locations of object references.
+With the <SAMP>`-p'</SAMP> option, print the root directory of the project.
 <DT><SAMP>`--result'</SAMP> format
 <DD>
-format may be 'path', `ctags', `ctags-x', `grep' or 'cscope'.
+Print out using the specified format.
+format may be path, ctags, ctags-x, grep or cscope.
+The default is path.
 The <SAMP>`--result=ctags'</SAMP> and <SAMP>`--result=ctags-x'</SAMP> are
 equivalent to the <SAMP>`-t'</SAMP> and <SAMP>`-x'</SAMP> respectively.
 The <SAMP>`--result'</SAMP> option is given to priority more than the -t and -x option.
 <DT><SAMP>`-s'</SAMP>, <SAMP>`--symbol'</SAMP>
 <DD>
-Print the locations of specified symbol other than definitions.
+Print locations of the specified symbol other than definitions.
 <DT><SAMP>`-T'</SAMP>, <SAMP>`--through'</SAMP>
 <DD>
 Go through all the tag files listed in <VAR>GTAGSLIBPATH</VAR>.
@@ -2452,14 +2466,13 @@ This option is ignored when either <SAMP>`-s'</SAMP>, <SAMP>`-r'</SAMP>
 or <SAMP>`-l'</SAMP> option is specified.
 <DT><SAMP>`-t'</SAMP>, <SAMP>`--tags'</SAMP>
 <DD>
-Print with standard ctags format.
+Use standard ctags format.
 <DT><SAMP>`-v'</SAMP>, <SAMP>`--verbose'</SAMP>
 <DD>
 Verbose mode.
 <DT><SAMP>`-x'</SAMP>, <SAMP>`--cxref'</SAMP>
 <DD>
-In addition to the default output, produce the line number and
-the line contents.
+Use standard ctags cxref (with the -x) format.
 </DL>
 
 
@@ -2473,18 +2486,18 @@ the line contents.
 	src/main.c
 	$ global -x main
 	main              10 src/main.c  main (argc, argv) {
+	$ global -f src/main.c
+	main              10 src/main.c  main (argc, argv) {
+	func1		  55 src/main.c  func1() {		  
+	func2		  72 src/main.c  func2() {		  
+	func3		 120 src/main.c  func3() {		  
 	$ global -x '^[sg]et'
-	set_num           20 lib/util.c  set_num(values)
+	set_num           20 lib/util.c  set_num(values) {
 	get_num           30 lib/util.c  get_num() {
 	$ global -rx '^[sg]et'
+	get_num          205 src/op.c            while (get_num() &#62; 0) {
 	set_num          113 src/op.c            set_num(32);
 	set_num          225 src/opop.c               if (set_num(0) &#62; 0) {
-	get_num           90 src/op.c            while (get_num() &#62; 0) {
-	$ cd lib
-	$ global -rx '^[sg]et'
-	set_num          113 ../src/op.c            set_num(32);
-	set_num          225 ../src/opop.c               if (set_num(0) &#62; 0) {
-	get_num           90 ../src/op.c            while (get_num() &#62; 0) {
 	$ global strlen
 	$ (cd /usr/src/sys; gtags)
 	$ export GTAGSLIBPATH=/usr/src/sys
@@ -2515,9 +2528,9 @@ Tag file for other symbols.
 Tag file for path of source files.
 <DT><TT>`GTAGSROOT'</TT>
 <DD>
-If environment variable <VAR>GTAGSROOT</VAR> is not set and <TT>`GTAGSROOT'</TT> exist
-in the same directory with <TT>`GTAGS'</TT> then use the value
-as <VAR>GTAGSROOT</VAR>.
+If environment variable <VAR>GTAGSROOT</VAR> is not set
+and file <TT>`GTAGSROOT'</TT> exists in the same directory with <TT>`GTAGS'</TT>
+then global set the <VAR>GTAGSROOT</VAR> to the content of the file.
 <DT><TT>`/etc/gtags.conf'</TT>, <TT>`$HOME/.globalrc'</TT>
 <DD>
 Configuration file.
@@ -2531,27 +2544,28 @@ The following environment variables affect the execution of global:
 
 <DT><VAR>GTAGSROOT</VAR>
 <DD>
-The directory which is the root of source code.
+The root directory of the project.
 <DT><VAR>GTAGSDBPATH</VAR>
 <DD>
-The directory on which gtags database exist.
+The directory on which tag files exist.
 This value is ignored when <VAR>GTAGSROOT</VAR> is not defined.
 <DT><VAR>GTAGSLIBPATH</VAR>
 <DD>
 If this variable is set, it is used as the path to search
 for library functions. If the specified object is not
-found in the source project, global also search in these paths.
+found in the project, global also search in these paths.
 Since only <TT>`GTAGS'</TT> is targeted in the retrieval, this variable is
 ignored when the <SAMP>`-r'</SAMP> or <SAMP>`-s'</SAMP> is specified.
+<DT><VAR>GTAGSCONF</VAR>
+<DD>
+Configuration file. The default is <TT>`$HOME/.globalrc'</TT>.
 <DT><VAR>GTAGSLABEL</VAR>
 <DD>
-If this variable is set, its value is used as the label
-of configuration file. The default is <CODE>default</CODE>.
+Configuration label. The default is default.
 <DT><VAR>MAKEOBJDIRPREFIX</VAR>
 <DD>
-If this variable is set, <TT>`$MAKEOBJDIRPREFIX&#60;current directory&#62;'</TT>
-is used as the candidate directory for tag files.
-The default is <TT>`/usr/obj'</TT>.
+If this variable is set, <TT>`$MAKEOBJDIRPREFIX'</TT> is used as the prefix
+of BSD-style objdir. The default is <TT>`/usr/obj'</TT>.
 </DL>
 
 
@@ -2614,11 +2628,13 @@ gtags [-ciIOqvw][-d tag-file][-f file][-n number][dbpath]<BR>
 
 <H3><A NAME="SEC64">DESCRIPTION</A></H3>
 <P>
-Gtags recursively collect the source files under
-the current directory,
-pickup symbols and write the cross-reference data into tag files
+Gtags is used to create tag files for global(1).
+
+
+<P>
+Gtags recursively collects source files under the current directory,
+pickup symbols and write the cross-reference data into the tag files
 (<TT>`GTAGS'</TT>, <TT>`GRTAGS'</TT>, <TT>`GSYMS'</TT> and <TT>`GPATH'</TT>).
-You should execute this command at the root of the source tree.
 
 
 <P>
@@ -2648,30 +2664,27 @@ This option does not influence GRTAGS and GSYMS,
 because they are always made in compact format.
 <DT><SAMP>`--config'</SAMP>[=name]
 <DD>
-Show the value of config variable name.
-If name is not specified then show whole of config entry.
+Print the value of config variable name.
+If name is not specified then print all names and values.
 <DT><SAMP>`-d'</SAMP>, <SAMP>`--dump'</SAMP> tag-file
 <DD>
 Dump a tag file. The output format is 'key&#60;tab&#62;data'.
 This is for debugging.
 <DT><SAMP>`-f'</SAMP>, <SAMP>`--file'</SAMP> file
 <DD>
-Read from file a list of file names which should be
-considered as the candidate of source files.
-By default, all files under the current directory are
-considered as the candidate.
-If file is <TT>`-'</TT>, read from standard input.
+Browse through all source files whose names are listed in file.
+The argument file can  be set to <TT>`-'</TT> to accept a list of
+files from the standard input.
 File names must be separated by newline.
 <DT><SAMP>`--gtagsconf'</SAMP> file
 <DD>
-Load user's configuration from file.
+Set the <VAR>GTAGSCONF</VAR> environment variable to file.
 <DT><SAMP>`--gtagslabel'</SAMP> label
 <DD>
-label is used as the label of configuration file.
-The default is <CODE>default</CODE>.
+Set the <VAR>GTAGSLABEL</VAR> environment variable to label.
 <DT><SAMP>`-I'</SAMP>, <SAMP>`--idutils'</SAMP>
 <DD>
-Make index files for idutils(1) too.
+Also make the ID database file for idutils(1).
 <DT><SAMP>`-i'</SAMP>, <SAMP>`--incremental'</SAMP>
 <DD>
 Update tag files incrementally. You had better use
@@ -2683,7 +2696,7 @@ By default, gtags invokes gtags-parser with arguments
 as many as possible to decrease the frequency of invoking.
 <DT><SAMP>`-O'</SAMP>, <SAMP>`--objdir'</SAMP>
 <DD>
-Use objdir as dbpath.
+Use BSD-style objdir as the location of tag files.
 If <TT>`$MAKEOBJDIRPREFIX'</TT> directory exists, gtags creates
 <TT>`$MAKEOBJDIRPREFIX/&#60;current directory&#62;'</TT> directory and makes
 tag files in it.
@@ -2695,7 +2708,7 @@ It is considered that file was updated, and other files were not
 updated.  The file must be relative path name from the current directory.
 This option implies the -i option.
 If the file is new then <SAMP>`--single-update'</SAMP> is ignored,
-and the processing is automatically switched to the normal incremental updating.
+and the processing is automatically switched to normal incremental updating.
 <DT><SAMP>`--statistics'</SAMP>
 <DD>
 Print statistics information.
@@ -2713,8 +2726,6 @@ Print warning messages.
 <DD>
 The directory in which tag files are generated.
 The default is the current directory.
-It is useful when your source directory is on a read only
-device like CDROM.
 </DL>
 
 
@@ -2756,26 +2767,26 @@ Configuration file.
 The following environment variables affect the execution of gtags:
 <DL COMPACT>
 
+<DT><VAR>TMPDIR</VAR>
+<DD>
+The location used to stored temporary files. The default is <TT>`/tmp'</TT>.
 <DT><VAR>GTAGSCONF</VAR>
 <DD>
-If this variable is set, its value is used as the
-configuration file. The default is <TT>`$HOME/.globalrc'</TT>.
+Configuration file. The default is <TT>`$HOME/.globalrc'</TT>.
 <DT><VAR>GTAGSLABEL</VAR>
 <DD>
-If this variable is set, its value is used as the label
-of configuration file. The default is <CODE>default</CODE>.
+Configuration label. The default is default.
 <DT><VAR>GTAGSCACHE</VAR>
 <DD>
-If this variable is set, its value is used as the size of
-B-tree cache. The default is 50000000 (bytes).
+The size of B-tree cache. The default is 50000000 (bytes).
 <DT><VAR>GTAGSFORCECPP</VAR>
 <DD>
 If this variable is set, each file whose suffix is 'h' is treated
 as a C++ source file.
 <DT><VAR>MAKEOBJDIRPREFIX</VAR>
 <DD>
-If this variable is set, <TT>`$MAKEOBJDIRPREFIX'</TT> is used as an object
-prefix directory. The default is <TT>`/usr/obj'</TT>.
+If this variable is set, <TT>`$MAKEOBJDIRPREFIX'</TT> is used as the prefix
+of BSD-style objdir. The default is <TT>`/usr/obj'</TT>.
 </DL>
 
 
@@ -2788,15 +2799,15 @@ You can see the default value for each variable with the <SAMP>`--config'</SAMP>
 <DT><CODE>GTAGS</CODE>(string)
 <DD>
 If this variable is set, its value is used as the
-command line of the parser for GTAGS. The default is <TT>`gtags-parser %s'</TT>.
+command line of the parser for GTAGS.
 <DT><CODE>GRTAGS</CODE>(string)
 <DD>
 If this variable is set, its value is used as the
-command line of the parser for GRTAGS. The default is <TT>`gtags-parser -r %s'</TT>.
+command line of the parser for GRTAGS.
 <DT><CODE>GSYMS</CODE>(string)
 <DD>
 If this variable is set, its value is used as the
-command line of the parser for GSYMS. The default is <TT>`gtags-parser -s %s'</TT>.
+command line of the parser for GSYMS.
 <DT><CODE>icase_path</CODE>(boolean)
 <DD>
 Ignore case distinctions in the path.
@@ -2822,15 +2833,10 @@ If the value ends with '/', it assumed as a directory and gtags skips all files 
 If the value start with '/', it assumed relative path from the root of source directory.
 <DT><CODE>suffixes</CODE>(comma separated list)
 <DD>
-Suffixes of target source file.
+Suffixes of target source files.
 As a special exception, gtags collect values from multiple <CODE>suffixes</CODE> variables.
-This variable is obsoleted. If the langmap variable is defined
+This variable is obsolete. If the langmap variable is defined
 gtags no longer refers this.
-<DT><CODE>use_builtin_parser</CODE>(boolean)
-<DD>
-Use built-in parser instead of external command.
-The following restrictions are in incremental updating with built-in parser:
-If <TT>`GRTAGS'</TT> or <TT>`GSYMS'</TT> exists, both of them exist and the format should be the same.
 </DL>
 
 
@@ -2839,14 +2845,7 @@ If <TT>`GRTAGS'</TT> or <TT>`GSYMS'</TT> exists, both of them exist and the form
 Gtags exits with a non 0 value if an error occurred, 0 otherwise.
 
 
-<H3><A NAME="SEC71">MESSAGE FORMAT</A></H3>
-<P>
-Verbose message has important level. The most important level is 0,
-the second is 1 and so on. All the message has level numbers leading
-blanks.
-
-
-<H3><A NAME="SEC72">SEE ALSO</A></H3>
+<H3><A NAME="SEC71">SEE ALSO</A></H3>
 <P>
 gtags-parser(1),
 global(1),
@@ -2858,7 +2857,7 @@ GNU GLOBAL source code tag system<BR>
 (http://www.gnu.org/software/global/).
 
 
-<H3><A NAME="SEC73">BUG</A></H3>
+<H3><A NAME="SEC72">BUG</A></H3>
 <P>
 <TT>`GTAGS'</TT>, <TT>`GRTAGS'</TT> and <TT>`GSYMS'</TT> are very large.
 In advance of using this command, check the space of your disk.
@@ -2874,25 +2873,25 @@ Probably valid only for FreeBSD and Linux kernel source.
 There is no concurrency control about tag files.
 
 
-<H3><A NAME="SEC74">AUTHOR</A></H3>
+<H3><A NAME="SEC73">AUTHOR</A></H3>
 <P>
 Shigio YAMAGUCHI, Hideki IWAMOTO and others.
 
 
-<H3><A NAME="SEC75">HISTORY</A></H3>
+<H3><A NAME="SEC74">HISTORY</A></H3>
 <P>
 The gtags command appeared in FreeBSD 2.2.2.
 
 
-<H2><A NAME="SEC76">5.3 htags - generate hypertext from source code.</A></H2>
+<H2><A NAME="SEC75">5.3 htags - generate a hypertext from a set of source files.</A></H2>
 
 
-<H3><A NAME="SEC77">NAME</A></H3>
+<H3><A NAME="SEC76">NAME</A></H3>
 <P>
-htags - generate hypertext from source code.
+htags - generate a hypertext from a set of source files.
 
 
-<H3><A NAME="SEC78">SYNOPSIS</A></H3>
+<H3><A NAME="SEC77">SYNOPSIS</A></H3>
 <P>
 
 <BLOCKQUOTE>
@@ -2902,111 +2901,105 @@ htags [-acDfFghInosTvwx][-d dbpath][-m name][-S cgidir][-t title][dir]<BR>
 
 
 
-<H3><A NAME="SEC79">DESCRIPTION</A></H3>
+<H3><A NAME="SEC78">DESCRIPTION</A></H3>
 <P>
-Htags makes hypertext of C, C++, Yacc, Java, PHP and Assembly source code.
-
-
-<P>
-In advance of using this command, you must execute
-gtags(1) from the root directory of the source tree.
-Then you can execute htags from the same place.
-Htags makes an directory named <TT>`HTML'</TT> and generates
-hypertext in it.
-You can start browsing from <TT>`HTML/index.html'</TT>.
+Htags generates a hypertext from a set of source files of
+C, C++, Yacc, Java, PHP and Assembly.
 
 
 <P>
-Since htags generates static hypertext as long as
-the <SAMP>`-D'</SAMP> or <SAMP>`-f'</SAMP> option is not specified,
-you can move it anywhere and browse it by any browser without
-web server.
+In advance of using this command, you should execute gtags(1)
+in the root directory of a source project.
+Then you can execute htags in the same place.
+Htags makes a directory named <TT>`HTML'</TT>, and put a hypertext in it.
+You can start browsing at <TT>`HTML/index.html'</TT>.
 
 
 <P>
-You must use same parser for both gtags(1) and htags.
-If you use the default parser, it is not necessary to consider for it.
+Since htags generates a static hypertext as long as the <SAMP>`-D'</SAMP> or <SAMP>`-f'</SAMP>
+option is not specified, you can move it anywhere and browse it by any browser without
+any HTTP server.
 
 
-
-
-<H3><A NAME="SEC80">OPTIONS</A></H3>
 <P>
-If you are new on htags, it is recommended to invoke with the <SAMP>`--suggest'</SAMP> option.
-With the option, htags use popular options instead of you.<BR>
+This command has so many options.
+If you are new on htags, it is recommended to use the <SAMP>`--suggest'</SAMP> option.
+With that option, htags chooses popular options on behalf of you.
+
+
+<H3><A NAME="SEC79">OPTIONS</A></H3>
+<P>
 The following options are available:
 <DL COMPACT>
 
 <DT><SAMP>`-a'</SAMP>, <SAMP>`--alphabet'</SAMP>
 <DD>
-Make an alphabetical function index which is suitable
-for a large project.
+Make an alphabetical object index which is suitable for large projects.
 <DT><SAMP>`--caution'</SAMP>
 <DD>
-Include caution message to prohibit downloading.
+Display a caution message on the top page.
 <DT><SAMP>`--cflow'</SAMP> cflowfile
 <DD>
 Add a call tree by cflow(1). cflowfile must be posix format.
-If you use GNU cflow, invoke cflow at the root of the project with
-the <SAMP>`--format=posix'</SAMP> option. See EXAMPLES.
+If you use GNU cflow, invoke the command at the root directory of the project
+with the <SAMP>`--format=posix'</SAMP> option. See EXAMPLES.
 <DT><SAMP>`-c'</SAMP>, <SAMP>`--compact'</SAMP>
 <DD>
-Compress html files  by gzip(1).
-You need to set up a web server so that gzip(1)
+Compress html files by gzip(1).
+You need to configure HTTP server so that gzip(1)
 is invoked for each compressed file.
 See <TT>`HTML/.htaccess'</TT> that is generated by htags.
 <DT><SAMP>`--cvsweb'</SAMP> url
 <DD>
-Include cvsweb URL. url is used as base of URL.
-When directory <TT>`CVS'</TT> exists in the root directory of source project,
+Add a link to cvsweb. url is used as the base of URL.
+When directory <TT>`CVS'</TT> exists in the root directory of the source project,
 the content of <TT>`CVS/Repository'</TT> is used as the relative path from the base.
 <DT><SAMP>`--cvsweb-cvsroot'</SAMP> cvsroot
 <DD>
-Specifies cvsroot in cvsweb URL.
+Specify cvsroot in cvsweb URL.
 <DT><SAMP>`-D'</SAMP>, <SAMP>`--dynamic'</SAMP>
 <DD>
 Generate object lists dynamically using CGI program.
-By default, object lists are generated statically.
-Though this option decrease both the size and the generation
-time of the hypertext, you need to set up a web server, and 
-you cannot move the hypertext from the source directory.
+Though this option decrease both the size and generation time of hypertext,
+you need to start up HTTP server.
 <DT><SAMP>`-d'</SAMP>, <SAMP>`--dbpath'</SAMP> dbpath
 <DD>
-Specifies the directory in which <TT>`GTAGS'</TT> and <TT>`GRTAGS'</TT>
-exist. The default is the current directory.
+Specify a directory in which <TT>`GTAGS'</TT> exist.
+The default is the current directory.
 <DT><SAMP>`--disable-grep'</SAMP>
 <DD>
 Disable grep in the search form(-f,--form).
 <DT><SAMP>`-F'</SAMP>, <SAMP>`--frame'</SAMP>
 <DD>
-Use frame for each part of the contents.
+Use frames for the top page.
 <DT><SAMP>`-f'</SAMP>, <SAMP>`--form'</SAMP>
 <DD>
 Add a search form using CGI program.
-You need to set up a web server, and you cannot move
-the hypertext from the source directory.
+You need to start up HTTP server for it.
 <DT><SAMP>`--full-path'</SAMP>
 <DD>
-List file names with full path in the file index.
-By default, list just the last component of a path.
+Use full path name in the file index.
+By default, use just the last component of a path.
 <DT><SAMP>`-g'</SAMP>, <SAMP>`--gtags'</SAMP>
 <DD>
-Execute gtags(1) before creating hypertext.
+Execute gtags(1) before starting job.
 The <SAMP>`-v'</SAMP>, <SAMP>`-w'</SAMP> and dbpath are passed to gtags.
 <DT><SAMP>`--gtagsconf'</SAMP> file
 <DD>
-Load user's configuration from file.
+Set the <VAR>GTAGSCONF</VAR> environment variable to file.
 <DT><SAMP>`--gtagslabel'</SAMP> label
 <DD>
-label is used for the label of configuration file.
-The default is <CODE>default</CODE>.
+Set the <VAR>GTAGSLABEL</VAR> environment variable to label.
 <DT><SAMP>`-h'</SAMP>, <SAMP>`--func-header'</SAMP>[=position]
 <DD>
 Insert function header for each function.
-By default, htags doesn't generates it.
+By default, htags doesn't generate it.
 You can specify the position using position argument,
-which allows one of <CODE>before</CODE>, <CODE>right</CODE> and <CODE>after</CODE>.
-The default position is <CODE>after</CODE>.
+which allows one of before, right and after.
+The default position is after.
+<DT><SAMP>`--html'</SAMP>
+<DD>
+Generate HTML hypertext instead of XHTML.
 <DT><SAMP>`-I'</SAMP>, <SAMP>`--icon'</SAMP>
 <DD>
 Use icons instead of text for some links.
@@ -3018,7 +3011,7 @@ Insert custom footer derived from file before &#60;/body&#62; tag.
 Insert custom header derived from file after &#60;body&#62; tag.
 <DT><SAMP>`--item-order'</SAMP> spec
 <DD>
-Specify order of items in the top page.
+Specify the order of the items in the top page.
 The spec is a string consists of item signs in order.
 Each sign means as follows:
 c: caution, s: search form,
@@ -3026,23 +3019,21 @@ m: mains, d: definition, f: files, t: call tree.
 The default is csmdf.
 <DT><SAMP>`-m'</SAMP>, <SAMP>`--main-func'</SAMP> name
 <DD>
-Specify the main function name. The default is <CODE>main</CODE>.
+Specify startup function name. The default is main.
 <DT><SAMP>`-n'</SAMP>, <SAMP>`--line-number'</SAMP>[=columns]
 <DD>
 Print line numbers. By default, doesn't print line numbers.
 The default value of columns is 4.
 <DT><SAMP>`--no-map-file'</SAMP>
 <DD>
-Doesn't generate <TT>`MAP'</TT> and <TT>`FILEMAP'</TT> file.
+Stop generating file <TT>`MAP'</TT> and <TT>`FILEMAP'</TT>.
 By default, htags generates them.
 <DT><SAMP>`-o'</SAMP>, <SAMP>`--other'</SAMP>
 <DD>
-Pick up not only source files but also other files except for
-binary files.
+Pick up not only source files but also other files in the file index.
 <DT><SAMP>`-S'</SAMP>, <SAMP>`--secure-cgi'</SAMP> cgidir
 <DD>
-Write CGI programs into the cgidir to realize
-a centralised CGI program.
+Write CGI programs into the cgidir to realize centralised CGI program.
 Script alias is <TT>`/cgi-bin'</TT> by default.
 You can overwrite this value using config variable
 <CODE>script_alias</CODE> in <TT>`gtags.conf'</TT>.
@@ -3054,19 +3045,19 @@ Make anchors not only for object definitions and references but also other symbo
 Print statistics information.
 <DT><SAMP>`--suggest'</SAMP>
 <DD>
-Htags selects popular options instead of beginners.
+Htags chooses popular options on behalf of beginners.
 It is equivalent to '-afghInosTxv --show-position' now.
-<DT><SAMP>`-T'</SAMP>, <SAMP>`--table-flist'</SAMP>[=fields]
+<DT><SAMP>`-T'</SAMP>, <SAMP>`--table-flist'</SAMP>[=rows]
 <DD>
-Generate file list using &#60;table&#62; tag.
-The fields is used for field number in a line. The default is 5.
+Use &#60;table&#62; tag to display the file index.
+You can optionally specify the number of rows. The default is 5.
 <DT><SAMP>`-t'</SAMP>, <SAMP>`--title'</SAMP> title
 <DD>
-The title of this hypertext. The default is the last
-component of the current directory.
+Title of the hypertext.
+The default is the last component of the path of the current directory.
 <DT><SAMP>`--table-list'</SAMP>
 <DD>
-List tags using &#60;table&#62; tag.
+Use &#60;table&#62; tag to display the tag list.
 <DT><SAMP>`--tabs number'</SAMP>
 <DD>
 Tab stop. The default is 8.
@@ -3078,7 +3069,7 @@ Verbose mode.
 Print warning messages.
 <DT><SAMP>`-x'</SAMP>, <SAMP>`--xhtml'</SAMP>[=version]
 <DD>
-Generate XHTML hypertext instead of HTML.
+Generate XHTML hypertext. This is the default.
 If the <SAMP>`--frame'</SAMP> option is specified then
 generate XHTML-1.0 Frameset for index.html
 and generate XHTML-1.0 Transitional for other files,
@@ -3087,12 +3078,12 @@ else if version is <CODE>1.1</CODE> or config variable
 XHTML-1.1 else XHTML 1.0 Transitional.
 <DT>dir
 <DD>
-The directory in which hypertext is generated.
+The directory in which the result of this command is stored.
 The default is the current directory.
 </DL>
 
 
-<H3><A NAME="SEC81">EXAMPLES</A></H3>
+<H3><A NAME="SEC80">EXAMPLES</A></H3>
 
 <PRE>
 	$ gtags -v
@@ -3108,7 +3099,7 @@ The default is the current directory.
 
 
 
-<H3><A NAME="SEC82">FILES</A></H3>
+<H3><A NAME="SEC81">FILES</A></H3>
 <DL COMPACT>
 
 <DT><TT>`GTAGS'</TT>
@@ -3122,49 +3113,53 @@ Tag file for object references.
 Tag file for other symbols.
 <DT><TT>`GPATH'</TT>
 <DD>
-Tag file for path of source files.
+Tag file for files.
 <DT><TT>`/etc/gtags.conf'</TT>, <TT>`$HOME/.globalrc'</TT>
 <DD>
 Configuration file.
 <DT><TT>`HTML/index.html'</TT>
 <DD>
-Index file for hypertext.
+Startup file.
 <DT><TT>`HTML/MAP'</TT>
 <DD>
-Mapping file for converting tag into path of hypertext.
-External systems can utilize this file.
+Mapping file for converting tag name into the path of tag list.
 <DT><TT>`HTML/FILEMAP'</TT>
 <DD>
-Mapping file for converting file name into path of hypertext.
-External systems can utilize this file.
+Mapping file for converting file name into the path of the file.
 <DT><TT>`HTML/style.css'</TT>
 <DD>
 Style sheet file. This file is generated when the <SAMP>`--xhtml'</SAMP>
 option is specified.
+<DT><TT>`HTML/.htaccess'</TT>
+<DD>
+Local configuration file for Apache. This file is generated when
+the <SAMP>`-f'</SAMP>, <SAMP>`-D'</SAMP> or <SAMP>`-c'</SAMP> option is specified.
+<DT><TT>`HTML/GTAGSROOT'</TT>
+<DD>
+If this file exists, CGI program <TT>`global.cgi'</TT> set
+environment variable GTAGSROOT to the content of it.
+If you move directory <TT>`HTML'</TT> from the original place,
+please make this file.
 </DL>
 
 
-<H3><A NAME="SEC83">ENVIRONMENT</A></H3>
+<H3><A NAME="SEC82">ENVIRONMENT</A></H3>
 <P>
 The following environment variables affect the execution of htags:
 <DL COMPACT>
 
 <DT><VAR>TMPDIR</VAR>
 <DD>
-If this variable is set, its value is used as the directory
-to make temporary files. The default is <TT>`/tmp'</TT>.
+The location used to stored temporary files. The default is <TT>`/tmp'</TT>.
 <DT><VAR>GTAGSCONF</VAR>
 <DD>
-If this variable is set, its value is used as the
-configuration file. The default is <TT>`$HOME/.globalrc'</TT>.
+Configuration file. The default is <TT>`$HOME/.globalrc'</TT>.
 <DT><VAR>GTAGSLABEL</VAR>
 <DD>
-If this variable is set, its value is used as the label
-of configuration file. The default is <CODE>default</CODE>.
+Configuration label. The default is default.
 <DT><VAR>GTAGSCACHE</VAR>
 <DD>
-If this variable is set, its value is used as the size of
-B-tree cache. The default is 50000000 (bytes).
+The size of B-tree cache. The default is 50000000 (bytes).
 <DT><VAR>GTAGSFORCECPP</VAR>
 <DD>
 If this variable is set, each file whose suffix is 'h' is treated
@@ -3172,7 +3167,7 @@ as a C++ source file.
 </DL>
 
 
-<H3><A NAME="SEC84">CONFIGURATION</A></H3>
+<H3><A NAME="SEC83">CONFIGURATION</A></H3>
 <P>
 The following configuration variables affect the execution of htags:
 If the <SAMP>`--xhtml'</SAMP> option is specified then all definitions of
@@ -3203,11 +3198,6 @@ Begin tag for comments. The default is '&#60;i&#62;&#60;font color=green&#62;'.
 <DT><CODE>comment_end</CODE>(string)
 <DD>
 End tag for comments. The default is '&#60;/font&#62;&#60;/i&#62;'.
-<DT><CODE>copy_files</CODE>(boolean)
-<DD>
-Copy files instead of linking.
-When the <SAMP>`-f'</SAMP> option is used, htags make links
-of tag files in <TT>`cgi-bin'</TT> directory by default.
 <DT><CODE>datadir</CODE>(string)
 <DD>
 Shared data directory. The default is '/usr/local/share' but
@@ -3231,8 +3221,8 @@ Enable idutils in search form(-f,--form). The default is false.
 Field number of file index. The default is 5.
 <DT><CODE>full_path</CODE>(boolean)
 <DD>
-List file names with full path in file index.
-By default, list just the last component of a path.
+Use full path name in the file index.
+By default, use just the last component of a path.
 <DT><CODE>gzipped_suffix</CODE>(string)
 <DD>
 Suffix for compressed html file. The default is 'ghtml'.
@@ -3245,7 +3235,7 @@ Default options for htags. This value is inserted into
 the head of arguments.
 <DT><CODE>include_file_suffixes</CODE>(comma separated list)
 <DD>
-Suffixes of include file. The default is 'h,hxx,hpp,H,inc.php'.
+Suffixes of include files. The default is 'h,hxx,hpp,H,inc.php'.
 <DT><CODE>langmap</CODE>(comma separated list)
 <DD>
 Language mapping. Each comma-separated map consists of
@@ -3259,7 +3249,8 @@ Columns of line number. The default is 4.
 Suffix for normal html file. The default is 'html'.
 <DT><CODE>no_map_file</CODE>(boolean)
 <DD>
-Doesn't generate <TT>`MAP'</TT> and <TT>`FILEMAP'</TT> file. The default is false.
+Stop generating file <TT>`MAP'</TT> and <TT>`FILEMAP'</TT>.
+By default, htags generates them.
 <DT><CODE>other_files</CODE>(boolean)
 <DD>
 File index includes not only source files but also other files. The default is false.
@@ -3295,10 +3286,10 @@ Begin tag for table. The default is '&#60;table&#62;'.
 End tag for table. The default is '&#60;/table&#62;'.
 <DT><CODE>table_flist</CODE>(boolean)
 <DD>
-Use &#60;table&#62; tag for file index. The default is false.
+Use &#60;table&#62; tag  to display the file list.
 <DT><CODE>table_list</CODE>(boolean)
 <DD>
-List tags using &#60;table&#62; tag. The default is false.
+Use &#60;table&#62; tag to display the tag list.
 <DT><CODE>tabs</CODE>(number)
 <DD>
 Tab stop. The default is 8.
@@ -3320,19 +3311,12 @@ XHTML version. 1.0 and 1.1 are acceptable. The default is 1.0.
 </DL>
 
 
-<H3><A NAME="SEC85">DIAGNOSTICS</A></H3>
+<H3><A NAME="SEC84">DIAGNOSTICS</A></H3>
 <P>
 Htags exits with a non 0 value if an error occurred, 0 otherwise.
 
 
-<H3><A NAME="SEC86">MESSAGE FORMAT</A></H3>
-<P>
-Verbose message has important level. The most important level is 0,
-the second it 1 and so on. All the message has level numbers leading
-blanks.
-
-
-<H3><A NAME="SEC87">SEE ALSO</A></H3>
+<H3><A NAME="SEC85">SEE ALSO</A></H3>
 <P>
 gtags-parser(1),
 global(1),
@@ -3344,7 +3328,7 @@ GNU GLOBAL source code tag system<BR>
 (http://www.gnu.org/software/global/).
 
 
-<H3><A NAME="SEC88">BUG</A></H3>
+<H3><A NAME="SEC86">BUG</A></H3>
 <P>
 Generated hypertext is VERY LARGE.
 In advance, check the space of your disk.
@@ -3354,25 +3338,30 @@ In advance, check the space of your disk.
 PHP support is far from complete.
 
 
-<H3><A NAME="SEC89">AUTHOR</A></H3>
+<P>
+The -f, -D or -c option generates CGI programs.
+If you open the result to the public, please recognize the security dangers.
+
+
+<H3><A NAME="SEC87">AUTHOR</A></H3>
 <P>
 Shigio YAMAGUCHI, Hideki IWAMOTO and others.
 
 
-<H3><A NAME="SEC90">HISTORY</A></H3>
+<H3><A NAME="SEC88">HISTORY</A></H3>
 <P>
 The htags command appeared in FreeBSD 2.2.2.
 
 
-<H2><A NAME="SEC91">5.4 gtags-parser - print cross reference list for gtags.</A></H2>
+<H2><A NAME="SEC89">5.4 gtags-parser - print cross reference for gtags.</A></H2>
 
 
-<H3><A NAME="SEC92">NAME</A></H3>
+<H3><A NAME="SEC90">NAME</A></H3>
 <P>
-gtags-parser - print cross reference list for gtags.
+gtags-parser - print cross reference for gtags.
 
 
-<H3><A NAME="SEC93">SYNOPSIS</A></H3>
+<H3><A NAME="SEC91">SYNOPSIS</A></H3>
 <P>
 
 <BLOCKQUOTE>
@@ -3382,36 +3371,29 @@ gtags-parser [-bdenqrstvw] file ...<BR>
 
 
 
-<H3><A NAME="SEC94">DESCRIPTION</A></H3>
+<H3><A NAME="SEC92">DESCRIPTION</A></H3>
 <P>
-Gtags-parser print cross reference list for gtags(1)
-from the specified C, C++, yacc, java, PHP and Assembly source
-to standard output.
-Each line of output contains the object name,
-the line number which it appears, the file in which it is defined,
-and a line image separated by white-space.
+Gtags-parser prints cross reference of the specified
+C, C++, yacc, java, PHP and Assembly source files to the standard output.
+
+
+<P>
+Each line of output contains the object name, line number, file name and line image
+separated by white-space.
 It's same with the output of ctags(1) with <SAMP>`-x'</SAMP> option.
 
 
 <P>
-Depending upon the options provided to gtags-parser,
-objects will consist of object definitions, object references
-and other symbols.
-
-
-<P>
-Files whose names end in <TT>`.c'</TT> or <TT>`.h'</TT> are assumed to be C
-source files.
-Files whose names end in <TT>`.c++'</TT> <TT>`.cc'</TT> <TT>`.cpp'</TT>
+Files whose name end in <TT>`.c'</TT> or <TT>`.h'</TT> are assumed to be C source files.
+Files whose name end in <TT>`.c++'</TT> <TT>`.cc'</TT> <TT>`.cpp'</TT>
 <TT>`.cxx'</TT> <TT>`.hxx'</TT> <TT>`.hpp'</TT> <TT>`.C'</TT> <TT>`.H'</TT> are assumed to be C++
 source files.
-Files whose names end in <TT>`.y'</TT> are assumed to be YACC source files.
-Files whose names end in <TT>`.java'</TT> are assumed to be Java source files.
-Files whose names end in <TT>`.php'</TT> <TT>`.php3'</TT> <TT>`.phtml'</TT> are
+Files whose name end in <TT>`.y'</TT> are assumed to be YACC source files.
+Files whose name end in <TT>`.java'</TT> are assumed to be Java source files.
+Files whose name end in <TT>`.php'</TT> <TT>`.php3'</TT> <TT>`.phtml'</TT> are
 assumed to be PHP source files.
-Files whose names end in <TT>`.s'</TT> or <TT>`.S'</TT> are assumed to be
-Assembly source files.
-Other files are searched for C style definitions.
+Files whose name end in <TT>`.s'</TT> or <TT>`.S'</TT> are assumed to be Assembly source files.
+Other files are assumed to be C source files.
 
 
 <P>
@@ -3420,10 +3402,10 @@ of the second section of the yacc file.
 
 
 <P>
-This command is the default parser of GLOBAL source code tag system.
+This command is obsolete.
 
 
-<H3><A NAME="SEC95">OPTIONS</A></H3>
+<H3><A NAME="SEC93">OPTIONS</A></H3>
 <P>
 The following options are available:
 <DL COMPACT>
@@ -3445,7 +3427,7 @@ Quiet mode.
 <DT><SAMP>`-r'</SAMP>, <SAMP>`--reference'</SAMP>
 <DD>
 Locate object references instead of object definitions.
-<TT>`GTAGS'</TT> is needed at the current directory.
+<TT>`GTAGS'</TT> should exist in the current directory.
 (C, C++ and Java source only)
 By default, locate object definitions.
 <DT><SAMP>`-s'</SAMP>, <SAMP>`--symbol'</SAMP>
@@ -3460,7 +3442,7 @@ Verbose mode.
 Print warning message.
 <DT><SAMP>`--langmap'</SAMP>=map
 <DD>
-Language mapping. Each comma-separated  map  consists of
+Language mapping. Each comma-separated map  consists of
 the language name, a colon, and a list of file extensions.
 Default mapping is 'c:.c.h,yacc:.y,asm:.s.S,java:.java,cpp:.c++.cc.cpp.cxx.hxx.hpp.C.H,php:.php.php3.phtml'.
 </DL>
@@ -3470,7 +3452,7 @@ The <SAMP>`-r'</SAMP> and <SAMP>`-s'</SAMP> options override each other;
 the last one specified determines the method used.
 
 
-<H3><A NAME="SEC96">ENVIRONMENT</A></H3>
+<H3><A NAME="SEC94">ENVIRONMENT</A></H3>
 <P>
 The following environment variables affect the execution of gtags-parser:
 <DL COMPACT>
@@ -3482,13 +3464,13 @@ as a C++ source file.
 </DL>
 
 
-<H3><A NAME="SEC97">DIAGNOSTICS</A></H3>
+<H3><A NAME="SEC95">DIAGNOSTICS</A></H3>
 <P>
 Gtags-parser exits with a non 0 value if an error occurred, 0 otherwise.
 Duplicate objects are not considered errors.
 
 
-<H3><A NAME="SEC98">SEE ALSO</A></H3>
+<H3><A NAME="SEC96">SEE ALSO</A></H3>
 <P>
 global(1),
 gtags(1),
@@ -3500,31 +3482,31 @@ GNU GLOBAL source code tag system<BR>
 (http://www.gnu.org/software/global/).
 
 
-<H3><A NAME="SEC99">BUG</A></H3>
+<H3><A NAME="SEC97">BUG</A></H3>
 <P>
 Gtags-parser relies on the input being well formed,
 and any syntactical errors will completely confuse it.
 
 
-<H3><A NAME="SEC100">AUTHOR</A></H3>
+<H3><A NAME="SEC98">AUTHOR</A></H3>
 <P>
 Shigio YAMAGUCHI, Hideki IWAMOTO and others.
 
 
-<H3><A NAME="SEC101">HISTORY</A></H3>
+<H3><A NAME="SEC99">HISTORY</A></H3>
 <P>
 The gtags-parser(gctags) command appeared in FreeBSD 2.2.2.
 
 
-<H2><A NAME="SEC102">5.5 gozilla - force mozilla to display specified source file.</A></H2>
+<H2><A NAME="SEC100">5.5 gozilla - force mozilla to display specified part of a source file.</A></H2>
 
 
-<H3><A NAME="SEC103">NAME</A></H3>
+<H3><A NAME="SEC101">NAME</A></H3>
 <P>
-gozilla - force mozilla to display specified source file.
+gozilla - force mozilla to display specified part of a source file.
 
 
-<H3><A NAME="SEC104">SYNOPSIS</A></H3>
+<H3><A NAME="SEC102">SYNOPSIS</A></H3>
 <P>
 
 <BLOCKQUOTE>
@@ -3535,62 +3517,57 @@ gozilla [-b browser][-p] -d name<BR>
 
 
 
-<H3><A NAME="SEC105">DESCRIPTION</A></H3>
+<H3><A NAME="SEC103">DESCRIPTION</A></H3>
 <P>
-Gozilla force mozilla to display specified source
-file as a hypertext. Gozilla can be used with other
-browsers like firefox and epiphany.
+Gozilla forces mozilla to display specified part of a source file.
+Gozilla can be used with other browsers like firefox and epiphany.
 
 
 <P>
 In advance of using this command, you must execute gtags(1)
-and htags(1) at the root directory of the source tree
-to make tag files.
-Then you can execute gozilla at anywhere in the source tree.
+and htags(1) at the root directory of a project to make tag files.
+Then you can execute this command anywhere in the project.
 
 
 <P>
 First form:<BR>
-You can specify source file and the line number optionally.
+You can specify a source file and optional line number.
+This syntax is similar to vi(1) and emacs(1).
 
 
 <P>
 Second form:<BR>
-You can specify definition name directly. Definition name must exist 
-in <TT>`GTAGS'</TT> tag file.
+You can specify a definition name directly. The definition name should
+exist in <TT>`GTAGS'</TT>.
 
 
 <P>
 Some browsers require you to load it before executing gozilla.
-Whether or not gozilla waits for exiting of browser depends
-on browser.
 
 
-<H3><A NAME="SEC106">OPTIONS</A></H3>
+<H3><A NAME="SEC104">OPTIONS</A></H3>
 <P>
 The following options are available:
 <DL COMPACT>
 
 <DT><SAMP>`+no'</SAMP>
 <DD>
-line number. It must be a line on which function definition or
-function reference is exist.  If you execute htags(1)
-with <SAMP>`-l'</SAMP> option, you can specify any line.
+Line number.
 <DT><SAMP>`-b'</SAMP> browser
 <DD>
-browser to use. By default, it is assumed mozilla.
+Browser to use. By default, it is assumed mozilla.
 <DT><SAMP>`-d'</SAMP> name
 <DD>
-print function.
+Print object definitions.
 <DT><SAMP>`--help'</SAMP>
 <DD>
 Show help.
 <DT><SAMP>`-p'</SAMP>
 <DD>
-just print generated target URL.
+Print just a generated URL instead of displaying it.
 <DT>file
 <DD>
-path of source file or alias name.
+File name or alias name.
 <DT><SAMP>`-q'</SAMP>, <SAMP>`--quiet'</SAMP>
 <DD>
 Quiet mode.
@@ -3603,38 +3580,38 @@ Show version number.
 </DL>
 
 
-<H3><A NAME="SEC107">FILES</A></H3>
+<H3><A NAME="SEC105">FILES</A></H3>
 <DL COMPACT>
 
 <DT><TT>`HTML/'</TT>
 <DD>
-hypertext of source tree.
+Hypertext of source code.
 <DT><TT>`GTAGS/'</TT>
 <DD>
-tags file for function definitions.
+Tag file for object definitions.
 <DT><TT>`$HOME/.gozillarc'</TT>
 <DD>
-alias file. Please read source code for the detail.
+Alias file. Please read source code for the detail.
 </DL>
 
 
-<H3><A NAME="SEC108">ENVIRONMENT</A></H3>
+<H3><A NAME="SEC106">ENVIRONMENT</A></H3>
 <DL COMPACT>
 
 <DT><VAR>GTAGSROOT</VAR>
 <DD>
-The directory which is the root of source tree.
+The root directory of the project.
 <DT><VAR>GTAGSDBPATH</VAR>
 <DD>
-The directory on which gtags database exist.
-This value is ignored when <VAR>GTAGSROOT</VAR> is not defined.
+The directory on which tag files exist.
+This value is ignored when GTAGSROOT is not defined.
 <DT><VAR>BROWSER</VAR>
 <DD>
-browser to use. By default, it is assumed mozilla.
+Browser to use. By default, it is assumed mozilla.
 </DL>
 
 
-<H3><A NAME="SEC109">EXAMPLES</A></H3>
+<H3><A NAME="SEC107">EXAMPLES</A></H3>
 
 <PRE>
 	$ gtags
@@ -3643,23 +3620,21 @@ browser to use. By default, it is assumed mozilla.
 	main              82 ctags.c          main(argc, argv)
 	$ mozilla &#38;
 	$ gozilla +82 ctags.c
+	$ gozilla -d main
 
 	$ firefox &#38;
 	$ gozilla -b firefox +82 ctags.c
 
-	$ setenv BROWSER 'epiphany --new-tab'
-	$ epiphany &#38;
-	$ gozilla +82 ctags.c
 </PRE>
 
 
 
-<H3><A NAME="SEC110">DIAGNOSTICS</A></H3>
+<H3><A NAME="SEC108">DIAGNOSTICS</A></H3>
 <P>
 Gozilla exits with a non 0 value if an error occurred, 0 otherwise.
 
 
-<H3><A NAME="SEC111">SEE ALSO</A></H3>
+<H3><A NAME="SEC109">SEE ALSO</A></H3>
 <P>
 global(1),
 gtags(1),
@@ -3674,37 +3649,37 @@ GNU GLOBAL source code tag system<BR>
 (http://www.gnu.org/software/global/).
 
 
-<H3><A NAME="SEC112">NOTES</A></H3>
+<H3><A NAME="SEC110">NOTES</A></H3>
 <P>
 Gozilla means 'Global for mozilla'.
 
 
-<H3><A NAME="SEC113">BUGS</A></H3>
+<H3><A NAME="SEC111">BUGS</A></H3>
 <P>
-Gozilla can treat not only source file but also normal file,
-directory, HTML file and even URL, because it is omnivorous.
+Gozilla can accept not only source files but also text files,
+directories, HTML files and even URLs, because it is omnivorous.
 
 
-<H3><A NAME="SEC114">AUTHORS</A></H3>
+<H3><A NAME="SEC112">AUTHORS</A></H3>
 <P>
 Shigio YAMAGUCHI.
 
 
-<H3><A NAME="SEC115">HISTORY</A></H3>
+<H3><A NAME="SEC113">HISTORY</A></H3>
 <P>
 The gozilla command appeared in FreeBSD 2.2.2 but did not
 installed by default.
 
 
-<H2><A NAME="SEC116">5.6 gtags-cscope - pseudo cscope which implements the line-oriented interface</A></H2>
+<H2><A NAME="SEC114">5.6 gtags-cscope - pseudo cscope which implements the line-oriented interface</A></H2>
 
 
-<H3><A NAME="SEC117">NAME</A></H3>
+<H3><A NAME="SEC115">NAME</A></H3>
 <P>
 gtags-cscope - pseudo cscope which implements the line-oriented interface
 
 
-<H3><A NAME="SEC118">SYNOPSIS</A></H3>
+<H3><A NAME="SEC116">SYNOPSIS</A></H3>
 <P>
 
 <BLOCKQUOTE>
@@ -3714,10 +3689,10 @@ gtags-cscope [-Cqv]<BR>
 
 
 
-<H3><A NAME="SEC119">DESCRIPTION</A></H3>
+<H3><A NAME="SEC117">DESCRIPTION</A></H3>
 <P>
 Gtags-cscope is a pseudo cscope which implements the
-line-oriented interface.
+line-oriented interface of cscope(1).
 You can use this command for various clients instead of true cscope.
 
 
@@ -3732,7 +3707,7 @@ Command 2 is not available.
 This command is used as a internal command for context search.
 
 
-<H3><A NAME="SEC120">OPTIONS</A></H3>
+<H3><A NAME="SEC118">OPTIONS</A></H3>
 <P>
 The following options are available:
 <DL COMPACT>
@@ -3749,7 +3724,7 @@ Verbose mode.
 </DL>
 
 
-<H3><A NAME="SEC121">EXAMPLES</A></H3>
+<H3><A NAME="SEC119">EXAMPLES</A></H3>
 
 <PRE>
 	$ gtags-cscope
@@ -3783,12 +3758,12 @@ Verbose mode.
 
 
 
-<H3><A NAME="SEC122">DIAGNOSTICS</A></H3>
+<H3><A NAME="SEC120">DIAGNOSTICS</A></H3>
 <P>
 Gtags-cscope exits with a non 0 value if an error occurred, 0 otherwise.
 
 
-<H3><A NAME="SEC123">SEE ALSO</A></H3>
+<H3><A NAME="SEC121">SEE ALSO</A></H3>
 <P>
 cscope(1),
 gtags-parser(1),
@@ -3802,30 +3777,30 @@ GNU GLOBAL source code tag system<BR>
 (http://www.gnu.org/software/global/).
 
 
-<H3><A NAME="SEC124">BUG</A></H3>
+<H3><A NAME="SEC122">BUG</A></H3>
 <P>
 The second field of the output is almost &#60;unknown&#62; since
 GLOBAL doesn't recognize it.
 Command 2 (Find functions called by this function) is not implemented.
 
 
-<H3><A NAME="SEC125">AUTHOR</A></H3>
+<H3><A NAME="SEC123">AUTHOR</A></H3>
 <P>
 Shigio YAMAGUCHI.
 
 
-<H3><A NAME="SEC126">HISTORY</A></H3>
+<H3><A NAME="SEC124">HISTORY</A></H3>
 <P>
 The gtags-cscope command appeared in 2006.
 
 
 
 
-<H1><A NAME="SEC127">A. Copying This Manual</A></H1>
+<H1><A NAME="SEC125">A. Copying This Manual</A></H1>
 
 
 
-<H2><A NAME="SEC128">A.1 GNU Free Documentation License</A></H2>
+<H2><A NAME="SEC126">A.1 GNU Free Documentation License</A></H2>
 
 <P>
 <A NAME="IDX33"></A>
@@ -4267,7 +4242,7 @@ as a draft) by the Free Software Foundation.
 
 
 
-<H3><A NAME="SEC129">A.1.1 ADDENDUM: How to use this License for your documents</A></H3>
+<H3><A NAME="SEC127">A.1.1 ADDENDUM: How to use this License for your documents</A></H3>
 
 <P>
 To use this License in a document you have written, include a copy of
@@ -4313,11 +4288,11 @@ to permit their use in free software.
 
 
 
-<H1><A NAME="SEC130">B. Business Model</A></H1>
+<H1><A NAME="SEC128">B. Business Model</A></H1>
 
 
 
-<H2><A NAME="SEC131">B.1 The BOKIN Model Definition</A></H2>
+<H2><A NAME="SEC129">B.1 The BOKIN Model Definition</A></H2>
 
 <PRE>
 Version 1.0, December 17, 2005
@@ -4329,7 +4304,7 @@ of this document, but changing it is not allowed.
 
 
 
-<H3><A NAME="SEC132">Introduction</A></H3>
+<H3><A NAME="SEC130">Introduction</A></H3>
 
 <P>
 <EM>BOKIN Model</EM> is a business model to obtain proceeds by widely collecting
@@ -4344,7 +4319,7 @@ The business which comply with the following criteria can be called
 
 
 
-<H3><A NAME="SEC133">Criteria</A></H3>
+<H3><A NAME="SEC131">Criteria</A></H3>
 
 
 <OL>
@@ -4459,7 +4434,7 @@ The BOKINware should contain the present definition as a file named
 
 
 
-<H3><A NAME="SEC134">Renewal</A></H3>
+<H3><A NAME="SEC132">Renewal</A></H3>
 
 <P>
 The author may publish revised and/or new versions of the BOKIN Model
@@ -4468,7 +4443,7 @@ to the present version, but may differ in detail to address new problems
 or concerns.
 
 
-<H2><A NAME="SEC135">B.2 Frequently Asked Questions</A></H2>
+<H2><A NAME="SEC133">B.2 Frequently Asked Questions</A></H2>
 
 <PRE>
 Version 1.0, December 17, 2005
@@ -4480,7 +4455,7 @@ of this document, but changing it is not allowed.
 
 
 
-<H3><A NAME="SEC136">BOKIN Model Frequently Asked Questions</A></H3>
+<H3><A NAME="SEC134">BOKIN Model Frequently Asked Questions</A></H3>
 
 
 <OL>
@@ -4577,7 +4552,7 @@ BOKIN Model business should be supported only by people's free will.
 
 
 
-<H1><A NAME="SEC137">Option Index</A></H1>
+<H1><A NAME="SEC135">Option Index</A></H1>
 <P>
 Jump to:
 <A HREF="#cindex_f">f</A>
@@ -4587,7 +4562,7 @@ Jump to:
 <LI><A HREF="globaldoc.html#IDX33">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on March, 6  2010 using
+This document was generated on April, 1  2010 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
 </BODY>

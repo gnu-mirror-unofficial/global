@@ -8,7 +8,7 @@ gtags-cscope [-Cqv]@*
 @end quotation
 @unnumberedsubsec DESCRIPTION
 Gtags-cscope is a pseudo cscope which implements the
-line-oriented interface.
+line-oriented interface of cscope(1).
 You can use this command for various clients instead of true cscope.
 
 Since gtags-cscope is intended to make GLOBAL available

@@ -7,11 +7,11 @@ gtags - create tag files for global.
 gtags [-ciIOqvw][-d tag-file][-f file][-n number][dbpath]@*
 @end quotation
 @unnumberedsubsec DESCRIPTION
-Gtags recursively collect the source files under
-the current directory,
-pickup symbols and write the cross-reference data into tag files
+Gtags is used to create tag files for global(1).
+
+Gtags recursively collects source files under the current directory,
+pickup symbols and write the cross-reference data into the tag files
 (@file{GTAGS}, @file{GRTAGS}, @file{GSYMS} and @file{GPATH}).
-You should execute this command at the root of the source tree.
 
 C, C++, yacc, java, PHP and Assembly source files are supported.
 Files whose names end in @file{.c} or @file{.h} are assumed to be
@@ -33,25 +33,22 @@ Make GTAGS in compact format.
 This option does not influence GRTAGS and GSYMS,
 because they are always made in compact format.
 @item @samp{--config}[=name]
-Show the value of config variable name.
-If name is not specified then show whole of config entry.
+Print the value of config variable name.
+If name is not specified then print all names and values.
 @item @samp{-d}, @samp{--dump} tag-file
 Dump a tag file. The output format is 'key<tab>data'.
 This is for debugging.
 @item @samp{-f}, @samp{--file} file
-Read from file a list of file names which should be
-considered as the candidate of source files.
-By default, all files under the current directory are
-considered as the candidate.
-If file is @file{-}, read from standard input.
+Browse through all source files whose names are listed in file.
+The argument file can  be set to @file{-} to accept a list of
+files from the standard input.
 File names must be separated by newline.
 @item @samp{--gtagsconf} file
-Load user's configuration from file.
+Set the @var{GTAGSCONF} environment variable to file.
 @item @samp{--gtagslabel} label
-label is used as the label of configuration file.
-The default is @code{default}.
+Set the @var{GTAGSLABEL} environment variable to label.
 @item @samp{-I}, @samp{--idutils}
-Make index files for idutils(1) too.
+Also make the ID database file for idutils(1).
 @item @samp{-i}, @samp{--incremental}
 Update tag files incrementally. You had better use
 global(1) with the -u option.
@@ -60,7 +57,7 @@ Maximum number of arguments for gtags-parser(1).
 By default, gtags invokes gtags-parser with arguments
 as many as possible to decrease the frequency of invoking.
 @item @samp{-O}, @samp{--objdir}
-Use objdir as dbpath.
+Use BSD-style objdir as the location of tag files.
 If @file{$MAKEOBJDIRPREFIX} directory exists, gtags creates
 @file{$MAKEOBJDIRPREFIX/<current directory>} directory and makes
 tag files in it.
@@ -71,7 +68,7 @@ It is considered that file was updated, and other files were not
 updated.  The file must be relative path name from the current directory.
 This option implies the -i option.
 If the file is new then @samp{--single-update} is ignored,
-and the processing is automatically switched to the normal incremental updating.
+and the processing is automatically switched to normal incremental updating.
 @item @samp{--statistics}
 Print statistics information.
 This option is valid only for normal creation of tag files.
@@ -84,8 +81,6 @@ Print warning messages.
 @item dbpath
 The directory in which tag files are generated.
 The default is the current directory.
-It is useful when your source directory is on a read only
-device like CDROM.
 @end table
 @unnumberedsubsec EXAMPLES
 @example
@@ -111,21 +106,20 @@ Configuration file.
 @unnumberedsubsec ENVIRONMENT
 The following environment variables affect the execution of gtags:
 @table @asis
+@item @var{TMPDIR}
+The location used to stored temporary files. The default is @file{/tmp}.
 @item @var{GTAGSCONF}
-If this variable is set, its value is used as the
-configuration file. The default is @file{$HOME/.globalrc}.
+Configuration file. The default is @file{$HOME/.globalrc}.
 @item @var{GTAGSLABEL}
-If this variable is set, its value is used as the label
-of configuration file. The default is @code{default}.
+Configuration label. The default is default.
 @item @var{GTAGSCACHE}
-If this variable is set, its value is used as the size of
-B-tree cache. The default is 50000000 (bytes).
+The size of B-tree cache. The default is 50000000 (bytes).
 @item @var{GTAGSFORCECPP}
 If this variable is set, each file whose suffix is 'h' is treated
 as a C++ source file.
 @item @var{MAKEOBJDIRPREFIX}
-If this variable is set, @file{$MAKEOBJDIRPREFIX} is used as an object
-prefix directory. The default is @file{/usr/obj}.
+If this variable is set, @file{$MAKEOBJDIRPREFIX} is used as the prefix
+of BSD-style objdir. The default is @file{/usr/obj}.
 @end table
 @unnumberedsubsec CONFIGURATION
 The following configuration variables affect the execution of gtags.
@@ -133,13 +127,13 @@ You can see the default value for each variable with the @samp{--config} option.
 @table @asis
 @item @code{GTAGS}(string)
 If this variable is set, its value is used as the
-command line of the parser for GTAGS. The default is @file{gtags-parser %s}.
+command line of the parser for GTAGS.
 @item @code{GRTAGS}(string)
 If this variable is set, its value is used as the
-command line of the parser for GRTAGS. The default is @file{gtags-parser -r %s}.
+command line of the parser for GRTAGS.
 @item @code{GSYMS}(string)
 If this variable is set, its value is used as the
-command line of the parser for GSYMS. The default is @file{gtags-parser -s %s}.
+command line of the parser for GSYMS.
 @item @code{icase_path}(boolean)
 Ignore case distinctions in the path.
 Suffixes check are affected by this capability.
@@ -160,21 +154,13 @@ As a special exception, gtags collect values from multiple @code{skip} variables
 If the value ends with '/', it assumed as a directory and gtags skips all files under it.
 If the value start with '/', it assumed relative path from the root of source directory.
 @item @code{suffixes}(comma separated list)
-Suffixes of target source file.
+Suffixes of target source files.
 As a special exception, gtags collect values from multiple @code{suffixes} variables.
-This variable is obsoleted. If the langmap variable is defined
+This variable is obsolete. If the langmap variable is defined
 gtags no longer refers this.
-@item @code{use_builtin_parser}(boolean)
-Use built-in parser instead of external command.
-The following restrictions are in incremental updating with built-in parser:
-If @file{GRTAGS} or @file{GSYMS} exists, both of them exist and the format should be the same.
 @end table
 @unnumberedsubsec DIAGNOSTICS
 Gtags exits with a non 0 value if an error occurred, 0 otherwise.
-@unnumberedsubsec MESSAGE FORMAT
-Verbose message has important level. The most important level is 0,
-the second is 1 and so on. All the message has level numbers leading
-blanks.
 @unnumberedsubsec SEE ALSO
 gtags-parser(1),
 global(1),
