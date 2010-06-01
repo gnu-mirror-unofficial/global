@@ -17,6 +17,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	You can use, for example, Exuberant ctags, to parse your Ruby code
 	and then use gtags to navigate it.
 </dl>
+<a name="GLOBAL_related_tools">
 <h3>GLOBAL related tools</h3>
 <dl>
 <dt><a href="http://www.jedit.org/">jEdit</a><dd>
@@ -140,6 +141,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 </dl>
 
 <H3>Source code browsing Tools</H3>
+Please see also <a href="#GLOBAL_related_tools">GLOBAL related tools</a> section.
 <dl>
 <dt><a href="http://silentbob.sourceforge.net/">Silent Bob</a><dd>
 	The SilentBob is yet another indexing tool helping you to find your way through
