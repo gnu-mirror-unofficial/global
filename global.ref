@@ -80,6 +80,10 @@ editors and IDEs.
 @item @samp{-e}, @samp{--regexp} pattern
 Use pattern as the pattern; useful to protect patterns
 beginning with @file{-}.
+@item @samp{--encode-path} chars
+Convert path characters in chars into a '%' symbol, followed by the
+two-digit hexadecimal representation of the character.
+A blank will be converted to '%20'.
 @item @samp{-G}, @samp{--basic-regexp}
 Interpret pattern as a basic regular expression.
 The default is extended regular expression.
@@ -160,8 +164,6 @@ Use standard ctags cxref (with the -x) format.
 Tag file for object definitions.
 @item @file{GRTAGS}
 Tag file for object references.
-@item @file{GSYMS}
-Tag file for other symbols.
 @item @file{GPATH}
 Tag file for path of source files.
 @item @file{GTAGSROOT}
@@ -202,7 +204,6 @@ Ignore case distinctions in the pattern.
 @unnumberedsubsec DIAGNOSTICS
 Global exits with a non 0 value if an error occurred, 0 otherwise.
 @unnumberedsubsec SEE ALSO
-gtags-parser(1),
 gtags(1),
 htags(1),
 less(1).

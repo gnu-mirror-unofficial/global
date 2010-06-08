@@ -54,6 +54,8 @@ Specify a directory in which @file{GTAGS} exist.
 The default is the current directory.
 @item @samp{--disable-grep}
 Disable grep in the search form(-f,--form).
+@item @samp{--disable-idutils}
+Disable idutils in the search form(-f,--form).
 @item @samp{-F}, @samp{--frame}
 Use frames for the top page.
 @item @samp{-f}, @samp{--form}
@@ -107,6 +109,8 @@ You can overwrite this value using config variable
 @code{script_alias} in @file{gtags.conf}.
 @item @samp{-s}, @samp{--symbol}
 Make anchors not only for object definitions and references but also other symbols.
+@item @samp{--show-position}
+Show position per function definition. The default is false.
 @item @samp{--statistics}
 Print statistics information.
 @item @samp{--suggest}
@@ -120,8 +124,6 @@ Title of the hypertext.
 The default is the last component of the path of the current directory.
 @item @samp{--table-list}
 Use <table> tag to display the tag list.
-@item @samp{--tabs number}
-Tab stop. The default is 8.
 @item @samp{-v}, @samp{--verbose}
 Verbose mode.
 @item @samp{-w}, @samp{--warning}
@@ -156,8 +158,6 @@ The default is the current directory.
 Tag file for object definitions.
 @item @file{GRTAGS}
 Tag file for object references.
-@item @file{GSYMS}
-Tag file for other symbols.
 @item @file{GPATH}
 Tag file for files.
 @item @file{/etc/gtags.conf}, @file{$HOME/.globalrc}
@@ -222,19 +222,6 @@ Shared data directory. The default is '/usr/local/share' but
 you can change the value using configure script.
 Htags look up template files in the 'gtags' directory
 in this data directory.
-@item @code{definition_header}(no|before|right|after)
-Position of function header. The default is 'no'.
-@item @code{disable_grep}(boolean)
-Disable grep in search form(-f,--form). The default is false.
-@item @code{dynamic}(boolean)
-Generate object list dynamically.
-@item @code{enable_idutils}(boolean)
-Enable idutils in search form(-f,--form). The default is false.
-@item @code{flist_fields}(number)
-Field number of file index. The default is 5.
-@item @code{full_path}(boolean)
-Use full path name in the file index.
-By default, use just the last component of a path.
 @item @code{gzipped_suffix}(string)
 Suffix for compressed html file. The default is 'ghtml'.
 @item @code{hr}(string)
@@ -252,11 +239,6 @@ Default mapping is 'c:.c.h,yacc:.y,asm:.s.S,java:.java,cpp:.c++.cc.cpp.cxx.hxx.h
 Columns of line number. The default is 4.
 @item @code{normal_suffix}(string)
 Suffix for normal html file. The default is 'html'.
-@item @code{no_map_file}(boolean)
-Stop generating file @file{MAP} and @file{FILEMAP}.
-By default, htags generates them.
-@item @code{other_files}(boolean)
-File index includes not only source files but also other files. The default is false.
 @item @code{position_begin}(string)
 Begin tag for position mark. The default is '<font color=gray>'.
 @item @code{position_end}(string)
@@ -271,16 +253,10 @@ Script alias for safe cgi script (@samp{-S}).
 Begin tag for 'define'. The default is '<font color=darkred>'.
 @item @code{sharp_end}(string)
 End tag for 'define'. The default is '</font>'.
-@item @code{show_position}(boolean)
-Show position per function definition. The default is false.
 @item @code{table_begin}(string)
 Begin tag for table. The default is '<table>'.
 @item @code{table_end}(string)
 End tag for table. The default is '</table>'.
-@item @code{table_flist}(boolean)
-Use <table> tag  to display the file list.
-@item @code{table_list}(boolean)
-Use <table> tag to display the tag list.
 @item @code{tabs}(number)
 Tab stop. The default is 8.
 @item @code{title_begin}(string)
@@ -297,7 +273,6 @@ XHTML version. 1.0 and 1.1 are acceptable. The default is 1.0.
 @unnumberedsubsec DIAGNOSTICS
 Htags exits with a non 0 value if an error occurred, 0 otherwise.
 @unnumberedsubsec SEE ALSO
-gtags-parser(1),
 global(1),
 gtags(1).
 

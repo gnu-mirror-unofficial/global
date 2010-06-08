@@ -3,9 +3,9 @@
 * global::         global - print locations of the specified object.
 * gtags::          gtags - create tag files for global.
 * htags::          htags - generate a hypertext from a set of source files.
-* gtags-parser::   gtags-parser - print cross reference for gtags.
 * gozilla::        gozilla - force mozilla to display specified part of a source file.
 * gtags-cscope::   gtags-cscope - pseudo cscope which implements the line-oriented interface
+* globash::        globash - a special shell for GLOBAL using GNU bash.
 @end menu
 
 @node global
@@ -17,12 +17,12 @@
 @node htags
 @section htags - generate a hypertext from a set of source files.
 @include htags.ref
-@node gtags-parser
-@section gtags-parser - print cross reference for gtags.
-@include gtags-parser.ref
 @node gozilla
 @section gozilla - force mozilla to display specified part of a source file.
 @include gozilla.ref
 @node gtags-cscope
 @section gtags-cscope - pseudo cscope which implements the line-oriented interface
 @include gtags-cscope.ref
+@node globash
+@section globash - a special shell for GLOBAL using GNU bash.
+@include globash.ref

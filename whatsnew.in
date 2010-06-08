@@ -6,6 +6,8 @@ Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <dl compact>
+<dt>2010/6/8<dd>
+	GLOBAL-5.9 was released. The speed of Gtags(1) has been improved.
 <dt>2010/4/1<dd>
 	GLOBAL-5.8.2 was released. Function layer plug-in parser has become the default of gtags(1).
 	See <a href='http://lists.gnu.org/archive/html/info-global/2010-03/msg00001.html'>release note</a>.

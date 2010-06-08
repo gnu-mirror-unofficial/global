@@ -11,7 +11,7 @@ Gtags is used to create tag files for global(1).
 
 Gtags recursively collects source files under the current directory,
 pickup symbols and write the cross-reference data into the tag files
-(@file{GTAGS}, @file{GRTAGS}, @file{GSYMS} and @file{GPATH}).
+(@file{GTAGS}, @file{GRTAGS} and @file{GPATH}).
 
 C, C++, yacc, java, PHP and Assembly source files are supported.
 Files whose names end in @file{.c} or @file{.h} are assumed to be
@@ -30,7 +30,7 @@ The following options are available:
 @table @asis
 @item @samp{-c}, @samp{--compact}
 Make GTAGS in compact format.
-This option does not influence GRTAGS and GSYMS,
+This option does not influence GRTAGS,
 because they are always made in compact format.
 @item @samp{--config}[=name]
 Print the value of config variable name.
@@ -52,10 +52,6 @@ Also make the ID database file for idutils(1).
 @item @samp{-i}, @samp{--incremental}
 Update tag files incrementally. You had better use
 global(1) with the -u option.
-@item @samp{-n}, @samp{--max-args} number
-Maximum number of arguments for gtags-parser(1).
-By default, gtags invokes gtags-parser with arguments
-as many as possible to decrease the frequency of invoking.
 @item @samp{-O}, @samp{--objdir}
 Use BSD-style objdir as the location of tag files.
 If @file{$MAKEOBJDIRPREFIX} directory exists, gtags creates
@@ -96,8 +92,6 @@ The default is the current directory.
 Tag file for object definitions.
 @item @file{GRTAGS}
 Tag file for object references.
-@item @file{GSYMS}
-Tag file for other symbols.
 @item @file{GPATH}
 Tag file for path of source files.
 @item @file{/etc/gtags.conf}, @file{$HOME/.globalrc}
@@ -125,15 +119,6 @@ of BSD-style objdir. The default is @file{/usr/obj}.
 The following configuration variables affect the execution of gtags.
 You can see the default value for each variable with the @samp{--config} option.
 @table @asis
-@item @code{GTAGS}(string)
-If this variable is set, its value is used as the
-command line of the parser for GTAGS.
-@item @code{GRTAGS}(string)
-If this variable is set, its value is used as the
-command line of the parser for GRTAGS.
-@item @code{GSYMS}(string)
-If this variable is set, its value is used as the
-command line of the parser for GSYMS.
 @item @code{icase_path}(boolean)
 Ignore case distinctions in the path.
 Suffixes check are affected by this capability.
@@ -153,23 +138,17 @@ Gtags skips files which are listed in this list.
 As a special exception, gtags collect values from multiple @code{skip} variables.
 If the value ends with '/', it assumed as a directory and gtags skips all files under it.
 If the value start with '/', it assumed relative path from the root of source directory.
-@item @code{suffixes}(comma separated list)
-Suffixes of target source files.
-As a special exception, gtags collect values from multiple @code{suffixes} variables.
-This variable is obsolete. If the langmap variable is defined
-gtags no longer refers this.
 @end table
 @unnumberedsubsec DIAGNOSTICS
 Gtags exits with a non 0 value if an error occurred, 0 otherwise.
 @unnumberedsubsec SEE ALSO
-gtags-parser(1),
 global(1),
 htags(1).
 
 GNU GLOBAL source code tag system@*
 (http://www.gnu.org/software/global/).
 @unnumberedsubsec BUG
-@file{GTAGS}, @file{GRTAGS} and @file{GSYMS} are very large.
+@file{GTAGS} and @file{GRTAGS} are very large.
 In advance of using this command, check the space of your disk.
 
 Assembly support is far from complete.

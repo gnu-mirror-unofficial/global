@@ -61,7 +61,6 @@ Verbose mode.
 Gtags-cscope exits with a non 0 value if an error occurred, 0 otherwise.
 @unnumberedsubsec SEE ALSO
 cscope(1),
-gtags-parser(1),
 gtags(1),
 global(1),
 htags(1).
