@@ -4,7 +4,7 @@ gtags - create tag files for global.
 @unnumberedsubsec SYNOPSIS
 @noindent
 @quotation
-gtags [-ciIOqvw][-d tag-file][-f file][-n number][dbpath]@*
+gtags [-ciIOqvw][-d tag-file][-f file][dbpath]@*
 @end quotation
 @unnumberedsubsec DESCRIPTION
 Gtags is used to create tag files for global(1).
@@ -12,6 +12,9 @@ Gtags is used to create tag files for global(1).
 Gtags recursively collects source files under the current directory,
 pickup symbols and write the cross-reference data into the tag files
 (@file{GTAGS}, @file{GRTAGS} and @file{GPATH}).
+
+If @file{gtags.files} exists or the @samp{-f} option is specified,
+target files are limited by it. Lines starts with ". " are comments.
 
 C, C++, yacc, java, PHP and Assembly source files are supported.
 Files whose names end in @file{.c} or @file{.h} are assumed to be
@@ -96,6 +99,8 @@ Tag file for object references.
 Tag file for path of source files.
 @item @file{/etc/gtags.conf}, @file{$HOME/.globalrc}
 Configuration file.
+@item @file{gtags.files}
+The list of candidates of target files.
 @end table
 @unnumberedsubsec ENVIRONMENT
 The following environment variables affect the execution of gtags:

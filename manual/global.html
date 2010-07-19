@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.57 from global.texi on June, 8  2010 -->
+<!-- Created by texi2html 1.57 from global.texi on July, 19  2010 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY >
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 5.9, for GNU GLOBAL version 5.9</H2>
-<H2>8 June 2010</H2>
+<H2>Edition 5.9.1, for GNU GLOBAL version 5.9.1</H2>
+<H2>19 July 2010</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -2395,7 +2395,7 @@ global - print locations of the specified object.
 <BLOCKQUOTE>
 <P>
 global [-aGilnqrstTvx][-e] pattern<BR>
-global -c[iqsv] prefix<BR>
+global -c[iIqsv] prefix<BR>
 global -f[anqrstvx] files<BR>
 global -g[aGilnoOqtvx][-e] pattern<BR>
 global -I[ailnqtvx][-e] pattern<BR>
@@ -2704,7 +2704,7 @@ gtags - create tag files for global.
 
 <BLOCKQUOTE>
 <P>
-gtags [-ciIOqvw][-d tag-file][-f file][-n number][dbpath]<BR>
+gtags [-ciIOqvw][-d tag-file][-f file][dbpath]<BR>
 </BLOCKQUOTE>
 
 
@@ -2718,6 +2718,11 @@ Gtags is used to create tag files for global(1).
 Gtags recursively collects source files under the current directory,
 pickup symbols and write the cross-reference data into the tag files
 (<TT>`GTAGS'</TT>, <TT>`GRTAGS'</TT> and <TT>`GPATH'</TT>).
+
+
+<P>
+If <TT>`gtags.files'</TT> exists or the <SAMP>`-f'</SAMP> option is specified,
+target files are limited by it. Lines starts with ". " are comments.
 
 
 <P>
@@ -2834,6 +2839,9 @@ Tag file for path of source files.
 <DT><TT>`/etc/gtags.conf'</TT>, <TT>`$HOME/.globalrc'</TT>
 <DD>
 Configuration file.
+<DT><TT>`gtags.files'</TT>
+<DD>
+The list of candidates of target files.
 </DL>
 
 
@@ -2952,7 +2960,7 @@ htags - generate a hypertext from a set of source files.
 
 <BLOCKQUOTE>
 <P>
-htags [-acDfFghInosTvwx][-d dbpath][-m name][-S cgidir][-t title][dir]<BR>
+htags [-acDfFghInosTvwx][-d dbpath][-m name][-S key][-t title][dir]<BR>
 </BLOCKQUOTE>
 
 
@@ -2991,6 +2999,11 @@ The following options are available:
 <DT><SAMP>`-a'</SAMP>, <SAMP>`--alphabet'</SAMP>
 <DD>
 Make an alphabetical object index which is suitable for large projects.
+<DT><SAMP>`--auto-completion'</SAMP>[=limit]
+<DD>
+Enable auto completion facility for the input form.
+If limit is specified, the number of candidates is limited to the value.
+Please note that this function requires javascript language in your browser.
 <DT><SAMP>`--caution'</SAMP>
 <DD>
 Display a caution message on the top page.
@@ -3090,12 +3103,14 @@ By default, htags generates them.
 <DT><SAMP>`-o'</SAMP>, <SAMP>`--other'</SAMP>
 <DD>
 Pick up not only source files but also other files in the file index.
-<DT><SAMP>`-S'</SAMP>, <SAMP>`--secure-cgi'</SAMP> cgidir
+<DT><SAMP>`--overwrite-key'</SAMP>
 <DD>
-Write CGI programs into the cgidir to realize centralised CGI program.
-Script alias is <TT>`/cgi-bin'</TT> by default.
-You can overwrite this value using config variable
-<CODE>script_alias</CODE> in <TT>`gtags.conf'</TT>.
+Allow the same key as the parameter of the <SAMP>`-S'</SAMP> option.
+<DT><SAMP>`-S'</SAMP>, <SAMP>`--secure-cgi'</SAMP> key
+<DD>
+Use the center CGI script. The key must be a unique key in your site.
+At the first time, you should copy the CGI script written by this command
+into the center CGI directory.
 <DT><SAMP>`-s'</SAMP>, <SAMP>`--symbol'</SAMP>
 <DD>
 Make anchors not only for object definitions and references but also other symbols.
@@ -3108,7 +3123,12 @@ Print statistics information.
 <DT><SAMP>`--suggest'</SAMP>
 <DD>
 Htags chooses popular options on behalf of beginners.
-It is equivalent to '-afghInosTxv --show-position' now.
+It is equivalent to '-aghInosTxv --show-position' now.
+<DT><SAMP>`--suggest2'</SAMP>
+<DD>
+Htags chooses popular options on behalf of beginners.
+This option enables frame, AJAX and CGI facility in addition
+to the facilities by the <SAMP>`--suggest'</SAMP> option.
 <DT><SAMP>`-T'</SAMP>, <SAMP>`--table-flist'</SAMP>[=rows]
 <DD>
 Use &#60;table&#62; tag to display the file index.
@@ -3120,6 +3140,10 @@ The default is the last component of the path of the current directory.
 <DT><SAMP>`--table-list'</SAMP>
 <DD>
 Use &#60;table&#62; tag to display the tag list.
+<DT><SAMP>`--tree-view'</SAMP>[=type]
+<DD>
+Use treeview for the file index.
+Please note that this function requires javascript language in your browser.
 <DT><SAMP>`-v'</SAMP>, <SAMP>`--verbose'</SAMP>
 <DD>
 Verbose mode.
@@ -4515,7 +4539,7 @@ Jump to:
 <LI><A HREF="global.html#IDX31">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on June, 8  2010 using
+This document was generated on July, 19  2010 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
 </BODY>

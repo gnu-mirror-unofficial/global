@@ -4,7 +4,7 @@ htags - generate a hypertext from a set of source files.
 @unnumberedsubsec SYNOPSIS
 @noindent
 @quotation
-htags [-acDfFghInosTvwx][-d dbpath][-m name][-S cgidir][-t title][dir]@*
+htags [-acDfFghInosTvwx][-d dbpath][-m name][-S key][-t title][dir]@*
 @end quotation
 @unnumberedsubsec DESCRIPTION
 Htags generates a hypertext from a set of source files of
@@ -28,6 +28,10 @@ The following options are available:
 @table @asis
 @item @samp{-a}, @samp{--alphabet}
 Make an alphabetical object index which is suitable for large projects.
+@item @samp{--auto-completion}[=limit]
+Enable auto completion facility for the input form.
+If limit is specified, the number of candidates is limited to the value.
+Please note that this function requires javascript language in your browser.
 @item @samp{--caution}
 Display a caution message on the top page.
 @item @samp{--cflow} cflowfile
@@ -102,11 +106,12 @@ Stop generating file @file{MAP} and @file{FILEMAP}.
 By default, htags generates them.
 @item @samp{-o}, @samp{--other}
 Pick up not only source files but also other files in the file index.
-@item @samp{-S}, @samp{--secure-cgi} cgidir
-Write CGI programs into the cgidir to realize centralised CGI program.
-Script alias is @file{/cgi-bin} by default.
-You can overwrite this value using config variable
-@code{script_alias} in @file{gtags.conf}.
+@item @samp{--overwrite-key}
+Allow the same key as the parameter of the @samp{-S} option.
+@item @samp{-S}, @samp{--secure-cgi} key
+Use the center CGI script. The key must be a unique key in your site.
+At the first time, you should copy the CGI script written by this command
+into the center CGI directory.
 @item @samp{-s}, @samp{--symbol}
 Make anchors not only for object definitions and references but also other symbols.
 @item @samp{--show-position}
@@ -115,7 +120,11 @@ Show position per function definition. The default is false.
 Print statistics information.
 @item @samp{--suggest}
 Htags chooses popular options on behalf of beginners.
-It is equivalent to '-afghInosTxv --show-position' now.
+It is equivalent to '-aghInosTxv --show-position' now.
+@item @samp{--suggest2}
+Htags chooses popular options on behalf of beginners.
+This option enables frame, AJAX and CGI facility in addition
+to the facilities by the @samp{--suggest} option.
 @item @samp{-T}, @samp{--table-flist}[=rows]
 Use <table> tag to display the file index.
 You can optionally specify the number of rows. The default is 5.
@@ -124,6 +133,9 @@ Title of the hypertext.
 The default is the last component of the path of the current directory.
 @item @samp{--table-list}
 Use <table> tag to display the tag list.
+@item @samp{--tree-view}[=type]
+Use treeview for the file index.
+Please note that this function requires javascript language in your browser.
 @item @samp{-v}, @samp{--verbose}
 Verbose mode.
 @item @samp{-w}, @samp{--warning}
