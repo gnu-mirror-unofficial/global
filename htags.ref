@@ -83,6 +83,8 @@ which allows one of before, right and after.
 The default position is after.
 @item @samp{--html}
 Generate HTML hypertext instead of XHTML.
+@item @samp{--html-header} file
+Insert header records derived from file into the HTML header.
 @item @samp{-I}, @samp{--icon}
 Use icons instead of text for some links.
 @item @samp{--insert-footer} file
@@ -173,7 +175,7 @@ Tag file for object definitions.
 Tag file for object references.
 @item @file{GPATH}
 Tag file for files.
-@item @file{/etc/gtags.conf}, @file{$HOME/.globalrc}
+@item @file{$HOME/.globalrc}, @file{/etc/gtags.conf}, @file{[sysconfdir]/gtags.conf}
 Configuration file.
 @item @file{HTML/index.html}
 Startup file.

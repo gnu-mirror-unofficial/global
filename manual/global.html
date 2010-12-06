@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.57 from global.texi on August, 30  2010 -->
+<!-- Created by texi2html 1.57 from global.texi on December, 6  2010 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY >
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 5.9.2, for GNU GLOBAL version 5.9.2</H2>
-<H2>30 August 2010</H2>
+<H2>Edition 5.9.3, for GNU GLOBAL version 5.9.3</H2>
+<H2>6 December 2010</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -2396,10 +2396,10 @@ global - print locations of the specified object.
 <P>
 global [-aGilnqrstTvx][-e] pattern<BR>
 global -c[iIqsv] prefix<BR>
-global -f[anqrstvx] files<BR>
-global -g[aGilnoOqtvx][-e] pattern<BR>
+global -f[anqrstvx][-L file-list] files<BR>
+global -g[aGilnoOqtvVx][-L file-list][-e] pattern [files]<BR>
 global -I[ailnqtvx][-e] pattern<BR>
-global -P[aGilnoOqtvx][-e] pattern<BR>
+global -P[aGilnoOqtvVx][-e] pattern<BR>
 global -p[qrv]<BR>
 global -u[qv]<BR>
 </BLOCKQUOTE>
@@ -2448,9 +2448,10 @@ If prefix is not specified, print all object names.
 <DD>
 Print all objects in the files.
 This option implies the <SAMP>`-x'</SAMP> option.
-<DT><SAMP>`-g'</SAMP>, <SAMP>`--grep'</SAMP> pattern
+<DT><SAMP>`-g'</SAMP>, <SAMP>`--grep'</SAMP> pattern [files]
 <DD>
 Print all lines which match to the pattern.
+If files is specified, this command searchs in the files.
 <DT><SAMP>`--help'</SAMP>
 <DD>
 Show help.
@@ -2514,6 +2515,9 @@ Ignore case distinctions in the pattern.
 <DT><SAMP>`-l'</SAMP>, <SAMP>`--local'</SAMP>
 <DD>
 Print only objects which exist under the current directory.
+<DT><SAMP>`-L'</SAMP>, <SAMP>`--file-list'</SAMP> file-list
+<DD>
+Obtain files from file-list in addition to the arguments.
 <DT><SAMP>`-n'</SAMP>, <SAMP>`--nofilter'</SAMP>
 <DD>
 Suppress sort filter and path conversion filter.
@@ -2527,6 +2531,9 @@ This option override the <SAMP>`-o'</SAMP> option.
 Treat not only source files but also text files other than source code
 like <TT>`README'</TT>.
 This option is valid only with the <SAMP>`-g'</SAMP> or <SAMP>`-P'</SAMP> command.
+<DT><SAMP>`--print0'</SAMP>
+<DD>
+Print each record followed by a null character instead of a newline.
 <DT><SAMP>`-q'</SAMP>, <SAMP>`--quiet'</SAMP>
 <DD>
 Quiet mode.
@@ -2557,6 +2564,10 @@ Use standard ctags format.
 <DT><SAMP>`-v'</SAMP>, <SAMP>`--verbose'</SAMP>
 <DD>
 Verbose mode.
+<DT><SAMP>`-V'</SAMP>, <SAMP>`--invert-match'</SAMP>
+<DD>
+Invert the sense of matching, to select non-matching lines.
+This option is valid in the <SAMP>`-g'</SAMP> and <SAMP>`-P'</SAMP> command.
 <DT><SAMP>`-x'</SAMP>, <SAMP>`--cxref'</SAMP>
 <DD>
 Use standard ctags cxref (with the -x) format.
@@ -2615,7 +2626,7 @@ Tag file for path of source files.
 If environment variable <VAR>GTAGSROOT</VAR> is not set
 and file <TT>`GTAGSROOT'</TT> exists in the same directory with <TT>`GTAGS'</TT>
 then global set the <VAR>GTAGSROOT</VAR> to the content of the file.
-<DT><TT>`/etc/gtags.conf'</TT>, <TT>`$HOME/.globalrc'</TT>
+<DT><TT>`$HOME/.globalrc'</TT>, <TT>`/etc/gtags.conf'</TT>, <TT>`[sysconfdir]/gtags.conf'</TT>
 <DD>
 Configuration file.
 </DL>
@@ -2836,7 +2847,7 @@ Tag file for object references.
 <DT><TT>`GPATH'</TT>
 <DD>
 Tag file for path of source files.
-<DT><TT>`/etc/gtags.conf'</TT>, <TT>`$HOME/.globalrc'</TT>
+<DT><TT>`$HOME/.globalrc'</TT>, <TT>`/etc/gtags.conf'</TT>, <TT>`[sysconfdir]/gtags.conf'</TT>
 <DD>
 Configuration file.
 <DT><TT>`gtags.files'</TT>
@@ -3072,6 +3083,9 @@ The default position is after.
 <DT><SAMP>`--html'</SAMP>
 <DD>
 Generate HTML hypertext instead of XHTML.
+<DT><SAMP>`--html-header'</SAMP> file
+<DD>
+Insert header records derived from file into the HTML header.
 <DT><SAMP>`-I'</SAMP>, <SAMP>`--icon'</SAMP>
 <DD>
 Use icons instead of text for some links.
@@ -3195,7 +3209,7 @@ Tag file for object references.
 <DT><TT>`GPATH'</TT>
 <DD>
 Tag file for files.
-<DT><TT>`/etc/gtags.conf'</TT>, <TT>`$HOME/.globalrc'</TT>
+<DT><TT>`$HOME/.globalrc'</TT>, <TT>`/etc/gtags.conf'</TT>, <TT>`[sysconfdir]/gtags.conf'</TT>
 <DD>
 Configuration file.
 <DT><TT>`HTML/index.html'</TT>
@@ -4540,7 +4554,7 @@ Jump to:
 <LI><A HREF="global.html#IDX31">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on August, 30  2010 using
+This document was generated on December, 6  2010 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
 </BODY>
