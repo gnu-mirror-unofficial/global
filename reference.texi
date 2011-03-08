@@ -4,7 +4,7 @@
 * gtags::          gtags - create tag files for global.
 * htags::          htags - generate a hypertext from a set of source files.
 * gozilla::        gozilla - force mozilla to display specified part of a source file.
-* gtags-cscope::   gtags-cscope - pseudo cscope which implements the line-oriented interface
+* gtags-cscope::   gtags-cscope - pseudo cscope which implements the line-oriented interface.
 * globash::        globash - a special shell for GLOBAL using GNU bash.
 @end menu
 
@@ -21,7 +21,7 @@
 @section gozilla - force mozilla to display specified part of a source file.
 @include gozilla.ref
 @node gtags-cscope
-@section gtags-cscope - pseudo cscope which implements the line-oriented interface
+@section gtags-cscope - pseudo cscope which implements the line-oriented interface.
 @include gtags-cscope.ref
 @node globash
 @section globash - a special shell for GLOBAL using GNU bash.

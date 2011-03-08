@@ -99,5 +99,5 @@ directories, HTML files and even URLs, because it is omnivorous.
 @unnumberedsubsec AUTHORS
 Shigio YAMAGUCHI.
 @unnumberedsubsec HISTORY
-The gozilla command appeared in FreeBSD 2.2.2 but did not
+The gozilla command appeared in FreeBSD 2.2.2 but was not
 installed by default.

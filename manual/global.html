@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.57 from global.texi on December, 6  2010 -->
+<!-- Created by texi2html 1.57 from global.texi on March, 8  2011 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY >
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 5.9.3, for GNU GLOBAL version 5.9.3</H2>
-<H2>6 December 2010</H2>
+<H2>Edition 5.9.4, for GNU GLOBAL version 5.9.4</H2>
+<H2>8 March 2011</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -144,7 +144,7 @@
 </LI><LI><A NAME="TOC99" HREF="global.html#SEC99">AUTHORS</A>
 </LI><LI><A NAME="TOC100" HREF="global.html#SEC100">HISTORY</A>
 </LI></UL>
-<LI><A NAME="TOC101" HREF="global.html#SEC101">5.5 gtags-cscope - pseudo cscope which implements the line-oriented interface</A>
+<LI><A NAME="TOC101" HREF="global.html#SEC101">5.5 gtags-cscope - pseudo cscope which implements the line-oriented interface.</A>
 </LI><UL>
 <LI><A NAME="TOC102" HREF="global.html#SEC102">NAME</A>
 </LI><LI><A NAME="TOC103" HREF="global.html#SEC103">SYNOPSIS</A>
@@ -2394,7 +2394,7 @@ global - print locations of the specified object.
 
 <BLOCKQUOTE>
 <P>
-global [-aGilnqrstTvx][-e] pattern<BR>
+global [-adGilnqrstTvx][-e] pattern<BR>
 global -c[iIqsv] prefix<BR>
 global -f[anqrstvx][-L file-list] files<BR>
 global -g[aGilnoOqtvVx][-L file-list][-e] pattern [files]<BR>
@@ -2417,7 +2417,7 @@ references and other symbols.
 
 <P>
 Global can treat a source tree, that is, a directory that
-has sub-directories and source files as a project.
+has sub-directories and source files, as a project.
 In advance of using this command, you must execute gtags(1)
 at the root directory of a project to make tag files.
 Then you can execute this command anywhere in the project.
@@ -2451,7 +2451,7 @@ This option implies the <SAMP>`-x'</SAMP> option.
 <DT><SAMP>`-g'</SAMP>, <SAMP>`--grep'</SAMP> pattern [files]
 <DD>
 Print all lines which match to the pattern.
-If files is specified, this command searchs in the files.
+If files is specified, this command searches in the files.
 <DT><SAMP>`--help'</SAMP>
 <DD>
 Show help.
@@ -2488,6 +2488,9 @@ The following options are available:
 <DT><SAMP>`-a'</SAMP>, <SAMP>`--absolute'</SAMP>
 <DD>
 Print absolute path name. By default, print relative path name.
+<DT><SAMP>`-d'</SAMP>, <SAMP>`--definition'</SAMP>
+<DD>
+Print locations of object definitions.
 <DT><SAMP>`--from-here'</SAMP> context
 <DD>
 Decide tag type by the context. The context must be 'lineno:path'.
@@ -2525,7 +2528,7 @@ Suppress sort filter and path conversion filter.
 <DD>
 Treat only text files other than source code like <TT>`README'</TT>.
 This option is valid only with the <SAMP>`-g'</SAMP> or <SAMP>`-P'</SAMP> command.
-This option override the <SAMP>`-o'</SAMP> option.
+This option overrides the <SAMP>`-o'</SAMP> option.
 <DT><SAMP>`-o'</SAMP>, <SAMP>`--other'</SAMP>
 <DD>
 Treat not only source files but also text files other than source code
@@ -2548,7 +2551,7 @@ format may be path, ctags, ctags-x, grep or cscope.
 The default is path.
 The <SAMP>`--result=ctags'</SAMP> and <SAMP>`--result=ctags-x'</SAMP> are
 equivalent to the <SAMP>`-t'</SAMP> and <SAMP>`-x'</SAMP> respectively.
-The <SAMP>`--result'</SAMP> option is given to priority more than the -t and -x option.
+The <SAMP>`--result'</SAMP> option is given more priority than the -t and -x options.
 <DT><SAMP>`-s'</SAMP>, <SAMP>`--symbol'</SAMP>
 <DD>
 Print locations of the specified symbol other than definitions.
@@ -2567,7 +2570,7 @@ Verbose mode.
 <DT><SAMP>`-V'</SAMP>, <SAMP>`--invert-match'</SAMP>
 <DD>
 Invert the sense of matching, to select non-matching lines.
-This option is valid in the <SAMP>`-g'</SAMP> and <SAMP>`-P'</SAMP> command.
+This option is valid only with the <SAMP>`-g'</SAMP> or <SAMP>`-P'</SAMP> command.
 <DT><SAMP>`-x'</SAMP>, <SAMP>`--cxref'</SAMP>
 <DD>
 Use standard ctags cxref (with the -x) format.
@@ -2625,10 +2628,10 @@ Tag file for path of source files.
 <DD>
 If environment variable <VAR>GTAGSROOT</VAR> is not set
 and file <TT>`GTAGSROOT'</TT> exists in the same directory with <TT>`GTAGS'</TT>
-then global set the <VAR>GTAGSROOT</VAR> to the content of the file.
+then global sets <VAR>GTAGSROOT</VAR> to the contents of the file.
 <DT><TT>`$HOME/.globalrc'</TT>, <TT>`/etc/gtags.conf'</TT>, <TT>`[sysconfdir]/gtags.conf'</TT>
 <DD>
-Configuration file.
+Configuration files.
 </DL>
 
 
@@ -2733,7 +2736,7 @@ pickup symbols and write the cross-reference data into the tag files
 
 <P>
 If <TT>`gtags.files'</TT> exists or the <SAMP>`-f'</SAMP> option is specified,
-target files are limited by it. Lines starts with ". " are comments.
+target files are limited by it. Lines starting with ". " are comments.
 
 
 <P>
@@ -2794,7 +2797,7 @@ Use BSD-style objdir as the location of tag files.
 If <TT>`$MAKEOBJDIRPREFIX'</TT> directory exists, gtags creates
 <TT>`$MAKEOBJDIRPREFIX/&#60;current directory&#62;'</TT> directory and makes
 tag files in it.
-If dbpath is specified, this options is ignored.
+If dbpath is specified, this option is ignored.
 <DT><SAMP>`--single-update'</SAMP> file
 <DD>
 Update tag files for single file.
@@ -2849,7 +2852,7 @@ Tag file for object references.
 Tag file for path of source files.
 <DT><TT>`$HOME/.globalrc'</TT>, <TT>`/etc/gtags.conf'</TT>, <TT>`[sysconfdir]/gtags.conf'</TT>
 <DD>
-Configuration file.
+Configuration files.
 <DT><TT>`gtags.files'</TT>
 <DD>
 The list of candidates of target files.
@@ -2893,12 +2896,12 @@ You can see the default value for each variable with the <SAMP>`--config'</SAMP>
 <DT><CODE>icase_path</CODE>(boolean)
 <DD>
 Ignore case distinctions in the path.
-Suffixes check are affected by this capability.
+Suffixes check is affected by this capability.
 <DT><CODE>langmap</CODE>(comma separated list)
 <DD>
 Language mapping. Each comma-separated map consists of
 the language name, a colon, and a list of file extensions.
-As a special exception, gtags collect values from multiple <CODE>langmap</CODE> variables.
+As a special exception, gtags collects values from multiple <CODE>langmap</CODE> variables.
 Default mapping is 'c:.c.h,yacc:.y,asm:.s.S,java:.java,cpp:.c++.cc.cpp.cxx.hxx.hpp.C.H,php:.php.php3.phtml'.
 <DT><CODE>gtags_parser</CODE>(comma separated list)
 <DD>
@@ -2906,13 +2909,13 @@ Specify the mapping of funtion layer plugin parser.
 Each part delimited by the comma consists of the language name, a colon,
 the shared object path, an optional colon followed by a function name.
 If the function name is not specified, 'parser' is assumed.
-As a special exception, gtags collect values from multiple <CODE>gtags_parser</CODE> variables.
+As a special exception, gtags collects values from multiple <CODE>gtags_parser</CODE> variables.
 <DT><CODE>skip</CODE>(comma separated list)
 <DD>
 Gtags skips files which are listed in this list.
-As a special exception, gtags collect values from multiple <CODE>skip</CODE> variables.
-If the value ends with '/', it assumed as a directory and gtags skips all files under it.
-If the value start with '/', it assumed relative path from the root of source directory.
+As a special exception, gtags collects values from multiple <CODE>skip</CODE> variables.
+If the value ends with '/', it is assumed as a directory and gtags skips all files under it.
+If the value starts with '/', it is assumed a relative path from the root of source directory.
 </DL>
 
 
@@ -2986,7 +2989,7 @@ C, C++, Yacc, Java, PHP and Assembly.
 In advance of using this command, you should execute gtags(1)
 in the root directory of a source project.
 Then you can execute htags in the same place.
-Htags makes a directory named <TT>`HTML'</TT>, and put a hypertext in it.
+Htags makes a directory named <TT>`HTML'</TT>, and puts a hypertext in it.
 You can start browsing at <TT>`HTML/index.html'</TT>.
 
 
@@ -3066,7 +3069,7 @@ By default, use just the last component of a path.
 <DT><SAMP>`-g'</SAMP>, <SAMP>`--gtags'</SAMP>
 <DD>
 Execute gtags(1) before starting job.
-The <SAMP>`-v'</SAMP>, <SAMP>`-w'</SAMP> and dbpath are passed to gtags.
+The <SAMP>`-v'</SAMP>, <SAMP>`-w'</SAMP> and dbpath options are passed to gtags.
 <DT><SAMP>`--gtagsconf'</SAMP> file
 <DD>
 Set the <VAR>GTAGSCONF</VAR> environment variable to file.
@@ -3098,10 +3101,10 @@ Insert custom header derived from file after &#60;body&#62; tag.
 <DT><SAMP>`--item-order'</SAMP> spec
 <DD>
 Specify the order of the items in the top page.
-The spec is a string consists of item signs in order.
+The spec is a string consisting of item signs in order.
 Each sign means as follows:
-c: caution, s: search form,
-m: mains, d: definition, f: files, t: call tree.
+c: caution; s: search form;
+m: mains; d: definition; f: files; t: call tree.
 The default is csmdf.
 <DT><SAMP>`-m'</SAMP>, <SAMP>`--main-func'</SAMP> name
 <DD>
@@ -3110,10 +3113,9 @@ Specify startup function name. The default is main.
 <DD>
 Print line numbers. By default, doesn't print line numbers.
 The default value of columns is 4.
-<DT><SAMP>`--no-map-file'</SAMP>
+<DT><SAMP>`--map-file'</SAMP>
 <DD>
-Stop generating file <TT>`MAP'</TT> and <TT>`FILEMAP'</TT>.
-By default, htags generates them.
+Generate files <TT>`MAP'</TT> and <TT>`FILEMAP'</TT>.
 <DT><SAMP>`-o'</SAMP>, <SAMP>`--other'</SAMP>
 <DD>
 Pick up not only source files but also other files in the file index.
@@ -3211,7 +3213,7 @@ Tag file for object references.
 Tag file for files.
 <DT><TT>`$HOME/.globalrc'</TT>, <TT>`/etc/gtags.conf'</TT>, <TT>`[sysconfdir]/gtags.conf'</TT>
 <DD>
-Configuration file.
+Configuration files.
 <DT><TT>`HTML/index.html'</TT>
 <DD>
 Startup file.
@@ -3231,8 +3233,8 @@ Local configuration file for Apache. This file is generated when
 the <SAMP>`-f'</SAMP>, <SAMP>`-D'</SAMP> or <SAMP>`-c'</SAMP> option is specified.
 <DT><TT>`HTML/GTAGSROOT'</TT>
 <DD>
-If this file exists, CGI program <TT>`global.cgi'</TT> set
-environment variable GTAGSROOT to the content of it.
+If this file exists, CGI program <TT>`global.cgi'</TT> sets
+environment variable GTAGSROOT to the contents of it.
 If you move directory <TT>`HTML'</TT> from the original place,
 please make this file.
 </DL>
@@ -3581,16 +3583,16 @@ Shigio YAMAGUCHI.
 
 <H3><A NAME="SEC100">HISTORY</A></H3>
 <P>
-The gozilla command appeared in FreeBSD 2.2.2 but did not
+The gozilla command appeared in FreeBSD 2.2.2 but was not
 installed by default.
 
 
-<H2><A NAME="SEC101">5.5 gtags-cscope - pseudo cscope which implements the line-oriented interface</A></H2>
+<H2><A NAME="SEC101">5.5 gtags-cscope - pseudo cscope which implements the line-oriented interface.</A></H2>
 
 
 <H3><A NAME="SEC102">NAME</A></H3>
 <P>
-gtags-cscope - pseudo cscope which implements the line-oriented interface
+gtags-cscope - pseudo cscope which implements the line-oriented interface.
 
 
 <H3><A NAME="SEC103">SYNOPSIS</A></H3>
@@ -3618,7 +3620,7 @@ as cscope.
 
 <P>
 Command 2 is not available.
-This command is used as a internal command for context search.
+This command is used as an internal command for context search.
 
 
 <H3><A NAME="SEC105">OPTIONS</A></H3>
@@ -3720,7 +3722,7 @@ globash - a special shell for GLOBAL using GNU bash.
 
 <BLOCKQUOTE>
 <P>
-blobash<BR>
+globash<BR>
 </BLOCKQUOTE>
 
 
@@ -3783,7 +3785,7 @@ Shigio YAMAGUCHI.
 
 <H3><A NAME="SEC120">HISTORY</A></H3>
 <P>
-The global command appeared in GLOBAL-4.1(2001).
+The globash command appeared in GLOBAL-4.1(2001).
 
 
 
@@ -4554,7 +4556,7 @@ Jump to:
 <LI><A HREF="global.html#IDX31">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on December, 6  2010 using
+This document was generated on March, 8  2011 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
 </BODY>

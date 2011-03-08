@@ -4,7 +4,7 @@ globash - a special shell for GLOBAL using GNU bash.
 @unnumberedsubsec SYNOPSIS
 @noindent
 @quotation
-blobash@*
+globash@*
 @end quotation
 @unnumberedsubsec DESCRIPTION
 Globash is a special shell for GLOBAL using GNU bash.
@@ -40,4 +40,4 @@ GNU GLOBAL source code tag system@*
 @unnumberedsubsec AUTHOR
 Shigio YAMAGUCHI.
 @unnumberedsubsec HISTORY
-The global command appeared in GLOBAL-4.1(2001).
+The globash command appeared in GLOBAL-4.1(2001).

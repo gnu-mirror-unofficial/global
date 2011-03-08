@@ -4,7 +4,7 @@ global - print locations of the specified object.
 @unnumberedsubsec SYNOPSIS
 @noindent
 @quotation
-global [-aGilnqrstTvx][-e] pattern@*
+global [-adGilnqrstTvx][-e] pattern@*
 global -c[iIqsv] prefix@*
 global -f[anqrstvx][-L file-list] files@*
 global -g[aGilnoOqtvVx][-L file-list][-e] pattern [files]@*
@@ -21,7 +21,7 @@ Global can locate not only object definitions but also object
 references and other symbols.
 
 Global can treat a source tree, that is, a directory that
-has sub-directories and source files as a project.
+has sub-directories and source files, as a project.
 In advance of using this command, you must execute gtags(1)
 at the root directory of a project to make tag files.
 Then you can execute this command anywhere in the project.
@@ -45,7 +45,7 @@ Print all objects in the files.
 This option implies the @samp{-x} option.
 @item @samp{-g}, @samp{--grep} pattern [files]
 Print all lines which match to the pattern.
-If files is specified, this command searchs in the files.
+If files is specified, this command searches in the files.
 @item @samp{--help}
 Show help.
 @item @samp{-I}, @samp{--idutils} pattern
@@ -71,6 +71,8 @@ The following options are available:
 @table @asis
 @item @samp{-a}, @samp{--absolute}
 Print absolute path name. By default, print relative path name.
+@item @samp{-d}, @samp{--definition}
+Print locations of object definitions.
 @item @samp{--from-here} context
 Decide tag type by the context. The context must be 'lineno:path'.
 If this option is specified then the @samp{-s} and @samp{-r}
@@ -99,7 +101,7 @@ Suppress sort filter and path conversion filter.
 @item @samp{-O}, @samp{--only-other}
 Treat only text files other than source code like @file{README}.
 This option is valid only with the @samp{-g} or @samp{-P} command.
-This option override the @samp{-o} option.
+This option overrides the @samp{-o} option.
 @item @samp{-o}, @samp{--other}
 Treat not only source files but also text files other than source code
 like @file{README}.
@@ -117,7 +119,7 @@ format may be path, ctags, ctags-x, grep or cscope.
 The default is path.
 The @samp{--result=ctags} and @samp{--result=ctags-x} are
 equivalent to the @samp{-t} and @samp{-x} respectively.
-The @samp{--result} option is given to priority more than the -t and -x option.
+The @samp{--result} option is given more priority than the -t and -x options.
 @item @samp{-s}, @samp{--symbol}
 Print locations of the specified symbol other than definitions.
 @item @samp{-T}, @samp{--through}
@@ -131,7 +133,7 @@ Use standard ctags format.
 Verbose mode.
 @item @samp{-V}, @samp{--invert-match}
 Invert the sense of matching, to select non-matching lines.
-This option is valid in the @samp{-g} and @samp{-P} command.
+This option is valid only with the @samp{-g} or @samp{-P} command.
 @item @samp{-x}, @samp{--cxref}
 Use standard ctags cxref (with the -x) format.
 @end table
@@ -177,9 +179,9 @@ Tag file for path of source files.
 @item @file{GTAGSROOT}
 If environment variable @var{GTAGSROOT} is not set
 and file @file{GTAGSROOT} exists in the same directory with @file{GTAGS}
-then global set the @var{GTAGSROOT} to the content of the file.
+then global sets @var{GTAGSROOT} to the contents of the file.
 @item @file{$HOME/.globalrc}, @file{/etc/gtags.conf}, @file{[sysconfdir]/gtags.conf}
-Configuration file.
+Configuration files.
 @end table
 @unnumberedsubsec ENVIRONMENT
 The following environment variables affect the execution of global:
