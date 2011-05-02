@@ -13,6 +13,7 @@ Plans of the highest priority are listed first.
 <li>Pickup definitions of data type, enum name, enum value, struct member name,
 	union name and struct name in C language.
 	Finally, remove GSYMS. (gtags-parser, gtags)
+<li>ANSI C mode in C parser.
 <li>Rewrite the CGI program using C language instead of Perl.
 <li>Support of glob pattern for path name search (global -P).
 <li>Rewrite gtags-parser(1) using flex(1) completely.
