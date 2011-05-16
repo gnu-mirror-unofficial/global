@@ -2,7 +2,6 @@
 @unnumberedsubsec NAME
 gtags - create tag files for global.
 @unnumberedsubsec SYNOPSIS
-@noindent
 @quotation
 gtags [-ciIOqvw][-d tag-file][-f file][dbpath]@*
 @end quotation

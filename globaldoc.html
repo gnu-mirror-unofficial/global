@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.57 from globaldoc.texi on March, 8  2011 -->
+<!-- Created by texi2html 1.57 from globaldoc.texi on May, 16  2011 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY >
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 5.9.4, for GNU GLOBAL version 5.9.4</H2>
-<H2>8 March 2011</H2>
+<H2>Edition 5.9.5, for GNU GLOBAL version 5.9.5</H2>
+<H2>16 May 2011</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -2209,7 +2209,6 @@ global - print locations of the specified object.
 
 
 <H3><A NAME="SEC47">SYNOPSIS</A></H3>
-<P>
 
 <BLOCKQUOTE>
 <P>
@@ -2533,7 +2532,6 @@ gtags - create tag files for global.
 
 
 <H3><A NAME="SEC61">SYNOPSIS</A></H3>
-<P>
 
 <BLOCKQUOTE>
 <P>
@@ -2789,7 +2787,6 @@ htags - generate a hypertext from a set of source files.
 
 
 <H3><A NAME="SEC75">SYNOPSIS</A></H3>
-<P>
 
 <BLOCKQUOTE>
 <P>
@@ -3013,7 +3010,6 @@ The default is the current directory.
 
 	$ cflow --tree --format=posix *.[ch] &#62;cflow.out
 	$ htags --cflow=cflow.out
-
 </PRE>
 
 
@@ -3242,7 +3238,6 @@ gozilla - force mozilla to display specified part of a source file.
 
 
 <H3><A NAME="SEC89">SYNOPSIS</A></H3>
-<P>
 
 <BLOCKQUOTE>
 <P>
@@ -3359,7 +3354,6 @@ Browser to use. By default, it is assumed mozilla.
 
 	$ firefox &#38;
 	$ gozilla -b firefox +82 ctags.c
-
 </PRE>
 
 
@@ -3406,101 +3400,451 @@ The gozilla command appeared in FreeBSD 2.2.2 but was not
 installed by default.
 
 
-<H2><A NAME="SEC101">5.5 gtags-cscope - pseudo cscope which implements the line-oriented interface.</A></H2>
+<H2><A NAME="SEC101">5.5 gtags-cscope - interactively examine a C program</A></H2>
 
 
 <H3><A NAME="SEC102">NAME</A></H3>
 <P>
-gtags-cscope - pseudo cscope which implements the line-oriented interface.
+gtags-cscope - interactively examine a C program
 
 
 <H3><A NAME="SEC103">SYNOPSIS</A></H3>
-<P>
 
 <BLOCKQUOTE>
 <P>
-gtags-cscope [-Cqv]<BR>
+gtags-cscope [-bCdehLlVv][-F symfile ][-0123456789 pattern][-p n]<BR>
 </BLOCKQUOTE>
 
 
 
 <H3><A NAME="SEC104">DESCRIPTION</A></H3>
 <P>
-Gtags-cscope is a pseudo cscope which implements the
-line-oriented interface of cscope(1).
-You can use this command for various clients instead of true cscope.
+gtags-cscope is an interactive, screen-oriented tool that allows the user to
+browse through C source files for specified elements of code.
 
 
 <P>
-Since gtags-cscope is intended to make GLOBAL available
-through cscope interface, the output is not necessarily the same
-as cscope.
-
-
-<P>
-Command 2 is not available.
-This command is used as an internal command for context search.
+gtags-cscope builds the symbol cross-reference the first time it is used on
+the source files for the program being browsed. On a subsequent invocation, 
+gtags-cscope rebuilds the cross-reference only if a source file
+has changed or the list of source files is different. When the
+cross-reference is rebuilt, the data for the unchanged files are
+copied from the old cross-reference, which makes rebuilding faster
+than the initial build.
 
 
 <H3><A NAME="SEC105">OPTIONS</A></H3>
 <P>
-The following options are available:
+Some command line arguments can only occur as the only argument in
+the execution of gtags-cscope.  They cause the program to just print out
+some output and exit immediately:
 <DL COMPACT>
 
-<DT><SAMP>`-C'</SAMP>, <SAMP>`--ignore-case'</SAMP>
+<DT><SAMP>`-h'</SAMP>
+<DD>
+View the long usage help display.
+<DT><SAMP>`-V'</SAMP>
+<DD>
+Print on the first line of screen the version number of gtags-cscope.
+<DT><SAMP>`--help'</SAMP>
+<DD>
+Same as <SAMP>`-h'</SAMP>
+<DT><SAMP>`--version'</SAMP>
+<DD>
+Same as <SAMP>`-V'</SAMP>
+</DL>
+
+<P>
+The following options can appear in any combination:
+<DL COMPACT>
+
+<DT><SAMP>`-b'</SAMP>
+<DD>
+Build the cross-reference only.
+<DT><SAMP>`-C'</SAMP>
 <DD>
 Ignore letter case when searching.
-<DT><SAMP>`-q'</SAMP>, <SAMP>`--quiet'</SAMP>
+<DT><SAMP>`-d'</SAMP>
 <DD>
-Quiet mode.
-<DT><SAMP>`-v'</SAMP>, <SAMP>`--verbose'</SAMP>
+Do not update the cross-reference.
+<DT><SAMP>`-e'</SAMP>
 <DD>
-Verbose mode.
+Suppress the &#60;Ctrl&#62;-e command prompt between files.
+<DT><SAMP>`-F'</SAMP> symfile
+<DD>
+Read symbol reference lines from symfile. 
+(A symbol reference file is created by &#62; and &#62;&#62;,
+and can also be read using the &#60; command,
+described under "Issuing Subsequent Requests", below.)
+<DT><SAMP>`-L'</SAMP>
+<DD>
+Do a single search with line-oriented output when used with the
+-num pattern option.
+<DT><SAMP>`-l'</SAMP>
+<DD>
+Line-oriented interface (see "Line-Oriented Interface" below).
+<DT><SAMP>`-[0-9]'</SAMP> pattern
+<DD>
+Go to input field num (counting from 0) and find 
+pattern.
+<DT><SAMP>`-p'</SAMP> n
+<DD>
+Display the last n file path components instead of
+the default (1). Use 0 not to display the file name at all.
+<DT><SAMP>`-v'</SAMP>
+<DD>
+Be more verbose in line-oriented mode.  Output progress updates during
+database building and searches.
 </DL>
 
 
-<H3><A NAME="SEC106">EXAMPLES</A></H3>
+<H3><A NAME="SEC106">Requesting the initial search</A></H3>
+<P>
+After the cross-reference is ready, gtags-cscope will display this menu:
+
+
 
 <PRE>
-	$ gtags-cscope
-	&#62;&#62; help
-	0&#60;arg&#62;: Find this C symbol
-	1&#60;arg&#62;: Find this definition
-	2&#60;arg&#62;: &#60;NA&#62;(This command is used by gtags-cscope.vim internally)
-	3&#60;arg&#62;: Find functions calling this function
-	4&#60;arg&#62;: Find this text string
-	6&#60;arg&#62;: Find this egrep pattern
-	7&#60;arg&#62;: Find this file
-	8&#60;arg&#62;: Find files #including this file
-	c: Toggle ignore/use letter case
-	r: Rebuild the database
-	q: Quit the session
-	h: Show help
-	&#62;&#62; 1main
-	cscope: 9 lines
-	global/global.c main 158 main(int argc, char **argv)
-	gozilla/gozilla.c main 155 main(int argc, char **argv)
-	gtags-parser/gctags.c main 158 main(int argc, char **argv)
-	gtags-cscope/gtags-cscope.c main 115 main(int argc, char **argv)
-	gtags/gtags.c main 150 main(int argc, char **argv)
-	htags-refkit/htags_path2url.c main 281 main(int argc, char **argv)
-	htags/htags.c main 1400 main(int argc, char **argv)
-	libglibc/getopt.c main 704 main (argc, argv)
-	libglibc/getopt1.c main 93 main (argc, argv)
-	&#62;&#62; q
-	$ _
+	Find this C symbol:
+	Find this function definition:
+	Find functions called by this function (N/A):
+	Find functions calling this function:
+	Find this text string:
+	Change this text string:
+	Find this egrep pattern:
+	Find this file:
+	Find files #including this file:
 </PRE>
 
-
-
-<H3><A NAME="SEC107">DIAGNOSTICS</A></H3>
 <P>
-Gtags-cscope exits with a non 0 value if an error occurred, 0 otherwise.
+Press the &#60;Up&#62; or &#60;Down&#62; keys repeatedly to move to the desired input
+field, type the text to search for, and then press the &#60;Return&#62; key.
 
 
-<H3><A NAME="SEC108">SEE ALSO</A></H3>
+<H3><A NAME="SEC107">Issuing subsequent requests</A></H3>
 <P>
-cscope(1),
+If the search is successful, any of these single-character commands
+can be used:
+<DL COMPACT>
+
+<DT>0-9a-zA-Z
+<DD>
+Edit the file referenced by the given line number.
+<DT>&#60;Space&#62;
+<DD>
+Display next set of matching lines.
+<DT>&#60;Tab&#62;
+<DD>
+Alternate between the menu and the list of matching lines
+<DT>&#60;Up&#62;
+<DD>
+Move to the previous menu item (if the cursor is in the menu)
+or move to the previous matching line (if the cursor is in the
+matching line list.)
+<DT>&#60;Down&#62;
+<DD>
+Move to the next menu item (if the cursor is in the menu)
+or move to the next matching line (if the cursor is in the
+matching line list.)
+<DT>+
+<DD>
+Display next set of matching lines.
+<DT>-
+<DD>
+Display previous set of matching lines.
+<DT>^e
+<DD>
+Edit displayed files in order.
+<DT>&#62;
+<DD>
+Write the displayed list of lines to a file.
+<DT>&#62;&#62;
+<DD>
+Append the displayed list of lines to a file.
+<DT>&#60;
+<DD>
+Read lines from a file that is in symbol reference format
+(created by &#62; or &#62;&#62;), just like the -F option.
+<DT>^
+<DD>
+Filter all lines through a shell command and display the
+resulting lines, replacing the lines that were already there.
+<DT>|
+<DD>
+Pipe all lines to a shell command and display them without
+changing them.
+</DL>
+
+<P>
+At any time these single-character commands can also be used:
+<DL COMPACT>
+
+<DT>&#60;Return&#62;
+<DD>
+Move to next input field.
+<DT>^g
+<DD>
+Read lines from the result of the execution of specified command.
+<DT>^n
+<DD>
+Move to next input field.
+<DT>^p
+<DD>
+Move to previous input field.
+<DT>^y
+<DD>
+Search with the last text typed.
+<DT>^b
+<DD>
+Move to previous input field and search pattern.
+<DT>^f
+<DD>
+Move to next input field and search pattern.
+<DT>^c
+<DD>
+Toggle ignore/use letter case when searching. (When ignoring
+letter case, search for "FILE" will match "File" and "file".)
+<DT>^r
+<DD>
+Rebuild the cross-reference.
+<DT>!
+<DD>
+Start an interactive shell (type ^d to return to gtags-cscope).
+<DT>^l
+<DD>
+Redraw the screen.
+<DT>?
+<DD>
+Give help information about gtags-cscope commands.
+<DT>^d
+<DD>
+Exit gtags-cscope.
+</DL>
+
+<P>
+NOTE: If the first character of the text to be searched for matches
+one of the above commands, escape it by typing a  (backslash) first.
+
+
+<P>
+Substituting new text for old text
+
+
+<P>
+After the text to be changed has been typed, gtags-cscope will prompt for
+the new text, and then it will display the lines containing the old
+text. Select the lines to be changed with these single-character
+commands:
+<DL COMPACT>
+
+<DT>0-9a-zA-Z
+<DD>
+Mark or unmark the line to be changed.
+<DT>*
+<DD>
+Mark or unmark all displayed lines to be changed.
+<DT>&#60;Space&#62;
+<DD>
+Display next set of lines.
+<DT>+
+<DD>
+Display next set of lines.
+<DT>-
+<DD>
+Display previous set of lines.
+<DT>a
+<DD>
+Mark or unmark all lines to be changed.
+<DT>^d
+<DD>
+Change the marked lines and exit.
+<DT>&#60;Esc&#62;
+<DD>
+Exit without changing the marked lines.
+<DT>!
+<DD>
+Start an interactive shell (type ^d to return to gtags-cscope).
+<DT>^l
+<DD>
+Redraw the screen.
+<DT>?
+<DD>
+Give help information about gtags-cscope commands.
+<DT>Special keys
+<DD>
+If your terminal has arrow keys that work in vi, you can use them
+to move around the input fields. The up-arrow key is useful to move to
+the previous
+input field instead of using the &#60;Tab&#62; key repeatedly. If you have
+&#60;CLEAR&#62;, &#60;NEXT&#62;, or &#60;PREV&#62; keys they will act as the ^l, +, and -
+commands, respectively.
+</DL>
+
+
+<H3><A NAME="SEC108">Line-Oriented interface</A></H3>
+<P>
+The -l option lets you use gtags-cscope where a screen-oriented interface
+would not be useful, for example, from another screen-oriented
+program.
+
+
+<P>
+gtags-cscope will prompt with &#62;&#62; when it is ready for an input line starting
+with the field number (counting from 0) immediately followed by the
+search pattern, for example, "lmain" finds the definition of the
+main function.
+
+
+<P>
+If you just want a single search, instead of the -l option use the -L
+and -num pattern options, and you won't get the &#62;&#62; prompt.
+
+
+<P>
+For -l, gtags-cscope outputs the number of reference lines
+cscope: 2 lines
+
+
+<P>
+For each reference found, gtags-cscope outputs a line consisting of the file
+name, function name, line number, and line text, separated by spaces,
+for example,
+main.c main 161 main(argc, argv)
+
+
+<P>
+Note that the editor is not called to display a single reference,
+unlike the screen-oriented interface.
+
+
+<P>
+You can use the c command to toggle ignore/use letter case when
+searching. (When ignoring letter case, search for "FILE" will match
+"File" and "file".)
+
+
+<P>
+You can use the r command to rebuild the database.
+
+
+<P>
+gtags-cscope will quit when it detects end-of-file, or when the first
+character of an input line is "^d" or "q".
+
+
+<H3><A NAME="SEC109">ENVIRONMENT VARIABLES</A></H3>
+<P>
+The following environment variables are the cscope origin.
+
+
+<DL COMPACT>
+
+<DT><VAR>CSCOPE_EDITOR</VAR>
+<DD>
+Overrides the EDITOR and VIEWER variables. Use this if you wish to use
+a different editor with cscope than that specified by your
+EDITOR/VIEWER variables.
+<DT><VAR>CSCOPE_LINEFLAG</VAR>
+<DD>
+Format of the line number flag for your editor. By default, cscope
+invokes your editor via the equivalent of "editor +N file", where
+"N" is the line number that the editor should jump to. This format
+is used by both emacs and vi. If your editor needs something
+different, specify it in this variable, with "%s" as a placeholder
+for the line number.  Ex: if your editor needs to be invoked as
+"editor -#103 file" to go to line 103, set this variable to
+"-#%s".
+<DT><VAR>CSCOPE_LINEFLAG_AFTER_FILE</VAR>
+<DD>
+Set this variable to "yes" if your editor needs to be invoked with
+the line number option after the filename to be edited. To continue
+the example from CSCOPE_LINEFLAG, above: if your editor needs to see
+"editor file -#number", set this environment variable. Users of most
+standard editors (vi, emacs) do not need to set this variable.
+<DT><VAR>EDITOR</VAR>
+<DD>
+Preferred editor, which defaults to vi.
+<DT><VAR>HOME</VAR>
+<DD>
+Home directory, which is automatically set at login.
+<DT><VAR>SHELL</VAR>
+<DD>
+Preferred shell, which defaults to sh.
+<DT><VAR>TERM</VAR>
+<DD>
+Terminal type, which must be a screen terminal.
+<DT><VAR>TERMINFO</VAR>
+<DD>
+Terminal information directory full path name. If your terminal
+is not in the standard terminfo directory, see curses
+and terminfo for how to make your own terminal description.
+<DT><VAR>TMPDIR</VAR>
+<DD>
+Temporary file directory, which defaults to /tmp.
+<DT><VAR>VIEWER</VAR>
+<DD>
+Preferred file display program (such as less), which overrides
+EDITOR (see above).
+</DL>
+
+<P>
+The following environment variables are the GLOBAL origin.
+
+
+<DL COMPACT>
+
+<DT><VAR>GTAGSROOT</VAR>
+<DD>
+The root directory of the project.
+<DT><VAR>GTAGSDBPATH</VAR>
+<DD>
+The directory on which tag files exist.
+This value is ignored when <VAR>GTAGSROOT</VAR> is not defined.
+<DT><VAR>GTAGSLIBPATH</VAR>
+<DD>
+If this variable is set, it is used as the path to search
+for library functions. If the specified object is not
+found in the project, global also search in these paths.
+Since only <TT>`GTAGS'</TT> is targeted in the retrieval, this variable is
+ignored when the <SAMP>`-r'</SAMP> or <SAMP>`-s'</SAMP> is specified.
+<DT><VAR>GTAGSCONF</VAR>
+<DD>
+Configuration file. The default is <TT>`$HOME/.globalrc'</TT>.
+<DT><VAR>GTAGSLABEL</VAR>
+<DD>
+Configuration label. The default is default.
+<DT><VAR>MAKEOBJDIRPREFIX</VAR>
+<DD>
+If this variable is set, <TT>`$MAKEOBJDIRPREFIX'</TT> is used as the prefix
+of BSD-style objdir. The default is <TT>`/usr/obj'</TT>.
+</DL>
+
+
+<H3><A NAME="SEC110">FILES</A></H3>
+<DL COMPACT>
+
+<DT><TT>`GTAGS'</TT>
+<DD>
+Tag file for object definitions.
+<DT><TT>`GRTAGS'</TT>
+<DD>
+Tag file for object references.
+<DT><TT>`GPATH'</TT>
+<DD>
+Tag file for path of source files.
+<DT><TT>`GTAGSROOT'</TT>
+<DD>
+If environment variable <VAR>GTAGSROOT</VAR> is not set
+and file <TT>`GTAGSROOT'</TT> exists in the same directory with <TT>`GTAGS'</TT>
+then global sets <VAR>GTAGSROOT</VAR> to the contents of the file.
+<DT><TT>`$HOME/.globalrc'</TT>, <TT>`/etc/gtags.conf'</TT>, <TT>`[sysconfdir]/gtags.conf'</TT>
+<DD>
+Configuration files.
+</DL>
+
+
+<H3><A NAME="SEC111">SEE ALSO</A></H3>
+<P>
 gtags(1),
 global(1),
 htags(1).
@@ -3511,33 +3855,39 @@ GNU GLOBAL source code tag system<BR>
 (http://www.gnu.org/software/global/).
 
 
-<H3><A NAME="SEC109">BUG</A></H3>
+<H3><A NAME="SEC112">BUG</A></H3>
 <P>
-The second field of the output is almost &#60;unknown&#62; since
+The function field of the display is almost &#60;unknown&#62; since
 GLOBAL doesn't recognize it.
-Command 2 (Find functions called by this function) is not implemented.
 
 
-<H3><A NAME="SEC110">AUTHOR</A></H3>
 <P>
-Shigio YAMAGUCHI.
+"Find functions called by this function" is not implemented.
 
 
-<H3><A NAME="SEC111">HISTORY</A></H3>
+<H3><A NAME="SEC113">AUTHOR</A></H3>
 <P>
-The gtags-cscope command appeared in 2006.
+Joe Steffen (original author) and others
 
 
-<H2><A NAME="SEC112">5.6 globash - a special shell for GLOBAL using GNU bash.</A></H2>
+<H3><A NAME="SEC114">HISTORY</A></H3>
+<P>
+Cscope was originally developed at Bell Labs in the early 1980's,
+and was released as free software under the BSD license in April 2000.
+Gtags-cscope is a derivative of cscope to use GLOBAL as the back-end.
+Its line-oriented interface was originally written in 2006, and was
+re-implemented in 2011 using cscope itself.
 
 
-<H3><A NAME="SEC113">NAME</A></H3>
+<H2><A NAME="SEC115">5.6 globash - a special shell for GLOBAL using GNU bash.</A></H2>
+
+
+<H3><A NAME="SEC116">NAME</A></H3>
 <P>
 globash - a special shell for GLOBAL using GNU bash.
 
 
-<H3><A NAME="SEC114">SYNOPSIS</A></H3>
-<P>
+<H3><A NAME="SEC117">SYNOPSIS</A></H3>
 
 <BLOCKQUOTE>
 <P>
@@ -3546,7 +3896,7 @@ globash<BR>
 
 
 
-<H3><A NAME="SEC115">DESCRIPTION</A></H3>
+<H3><A NAME="SEC118">DESCRIPTION</A></H3>
 <P>
 Globash is a special shell for GLOBAL using GNU bash.
 You can use a lot of function to ease reading source code
@@ -3556,7 +3906,7 @@ invoke this command in the project.
 Please refer to the help (type 'ghelp'&#60;ENTER&#62;) about a detailed usage.
 
 
-<H3><A NAME="SEC116">FILES</A></H3>
+<H3><A NAME="SEC119">FILES</A></H3>
 <DL COMPACT>
 
 <DT><TT>`GTAGS'</TT>
@@ -3574,7 +3924,7 @@ The personal initialization file, executed for globash.
 </DL>
 
 
-<H3><A NAME="SEC117">ENVIRONMENT</A></H3>
+<H3><A NAME="SEC120">ENVIRONMENT</A></H3>
 <P>
 The following environment variables affect the execution of globash:
 <DL COMPACT>
@@ -3585,7 +3935,7 @@ The editor used by the show command.
 </DL>
 
 
-<H3><A NAME="SEC118">SEE ALSO</A></H3>
+<H3><A NAME="SEC121">SEE ALSO</A></H3>
 <P>
 gtags(1),
 htags(1),
@@ -3597,23 +3947,23 @@ GNU GLOBAL source code tag system<BR>
 (http://www.gnu.org/software/global/).
 
 
-<H3><A NAME="SEC119">AUTHOR</A></H3>
+<H3><A NAME="SEC122">AUTHOR</A></H3>
 <P>
 Shigio YAMAGUCHI.
 
 
-<H3><A NAME="SEC120">HISTORY</A></H3>
+<H3><A NAME="SEC123">HISTORY</A></H3>
 <P>
 The globash command appeared in GLOBAL-4.1(2001).
 
 
 
 
-<H1><A NAME="SEC121">A. Copying This Manual</A></H1>
+<H1><A NAME="SEC124">A. Copying This Manual</A></H1>
 
 
 
-<H2><A NAME="SEC122">A.1 GNU Free Documentation License</A></H2>
+<H2><A NAME="SEC125">A.1 GNU Free Documentation License</A></H2>
 
 <P>
 <A NAME="IDX31"></A>
@@ -4055,7 +4405,7 @@ as a draft) by the Free Software Foundation.
 
 
 
-<H3><A NAME="SEC123">A.1.1 ADDENDUM: How to use this License for your documents</A></H3>
+<H3><A NAME="SEC126">A.1.1 ADDENDUM: How to use this License for your documents</A></H3>
 
 <P>
 To use this License in a document you have written, include a copy of
@@ -4101,11 +4451,11 @@ to permit their use in free software.
 
 
 
-<H1><A NAME="SEC124">B. Business Model</A></H1>
+<H1><A NAME="SEC127">B. Business Model</A></H1>
 
 
 
-<H2><A NAME="SEC125">B.1 The BOKIN Model Definition</A></H2>
+<H2><A NAME="SEC128">B.1 The BOKIN Model Definition</A></H2>
 
 <PRE>
 Version 1.0, December 17, 2005
@@ -4117,7 +4467,7 @@ of this document, but changing it is not allowed.
 
 
 
-<H3><A NAME="SEC126">Introduction</A></H3>
+<H3><A NAME="SEC129">Introduction</A></H3>
 
 <P>
 <EM>BOKIN Model</EM> is a business model to obtain proceeds by widely collecting
@@ -4132,7 +4482,7 @@ The business which comply with the following criteria can be called
 
 
 
-<H3><A NAME="SEC127">Criteria</A></H3>
+<H3><A NAME="SEC130">Criteria</A></H3>
 
 
 <OL>
@@ -4247,7 +4597,7 @@ The BOKINware should contain the present definition as a file named
 
 
 
-<H3><A NAME="SEC128">Renewal</A></H3>
+<H3><A NAME="SEC131">Renewal</A></H3>
 
 <P>
 The author may publish revised and/or new versions of the BOKIN Model
@@ -4256,7 +4606,7 @@ to the present version, but may differ in detail to address new problems
 or concerns.
 
 
-<H2><A NAME="SEC129">B.2 Frequently Asked Questions</A></H2>
+<H2><A NAME="SEC132">B.2 Frequently Asked Questions</A></H2>
 
 <PRE>
 Version 1.0, December 17, 2005
@@ -4268,7 +4618,7 @@ of this document, but changing it is not allowed.
 
 
 
-<H3><A NAME="SEC130">BOKIN Model Frequently Asked Questions</A></H3>
+<H3><A NAME="SEC133">BOKIN Model Frequently Asked Questions</A></H3>
 
 
 <OL>
@@ -4365,7 +4715,7 @@ BOKIN Model business should be supported only by people's free will.
 
 
 
-<H1><A NAME="SEC131">Option Index</A></H1>
+<H1><A NAME="SEC134">Option Index</A></H1>
 <P>
 Jump to:
 <A HREF="#cindex_f">f</A>
@@ -4375,7 +4725,7 @@ Jump to:
 <LI><A HREF="globaldoc.html#IDX31">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on March, 8  2011 using
+This document was generated on May, 16  2011 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
 </BODY>

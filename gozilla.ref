@@ -2,7 +2,6 @@
 @unnumberedsubsec NAME
 gozilla - force mozilla to display specified part of a source file.
 @unnumberedsubsec SYNOPSIS
-@noindent
 @quotation
 gozilla [-b browser][-p][+no] file@*
 gozilla [-b browser][-p] -d name@*
@@ -77,7 +76,6 @@ Browser to use. By default, it is assumed mozilla.
 
 	$ firefox &
 	$ gozilla -b firefox +82 ctags.c
-
 @end example
 @unnumberedsubsec DIAGNOSTICS
 Gozilla exits with a non 0 value if an error occurred, 0 otherwise.

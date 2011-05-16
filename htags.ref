@@ -2,7 +2,6 @@
 @unnumberedsubsec NAME
 htags - generate a hypertext from a set of source files.
 @unnumberedsubsec SYNOPSIS
-@noindent
 @quotation
 htags [-acDfFghInosTvwx][-d dbpath][-m name][-t title][dir]@*
 @end quotation
@@ -164,7 +163,6 @@ The default is the current directory.
 
 	$ cflow --tree --format=posix *.[ch] >cflow.out
 	$ htags --cflow=cflow.out
-
 @end example
 @unnumberedsubsec FILES
 @table @asis

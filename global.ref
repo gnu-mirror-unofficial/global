@@ -2,7 +2,6 @@
 @unnumberedsubsec NAME
 global - print locations of the specified object.
 @unnumberedsubsec SYNOPSIS
-@noindent
 @quotation
 global [-adGilnqrstTvx][-e] pattern@*
 global -c[iIqsv] prefix@*

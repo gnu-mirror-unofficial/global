@@ -2,7 +2,6 @@
 @unnumberedsubsec NAME
 globash - a special shell for GLOBAL using GNU bash.
 @unnumberedsubsec SYNOPSIS
-@noindent
 @quotation
 globash@*
 @end quotation
