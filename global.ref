@@ -95,6 +95,9 @@ Ignore case distinctions in the pattern.
 Print only objects which exist under the current directory.
 @item @samp{-L}, @samp{--file-list} file-list
 Obtain files from file-list in addition to the arguments.
+@item @samp{--literal}
+Execute literal search instead of regular expression search.
+This option is only valid when the @samp{-g} command is specified.
 @item @samp{-n}, @samp{--nofilter}
 Suppress sort filter and path conversion filter.
 @item @samp{-O}, @samp{--only-other}

@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.57 from global.texi on May, 16  2011 -->
+<!-- Created by texi2html 1.57 from global.texi on June, 7  2011 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY >
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 5.9.5, for GNU GLOBAL version 5.9.5</H2>
-<H2>16 May 2011</H2>
+<H2>Edition 5.9.6, for GNU GLOBAL version 5.9.6</H2>
+<H2>7 June 2011</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -744,23 +744,6 @@ In Bash:
     kmem_alloc_pageable  kmem_free_wakeup     kmem_suballoc
     $ global kmem_s<KBD>TAB</KBD>
     $ global kmem_suballoc
-    ../vm/vm_kern.c
-
-</PRE>
-
-In Tcsh:
-
-<PRE>
-
-    % set funcs=(`global -c`)
-    % complete global 'n/*/$funcs/'
-    % global kmem_<KBD>TAB</KBD>
-    kmem_alloc          kmem_free_wakeup
-    kmem_alloc_pageable kmem_init
-    kmem_alloc_wait     kmem_malloc
-    kmem_free           kmem_suballoc
-    % global kmem_s<KBD>TAB</KBD>
-    % global kmem_suballoc
     ../vm/vm_kern.c
 
 </PRE>
@@ -2523,6 +2506,10 @@ Print only objects which exist under the current directory.
 <DT><SAMP>`-L'</SAMP>, <SAMP>`--file-list'</SAMP> file-list
 <DD>
 Obtain files from file-list in addition to the arguments.
+<DT><SAMP>`--literal'</SAMP>
+<DD>
+Execute literal search instead of regular expression search.
+This option is only valid when the <SAMP>`-g'</SAMP> command is specified.
 <DT><SAMP>`-n'</SAMP>, <SAMP>`--nofilter'</SAMP>
 <DD>
 Suppress sort filter and path conversion filter.
@@ -3062,6 +3049,9 @@ Use frames for the top page.
 <DD>
 Add a search form using CGI program.
 You need to start up HTTP server for it.
+<DT><SAMP>`--fixed-guide'</SAMP>
+<DD>
+Put a fixed guide at the bottom of the source code.
 <DT><SAMP>`--full-path'</SAMP>
 <DD>
 Use full path name in the file index.
@@ -3115,7 +3105,7 @@ Print line numbers. By default, doesn't print line numbers.
 The default value of columns is 4.
 <DT><SAMP>`--map-file'</SAMP>
 <DD>
-Generate files <TT>`MAP'</TT> and <TT>`FILEMAP'</TT>.
+Generate files <TT>`MAP'</TT>.
 <DT><SAMP>`-o'</SAMP>, <SAMP>`--other'</SAMP>
 <DD>
 Pick up not only source files but also other files in the file index.
@@ -3140,7 +3130,7 @@ Print statistics information.
 <DT><SAMP>`--suggest'</SAMP>
 <DD>
 Htags chooses popular options on behalf of beginners.
-It is equivalent to '-aghInosTxv --show-position' now.
+It is equivalent to '-aghInosTxv --show-position --fixed-guide' now.
 <DT><SAMP>`--suggest2'</SAMP>
 <DD>
 Htags chooses popular options on behalf of beginners.
@@ -4909,7 +4899,7 @@ Jump to:
 <LI><A HREF="global.html#IDX31">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on May, 16  2011 using
+This document was generated on June, 7  2011 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
 </BODY>
