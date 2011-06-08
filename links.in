@@ -145,6 +145,28 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	written by Claudio Fleiner.
 </dl>
 
+<H3>IDE</H3>
+<dl>
+<dt><a href="http://www.codeblocks.org/">Code::Blocks</a><dd>
+	Code::Blocks is a free C++ IDE built to meet the most demanding needs of its users.
+	It is designed to be very extensible and fully configurable.
+<dt><a href="http://www.codelite.org/">CodeLite</a><dd>
+	CodeLite is an open-source, cross platform IDE for the C/C++ programming
+	languages (build and tested on Windows XP SP3, Windows Vista, Windows 7,
+	Ubuntu 10.04, and Mac OSX 10.5.8).
+<dt><a href="http://sourceforge.net/projects/vcfbuilder/">VCF Builder IDE</a><dd>
+	The VCF Builder is an advanced development tool for creating C++ applications,
+	and supporting a wide number of plugins for enhancing it's functionality.
+<dt><a href="http://netbeans.org/">NetBeans</a><dd>
+	NetBeans refers to both a platform framework for Java desktop applications,
+	and an integrated development environment (IDE) for developing with Java,
+	JavaScript, PHP, Python, Ruby, Groovy, C, C++, Scala, Clojure, and others.
+<dt><a href="http://www.eclipse.org/">Eclipse</a><dd>
+	Eclipse is a multi-language software development environment
+	comprising an integrated development environment (IDE) and
+	an extensible plug-in system.
+</dl>
+
 <H3>Source code browsing Tools</H3>
 Please see also <a href="#GLOBAL_related_tools">GLOBAL related tools</a> section.
 <dl>
