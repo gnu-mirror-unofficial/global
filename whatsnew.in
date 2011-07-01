@@ -8,6 +8,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <dl compact>
 <dt>2011/7/1<dd>
 	GLOBAL-5.9.7 was released.
+	See <a href='http://lists.gnu.org/archive/html/info-global/2011-07/msg00000.html'>release note</a>.
 <dt>2011/6/7<dd>
 	GLOBAL-5.9.6 was released.
 	See <a href='http://lists.gnu.org/archive/html/info-global/2011-06/msg00000.html'>release note</a>.
@@ -41,6 +42,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	GLOBAL-5.8 was released. New gtags(1) which using built-in parser is available.
 	This improvement has shortened the processing time to about 1/3.
 	See <a href='http://lists.gnu.org/archive/html/info-global/2010-02/msg00001.html'>release note</a>.
+<!--
 <dt>2009/12/19<dd>
 	GLOBAL-5.7.7 was released. New --statistics option for gtags(1) and htags(1) was added.
 	See <a href='http://lists.gnu.org/archive/html/info-global/2009-12/msg00000.html'>release note</a>.
@@ -53,7 +55,6 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <dt>2009/1/5<dd>
 	GLOBAL-5.7.4 was released. Some serious bugs about C++ were fixed.
 	See <a href='http://lists.gnu.org/archive/html/info-global/2009-01/msg00000.html'>release note</a>.
-<!--
 <dt>2008/10/29<dd>
 	GLOBAL-5.7.3 was released.
 	This is a bug-fix version.
