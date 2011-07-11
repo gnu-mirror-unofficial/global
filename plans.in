@@ -14,6 +14,7 @@ Plans of the highest priority are listed first.
 <li>'global -c' treats $GTAGSLIBPATH similarly to 'global -d's doing.
 <li>The -T(--through) option is effective in 'global -c'.
 </ul>
+<li>Support of <a href='http://lists.gnu.org/archive/html/bug-global/2011-07/msg00002.html'>class hierarchy</a>.
 <li>Support of tag stack per window. Currently tag stack is only one per emacs. (gtags.el)
 <li>Pickup definitions of data type, enum name, enum value, struct member name,
 	union name and struct name in C language.
