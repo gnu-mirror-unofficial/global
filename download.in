@@ -8,8 +8,10 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <h3>Source archive</h3>
 You can download the latest source archive from
 <a href=http://tamacom.com/global/global-@VERSION@.tar.gz>global-@VERSION@.tar.gz</a>
+(signature: <a href=http://tamacom.com/global/global-@VERSION@.tar.gz>global-@VERSION@.tar.gz.sig</a><a href=http://tamacom.com/global/global-@VERSION@.tar.gz>global-@VERSION@.tar.gz</a>)
 or
 <a href=ftp://ftp.gnu.org/pub/gnu/global/>GNU ftp site</a>.
+You can get the 
 
 <h3>Binary archive</h3>
 

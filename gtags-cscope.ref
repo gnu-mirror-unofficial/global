@@ -33,6 +33,8 @@ Same as @samp{-V}
 
 The following options can appear in any combination:
 @table @asis
+@item @samp{-a}
+Print absolute path name.
 @item @samp{-b}
 Build the cross-reference only.
 @item @samp{-C}
@@ -115,14 +117,14 @@ resulting lines, replacing the lines that were already there.
 @item |
 Pipe all lines to a shell command and display them without
 changing them.
+@item ^g
+Read lines from the result of the execution of global(1).
 @end table
 
 At any time these single-character commands can also be used:
 @table @asis
 @item <Return>
 Move to next input field.
-@item ^g
-Read lines from the result of the execution of specified command.
 @item ^n
 Move to next input field.
 @item ^p

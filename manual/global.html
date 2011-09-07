@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.57 from global.texi on July, 1  2011 -->
+<!-- Created by texi2html 1.57 from global.texi on September, 7  2011 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY >
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 5.9.7, for GNU GLOBAL version 5.9.7</H2>
-<H2>1 July 2011</H2>
+<H2>Edition 6.0, for GNU GLOBAL version 6.0</H2>
+<H2>7 September 2011</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -2510,6 +2510,11 @@ Obtain files from file-list in addition to the arguments.
 <DD>
 Execute literal search instead of regular expression search.
 This option is only valid when the <SAMP>`-g'</SAMP> command is specified.
+<DT><SAMP>`--match-part part'</SAMP>
+<DD>
+Specify the matched part of path name.
+This option is valid only with the <SAMP>`-c'</SAMP> command with the <SAMP>`-P'</SAMP> option,
+The default is all.
 <DT><SAMP>`-n'</SAMP>, <SAMP>`--nofilter'</SAMP>
 <DD>
 Suppress sort filter and path conversion filter.
@@ -2653,6 +2658,12 @@ Configuration label. The default is default.
 <DD>
 If this variable is set, <TT>`$MAKEOBJDIRPREFIX'</TT> is used as the prefix
 of BSD-style objdir. The default is <TT>`/usr/obj'</TT>.
+<DT><VAR>GTAGSTHROUGH</VAR>
+<DD>
+If this variable is set, the <SAMP>`-T'</SAMP> option is specified.
+<DT><VAR>GTAGSBLANKENCODE</VAR>
+<DD>
+If this variable is set, the --encode=" &#60;TAB&#62;" option is specified.
 </DL>
 
 
@@ -2728,17 +2739,13 @@ target files are limited by it. Lines starting with ". " are comments.
 
 
 <P>
-C, C++, yacc, java, PHP and Assembly source files are supported.
-Files whose names end in <TT>`.c'</TT> or <TT>`.h'</TT> are assumed to be
-C source files.
-Files whose names end in <TT>`.c++'</TT> <TT>`.cc'</TT> <TT>`.cpp'</TT> <TT>`.cxx'</TT>
-<TT>`.hxx'</TT> <TT>`.hpp'</TT> <TT>`.C'</TT> <TT>`.H'</TT> are assumed to be C++ source files.
-Files whose names end in <TT>`.y'</TT> are assumed to be YACC source files.
+C, yacc, Assembly, Java, C++ and PHP source files are supported.
+Files whose names end in <TT>`.c'</TT>, <TT>`.h'</TT> are assumed to be C source files.
+Files whose names end in <TT>`.y'</TT> are assumed to be yacc source files.
+Files whose names end in <TT>`.s'</TT>, <TT>`.S'</TT> are assumed to be Assembly source files.
 Files whose names end in <TT>`.java'</TT> are assumed to be Java source files.
-Files whose names end in <TT>`.php'</TT> <TT>`.php3'</TT> <TT>`.phtml'</TT> are
-assumed to be PHP source files.
-Files whose names end in <TT>`.s'</TT> or <TT>`.S'</TT>
-are assumed to be Assembly source files.
+Files whose names end in <TT>`.c++'</TT>, <TT>`.cc'</TT>, <TT>`.hh'</TT>, <TT>`.cpp'</TT>, <TT>`.cxx'</TT>, <TT>`.hxx'</TT>, <TT>`.hpp'</TT>, <TT>`.C'</TT>, <TT>`.H'</TT> are assumed to be C++ source files.
+Files whose names end in <TT>`.php'</TT>, <TT>`.php3'</TT>, <TT>`.phtml'</TT> are assumed to be PHP source files.
 Other files are assumed to be text files.
 
 
@@ -2890,7 +2897,7 @@ Suffixes check is affected by this capability.
 Language mapping. Each comma-separated map consists of
 the language name, a colon, and a list of file extensions.
 As a special exception, gtags collects values from multiple <CODE>langmap</CODE> variables.
-Default mapping is 'c:.c.h,yacc:.y,asm:.s.S,java:.java,cpp:.c++.cc.cpp.cxx.hxx.hpp.C.H,php:.php.php3.phtml'.
+Default mapping is 'c:.c.h,yacc:.y,asm:.s.S,java:.java,cpp:.c++.cc.hh.cpp.cxx.hxx.hpp.C.H,php:.php.php3.phtml'.
 <DT><CODE>gtags_parser</CODE>(comma separated list)
 <DD>
 Specify the mapping of funtion layer plugin parser.
@@ -3011,8 +3018,20 @@ Display a caution message on the top page.
 <DT><SAMP>`--cflow'</SAMP> cflowfile
 <DD>
 Add a call tree by cflow(1). cflowfile must be posix format.
-If you use GNU cflow, invoke the command at the root directory of the project
-with the <SAMP>`--format=posix'</SAMP> option. See EXAMPLES.
+If you use GNU cflow, invoke the command at the project root directory
+with the <SAMP>`--format=posix'</SAMP> option.
+This option is deprecated. Please use the <SAMP>`--call-tree'</SAMP> or
+<SAMP>`--callee-tree'</SAMP> instead.
+<DT><SAMP>`--call-tree'</SAMP> callfile
+<DD>
+Add a call tree by cflow(1). callfile must be posix format.
+If you use GNU cflow, invoke the command at the project root directory
+with the <SAMP>`--format=posix'</SAMP> option.
+<DT><SAMP>`--callee-tree'</SAMP> calleefile
+<DD>
+Add a callee tree by cflow(1). calleefile must be posix format.
+If you use GNU cflow, invoke the command at the project root directory
+with the <SAMP>`--format=posix'</SAMP> and <SAMP>`--reverse'</SAMP> option.
 <DT><SAMP>`-c'</SAMP>, <SAMP>`--compact'</SAMP>
 <DD>
 Compress html files by gzip(1).
@@ -3181,9 +3200,6 @@ The default is the current directory.
 	$ firefox HTML/index.html
 
 	$ htags --suggest
-
-	$ cflow --tree --format=posix *.[ch] &#62;cflow.out
-	$ htags --cflow=cflow.out
 </PRE>
 
 
@@ -3302,12 +3318,12 @@ Default options for htags. This value is inserted into
 the head of arguments.
 <DT><CODE>include_file_suffixes</CODE>(comma separated list)
 <DD>
-Suffixes of include files. The default is 'h,hxx,hpp,H,inc.php'.
+Suffixes of include files. The default is 'h,hh,hxx,hpp,H,inc.php'.
 <DT><CODE>langmap</CODE>(comma separated list)
 <DD>
 Language mapping. Each comma-separated map consists of
 the language name, a colon, and a list of file extensions.
-Default mapping is 'c:.c.h,yacc:.y,asm:.s.S,java:.java,cpp:.c++.cc.cpp.cxx.hxx.hpp.C.H,php:.php.php3.phtml'.
+Default mapping is 'c:.c.h,yacc:.y,asm:.s.S,java:.java,cpp:.c++.cc.hh.cpp.cxx.hxx.hpp.C.H,php:.php.php3.phtml'.
 <DT><CODE>ncol</CODE>(number)
 <DD>
 Columns of line number. The default is 4.
@@ -3632,6 +3648,9 @@ Same as <SAMP>`-V'</SAMP>
 The following options can appear in any combination:
 <DL COMPACT>
 
+<DT><SAMP>`-a'</SAMP>
+<DD>
+Print absolute path name.
 <DT><SAMP>`-b'</SAMP>
 <DD>
 Build the cross-reference only.
@@ -3747,6 +3766,9 @@ resulting lines, replacing the lines that were already there.
 <DD>
 Pipe all lines to a shell command and display them without
 changing them.
+<DT>^g
+<DD>
+Read lines from the result of the execution of global(1).
 </DL>
 
 <P>
@@ -3756,9 +3778,6 @@ At any time these single-character commands can also be used:
 <DT>&#60;Return&#62;
 <DD>
 Move to next input field.
-<DT>^g
-<DD>
-Read lines from the result of the execution of specified command.
 <DT>^n
 <DD>
 Move to next input field.
@@ -4899,7 +4918,7 @@ Jump to:
 <LI><A HREF="global.html#IDX31">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on July, 1  2011 using
+This document was generated on September, 7  2011 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
 </BODY>

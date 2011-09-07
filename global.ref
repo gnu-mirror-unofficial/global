@@ -98,6 +98,10 @@ Obtain files from file-list in addition to the arguments.
 @item @samp{--literal}
 Execute literal search instead of regular expression search.
 This option is only valid when the @samp{-g} command is specified.
+@item @samp{--match-part part}
+Specify the matched part of path name.
+This option is valid only with the @samp{-c} command with the @samp{-P} option,
+The default is all.
 @item @samp{-n}, @samp{--nofilter}
 Suppress sort filter and path conversion filter.
 @item @samp{-O}, @samp{--only-other}
@@ -206,6 +210,10 @@ Configuration label. The default is default.
 @item @var{MAKEOBJDIRPREFIX}
 If this variable is set, @file{$MAKEOBJDIRPREFIX} is used as the prefix
 of BSD-style objdir. The default is @file{/usr/obj}.
+@item @var{GTAGSTHROUGH}
+If this variable is set, the @samp{-T} option is specified.
+@item @var{GTAGSBLANKENCODE}
+If this variable is set, the --encode=" <TAB>" option is specified.
 @end table
 @unnumberedsubsec CONFIGURATION
 The following configuration variables affect the execution of global:
