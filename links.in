@@ -7,6 +7,9 @@ under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <h3>Related articles</h3>
 <dl>
+<dt><a href="http://hub.opensolaris.org/bin/view/Project+opengrok/">Comparison with Similar Tools</a><dd>
+	This comparison table compares the function of LXR, ctags, cscope, ViewVC, OpenGrok and, GLOBAL
+	which are typical tools for source code reading.
 <dt><a href="http://queue.acm.org/detail.cfm?id=945136">Code Spelunking: Exploring Cavernous Code Bases</a><dd>
 	Code diving through unfamiliar source bases is something we do far more often than
 	write new code from scratch--make sure you have the right gear for the job. (by George V. Neville-Neil)
@@ -24,7 +27,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <dl>
 <dt><a href="http://lqoyzy.blogspot.com/2010/04/add-scala-support-for-gtags.html">Scala support for gtags</a><dd>
 	Basic scala support for gtags is completed.
-	support for scala class/object/trait/function/varible/value definition and other symbols.
+	support for scala class/object/trait/function/variable/value definition and other symbols.
 <dt><a href="http://www.jedit.org/">jEdit</a><dd>
 	jEdit is a mature programmer's text editor with hundreds (counting the time
 	developing plugins) of person-years of development behind it.
@@ -43,7 +46,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <dt><a href="http://sourceforge.jp/projects/sfnet_ocamlglobaltags/">OCaml Global Tagger</a><dd>
 	A plugin for GNU Global which tags OCaml source code, using CamlP4 for versions
 	3.10 of OCaml and above. Provides ocaml_tags, which creates tags for ml and mli
-	files, and an ogtags script that wraps a gtags call with the ocaml_tags plugin.
+	files, and an ogtags script that wraps a gtags call with the ocaml_tags plug-in.
 <dt><a href="http://cedet.sourceforge.net/">Cedet</a><dd>
 	CEDET is a Collection of Emacs Development Environment Tools  written with the end goal of
 	creating an advanced development environment in Emacs. 
@@ -56,7 +59,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	`anything-c-source-gtags-select' is a source for `gtags-find-tag'.
 	Replace *GTAGS SELECT* buffer with `anything' interface.
 <dt><a href="http://home.tiscali.de/mgidde/Emacs.html#xgtags">xgtags.el</a><dd>
-	Xgtags.el provides an interface to the GLOBAL cross-refencing tools.
+	Xgtags.el provides an interface to the GLOBAL cross-referencing tools.
 	While gtags.el, that comes with the GLOBAL distribution, is more a
 	replacement for emacs' own find-tag/pop-tag-mark facility with some
 	extra stuff, xgtags.el tries to permit the same functionality as
@@ -65,7 +68,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <dt><a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen Release 1.4.3 or higher</a><dd>
 	Doxygen is a documentation system for C++, Java, IDL and C.
 	<br>
-	Doxygen Release 1.4.3 includs new config option USE_HTAGS.
+	Doxygen Release 1.4.3 includes new config option USE_HTAGS.
 	When enabled in combination with SOURCE_BROWSER=YES,
 	the source browser of htags(1) is used instead of doxygen's own. 
 	This facility needs GLOBAL-4.8.6 or the later.
@@ -205,7 +208,7 @@ Please see also <a href="#GLOBAL_related_tools">GLOBAL related tools</a> section
 	TagSearch is a command line tool for searching Tags in Exuberant
 	ctags Files. - Search for special tag kind (classes, variable
 	definitions ...) - configurable output format - search case
-	sensitiv/insensitiv - search for partial or full Match.
+	sensitive/insensitive - search for partial or full Match.
 <dt><a href="http://freescope.sourceforge.net/">Freescope</a><dd>
 	Freescope is a programmer tool that provides source code browsing on
 	UNIX-like operating systems. It is a clone of the cscope program
@@ -251,7 +254,7 @@ Please see also <a href="#GLOBAL_related_tools">GLOBAL related tools</a> section
 	Htmlfontify provides a means of converting individual emacs buffers, 
 	source files, or entire source trees to html, preserving formatting 
 	and emacs colourisation / syntax highlighting as much as possible 
-	through careful application of CSS stylesheets and html tags.
+	through careful application of CSS style-sheets and html tags.
 <dt><a href="http://www.gnu.org/software/src-highlite/">GNU Source-highlight</a><dd>
 	Source-highlight, given a source file, produces a document with syntax
 	highlighting. This package can handle Java, Javascript, C,C+, Prolog,
@@ -268,11 +271,11 @@ Please see also <a href="#GLOBAL_related_tools">GLOBAL related tools</a> section
 <!--
 <dt><a href="http://www.zib.de/Visual/software/doc++/">DOC++</a><dd>
 	DOC++ is a documentation system for C/C++ and Java generating both,
-	LaTeX output for high quality hardcopies and HTML output for
-	sophisticated online browsing of your documentation.
+	LaTeX output for high quality hard-copies and HTML output for
+	sophisticated on-line browsing of your documentation.
 -->
 <dt><a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a><dd>
-	ROBODoc is a documentation tool. It extracts specially formated
+	ROBODoc is a documentation tool. It extracts specially formatted
 	comment headers from the source file and puts them in a separate file.
 	ROBODoc thus allows you to include the program documentation
 	in the source code and avoid having to maintain two separate documents.
