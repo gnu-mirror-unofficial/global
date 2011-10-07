@@ -13,8 +13,7 @@ gtags-cscope builds the symbol cross-reference the first time it is used on
 the source files for the program being browsed. On a subsequent invocation, 
 gtags-cscope rebuilds the cross-reference only if a source file
 has changed or the list of source files is different. When the
-cross-reference is rebuilt, the data for the unchanged files are
-copied from the old cross-reference, which makes rebuilding faster
+cross-reference is rebuilt, it is updated incrementally, which makes rebuilding faster
 than the initial build.
 @unnumberedsubsec OPTIONS
 Some command line arguments can only occur as the only argument in
@@ -53,6 +52,7 @@ Do a single search with line-oriented output when used with the
 -num pattern option.
 @item @samp{-l}
 Line-oriented interface (see ``Line-Oriented Interface'' below).
+This option implies the -d option.
 @item @samp{-[0-9]} pattern
 Go to input field num (counting from 0) and find 
 pattern.
@@ -60,8 +60,7 @@ pattern.
 Display the last n file path components instead of
 the default (1). Use 0 not to display the file name at all.
 @item @samp{-v}
-Be more verbose in line-oriented mode.  Output progress updates during
-database building and searches.
+Be more verbose in line-oriented mode.
 @end table
 @unnumberedsubsec Requesting the initial search
 After the cross-reference is ready, gtags-cscope will display this menu:
@@ -170,7 +169,7 @@ Display next set of lines.
 Display next set of lines.
 @item -
 Display previous set of lines.
-@item a
+@item ^a
 Mark or unmark all lines to be changed.
 @item ^d
 Change the marked lines and exit.

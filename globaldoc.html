@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.57 from globaldoc.texi on September, 7  2011 -->
+<!-- Created by texi2html 1.57 from globaldoc.texi on October, 7  2011 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY >
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 6.0, for GNU GLOBAL version 6.0</H2>
-<H2>7 September 2011</H2>
+<H2>Edition 6.1, for GNU GLOBAL version 6.1</H2>
+<H2>7 October 2011</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -2612,15 +2612,13 @@ If dbpath is specified, this option is ignored.
 <DT><SAMP>`--single-update'</SAMP> file
 <DD>
 Update tag files for single file.
-It is considered that file was updated, and other files were not
-updated.  The file must be relative path name from the current directory.
+It is considered that file was updated, and other files were not updated.
 This option implies the -i option.
 If the file is new then <SAMP>`--single-update'</SAMP> is ignored,
 and the processing is automatically switched to normal incremental updating.
 <DT><SAMP>`--statistics'</SAMP>
 <DD>
 Print statistics information.
-This option is valid only for normal creation of tag files.
 <DT><SAMP>`-q'</SAMP>, <SAMP>`--quiet'</SAMP>
 <DD>
 Quiet mode.
@@ -2660,7 +2658,7 @@ Tag file for object definitions.
 Tag file for object references.
 <DT><TT>`GPATH'</TT>
 <DD>
-Tag file for path of source files.
+Tag file for path names.
 <DT><TT>`$HOME/.globalrc'</TT>, <TT>`/etc/gtags.conf'</TT>, <TT>`[sysconfdir]/gtags.conf'</TT>
 <DD>
 Configuration files.
@@ -2716,7 +2714,7 @@ As a special exception, gtags collects values from multiple <CODE>langmap</CODE>
 Default mapping is 'c:.c.h,yacc:.y,asm:.s.S,java:.java,cpp:.c++.cc.hh.cpp.cxx.hxx.hpp.C.H,php:.php.php3.phtml'.
 <DT><CODE>gtags_parser</CODE>(comma separated list)
 <DD>
-Specify the mapping of funtion layer plugin parser.
+Specify the mapping of language names and plugin parsers.
 Each part delimited by the comma consists of the language name, a colon,
 the shared object path, an optional colon followed by a function name.
 If the function name is not specified, 'parser' is assumed.
@@ -3094,28 +3092,6 @@ Instead, you can customize the appearance using style sheet file
 (<TT>`style.css'</TT>).
 <DL COMPACT>
 
-<DT><CODE>body_begin</CODE>(string)
-<DD>
-Begin tag for body. The default is '&#60;body text=#191970 bgcolor=#f5f5dc vlink=gray&#62;'.
-<DT><CODE>body_end</CODE>(string)
-<DD>
-End tag for body. The default is '&#60;/body&#62;'.
-<DT><CODE>brace_begin</CODE>(string)
-<DD>
-Begin tag for brace. The default is '&#60;font color=red&#62;'.
-<DT><CODE>brace_end</CODE>(string)
-<DD>
-End tag for brace. The default is '&#60;/font&#62;'.
-<DT><CODE>colorize_warned_line</CODE>(boolean)
-<DD>
-Colorize warned line using <CODE>warned_line_begin</CODE> and <CODE>warned_line_end</CODE>.
-The default is false.
-<DT><CODE>comment_begin</CODE>(string)
-<DD>
-Begin tag for comments. The default is '&#60;i&#62;&#60;font color=green&#62;'.
-<DT><CODE>comment_end</CODE>(string)
-<DD>
-End tag for comments. The default is '&#60;/font&#62;&#60;/i&#62;'.
 <DT><CODE>datadir</CODE>(string)
 <DD>
 Shared data directory. The default is '/usr/local/share' but
@@ -3125,9 +3101,6 @@ in this data directory.
 <DT><CODE>gzipped_suffix</CODE>(string)
 <DD>
 Suffix for compressed html file. The default is 'ghtml'.
-<DT><CODE>hr</CODE>(string)
-<DD>
-Horizontal rules. The default is '&#60;hr&#62;'.
 <DT><CODE>htags_options</CODE>(string)
 <DD>
 Default options for htags. This value is inserted into
@@ -3146,48 +3119,12 @@ Columns of line number. The default is 4.
 <DT><CODE>normal_suffix</CODE>(string)
 <DD>
 Suffix for normal html file. The default is 'html'.
-<DT><CODE>position_begin</CODE>(string)
-<DD>
-Begin tag for position mark. The default is '&#60;font color=gray&#62;'.
-<DT><CODE>position_end</CODE>(string)
-<DD>
-End tag for position mark. The default is '&#60;/font&#62;'.
-<DT><CODE>reserved_begin</CODE>(string)
-<DD>
-Begin tag for reserved word. The default is '&#60;b&#62;'.
-<DT><CODE>reserved_end</CODE>(string)
-<DD>
-End tag for reserved word. The default is '&#60;/b&#62;'.
 <DT><CODE>script_alias</CODE>(string)
 <DD>
 Script alias for system cgi script (<SAMP>`--system-cgi'</SAMP>).
-<DT><CODE>sharp_begin</CODE>(string)
-<DD>
-Begin tag for 'define'. The default is '&#60;font color=darkred&#62;'.
-<DT><CODE>sharp_end</CODE>(string)
-<DD>
-End tag for 'define'. The default is '&#60;/font&#62;'.
-<DT><CODE>table_begin</CODE>(string)
-<DD>
-Begin tag for table. The default is '&#60;table&#62;'.
-<DT><CODE>table_end</CODE>(string)
-<DD>
-End tag for table. The default is '&#60;/table&#62;'.
 <DT><CODE>tabs</CODE>(number)
 <DD>
 Tab stop. The default is 8.
-<DT><CODE>title_begin</CODE>(string)
-<DD>
-Begin tag for Title. The default is '&#60;h1&#62;&#60;font color=#cc0000&#62;'.
-<DT><CODE>title_end</CODE>(string)
-<DD>
-End tag for Title. The default is '&#60;/font&#62;&#60;/h1&#62;'.
-<DT><CODE>warned_line_begin</CODE>(string)
-<DD>
-Begin tag for line which htags warned. The default is '&#60;span style="background-color:yellow"&#62;'.
-<DT><CODE>warned_line_end</CODE>(string)
-<DD>
-End tag for line which htags warned. The default is '&#60;/span&#62;'.
 <DT><CODE>xhtml_version</CODE>(1.0|1.1)
 <DD>
 XHTML version. 1.0 and 1.1 are acceptable. The default is 1.0.
@@ -3384,37 +3321,32 @@ GNU GLOBAL source code tag system<BR>
 (http://www.gnu.org/software/global/).
 
 
-<H3><A NAME="SEC97">NOTES</A></H3>
-<P>
-Gozilla means 'Global for mozilla'.
-
-
-<H3><A NAME="SEC98">BUGS</A></H3>
+<H3><A NAME="SEC97">BUGS</A></H3>
 <P>
 Gozilla can accept not only source files but also text files,
 directories, HTML files and even URLs, because it is omnivorous.
 
 
-<H3><A NAME="SEC99">AUTHORS</A></H3>
+<H3><A NAME="SEC98">AUTHORS</A></H3>
 <P>
 Shigio YAMAGUCHI.
 
 
-<H3><A NAME="SEC100">HISTORY</A></H3>
+<H3><A NAME="SEC99">HISTORY</A></H3>
 <P>
 The gozilla command appeared in FreeBSD 2.2.2 but was not
 installed by default.
 
 
-<H2><A NAME="SEC101">5.5 gtags-cscope - interactively examine a C program</A></H2>
+<H2><A NAME="SEC100">5.5 gtags-cscope - interactively examine a C program</A></H2>
 
 
-<H3><A NAME="SEC102">NAME</A></H3>
+<H3><A NAME="SEC101">NAME</A></H3>
 <P>
 gtags-cscope - interactively examine a C program
 
 
-<H3><A NAME="SEC103">SYNOPSIS</A></H3>
+<H3><A NAME="SEC102">SYNOPSIS</A></H3>
 
 <BLOCKQUOTE>
 <P>
@@ -3423,7 +3355,7 @@ gtags-cscope [-bCdehLlVv][-F symfile ][-0123456789 pattern][-p n]<BR>
 
 
 
-<H3><A NAME="SEC104">DESCRIPTION</A></H3>
+<H3><A NAME="SEC103">DESCRIPTION</A></H3>
 <P>
 gtags-cscope is an interactive, screen-oriented tool that allows the user to
 browse through C source files for specified elements of code.
@@ -3434,12 +3366,11 @@ gtags-cscope builds the symbol cross-reference the first time it is used on
 the source files for the program being browsed. On a subsequent invocation, 
 gtags-cscope rebuilds the cross-reference only if a source file
 has changed or the list of source files is different. When the
-cross-reference is rebuilt, the data for the unchanged files are
-copied from the old cross-reference, which makes rebuilding faster
+cross-reference is rebuilt, it is updated incrementally, which makes rebuilding faster
 than the initial build.
 
 
-<H3><A NAME="SEC105">OPTIONS</A></H3>
+<H3><A NAME="SEC104">OPTIONS</A></H3>
 <P>
 Some command line arguments can only occur as the only argument in
 the execution of gtags-cscope.  They cause the program to just print out
@@ -3492,6 +3423,7 @@ Do a single search with line-oriented output when used with the
 <DT><SAMP>`-l'</SAMP>
 <DD>
 Line-oriented interface (see "Line-Oriented Interface" below).
+This option implies the -d option.
 <DT><SAMP>`-[0-9]'</SAMP> pattern
 <DD>
 Go to input field num (counting from 0) and find 
@@ -3502,12 +3434,11 @@ Display the last n file path components instead of
 the default (1). Use 0 not to display the file name at all.
 <DT><SAMP>`-v'</SAMP>
 <DD>
-Be more verbose in line-oriented mode.  Output progress updates during
-database building and searches.
+Be more verbose in line-oriented mode.
 </DL>
 
 
-<H3><A NAME="SEC106">Requesting the initial search</A></H3>
+<H3><A NAME="SEC105">Requesting the initial search</A></H3>
 <P>
 After the cross-reference is ready, gtags-cscope will display this menu:
 
@@ -3530,7 +3461,7 @@ Press the &#60;Up&#62; or &#60;Down&#62; keys repeatedly to move to the desired 
 field, type the text to search for, and then press the &#60;Return&#62; key.
 
 
-<H3><A NAME="SEC107">Issuing subsequent requests</A></H3>
+<H3><A NAME="SEC106">Issuing subsequent requests</A></H3>
 <P>
 If the search is successful, any of these single-character commands
 can be used:
@@ -3661,7 +3592,7 @@ Display next set of lines.
 <DT>-
 <DD>
 Display previous set of lines.
-<DT>a
+<DT>^a
 <DD>
 Mark or unmark all lines to be changed.
 <DT>^d
@@ -3690,7 +3621,7 @@ commands, respectively.
 </DL>
 
 
-<H3><A NAME="SEC108">Line-Oriented interface</A></H3>
+<H3><A NAME="SEC107">Line-Oriented interface</A></H3>
 <P>
 The -l option lets you use gtags-cscope where a screen-oriented interface
 would not be useful, for example, from another screen-oriented
@@ -3741,7 +3672,7 @@ gtags-cscope will quit when it detects end-of-file, or when the first
 character of an input line is "^d" or "q".
 
 
-<H3><A NAME="SEC109">ENVIRONMENT VARIABLES</A></H3>
+<H3><A NAME="SEC108">ENVIRONMENT VARIABLES</A></H3>
 <P>
 The following environment variables are the cscope origin.
 
@@ -3829,7 +3760,7 @@ of BSD-style objdir. The default is <TT>`/usr/obj'</TT>.
 </DL>
 
 
-<H3><A NAME="SEC110">FILES</A></H3>
+<H3><A NAME="SEC109">FILES</A></H3>
 <DL COMPACT>
 
 <DT><TT>`GTAGS'</TT>
@@ -3852,7 +3783,7 @@ Configuration files.
 </DL>
 
 
-<H3><A NAME="SEC111">SEE ALSO</A></H3>
+<H3><A NAME="SEC110">SEE ALSO</A></H3>
 <P>
 gtags(1),
 global(1),
@@ -3864,7 +3795,7 @@ GNU GLOBAL source code tag system<BR>
 (http://www.gnu.org/software/global/).
 
 
-<H3><A NAME="SEC112">BUG</A></H3>
+<H3><A NAME="SEC111">BUG</A></H3>
 <P>
 The function field of the display is almost &#60;unknown&#62; since
 GLOBAL doesn't recognize it.
@@ -3874,12 +3805,12 @@ GLOBAL doesn't recognize it.
 "Find functions called by this function" is not implemented.
 
 
-<H3><A NAME="SEC113">AUTHOR</A></H3>
+<H3><A NAME="SEC112">AUTHOR</A></H3>
 <P>
 Joe Steffen (original author) and others
 
 
-<H3><A NAME="SEC114">HISTORY</A></H3>
+<H3><A NAME="SEC113">HISTORY</A></H3>
 <P>
 Cscope was originally developed at Bell Labs in the early 1980's,
 and was released as free software under the BSD license in April 2000.
@@ -3888,15 +3819,15 @@ Its line-oriented interface was originally written in 2006, and was
 re-implemented in 2011 using cscope itself.
 
 
-<H2><A NAME="SEC115">5.6 globash - a special shell for GLOBAL using GNU bash.</A></H2>
+<H2><A NAME="SEC114">5.6 globash - a special shell for GLOBAL using GNU bash.</A></H2>
 
 
-<H3><A NAME="SEC116">NAME</A></H3>
+<H3><A NAME="SEC115">NAME</A></H3>
 <P>
 globash - a special shell for GLOBAL using GNU bash.
 
 
-<H3><A NAME="SEC117">SYNOPSIS</A></H3>
+<H3><A NAME="SEC116">SYNOPSIS</A></H3>
 
 <BLOCKQUOTE>
 <P>
@@ -3905,7 +3836,7 @@ globash<BR>
 
 
 
-<H3><A NAME="SEC118">DESCRIPTION</A></H3>
+<H3><A NAME="SEC117">DESCRIPTION</A></H3>
 <P>
 Globash is a special shell for GLOBAL using GNU bash.
 You can use a lot of function to ease reading source code
@@ -3915,7 +3846,7 @@ invoke this command in the project.
 Please refer to the help (type 'ghelp'&#60;ENTER&#62;) about a detailed usage.
 
 
-<H3><A NAME="SEC119">FILES</A></H3>
+<H3><A NAME="SEC118">FILES</A></H3>
 <DL COMPACT>
 
 <DT><TT>`GTAGS'</TT>
@@ -3933,7 +3864,7 @@ The personal initialization file, executed for globash.
 </DL>
 
 
-<H3><A NAME="SEC120">ENVIRONMENT</A></H3>
+<H3><A NAME="SEC119">ENVIRONMENT</A></H3>
 <P>
 The following environment variables affect the execution of globash:
 <DL COMPACT>
@@ -3944,7 +3875,7 @@ The editor used by the show command.
 </DL>
 
 
-<H3><A NAME="SEC121">SEE ALSO</A></H3>
+<H3><A NAME="SEC120">SEE ALSO</A></H3>
 <P>
 gtags(1),
 htags(1),
@@ -3956,23 +3887,23 @@ GNU GLOBAL source code tag system<BR>
 (http://www.gnu.org/software/global/).
 
 
-<H3><A NAME="SEC122">AUTHOR</A></H3>
+<H3><A NAME="SEC121">AUTHOR</A></H3>
 <P>
 Shigio YAMAGUCHI.
 
 
-<H3><A NAME="SEC123">HISTORY</A></H3>
+<H3><A NAME="SEC122">HISTORY</A></H3>
 <P>
 The globash command appeared in GLOBAL-4.1(2001).
 
 
 
 
-<H1><A NAME="SEC124">A. Copying This Manual</A></H1>
+<H1><A NAME="SEC123">A. Copying This Manual</A></H1>
 
 
 
-<H2><A NAME="SEC125">A.1 GNU Free Documentation License</A></H2>
+<H2><A NAME="SEC124">A.1 GNU Free Documentation License</A></H2>
 
 <P>
 <A NAME="IDX31"></A>
@@ -4414,7 +4345,7 @@ as a draft) by the Free Software Foundation.
 
 
 
-<H3><A NAME="SEC126">A.1.1 ADDENDUM: How to use this License for your documents</A></H3>
+<H3><A NAME="SEC125">A.1.1 ADDENDUM: How to use this License for your documents</A></H3>
 
 <P>
 To use this License in a document you have written, include a copy of
@@ -4460,11 +4391,11 @@ to permit their use in free software.
 
 
 
-<H1><A NAME="SEC127">B. Business Model</A></H1>
+<H1><A NAME="SEC126">B. Business Model</A></H1>
 
 
 
-<H2><A NAME="SEC128">B.1 The BOKIN Model Definition</A></H2>
+<H2><A NAME="SEC127">B.1 The BOKIN Model Definition</A></H2>
 
 <PRE>
 Version 1.0, December 17, 2005
@@ -4476,7 +4407,7 @@ of this document, but changing it is not allowed.
 
 
 
-<H3><A NAME="SEC129">Introduction</A></H3>
+<H3><A NAME="SEC128">Introduction</A></H3>
 
 <P>
 <EM>BOKIN Model</EM> is a business model to obtain proceeds by widely collecting
@@ -4491,7 +4422,7 @@ The business which comply with the following criteria can be called
 
 
 
-<H3><A NAME="SEC130">Criteria</A></H3>
+<H3><A NAME="SEC129">Criteria</A></H3>
 
 
 <OL>
@@ -4606,7 +4537,7 @@ The BOKINware should contain the present definition as a file named
 
 
 
-<H3><A NAME="SEC131">Renewal</A></H3>
+<H3><A NAME="SEC130">Renewal</A></H3>
 
 <P>
 The author may publish revised and/or new versions of the BOKIN Model
@@ -4615,7 +4546,7 @@ to the present version, but may differ in detail to address new problems
 or concerns.
 
 
-<H2><A NAME="SEC132">B.2 Frequently Asked Questions</A></H2>
+<H2><A NAME="SEC131">B.2 Frequently Asked Questions</A></H2>
 
 <PRE>
 Version 1.0, December 17, 2005
@@ -4627,7 +4558,7 @@ of this document, but changing it is not allowed.
 
 
 
-<H3><A NAME="SEC133">BOKIN Model Frequently Asked Questions</A></H3>
+<H3><A NAME="SEC132">BOKIN Model Frequently Asked Questions</A></H3>
 
 
 <OL>
@@ -4724,7 +4655,7 @@ BOKIN Model business should be supported only by people's free will.
 
 
 
-<H1><A NAME="SEC134">Option Index</A></H1>
+<H1><A NAME="SEC133">Option Index</A></H1>
 <P>
 Jump to:
 <A HREF="#cindex_f">f</A>
@@ -4734,7 +4665,7 @@ Jump to:
 <LI><A HREF="globaldoc.html#IDX31">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on September, 7  2011 using
+This document was generated on October, 7  2011 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
 </BODY>

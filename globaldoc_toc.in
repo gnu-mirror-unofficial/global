@@ -4,8 +4,8 @@
 This manual is available in <a href=http://www.gnu.org/software/global/manual/>various formats</a>.
 <hr>
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 6.0, for GNU GLOBAL version 6.0</H2>
-<H2>7 September 2011</H2>
+<H2>Edition 6.1, for GNU GLOBAL version 6.1</H2>
+<H2>7 October 2011</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -136,62 +136,61 @@ This manual is available in <a href=http://www.gnu.org/software/global/manual/>v
 </LI><LI><A NAME="TOC94" HREF="globaldoc.html#SEC94">EXAMPLES</A>
 </LI><LI><A NAME="TOC95" HREF="globaldoc.html#SEC95">DIAGNOSTICS</A>
 </LI><LI><A NAME="TOC96" HREF="globaldoc.html#SEC96">SEE ALSO</A>
-</LI><LI><A NAME="TOC97" HREF="globaldoc.html#SEC97">NOTES</A>
-</LI><LI><A NAME="TOC98" HREF="globaldoc.html#SEC98">BUGS</A>
-</LI><LI><A NAME="TOC99" HREF="globaldoc.html#SEC99">AUTHORS</A>
-</LI><LI><A NAME="TOC100" HREF="globaldoc.html#SEC100">HISTORY</A>
+</LI><LI><A NAME="TOC97" HREF="globaldoc.html#SEC97">BUGS</A>
+</LI><LI><A NAME="TOC98" HREF="globaldoc.html#SEC98">AUTHORS</A>
+</LI><LI><A NAME="TOC99" HREF="globaldoc.html#SEC99">HISTORY</A>
 </LI></UL>
-<LI><A NAME="TOC101" HREF="globaldoc.html#SEC101">5.5 gtags-cscope - interactively examine a C program</A>
+<LI><A NAME="TOC100" HREF="globaldoc.html#SEC100">5.5 gtags-cscope - interactively examine a C program</A>
 </LI><UL>
-<LI><A NAME="TOC102" HREF="globaldoc.html#SEC102">NAME</A>
-</LI><LI><A NAME="TOC103" HREF="globaldoc.html#SEC103">SYNOPSIS</A>
-</LI><LI><A NAME="TOC104" HREF="globaldoc.html#SEC104">DESCRIPTION</A>
-</LI><LI><A NAME="TOC105" HREF="globaldoc.html#SEC105">OPTIONS</A>
-</LI><LI><A NAME="TOC106" HREF="globaldoc.html#SEC106">Requesting the initial search</A>
-</LI><LI><A NAME="TOC107" HREF="globaldoc.html#SEC107">Issuing subsequent requests</A>
-</LI><LI><A NAME="TOC108" HREF="globaldoc.html#SEC108">Line-Oriented interface</A>
-</LI><LI><A NAME="TOC109" HREF="globaldoc.html#SEC109">ENVIRONMENT VARIABLES</A>
-</LI><LI><A NAME="TOC110" HREF="globaldoc.html#SEC110">FILES</A>
-</LI><LI><A NAME="TOC111" HREF="globaldoc.html#SEC111">SEE ALSO</A>
-</LI><LI><A NAME="TOC112" HREF="globaldoc.html#SEC112">BUG</A>
-</LI><LI><A NAME="TOC113" HREF="globaldoc.html#SEC113">AUTHOR</A>
-</LI><LI><A NAME="TOC114" HREF="globaldoc.html#SEC114">HISTORY</A>
+<LI><A NAME="TOC101" HREF="globaldoc.html#SEC101">NAME</A>
+</LI><LI><A NAME="TOC102" HREF="globaldoc.html#SEC102">SYNOPSIS</A>
+</LI><LI><A NAME="TOC103" HREF="globaldoc.html#SEC103">DESCRIPTION</A>
+</LI><LI><A NAME="TOC104" HREF="globaldoc.html#SEC104">OPTIONS</A>
+</LI><LI><A NAME="TOC105" HREF="globaldoc.html#SEC105">Requesting the initial search</A>
+</LI><LI><A NAME="TOC106" HREF="globaldoc.html#SEC106">Issuing subsequent requests</A>
+</LI><LI><A NAME="TOC107" HREF="globaldoc.html#SEC107">Line-Oriented interface</A>
+</LI><LI><A NAME="TOC108" HREF="globaldoc.html#SEC108">ENVIRONMENT VARIABLES</A>
+</LI><LI><A NAME="TOC109" HREF="globaldoc.html#SEC109">FILES</A>
+</LI><LI><A NAME="TOC110" HREF="globaldoc.html#SEC110">SEE ALSO</A>
+</LI><LI><A NAME="TOC111" HREF="globaldoc.html#SEC111">BUG</A>
+</LI><LI><A NAME="TOC112" HREF="globaldoc.html#SEC112">AUTHOR</A>
+</LI><LI><A NAME="TOC113" HREF="globaldoc.html#SEC113">HISTORY</A>
 </LI></UL>
-<LI><A NAME="TOC115" HREF="globaldoc.html#SEC115">5.6 globash - a special shell for GLOBAL using GNU bash.</A>
+<LI><A NAME="TOC114" HREF="globaldoc.html#SEC114">5.6 globash - a special shell for GLOBAL using GNU bash.</A>
 </LI><UL>
-<LI><A NAME="TOC116" HREF="globaldoc.html#SEC116">NAME</A>
-</LI><LI><A NAME="TOC117" HREF="globaldoc.html#SEC117">SYNOPSIS</A>
-</LI><LI><A NAME="TOC118" HREF="globaldoc.html#SEC118">DESCRIPTION</A>
-</LI><LI><A NAME="TOC119" HREF="globaldoc.html#SEC119">FILES</A>
-</LI><LI><A NAME="TOC120" HREF="globaldoc.html#SEC120">ENVIRONMENT</A>
-</LI><LI><A NAME="TOC121" HREF="globaldoc.html#SEC121">SEE ALSO</A>
-</LI><LI><A NAME="TOC122" HREF="globaldoc.html#SEC122">AUTHOR</A>
-</LI><LI><A NAME="TOC123" HREF="globaldoc.html#SEC123">HISTORY</A>
-</LI></UL>
-</UL>
-<LI><A NAME="TOC124" HREF="globaldoc.html#SEC124">A. Copying This Manual</A>
-</LI><UL>
-<LI><A NAME="TOC125" HREF="globaldoc.html#SEC125">A.1 GNU Free Documentation License</A>
-</LI><UL>
-<LI><A NAME="TOC126" HREF="globaldoc.html#SEC126">A.1.1 ADDENDUM: How to use this License for your documents</A>
+<LI><A NAME="TOC115" HREF="globaldoc.html#SEC115">NAME</A>
+</LI><LI><A NAME="TOC116" HREF="globaldoc.html#SEC116">SYNOPSIS</A>
+</LI><LI><A NAME="TOC117" HREF="globaldoc.html#SEC117">DESCRIPTION</A>
+</LI><LI><A NAME="TOC118" HREF="globaldoc.html#SEC118">FILES</A>
+</LI><LI><A NAME="TOC119" HREF="globaldoc.html#SEC119">ENVIRONMENT</A>
+</LI><LI><A NAME="TOC120" HREF="globaldoc.html#SEC120">SEE ALSO</A>
+</LI><LI><A NAME="TOC121" HREF="globaldoc.html#SEC121">AUTHOR</A>
+</LI><LI><A NAME="TOC122" HREF="globaldoc.html#SEC122">HISTORY</A>
 </LI></UL>
 </UL>
-<LI><A NAME="TOC127" HREF="globaldoc.html#SEC127">B. Business Model</A>
+<LI><A NAME="TOC123" HREF="globaldoc.html#SEC123">A. Copying This Manual</A>
 </LI><UL>
-<LI><A NAME="TOC128" HREF="globaldoc.html#SEC128">B.1 The BOKIN Model Definition</A>
+<LI><A NAME="TOC124" HREF="globaldoc.html#SEC124">A.1 GNU Free Documentation License</A>
 </LI><UL>
-<LI><A NAME="TOC129" HREF="globaldoc.html#SEC129">Introduction</A>
-</LI><LI><A NAME="TOC130" HREF="globaldoc.html#SEC130">Criteria</A>
-</LI><LI><A NAME="TOC131" HREF="globaldoc.html#SEC131">Renewal</A>
-</LI></UL>
-<LI><A NAME="TOC132" HREF="globaldoc.html#SEC132">B.2 Frequently Asked Questions</A>
-</LI><UL>
-<LI><A NAME="TOC133" HREF="globaldoc.html#SEC133">BOKIN Model Frequently Asked Questions</A>
+<LI><A NAME="TOC125" HREF="globaldoc.html#SEC125">A.1.1 ADDENDUM: How to use this License for your documents</A>
 </LI></UL>
 </UL>
-<LI><A NAME="TOC134" HREF="globaldoc.html#SEC134">Option Index</A>
+<LI><A NAME="TOC126" HREF="globaldoc.html#SEC126">B. Business Model</A>
+</LI><UL>
+<LI><A NAME="TOC127" HREF="globaldoc.html#SEC127">B.1 The BOKIN Model Definition</A>
+</LI><UL>
+<LI><A NAME="TOC128" HREF="globaldoc.html#SEC128">Introduction</A>
+</LI><LI><A NAME="TOC129" HREF="globaldoc.html#SEC129">Criteria</A>
+</LI><LI><A NAME="TOC130" HREF="globaldoc.html#SEC130">Renewal</A>
+</LI></UL>
+<LI><A NAME="TOC131" HREF="globaldoc.html#SEC131">B.2 Frequently Asked Questions</A>
+</LI><UL>
+<LI><A NAME="TOC132" HREF="globaldoc.html#SEC132">BOKIN Model Frequently Asked Questions</A>
+</LI></UL>
+</UL>
+<LI><A NAME="TOC133" HREF="globaldoc.html#SEC133">Option Index</A>
 </LI></UL>
 <P><HR><P>
-This document was generated on September, 7  2011 using
+This document was generated on October, 7  2011 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
