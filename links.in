@@ -25,6 +25,12 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <a name="GLOBAL_related_tools">
 <h3>GLOBAL related tools</h3>
 <dl>
+<dt><a href="http://code.google.com/p/seascope/">seascope</a><dd>
+	A pyQt GUI front-end for cscope, idutils and gtags.
+	Written in python using pyQt, QScintilla libraries.
+<dt><a href="http://notepad-plus-plus.org/">Notepad++</a><dd>
+	Notepad++ is a free source code editor and Notepad replacement that supports
+	several languages. You can use GLOBAL using its GtagsPlugin.
 <dt><a href="http://lqoyzy.blogspot.com/2010/04/add-scala-support-for-gtags.html">Scala support for gtags</a><dd>
 	Basic scala support for gtags is completed.
 	support for scala class/object/trait/function/variable/value definition and other symbols.
