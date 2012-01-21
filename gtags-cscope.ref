@@ -3,7 +3,7 @@
 gtags-cscope - interactively examine a C program
 @unnumberedsubsec SYNOPSIS
 @quotation
-gtags-cscope [-bCdehLlVv][-F symfile ][-0123456789 pattern][-p n]@*
+gtags-cscope [-bCdehLlVv][-F file ][-012345678 pattern][-p n]@*
 @end quotation
 @unnumberedsubsec DESCRIPTION
 gtags-cscope is an interactive, screen-oriented tool that allows the user to
@@ -42,11 +42,13 @@ Ignore letter case when searching.
 Do not update the cross-reference.
 @item @samp{-e}
 Suppress the <Ctrl>-e command prompt between files.
-@item @samp{-F} symfile
-Read symbol reference lines from symfile. 
+@item @samp{-F} file
+Read symbol reference lines from file. 
 (A symbol reference file is created by > and >>,
 and can also be read using the < command,
 described under ``Issuing Subsequent Requests'', below.)
+@item @samp{-i}
+Ignore SIGINT signal in line-oriented mode.
 @item @samp{-L}
 Do a single search with line-oriented output when used with the
 -num pattern option.

@@ -4,8 +4,8 @@ global - print locations of the specified object.
 @unnumberedsubsec SYNOPSIS
 @quotation
 global [-adGilnqrstTvx][-e] pattern@*
-global -c[diIoOPqrsv] prefix@*
-global -f[adnqrstvx][-L file-list] files@*
+global -c[diIoOPrsT] prefix@*
+global -f[adlnqrstvx][-L file-list] files@*
 global -g[aGilnoOqtvVx][-L file-list][-e] pattern [files]@*
 global -I[ailnqtvx][-e] pattern@*
 global -P[aGilnoOqtvVx][-e] pattern@*
@@ -100,7 +100,7 @@ Execute literal search instead of regular expression search.
 This option is only valid when the @samp{-g} command is specified.
 @item @samp{--match-part part}
 Specify the matched part of path name.
-This option is valid only with the @samp{-c} command with the @samp{-P} option,
+This option is valid only with the @samp{-c} command with the @samp{-P} option.
 The default is all.
 @item @samp{-n}, @samp{--nofilter}
 Suppress sort filter and path conversion filter.

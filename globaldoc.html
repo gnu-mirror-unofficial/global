@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.57 from globaldoc.texi on October, 7  2011 -->
+<!-- Created by texi2html 1.57 from globaldoc.texi on January, 21  2012 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY >
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 6.1, for GNU GLOBAL version 6.1</H2>
-<H2>7 October 2011</H2>
+<H2>Edition 6.2, for GNU GLOBAL version 6.2</H2>
+<H2>21 January 2012</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -146,7 +146,7 @@ please move to the source directory and invoke gtags(1).
 </PRE>
 
 <P>
-Gtags traverses sub-directories, picks up source files and makes four tag files
+Gtags traverses sub-directories, picks up source files and makes three tag files
 at the current directory.
 After this, the whole files under this directory is treated as a project.
 
@@ -2196,8 +2196,8 @@ global - print locations of the specified object.
 <BLOCKQUOTE>
 <P>
 global [-adGilnqrstTvx][-e] pattern<BR>
-global -c[diIoOPqrsv] prefix<BR>
-global -f[adnqrstvx][-L file-list] files<BR>
+global -c[diIoOPrsT] prefix<BR>
+global -f[adlnqrstvx][-L file-list] files<BR>
 global -g[aGilnoOqtvVx][-L file-list][-e] pattern [files]<BR>
 global -I[ailnqtvx][-e] pattern<BR>
 global -P[aGilnoOqtvVx][-e] pattern<BR>
@@ -2329,7 +2329,7 @@ This option is only valid when the <SAMP>`-g'</SAMP> command is specified.
 <DT><SAMP>`--match-part part'</SAMP>
 <DD>
 Specify the matched part of path name.
-This option is valid only with the <SAMP>`-c'</SAMP> command with the <SAMP>`-P'</SAMP> option,
+This option is valid only with the <SAMP>`-c'</SAMP> command with the <SAMP>`-P'</SAMP> option.
 The default is all.
 <DT><SAMP>`-n'</SAMP>, <SAMP>`--nofilter'</SAMP>
 <DD>
@@ -3350,7 +3350,7 @@ gtags-cscope - interactively examine a C program
 
 <BLOCKQUOTE>
 <P>
-gtags-cscope [-bCdehLlVv][-F symfile ][-0123456789 pattern][-p n]<BR>
+gtags-cscope [-bCdehLlVv][-F file ][-012345678 pattern][-p n]<BR>
 </BLOCKQUOTE>
 
 
@@ -3410,12 +3410,15 @@ Do not update the cross-reference.
 <DT><SAMP>`-e'</SAMP>
 <DD>
 Suppress the &#60;Ctrl&#62;-e command prompt between files.
-<DT><SAMP>`-F'</SAMP> symfile
+<DT><SAMP>`-F'</SAMP> file
 <DD>
-Read symbol reference lines from symfile. 
+Read symbol reference lines from file. 
 (A symbol reference file is created by &#62; and &#62;&#62;,
 and can also be read using the &#60; command,
 described under "Issuing Subsequent Requests", below.)
+<DT><SAMP>`-i'</SAMP>
+<DD>
+Ignore SIGINT signal in line-oriented mode.
 <DT><SAMP>`-L'</SAMP>
 <DD>
 Do a single search with line-oriented output when used with the
@@ -4665,7 +4668,7 @@ Jump to:
 <LI><A HREF="globaldoc.html#IDX31">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on October, 7  2011 using
+This document was generated on January, 21  2012 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
 </BODY>
