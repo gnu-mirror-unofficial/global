@@ -26,6 +26,8 @@ Other files are assumed to be text files.
 @unnumberedsubsec OPTIONS
 The following options are available:
 @table @asis
+@item @samp{--accept-dotfiles}
+Accept dot files and dot directories. By default, gtags ignore them.
 @item @samp{-c}, @samp{--compact}
 Make GTAGS in compact format.
 This option does not influence GRTAGS,
