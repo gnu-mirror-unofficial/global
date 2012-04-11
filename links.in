@@ -7,6 +7,10 @@ under the terms of the GNU Free Documentation License, Version 1.1
 @body
 <h3>Related articles</h3>
 <dl>
+<dt><a href="http://wadeberrier.blogspot.jp/2012/04/source-code-navigation-with-vim.html">Source Code Navigation with VIM</a><dd>
+	In any case, after trying all the above tools (comment: other tag systems), I settled on gnu global,
+	although it took some work to get it working with VIM and my setup.
+	That's what this post is really about: documenting my usage of VIM and gnu global.
 <dt><a href="http://hub.opensolaris.org/bin/view/Project+opengrok/">"Comparison with Similar Tools" in the OpenGrok project site</a><dd>
 	This comparison table compares the function of LXR, ctags, cscope, ViewVC, OpenGrok and, GLOBAL
 	which are typical tools for source code reading.
