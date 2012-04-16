@@ -1,4 +1,4 @@
-@title GNU GLOBAL source code tag system
+@title GNU GLOBAL source code tagging system
 @link Top page
 @license
 Copyright (c) 2000, 2001 Tama Communications Corporation
@@ -66,5 +66,5 @@ Please also see
 in the OpenGrok project site for comparison with other tools.
 <p>
 If you have a plan to make a yet another editor with tag facility,
-you can use GLOBAL as the tag system.
+you can use GLOBAL as the tag system of it.
 <p align=right><i>May the GLOBAL be under you like the globe!</i></p>
