@@ -186,6 +186,10 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <H3>Source code browsing Tools</H3>
 Please see also <a href="#GLOBAL_related_tools">GLOBAL related tools</a> section.
 <dl>
+<dt><a href="http://milkode.ongaeshi.me/wiki/Main_Page">Milkode</a><dd>
+	It is line-oriented source code search engine and search app.
+	It is possible to find the line containing the desired keyword
+	from the order of several tens of thousands of files instantly.
 <dt><a href="http://www.csn.ul.ie/~mel/projects/codeviz/">CodeViz</a><dd>
 	This project provides the ability to generate call graphs to aid the task
 	of understanding code. It uses a highly modular set of collection methods
