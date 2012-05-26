@@ -60,10 +60,9 @@ tag files in it.
 If dbpath is specified, this option is ignored.
 @item @samp{--single-update} file
 Update tag files for single file.
-It is considered that file was updated, and other files were not updated.
+It is considered that file was added or updated,
+and there is no change in other files.
 This option implies the -i option.
-If the file is new then @samp{--single-update} is ignored,
-and the processing is automatically switched to normal incremental updating.
 @item @samp{--statistics}
 Print statistics information.
 @item @samp{-q}, @samp{--quiet}

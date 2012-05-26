@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.57 from globaldoc.texi on March, 15  2012 -->
+<!-- Created by texi2html 1.57 from globaldoc.texi on May, 26  2012 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY >
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 6.2.2, for GNU GLOBAL version 6.2.2</H2>
-<H2>15 March 2012</H2>
+<H2>Edition 6.2.3, for GNU GLOBAL version 6.2.3</H2>
+<H2>26 May 2012</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -2362,6 +2362,12 @@ The default is path.
 The <SAMP>`--result=ctags'</SAMP> and <SAMP>`--result=ctags-x'</SAMP> are
 equivalent to the <SAMP>`-t'</SAMP> and <SAMP>`-x'</SAMP> respectively.
 The <SAMP>`--result'</SAMP> option is given more priority than the -t and -x options.
+<DT><SAMP>`--single-update'</SAMP> file
+<DD>
+Update tag files incrementally using gtags(1) with <SAMP>`--single-update'</SAMP> option.
+It is considered that file was added or updated,
+and there is no change in other files.
+This option implies the <SAMP>`-u'</SAMP> option.
 <DT><SAMP>`-s'</SAMP>, <SAMP>`--symbol'</SAMP>
 <DD>
 Print locations of the specified symbol other than definitions.
@@ -2615,10 +2621,9 @@ If dbpath is specified, this option is ignored.
 <DT><SAMP>`--single-update'</SAMP> file
 <DD>
 Update tag files for single file.
-It is considered that file was updated, and other files were not updated.
+It is considered that file was added or updated,
+and there is no change in other files.
 This option implies the -i option.
-If the file is new then <SAMP>`--single-update'</SAMP> is ignored,
-and the processing is automatically switched to normal incremental updating.
 <DT><SAMP>`--statistics'</SAMP>
 <DD>
 Print statistics information.
@@ -4671,7 +4676,7 @@ Jump to:
 <LI><A HREF="globaldoc.html#IDX31">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on March, 15  2012 using
+This document was generated on May, 26  2012 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
 </BODY>

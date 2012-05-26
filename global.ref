@@ -126,6 +126,11 @@ The default is path.
 The @samp{--result=ctags} and @samp{--result=ctags-x} are
 equivalent to the @samp{-t} and @samp{-x} respectively.
 The @samp{--result} option is given more priority than the -t and -x options.
+@item @samp{--single-update} file
+Update tag files incrementally using gtags(1) with @samp{--single-update} option.
+It is considered that file was added or updated,
+and there is no change in other files.
+This option implies the @samp{-u} option.
 @item @samp{-s}, @samp{--symbol}
 Print locations of the specified symbol other than definitions.
 @item @samp{-T}, @samp{--through}
