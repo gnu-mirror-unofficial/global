@@ -8,6 +8,8 @@ under the terms of the GNU Free Documentation License, Version 1.1
 Known bugs in the latest GNU GLOBAL.
 <p>
 <ul>
+<li>Global with the -x option abort in a special case.
+	<a href="http://lists.gnu.org/archive/html/bug-global/2012-06/msg00000.html">[report]</a>
 <li>It seems like derived structures is not supported.
 	<a href="http://lists.gnu.org/archive/html/bug-global/2010-09/msg00008.html">[report]</a>
 <li>backtics operator in PHP is not recognised as string delimiter
