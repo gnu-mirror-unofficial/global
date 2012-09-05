@@ -191,6 +191,11 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <H3>Source code browsing Tools</H3>
 Please see also <a href="#GLOBAL_related_tools">GLOBAL related tools</a> section.
 <dl>
+<dt><a href="https://code.google.com/p/codesearch/">Code Search</a><dd>
+	Code Search is a tool for indexing and then performing regular expression
+	searches over large bodies of source code.
+	It is a set of command-line programs written in Go.
+	Binary downloads are available for those who do not have Go installed.
 <dt><a href="http://milkode.ongaeshi.me/wiki/Main_Page">Milkode</a><dd>
 	It is line-oriented source code search engine and search app.
 	It is possible to find the line containing the desired keyword
