@@ -154,6 +154,18 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	These include intellisense code completion, producing call graphs
 	and dependency trees, etc. 
 </dl>
+<h3>Grep like tools</h3>
+<dl>
+<dt><a href="http://betterthangrep.com/">ack</a><dd>
+	Ack is a tool like grep, optimized for programmers.
+	Designed for programmers with large heterogeneous trees of source code,
+	ack is written purely in portable Perl 5 and takes advantage of the power of
+	Perl's regular expressions.
+<dt><a href="http://rak.rubyforge.org/">rak</a><dd>
+	Rak is a grep replacement in pure Ruby. It accepts Ruby syntax regular
+	 expressions and automatically recurses directories, skipping .svn/, .cvs/, pkg/
+	and more things you don't care about. It is based on the Perl tool ack by Andy Lester.
+</dl>
 <h3>Tag commands</h3>
 <dl>
 <dt><a href="http://ctags.sourceforge.net/">Exuberant Ctags</a><dd>
