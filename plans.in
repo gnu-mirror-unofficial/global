@@ -26,7 +26,6 @@ Plans of the highest priority are listed first.
 	<li>scheme
 	<li>C#
         </ul>
-<li>Rewrite function header using Doxygen style.
 <li>The --dynamic option generates not only index pages but also source code pages.
 <li>Ttags(1) command.<br>
         Ttags(1) is similar to htags(1) but generates a TeX source for a book
