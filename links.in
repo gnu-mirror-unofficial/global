@@ -177,6 +177,9 @@ under the terms of the GNU Free Documentation License, Version 1.1
 </dl>
 <h3>Tag commands</h3>
 <dl>
+<dt><a href="https://github.com/mozilla/doctorjs">jsctags</a><dd>
+	jsctags is a ctags-compatible code indexing solution for JavaScript.
+	Its interface and output are essentially identical to Exuberant Ctags.
 <dt><a href="http://ctags.sourceforge.net/">Exuberant Ctags</a><dd>
 	Exuberant Ctags is a reimplementation of the ctags(1),
 	written by Darren Hiebert.
