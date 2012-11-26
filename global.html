@@ -52,7 +52,7 @@ Copyright (c) 2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012 T
 GNU GLOBAL is a source code tagging system that works the same way
 across diverse environments (emacs, vi, less, bash, web browser, etc).
 You can locate objects in source files and move there easily.
-It is useful for hacking a large project containing many subdirectories,
+It is useful for hacking a large project containing many sub-directories,
 many <CODE>#ifdef</CODE> and many <CODE>main()</CODE> functions.
 It is similar to ctags or etags but is different from them at the point of
 independence of any editor.
@@ -63,10 +63,6 @@ GNU GLOBAL is part of the <a href="http://www.gnu.org/">GNU project</a>,
 and is <a href="http://www.gnu.org/philosophy/free-sw.html">free software</a>.
 You can freely copy, modify and redistribute this program under
 <a href=license.html>GNU GPL</a>.
-<p>
-GNU GLOBAL is also commercial (for-profit) software based on
-<a href='model.html'>BOKIN model</a>.
-
 <p>
 GNU GLOBAL has following features:
 
@@ -84,21 +80,25 @@ GNU GLOBAL has following features:
 		(See <a href=http://www.tamacom.com/tour/kernel/linux/>UNIX kernel source tour!</a>.)
 	<li> Doxygen documentation system
         </ul>
-<li> find locations of the specified object quickly.
-<li> locate not only object definitions but also object references.
-<li> allow duplicate objects.
+<li> find locations of specified symbol quickly.
+<li> locate not only definitions but also references.
 <li> locate paths which matches to the specified pattern.
-<li> treat a source tree containing subdirectories as a project.
+<li> hierarchical search by default.
+<li> treat a source tree containing sub-directories as a project.
 <li> search not only in a project but also in library paths.
 <li> understand POSIX 1003.2 regular expressions.
-<li> external search engine (grep and idutils) is available.
+<li> external search engine idutils is available too.
 <li> generate a hypertext of source code (XHTML ready).
 <li> tag files are independent of machine architecture.
-<li> plugged-in parser is available to treat new language.
+<li> plugged-in parser is available to treat new languages.
 <li> compact format to save disk space.
 <li> incremental updating of tag files.
-<li> customizing with a configuration file (gtags.conf).
+<li> customizing using a configuration file (gtags.conf).
 <li> generate completion list for completing input method.
+<li> support client/server environment (TRAMP ready).
+<li> ignore binary files, dot files and specified files.
+<li> include cscope compatible program (gtags-cscope).
+<li> include grep like command (-g command).
 </ul>
 
 Please also see
