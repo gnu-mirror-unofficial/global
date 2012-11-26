@@ -162,9 +162,16 @@ under the terms of the GNU Free Documentation License, Version 1.1
 </dl>
 <h3>Grep like tools</h3>
 <dl>
-<dt><a href="http://www.gnu.org/software/grep/">GNU grep</a><dd>
-	The grep command searches one or more input files for lines containing
-	a match to a specified pattern. By default, grep prints the matching lines.
+<dt><a href="https://github.com/ggreer/the_silver_searcher">The Silver Searcher - ag</a><dd>
+	An attempt to make something better than ack, which itself is better than grep.
+	It searches through code about 3x-5x faster than Ack.
+<dt><a href="http://pypi.python.org/pypi/grin">grin</a><dd>
+	A grep program configured the way the author like it, he wrote grin to help himself
+	search directories full of source code. It is written in Python by Robert Kern.
+<dt><a href="http://www.incava.org/projects/glark">glark</a><dd>
+	A replacement for (or supplement to) the grep family, glark offers: Perl compatible
+	regular expressions, highlighting of matches, context around matches,
+	complex expressions (``and'' and ``or''), and automatic exclusion of non-text files.
 <dt><a href="http://betterthangrep.com/">ack</a><dd>
 	Ack is a tool like grep, optimized for programmers.
 	Designed for programmers with large heterogeneous trees of source code,
@@ -174,6 +181,9 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	Rak is a grep replacement in pure Ruby. It accepts Ruby syntax regular
 	 expressions and automatically recurses directories, skipping .svn/, .cvs/, pkg/
 	and more things you don't care about. It is based on the Perl tool ack by Andy Lester.
+<dt><a href="http://www.gnu.org/software/grep/">GNU grep</a><dd>
+	The grep command searches one or more input files for lines containing
+	a match to a specified pattern. By default, grep prints the matching lines.
 </dl>
 <h3>Tag commands</h3>
 <dl>
