@@ -34,9 +34,9 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <h3>GLOBAL related tools</h3>
 <dl>
 <dt><a href="http://www.vim.org/scripts/script.php?script_id=3868">gtags_mwin.vim</a><dd>
-	multiwindow tag stacked code browsing with global(gtag).
+	multi windows tag stacked code browsing with global(gtag).
 <dt><a href="https://github.com/koko1000ban/SublimeGtags">SublimeGtags</a><dd>
-	This is a plugin for the Sublime Text 2 text editor that support GNU GLOBAL (gtags).
+	This is a plug-in for the Sublime Text 2 text editor that support GNU GLOBAL (gtags).
 <dt><a href="https://github.com/syohex/emacs-helm-gtags">helm-gtags.el</a><dd>
 	helm-gtags.el is GNU GLOBAL helm interface.
 	helm-gtags.el is not compatible anything-gtags.el
@@ -51,7 +51,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	support for scala class/object/trait/function/variable/value definition and other symbols.
 <dt><a href="http://www.jedit.org/">jEdit</a><dd>
 	jEdit is a mature programmer's text editor with hundreds (counting the time
-	developing plugins) of person-years of development behind it.
+	developing plug-ins) of person-years of development behind it.
 	<a href="http://plugins.jedit.org/plugins/?GlobalPlugin">GlobalPlugin</a>
 	provides an interface to the GNU Global source tagging tool.
 <dt><a href="http://cx4a.org/software/auto-complete/">auto-complete.el</a><dd>
@@ -65,7 +65,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	KXref is a KDE based front end for GNU Global.
 	This project aims to create a simple front-end for GLOBAL (and much more!).
 <dt><a href="http://sourceforge.jp/projects/sfnet_ocamlglobaltags/">OCaml Global Tagger</a><dd>
-	A plugin for GNU Global which tags OCaml source code, using CamlP4 for versions
+	A plug-in for GNU Global which tags OCaml source code, using CamlP4 for versions
 	3.10 of OCaml and above. Provides ocaml_tags, which creates tags for ml and mli
 	files, and an ogtags script that wraps a gtags call with the ocaml_tags plug-in.
 <dt><a href="http://cedet.sourceforge.net/">CEDET</a><dd>
@@ -73,7 +73,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	creating an advanced development environment in Emacs. 
 	The Symbol References tool in CEDET can use GNU GLOBAL as an external tool.
 <dt><a href="http://www.opendesktop.org/content/show.php/Kate+Gtags?content=49360&PHPSESSID=0266f910f489d2a865de5621bed641bb">Kate Gtags</a><dd>
-	KateGtags is a plugin for kate that uses the GNU Global source tagging system
+	KateGtags is a plug-in for kate that uses the GNU Global source tagging system
 	to provide function definition and reference location.
 <dt><a href="http://www.emacswiki.org/cgi-bin/wiki/Anything">anything-gtags.el</a><dd>
 	`anything-gtags-select' is `anything' interface of `gtags-find-tag'.
@@ -89,7 +89,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <dt><a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen Release 1.4.3 or higher</a><dd>
 	Doxygen is a documentation system for C++, Java, IDL and C.
 	<br>
-	Doxygen Release 1.4.3 includes new config option USE_HTAGS.
+	Doxygen Release 1.4.3 includes new configuration option USE_HTAGS.
 	When enabled in combination with SOURCE_BROWSER=YES,
 	the source browser of htags(1) is used instead of doxygen's own. 
 	This facility needs GLOBAL-4.8.6 or the later.
@@ -184,6 +184,16 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <dt><a href="http://www.gnu.org/software/grep/">GNU grep</a><dd>
 	The grep command searches one or more input files for lines containing
 	a match to a specified pattern. By default, grep prints the matching lines.
+<dt>GNU GLOBAL<dd>
+	The -g command of global(1) is also one of grep like tools. 
+	<ul>
+	<li>Hierarchical search
+	<li>Ignoring binary files, dot files and specified files
+	<li>POSIX 1003.2 regular expressions
+	<li>Change of search range (whole project, current directory, source files, text files)
+	<li>Integration with idutils
+	<li>Client/server (TRAMP ready)
+	</ul>
 </dl>
 <h3>Tag commands</h3>
 <dl>
@@ -211,7 +221,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	Ubuntu 10.04, and Mac OSX 10.5.8).
 <dt><a href="http://sourceforge.net/projects/vcfbuilder/">VCF Builder IDE</a><dd>
 	The VCF Builder is an advanced development tool for creating C++ applications,
-	and supporting a wide number of plugins for enhancing it's functionality.
+	and supporting a wide number of plug-ins for enhancing it's functionality.
 <dt><a href="http://netbeans.org/">NetBeans</a><dd>
 	NetBeans refers to both a platform framework for Java desktop applications,
 	and an integrated development environment (IDE) for developing with Java,
@@ -283,7 +293,7 @@ Please see also <a href="#GLOBAL_related_tools">GLOBAL related tools</a> section
 	KScope is a KDE front-end to Cscope. It provides a source-editing
 	environment for large C projects, such as the Linux kernel.
 <dt><a href="http://vim-taglist.sourceforge.net/">Taglist</a><dd>
-	The "Tag List" plugin is a source code browser for the Vim editor.
+	The "Tag List" plug-in is a source code browser for the Vim editor.
 	It provides an overview of the structure of source code files and
 	allows you to efficiently browse through source code files
 	in different programming languages. 
