@@ -27,7 +27,7 @@ You can freely copy, modify and redistribute this program under
 GNU GLOBAL has following features:
 
 <ul>
-<li> support C, C++, Yacc, Java and PHP4.
+<li> support C, C++, Yacc, Java, PHP4 and assembly.
 <li> work the same way across diverse environments.
         Currently, the following environments are supported:
         <ul>
@@ -44,17 +44,19 @@ GNU GLOBAL has following features:
 <li> locate not only definitions but also references.
 <li> locate paths which matches to the specified pattern.
 <li> hierarchical search by default.
-<li> treat a source tree containing sub-directories as a project.
-<li> search not only in a project but also in library paths.
-<li> understand POSIX 1003.2 regular expressions.
-<li> external search engine idutils is available too.
-<li> generate a hypertext of source code (XHTML ready).
-<li> tag files are independent of machine architecture.
-<li> plugged-in parser is available to treat new languages.
-<li> compact format to save disk space.
-<li> incremental updating of tag files.
-<li> customizing using a configuration file (gtags.conf).
+<li> search not only in a project but also in library projects.
 <li> generate completion list for completing input method.
+<li> support various output format.
+<li> allows customizing of the set of candidate files to be tagged.
+<li> understand POSIX 1003.2 regular expressions.
+<li> support idutils as an external search engine.
+<li> tag files are independent of machine architecture.
+<li> incremental updating of tag files.
+<li> plugged-in parser is available to treat new languages.
+<li> support customizing with @file{gtags.conf}.
+<li> generate a hypertext of source code (XHTML ready).
+<li> compact format to save disk space.
+<li> customizing using a configuration file (gtags.conf).
 <li> support client/server environment (TRAMP ready).
 <li> ignore binary files, dot files and specified files.
 <li> include cscope compatible program (gtags-cscope).
