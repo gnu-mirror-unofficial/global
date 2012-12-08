@@ -43,7 +43,7 @@ GNU GLOBAL has following features:
         </ul>
 <li> find locations of specified symbol quickly.
 <li> locate not only definitions but also references.
-<li> locate paths which matches to the specified pattern.
+<li> locate paths which matches to a specified pattern.
 <li> hierarchical search by default.
 <li> search not only in a project but also in library projects.
 <li> generate completion list for completing input method.
@@ -53,8 +53,8 @@ GNU GLOBAL has following features:
 <li> support idutils as an external search engine.
 <li> tag files are independent of machine architecture.
 <li> incremental updating of tag files.
-<li> plugged-in parser is available to treat new languages.
-<li> support customizing with @file{gtags.conf}.
+<li> plug-in parser is available to treat new languages.
+<li> support customizing with 'gtags.conf'.
 <li> generate a hypertext of source code (XHTML ready).
 <li> compact format to save disk space.
 <li> customizing using a configuration file (gtags.conf).
