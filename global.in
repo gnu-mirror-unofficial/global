@@ -60,6 +60,7 @@ GNU GLOBAL has following features:
 <li> customizing using a configuration file (gtags.conf).
 <li> support client/server environment (TRAMP ready).
 <li> ignore binary files, dot files and specified files.
+<li> symbolic link loop detection.
 <li> include cscope compatible program (gtags-cscope).
 <li> include grep like command (-g command).
 </ul>
