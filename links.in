@@ -192,8 +192,8 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	<li>Ignoring specified files by two method (File list, Skip list).
 	<li>POSIX 1003.2 regular expressions (Basic/Extended)
 	<li>Change of search range (whole project, current directory, source files, text files)
-	<li>Integration with idutils
-	<li>Client/server (TRAMP ready)
+	<li>Integration with idutils (index search for tokens)
+	<li>Client/Server (TRAMP ready)
 	</ul>
 </dl>
 <h3>Tag commands</h3>
