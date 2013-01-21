@@ -44,7 +44,6 @@ are also available.
 You can also get binary package from following distributions:
 <ul>
 <li><a href='http://www.debian.org'>Debian GNU/Linux</a> <font color=red><b> <- Debian's package is too old.</b></font>
-<li><a href='http://www.opensuse.org/'>open SuSE GNU/Linux</a>.
 <li><a href='http://www.freebsd.org/'>FreeBSD</a>.
 <li><a href='http://www.netbsd.org/'>NetBSD</a>.
 </ul>
