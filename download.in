@@ -31,35 +31,24 @@ is also distributed by Shankar Chakkere.
 -->
 <p>
 Mac OSX version is distributed by
-<a href='http://www.darwinports.org/'>DarwinPorts</a>
+<a href='http://www.macports.org/'>MacPorts</a>
 and
-<a href='http://fink.sourceforge.net/'>Fink project</a>
+<a href='http://www.finkproject.org'>Fink project</a>
 .
 <p>
 Solaris version is distributed by
 <a href='http://www.sunfreeware.com/'>Sunfreeware.com</a>
 .
 <p>
-<a href='http://packages.debian.org/stable/devel/global.html'>
-Debian GNU/Linux version
-</a>
-,
-<a href='http://www.suse.de/us/private/products/suse_linux/i386/packages_professional/global.html'>
-SuSE GNU/Linux version
-</a>
+<a href='http://www.perzl.org/aix/'>AIX version</a>
 and
-<a href='http://cvs.fedora.redhat.com/viewcvs/devel/global/?root=extras'>
-Fedora GNU/Linux version
-</a>
-are available.
-<p>
-<a href='http://aixpdslib.seas.ucla.edu/packages/global.html'>AIX version</a>
-and
-<a href='http://hpux.cs.utah.edu/hppd/hpux/Gnu/global-4.5/'>HP-UX version</a>
+<a href='http://hpux.connect.org.uk/hppd/hpux/'>HP-UX version</a>
 are also available.
 <p>
 You can also get binary package from following distributions:
 <ul>
+<li><a href='http://www.debian.org'>Debian GNU/Linux</a> <font color=red><b> <- Debian's package is too old.</b></font>
+<li><a href='http://www.opensuse.org/'>open SuSE GNU/Linux</a>.
 <li><a href='http://www.freebsd.org/'>FreeBSD</a>.
 <li><a href='http://www.netbsd.org/'>NetBSD</a>.
 </ul>
