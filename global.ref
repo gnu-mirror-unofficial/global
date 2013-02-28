@@ -112,6 +112,10 @@ This option overrides the @samp{-o} option.
 Treat not only source files but also text files other than source code
 like @file{README}.
 This option is valid only with the @samp{-g} or @samp{-P} command.
+@item @samp{--path-style} format
+Print path names using the specified format.
+format may be relative, absolute, shorter, abslib or through.
+The @samp{--path-style} option is given more priority than the -a options.
 @item @samp{--print0}
 Print each record followed by a null character instead of a newline.
 @item @samp{-q}, @samp{--quiet}

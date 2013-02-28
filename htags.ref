@@ -92,8 +92,6 @@ By default, htags doesn't generate it.
 You can specify the position using position argument,
 which allows one of before, right and after.
 The default position is after.
-@item @samp{--html}
-Generate HTML hypertext instead of XHTML.
 @item @samp{--html-header} file
 Insert header records derived from file into the HTML header.
 @item @samp{-I}, @samp{--icon}

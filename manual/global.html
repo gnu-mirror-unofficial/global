@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.57 from global.texi on December, 22  2012 -->
+<!-- Created by texi2html 1.57 from global.texi on February, 28  2013 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY >
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 6.2.7, for GNU GLOBAL version 6.2.7</H2>
-<H2>22 December 2012</H2>
+<H2>Edition 6.2.8, for GNU GLOBAL version 6.2.8</H2>
+<H2>28 February 2013</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -2334,7 +2334,7 @@ You can write new parser for gtags(1).
 <P>
 Command layer plug-in parser was abolished.
 Please write function layer plug-in parser instead.
-See <TT>`plugin-example/'</TT> to know function layer plug-in parser.
+See <TT>`plugin-factory/'</TT> to know function layer plug-in parser.
 
 
 
@@ -2539,6 +2539,11 @@ This option overrides the <SAMP>`-o'</SAMP> option.
 Treat not only source files but also text files other than source code
 like <TT>`README'</TT>.
 This option is valid only with the <SAMP>`-g'</SAMP> or <SAMP>`-P'</SAMP> command.
+<DT><SAMP>`--path-style'</SAMP> format
+<DD>
+Print path names using the specified format.
+format may be relative, absolute, shorter, abslib or through.
+The <SAMP>`--path-style'</SAMP> option is given more priority than the -a options.
 <DT><SAMP>`--print0'</SAMP>
 <DD>
 Print each record followed by a null character instead of a newline.
@@ -3109,9 +3114,6 @@ By default, htags doesn't generate it.
 You can specify the position using position argument,
 which allows one of before, right and after.
 The default position is after.
-<DT><SAMP>`--html'</SAMP>
-<DD>
-Generate HTML hypertext instead of XHTML.
 <DT><SAMP>`--html-header'</SAMP> file
 <DD>
 Insert header records derived from file into the HTML header.
@@ -4871,7 +4873,7 @@ Jump to:
 <LI><A HREF="global.html#IDX31">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on December, 22  2012 using
+This document was generated on February, 28  2013 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
 </BODY>
