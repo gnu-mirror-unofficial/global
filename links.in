@@ -247,6 +247,11 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <H3>Source code browsing Tools</H3>
 Please see also <a href="#GLOBAL_related_tools">GLOBAL related tools</a> section.
 <dl>
+<dt><a href="https://github.com/Andersbakken/rtags">rtags</a><dd>
+	RTags is a client/server application that indexes c/c++ code and keeps a persistent
+	in-memory database of references, declarations, definitions, symbolnames etc.
+	It allows you to find symbols by name (including class and namespace scope).
+	Most importantly we give you proper follow-symbol and find-references support.
 <dt><a href="http://www.vim.org/scripts/script.php?script_id=2179">SrcExpl</a><dd>
 	SrcExpl(srcexpl.vim) is a source code explorer based on tags and it provides
 	an overview of the function and type definitions.It has such a mechannism that
