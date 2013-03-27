@@ -206,6 +206,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	<li>Ignoring binary files and dot files automatically.
 	<li>Ignoring specified files by two method (File list, Skip list).
 	<li>POSIX 1003.2 regular expressions (Basic/Extended)
+	<li>High performance literal search.
 	<li>Change of search range (whole project, current directory, source files, text files)
 	<li>Integration with idutils (index search for tokens)
 	<li>Client/Server (TRAMP ready)
