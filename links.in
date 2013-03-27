@@ -213,6 +213,11 @@ under the terms of the GNU Free Documentation License, Version 1.1
 </dl>
 <h3>Tag commands</h3>
 <dl>
+<dt><a href="https://github.com/Andersbakken/rtags">rtags</a><dd>
+	RTags is a client/server application that indexes c/c++ code and keeps a persistent
+	in-memory database of references, declarations, definitions, symbolnames etc.
+	It allows you to find symbols by name (including class and namespace scope).
+	Most importantly we give you proper follow-symbol and find-references support.
 <dt><a href="https://github.com/mozilla/doctorjs">jsctags</a><dd>
 	jsctags is a ctags-compatible code indexing solution for JavaScript.
 	Its interface and output are essentially identical to Exuberant Ctags.
@@ -251,11 +256,6 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <H3>Source code browsing Tools</H3>
 Please see also <a href="#GLOBAL_related_tools">GLOBAL related tools</a> section.
 <dl>
-<dt><a href="https://github.com/Andersbakken/rtags">rtags</a><dd>
-	RTags is a client/server application that indexes c/c++ code and keeps a persistent
-	in-memory database of references, declarations, definitions, symbolnames etc.
-	It allows you to find symbols by name (including class and namespace scope).
-	Most importantly we give you proper follow-symbol and find-references support.
 <dt><a href="https://github.com/wesleyche/SrcExpl">SrcExpl</a><dd>
 	SrcExpl (Source Explorer) is a source code explorer that provides context
 	for the currently selected keyword by displaying the function or type definition or
