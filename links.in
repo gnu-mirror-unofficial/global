@@ -19,7 +19,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	In any case, after trying all the above tools (comment: other tag systems), I settled on gnu global,
 	although it took some work to get it working with VIM and my setup.
 	That's what this post is really about: documenting my usage of VIM and gnu global.
-<dt><a href="http://hub.opensolaris.org/bin/view/Project+opengrok/">"Comparison with Similar Tools" in the OpenGrok project site</a><dd>
+<dt><a href="https://github.com/OpenGrok/OpenGrok/wiki/Comparison-with-Similar-Tools">"Comparison with Similar Tools" in the OpenGrok project site</a><dd>
 	This comparison table compares the function of LXR, ctags, cscope, ViewVC, OpenGrok and, GLOBAL
 	which are typical tools for source code reading.
 <dt><a href="http://queue.acm.org/detail.cfm?id=945136">Code Spelunking: Exploring Cavernous Code Bases</a><dd>
@@ -293,7 +293,7 @@ Please see also <a href="#GLOBAL_related_tools">GLOBAL related tools</a> section
 	The SilentBob is yet another indexing tool helping you to find your way through
 	the software source code. Although SilentBob is also able to index sources in 
 	many popular programming languages, currently C/C++ is the most functional back-end.
-<dt><a href="http://hub.opensolaris.org/bin/view/Project+opengrok/">OpenGrok</a><dd>
+<dt><a href="http://opengrok.github.io/OpenGrok/">OpenGrok</a><dd>
 	OpenGrok is a fast and usable source code search and
 	cross reference engine. It helps you search, cross-reference and
 	navigate your source tree.  It can understand various program file
