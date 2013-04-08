@@ -46,7 +46,7 @@ You can also get binary package from following distributions:
 <!--
 <li><a href='http://www.debian.org'>Debian GNU/Linux</a> (<font color=red>New maintainer needed.</font> Please read <a href='http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=704508'>this</a>.)
 -->
-<li><a href='http://www.debian.org'>Debian GNU/Linux</a> <font color=red><b><- It's too old.</b></font>
+<li><a href='http://www.debian.org'>Debian GNU/Linux</a> <font color=red><b><- It's too old. Don't use Debian package.</b></font>
 <li><a href='http://www.freebsd.org/'>FreeBSD</a>.
 <li><a href='http://www.netbsd.org/'>NetBSD</a>.
 </ul>
