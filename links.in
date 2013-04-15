@@ -269,6 +269,9 @@ In addition to these, there are many forks and related tools of GLOBAL in Github
 <H3>Source code browsing Tools</H3>
 Please see also <a href="#GLOBAL_related_tools">GLOBAL related tools</a> section.
 <dl>
+<dt><a href="http://watermint.github.io/SourceColon/">Sourcecolon</a><dd>
+	Source code search engine based upon OpenGrok.
+	It provide simplified interface to search large scale source code tree.
 <dt><a href="https://github.com/wesleyche/SrcExpl">SrcExpl</a><dd>
 	SrcExpl (Source Explorer) is a source code explorer that provides context
 	for the currently selected keyword by displaying the function or type definition or
