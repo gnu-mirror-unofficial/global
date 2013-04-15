@@ -269,6 +269,11 @@ In addition to these, there are many forks and related tools of GLOBAL in Github
 <H3>Source code browsing Tools</H3>
 Please see also <a href="#GLOBAL_related_tools">GLOBAL related tools</a> section.
 <dl>
+<dt><a href="https://github.com/ruben2020/codequery">CodeQuery</a><dd>
+	A code-understanding, code-browsing or code-search tool.
+	This is a tool to index, then query or search C, C++,
+	Java and Python source code. It builds upon the databases of cscope and ctags,
+	and provides a nice GUI tool.
 <dt><a href="http://watermint.github.io/SourceColon/">Sourcecolon</a><dd>
 	Source code search engine based upon OpenGrok.
 	It provide simplified interface to search large scale source code tree.
