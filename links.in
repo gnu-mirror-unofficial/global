@@ -161,6 +161,10 @@ In addition to these, there are many forks and related tools of GLOBAL in Github
 
 <h3>Parsers</h3>
 <dl>
+<dt><a href="http://jflex.de/">JFlex</a><dd>
+	JFlex is a lexical analyzer generator for Java, written in Java.
+	It is also a rewrite of the very useful tool. JLex which was developed
+	by Elliot Berk at Princeton University.
 <dt><a href="http://clang.llvm.org/">Clang</a><dd>
 	Clang is a compiler front end for the C, C++, Objective-C, and Objective-C++ programming languages.
 	It includes a single unified parser for the language above.
