@@ -224,6 +224,10 @@ In addition to these, there are many forks and related tools of GLOBAL in Github
 </dl>
 <h3>Tag commands</h3>
 <dl>
+<dt><a href="http://hackage.haskell.org/package/hothasktags">hothasktags</a><dd>
+	Hothasktags generates ctags files for Haskell, with knowledge of import
+	lists and qualified imports. It provides a smart go-to-definition for Vim,
+	that almost always gets it right in the presence of multiple names from different modules.
 <dt><a href="https://github.com/drothlis/clang-ctags">clang-ctags</a><dd>
 	Generate tag file for C++ source code using clang.
 <dt><a href="https://github.com/katonori/cxxtags/">cxxtags</a><dd>
