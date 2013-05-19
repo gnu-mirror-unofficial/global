@@ -22,6 +22,10 @@ under the terms of the GNU Free Documentation License, Version 1.1
 </dl>
 <h3>GLOBAL related articles</h3>
 <dl>
+<dt><a href="http://www.webdbtips.com/6152/">How to read other people's code.</a><dd>
+	Grep shortcomings, the program intend to read other people's code,
+	you can consider the use like gtags to this tool. gtags GNU GLOBAL
+	source code tag system. (by Chien-Hsing Wang)
 <dt><a href="http://www.wolinlabs.com/blog/emacs.global.speedbar.html">Code Browsing with Emacs, GLOBAL, and Speedbar</a><dd>
 	This article details a simpler solution, using Emacs in combination with GLOBAL and Speedbar
 	for code browsing.
