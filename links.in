@@ -45,6 +45,9 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <h3>GLOBAL related tools</h3>
 
 <dl>
+<dt><a href="http://www.vim.org/scripts/script.php?script_id=4599">Vim's IDE Mode</a><dd>
+	Videm (Vim's IDE Mode) is a C/C++ IDE  based on vim (will become a common IDE
+	framework in future, I think). Videm use Cscope and GNU GLOBAL as symbol database.
 <dt><a href="http://drupal.org/project/emacs_drush">Drush utilities for Emacs users</a><dd>
 	Currently the project provides two new Drush commands:
 	<ul>
