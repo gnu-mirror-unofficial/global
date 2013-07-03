@@ -8,7 +8,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 Plans of the highest priority are listed first.
 <p>
 <ul>
-<li>Adding --color option like GNU grep.
+<li>Enable the --color option to work with other than the -g command.
 <li>Treat variable definitions as a definition tag (GTAGS).
 <li>Support of tag type. (like Exuberant Ctags)
 <li>Recognition of the range of procedures.
