@@ -45,6 +45,10 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <h3>GLOBAL related tools</h3>
 
 <dl>
+<dt><a href="https://github.com/baohaojun/ajoke">ajoke</a><dd>
+	Ajoke is a tool for doing Java programming on Emacs.
+	It is inspired by Emacs-Eclim, but does not depend on Eclipse.
+	Instead, it uses GNU Global and ctags-exuberant extensively, with a bunch of Perl scripts.
 <dt><a href="http://www.geocities.co.jp/Bookend/2352/sanaly/indexj.html">Sanaly</a><dd>
         Sanaly is a Source code ANALYsis web front end for GNU Global. It can treat
         source files written in python(.py), shell(.sh), perl(.pl) and ruby(.rb).
