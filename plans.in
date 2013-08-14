@@ -1,14 +1,15 @@
 @title Plans for the future
 @link Plans
 @license
-Copyright (c) 2000, 2001, 2002, 2005, 2006, 2007, 2009, 2011 Tama Communications Corporation
+Copyright (c) 2000, 2001, 2002, 2005, 2006, 2007, 2009, 2011, 2013 Tama Communications Corporation
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.1
 @body
 Plans of the highest priority are listed first.
 <p>
 <ul>
-<li>Enable the --color option to work with other than the -g command.
+<li>The same --color option as GNU grep.
+<li>Remove restriction of the length of a variable identifier (currently < 512).
 <li>Treat variable definitions as a definition tag (GTAGS).
 <li>Support of tag type. (like Exuberant Ctags)
 <li>Recognition of the range of procedures.
