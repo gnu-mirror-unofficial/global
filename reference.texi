@@ -1,6 +1,6 @@
 @c This file is generated automatically by convert.pl from a set of manual.in.
 @menu
-* global::         global - print locations of the specified object.
+* global::         global - print locations of given symbols
 * gtags::          gtags - create tag files for global.
 * htags::          htags - generate a hypertext from a set of source files.
 * gozilla::        gozilla - force mozilla to display specified part of a source file.
@@ -9,7 +9,7 @@
 @end menu
 
 @node global
-@section global - print locations of the specified object.
+@section global - print locations of given symbols
 @include global.ref
 @node gtags
 @section gtags - create tag files for global.

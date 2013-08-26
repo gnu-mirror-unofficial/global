@@ -1,13 +1,13 @@
 <HTML>
 <HEAD>
-<!-- Created by texi2html 1.57 from globaldoc.texi on February, 28  2013 -->
+<!-- Created by texi2html 1.57 from globaldoc.texi on August, 26  2013 -->
 
 <TITLE>GNU GLOBAL source code tag system</TITLE>
 </HEAD>
 <BODY >
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 6.2.8, for GNU GLOBAL version 6.2.8</H2>
-<H2>28 February 2013</H2>
+<H2>Edition 6.2.9, for GNU GLOBAL version 6.2.9</H2>
+<H2>26 August 2013</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -711,7 +711,7 @@ If you need help then please type <KBD>ghelp</KBD>.
 
 
 <UL>
-<LI>Almost global(1)(see section <A HREF="globaldoc.html#SEC45">5.1 global - print locations of the specified object.</A>)'s command characters are available as a command.
+<LI>Almost global(1)(see section <A HREF="globaldoc.html#SEC45">5.1 global - print locations of given symbols</A>)'s command characters are available as a command.
 
 
 <PRE>
@@ -1643,7 +1643,7 @@ Press <KBD>TAB</KBD> and Vim will complete the tag name.
 
 </PRE>
 
-	About the other options, please see See section <A HREF="globaldoc.html#SEC45">5.1 global - print locations of the specified object.</A>.
+	About the other options, please see See section <A HREF="globaldoc.html#SEC45">5.1 global - print locations of given symbols</A>.
 
 <LI>The GtagsCursor command brings you to the definition or reference of the current token.
 
@@ -2195,12 +2195,12 @@ Instead, you can use incremental updating facility (<SAMP>`-u'</SAMP> option).
 
 
 
-<H2><A NAME="SEC45">5.1 global - print locations of the specified object.</A></H2>
+<H2><A NAME="SEC45">5.1 global - print locations of given symbols</A></H2>
 
 
 <H3><A NAME="SEC46">NAME</A></H3>
 <P>
-global - print locations of the specified object.
+global - print locations of given symbols
 
 
 <H3><A NAME="SEC47">SYNOPSIS</A></H3>
@@ -2221,25 +2221,26 @@ global -u[qv]<BR>
 
 <H3><A NAME="SEC48">DESCRIPTION</A></H3>
 <P>
-Global finds locations of the specified object
+Global finds locations of given symbols
 in C, C++, Yacc, Java, PHP and Assembly source files,
-and print the path name, line number and line image of the locations.
-Global can locate not only object definitions but also object
-references and other symbols.
+and print path name, line number and line image for each of them.
+Global can locate not only definitions but also references
+and other symbols.
 
 
 <P>
-Global can treat a source tree, that is, a directory that
-has sub-directories and source files, as a project.
+Global can treat a source tree, that is, a directory that has
+sub-directories and source files, as a project.
 In advance of using this command, you must execute gtags(1)
-at the root directory of a project to make tag files.
-Then you can execute this command anywhere in the project.
+at the root directory of the project which you want to investigate
+to make tag files.
+Then you can use global command anywhere in the project.
 You need not specify where the tag file is.
 Instead, global locates it by itself.
 
 
 <P>
-You can specify a regular expression for the pattern.
+You can use regular expression for pattern.
 Global understands two different versions of regular expression
 syntax: basic and extended. The default is extended.
 
@@ -2251,23 +2252,23 @@ The following commands are available:
 
 <DT>&#60;no command&#62; pattern
 <DD>
-Print objects which match to the pattern.
-By default, print object definitions.
+Print tags of symbols which match to the pattern.
+By default, print definition tags.
 <DT><SAMP>`-c'</SAMP>, <SAMP>`--completion'</SAMP> [prefix]
 <DD>
-Print object names which start with the specified prefix.
-If prefix is not specified, print all object names.
+Print symbols which start with the prefix.
+If prefix is not given, print all symbols.
 <DT><SAMP>`-f'</SAMP>, <SAMP>`--file'</SAMP> files
 <DD>
-Print all objects in the files.
+Print all tags in the files.
 This option implies the <SAMP>`-x'</SAMP> option.
 <DT><SAMP>`-g'</SAMP>, <SAMP>`--grep'</SAMP> pattern [files]
 <DD>
 Print all lines which match to the pattern.
-If files is specified, this command searches in the files.
+If files are given, this command searches in the files.
 <DT><SAMP>`--help'</SAMP>
 <DD>
-Show help.
+Print a usage message.
 <DT><SAMP>`-I'</SAMP>, <SAMP>`--idutils'</SAMP> pattern
 <DD>
 Print all lines which match to the pattern.
@@ -2277,10 +2278,10 @@ in your system and execute gtags(1) with the <SAMP>`-I'</SAMP> option.
 <DT><SAMP>`-P'</SAMP>, <SAMP>`--path'</SAMP> [pattern]
 <DD>
 Print path names which match to the pattern.
-If no pattern specified, print all path names in the project.
+If no pattern is given, print all paths in the project.
 <DT><SAMP>`-p'</SAMP>, <SAMP>`--print-dbpath'</SAMP>
 <DD>
-Print the location of <TT>`GTAGS'</TT>.
+Print location of <TT>`GTAGS'</TT>.
 <DT><SAMP>`-u'</SAMP>, <SAMP>`--update'</SAMP>
 <DD>
 Update tag files incrementally.
@@ -2303,7 +2304,7 @@ The following options are available:
 Print absolute path name. By default, print relative path name.
 <DT><SAMP>`-d'</SAMP>, <SAMP>`--definition'</SAMP>
 <DD>
-Print locations of object definitions.
+Print locations of definitions.
 <DT><SAMP>`--from-here'</SAMP> context
 <DD>
 Decide tag type by the context. The context must be 'lineno:path'.
@@ -2330,7 +2331,7 @@ The default is extended regular expression.
 Ignore case distinctions in the pattern.
 <DT><SAMP>`-l'</SAMP>, <SAMP>`--local'</SAMP>
 <DD>
-Print only objects which exist under the current directory.
+Print only tags which exist under the current directory.
 <DT><SAMP>`-L'</SAMP>, <SAMP>`--file-list'</SAMP> file-list
 <DD>
 Obtain files from file-list in addition to the arguments.
@@ -2341,20 +2342,19 @@ This option is only valid when the <SAMP>`-g'</SAMP> command is specified.
 <DT><SAMP>`--match-part part'</SAMP>
 <DD>
 Specify the matched part of path name.
+Possible values are as follows: first, last, all. The default is all.
 This option is valid only with the <SAMP>`-c'</SAMP> command with the <SAMP>`-P'</SAMP> option.
-The default is all.
 <DT><SAMP>`-n'</SAMP>, <SAMP>`--nofilter'</SAMP>
 <DD>
 Suppress sort filter and path conversion filter.
 <DT><SAMP>`-O'</SAMP>, <SAMP>`--only-other'</SAMP>
 <DD>
-Treat only text files other than source code like <TT>`README'</TT>.
+Treat only text files: <TT>`README'</TT>, <TT>`ChangeLog'</TT>, or etc.
 This option is valid only with the <SAMP>`-g'</SAMP> or <SAMP>`-P'</SAMP> command.
 This option overrides the <SAMP>`-o'</SAMP> option.
 <DT><SAMP>`-o'</SAMP>, <SAMP>`--other'</SAMP>
 <DD>
-Treat not only source files but also text files other than source code
-like <TT>`README'</TT>.
+Treat not only source files but also text files: <TT>`README'</TT>, <TT>`ChangeLog'</TT>, or etc.
 This option is valid only with the <SAMP>`-g'</SAMP> or <SAMP>`-P'</SAMP> command.
 <DT><SAMP>`--path-style'</SAMP> format
 <DD>
@@ -2369,7 +2369,8 @@ Print each record followed by a null character instead of a newline.
 Quiet mode.
 <DT><SAMP>`-r'</SAMP>, <SAMP>`--reference'</SAMP>, <SAMP>`--rootdir'</SAMP>
 <DD>
-Print locations of object references.
+Print reference tags.
+Reference means the reference to a symbol which has definitions.
 With the <SAMP>`-p'</SAMP> option, print the root directory of the project.
 <DT><SAMP>`--result'</SAMP> format
 <DD>
@@ -2387,7 +2388,8 @@ and there is no change in other files.
 This option implies the <SAMP>`-u'</SAMP> option.
 <DT><SAMP>`-s'</SAMP>, <SAMP>`--symbol'</SAMP>
 <DD>
-Print locations of the specified symbol other than definitions.
+Print other symbol tags.
+Other symbol means the reference to a symbol which has no definition.
 <DT><SAMP>`-T'</SAMP>, <SAMP>`--through'</SAMP>
 <DD>
 Go through all the tag files listed in <VAR>GTAGSLIBPATH</VAR>.
@@ -2416,8 +2418,12 @@ Use standard ctags cxref (with the -x) format.
 	$ ls -F
 	Makefile      src/    lib/
 	$ gtags
+	$ ls G*
+	GPATH   GRTAGS  GTAGS
 	$ global main
 	src/main.c
+	$ (cd src; global main)
+	main.c
 	$ global -x main
 	main              10 src/main.c  main (argc, argv) {
 	$ global -f src/main.c
@@ -2428,8 +2434,7 @@ Use standard ctags cxref (with the -x) format.
 	$ global -x '^[sg]et'
 	set_num           20 lib/util.c  set_num(values) {
 	get_num           30 lib/util.c  get_num() {
-	$ global -rx '^[sg]et'
-	get_num          205 src/op.c            while (get_num() &#62; 0) {
+	$ global -rx set_num
 	set_num          113 src/op.c            set_num(32);
 	set_num          225 src/opop.c               if (set_num(0) &#62; 0) {
 	$ global strlen
@@ -2450,13 +2455,13 @@ Use standard ctags cxref (with the -x) format.
 
 <DT><TT>`GTAGS'</TT>
 <DD>
-Tag file for object definitions.
+Tag file for definitions.
 <DT><TT>`GRTAGS'</TT>
 <DD>
-Tag file for object references.
+Tag file for references.
 <DT><TT>`GPATH'</TT>
 <DD>
-Tag file for path of source files.
+Tag file for source files.
 <DT><TT>`GTAGSROOT'</TT>
 <DD>
 If environment variable <VAR>GTAGSROOT</VAR> is not set
@@ -2483,7 +2488,7 @@ This value is ignored when <VAR>GTAGSROOT</VAR> is not defined.
 <DT><VAR>GTAGSLIBPATH</VAR>
 <DD>
 If this variable is set, it is used as the path to search
-for library functions. If the specified object is not
+for library functions. If the given symbol is not
 found in the project, global also search in these paths.
 Since only <TT>`GTAGS'</TT> is targeted in the retrieval, this variable is
 ignored when the <SAMP>`-r'</SAMP> or <SAMP>`-s'</SAMP> is specified.
@@ -2568,7 +2573,7 @@ Gtags is used to create tag files for global(1).
 
 <P>
 Gtags recursively collects source files under the current directory,
-pickup symbols and write the cross-reference data into the tag files
+pickup symbols and write cross-reference data into tag files
 (<TT>`GTAGS'</TT>, <TT>`GRTAGS'</TT> and <TT>`GPATH'</TT>).
 
 
@@ -2585,7 +2590,7 @@ Files whose names end in <TT>`.s'</TT>, <TT>`.S'</TT> are assumed to be Assembly
 Files whose names end in <TT>`.java'</TT> are assumed to be Java source files.
 Files whose names end in <TT>`.c++'</TT>, <TT>`.cc'</TT>, <TT>`.hh'</TT>, <TT>`.cpp'</TT>, <TT>`.cxx'</TT>, <TT>`.hxx'</TT>, <TT>`.hpp'</TT>, <TT>`.C'</TT>, <TT>`.H'</TT> are assumed to be C++ source files.
 Files whose names end in <TT>`.php'</TT>, <TT>`.php3'</TT>, <TT>`.phtml'</TT> are assumed to be PHP source files.
-Other files are assumed to be text files.
+Other files are assumed to be text files. Gtags does not treat binary files.
 
 
 <H3><A NAME="SEC63">OPTIONS</A></H3>
@@ -2595,19 +2600,19 @@ The following options are available:
 
 <DT><SAMP>`--accept-dotfiles'</SAMP>
 <DD>
-Accept dot files and dot directories. By default, gtags ignore them.
+Accept dot files and dot directories. By default, gtags ignores them.
 <DT><SAMP>`-c'</SAMP>, <SAMP>`--compact'</SAMP>
 <DD>
 Make GTAGS in compact format.
 This option does not influence GRTAGS,
-because they are always made in compact format.
+because it is always made in compact format.
 <DT><SAMP>`--config'</SAMP>[=name]
 <DD>
 Print the value of config variable name.
 If name is not specified then print all names and values.
 <DT><SAMP>`-d'</SAMP>, <SAMP>`--dump'</SAMP> tag-file
 <DD>
-Dump a tag file. The output format is 'key&#60;tab&#62;data'.
+Dump a tag file as text to the standard output. Output format is 'key&#60;tab&#62;data'.
 This is for debugging.
 <DT><SAMP>`-f'</SAMP>, <SAMP>`--file'</SAMP> file
 <DD>
@@ -2617,13 +2622,13 @@ files from the standard input.
 File names must be separated by newline.
 <DT><SAMP>`--gtagsconf'</SAMP> file
 <DD>
-Set the <VAR>GTAGSCONF</VAR> environment variable to file.
+Set environment variable <VAR>GTAGSCONF</VAR> to file.
 <DT><SAMP>`--gtagslabel'</SAMP> label
 <DD>
-Set the <VAR>GTAGSLABEL</VAR> environment variable to label.
+Set environment variable <VAR>GTAGSLABEL</VAR> to label.
 <DT><SAMP>`-I'</SAMP>, <SAMP>`--idutils'</SAMP>
 <DD>
-Also make the ID database file for idutils(1).
+In addition to tag files, make ID database for idutils(1).
 <DT><SAMP>`-i'</SAMP>, <SAMP>`--incremental'</SAMP>
 <DD>
 Update tag files incrementally. You had better use
@@ -2637,7 +2642,7 @@ tag files in it.
 If dbpath is specified, this option is ignored.
 <DT><SAMP>`--single-update'</SAMP> file
 <DD>
-Update tag files for single file.
+Update tag files for single file by optimized method.
 It is considered that file was added or updated,
 and there is no change in other files.
 This option implies the -i option.
@@ -2677,16 +2682,16 @@ The default is the current directory.
 
 <DT><TT>`GTAGS'</TT>
 <DD>
-Tag file for object definitions.
+Tag file for definitions.
 <DT><TT>`GRTAGS'</TT>
 <DD>
-Tag file for object references.
+Tag file for references.
 <DT><TT>`GPATH'</TT>
 <DD>
-Tag file for path names.
+Tag file for source files.
 <DT><TT>`$HOME/.globalrc'</TT>, <TT>`/etc/gtags.conf'</TT>, <TT>`[sysconfdir]/gtags.conf'</TT>
 <DD>
-Configuration files.
+Configuration file.
 <DT><TT>`gtags.files'</TT>
 <DD>
 The list of candidates of target files.
@@ -2739,7 +2744,7 @@ As a special exception, gtags collects values from multiple <CODE>langmap</CODE>
 Default mapping is 'c:.c.h,yacc:.y,asm:.s.S,java:.java,cpp:.c++.cc.hh.cpp.cxx.hxx.hpp.C.H,php:.php.php3.phtml'.
 <DT><CODE>gtags_parser</CODE>(comma separated list)
 <DD>
-Specify the mapping of language names and plugin parsers.
+Specify the mapping of language names and plug-in parsers.
 Each part delimited by the comma consists of the language name, a colon,
 the shared object path, an optional colon followed by a function name.
 If the function name is not specified, 'parser' is assumed.
@@ -2834,8 +2839,8 @@ any HTTP server.
 
 <P>
 This command has so many options.
-If you are new on htags, it is recommended to use the <SAMP>`--suggest'</SAMP> option.
-With that option, htags chooses popular options on behalf of you.
+If you are new on htags, it is recommended to use <SAMP>`--suggest'</SAMP> option.
+With the option, htags chooses popular options on behalf of you.
 
 
 <H3><A NAME="SEC77">OPTIONS</A></H3>
@@ -2845,11 +2850,11 @@ The following options are available:
 
 <DT><SAMP>`-a'</SAMP>, <SAMP>`--alphabet'</SAMP>
 <DD>
-Make an alphabetical object index which is suitable for large projects.
+Make an alphabetical index suitable for a large project.
 <DT><SAMP>`--auto-completion'</SAMP>[=limit]
 <DD>
 Enable auto completion facility for the input form.
-If limit is specified, the number of candidates is limited to the value.
+If limit is specified, number of candidates is limited to the value.
 Please note that this function requires javascript language in your browser.
 <DT><SAMP>`--caution'</SAMP>
 <DD>
@@ -2858,19 +2863,19 @@ Display a caution message on the top page.
 <DD>
 Add a call tree by cflow(1). cflowfile must be posix format.
 If you use GNU cflow, invoke the command at the project root directory
-with the <SAMP>`--format=posix'</SAMP> option.
+with <SAMP>`--format=posix'</SAMP> option.
 This option is deprecated. Please use the <SAMP>`--call-tree'</SAMP> or
 <SAMP>`--callee-tree'</SAMP> instead.
 <DT><SAMP>`--call-tree'</SAMP> callfile
 <DD>
 Add a call tree by cflow(1). callfile must be posix format.
 If you use GNU cflow, invoke the command at the project root directory
-with the <SAMP>`--format=posix'</SAMP> option.
+with <SAMP>`--format=posix'</SAMP> option.
 <DT><SAMP>`--callee-tree'</SAMP> calleefile
 <DD>
 Add a callee tree by cflow(1). calleefile must be posix format.
 If you use GNU cflow, invoke the command at the project root directory
-with the <SAMP>`--format=posix'</SAMP> and <SAMP>`--reverse'</SAMP> option.
+with <SAMP>`--format=posix'</SAMP> and <SAMP>`--reverse'</SAMP> option.
 <DT><SAMP>`-c'</SAMP>, <SAMP>`--compact'</SAMP>
 <DD>
 Compress html files by gzip(1).
@@ -2880,19 +2885,19 @@ See <TT>`HTML/.htaccess'</TT> that is generated by htags.
 <DT><SAMP>`--cvsweb'</SAMP> url
 <DD>
 Add a link to cvsweb. url is used as the base of URL.
-When directory <TT>`CVS'</TT> exists in the root directory of the source project,
+When directory <TT>`CVS'</TT> exists in the root directory of the project,
 the content of <TT>`CVS/Repository'</TT> is used as the relative path from the base.
 <DT><SAMP>`--cvsweb-cvsroot'</SAMP> cvsroot
 <DD>
 Specify cvsroot in cvsweb URL.
 <DT><SAMP>`-D'</SAMP>, <SAMP>`--dynamic'</SAMP>
 <DD>
-Generate object lists dynamically using CGI program.
-Though this option decrease both the size and generation time of hypertext,
-you need to start up HTTP server.
+Generate a tag list dynamically using CGI program.
+This option decrease both the size and generation time of the hypertext.
+You need to start a HTTP server for it.
 <DT><SAMP>`-d'</SAMP>, <SAMP>`--dbpath'</SAMP> dbpath
 <DD>
-Specify a directory in which <TT>`GTAGS'</TT> exist.
+Specify a directory in which <TT>`GTAGS'</TT> exists.
 The default is the current directory.
 <DT><SAMP>`--disable-grep'</SAMP>
 <DD>
@@ -2906,10 +2911,10 @@ Use frames for the top page.
 <DT><SAMP>`-f'</SAMP>, <SAMP>`--form'</SAMP>
 <DD>
 Add a search form using CGI program.
-You need to start up HTTP server for it.
+You need to start a HTTP server for it.
 <DT><SAMP>`--fixed-guide'</SAMP>
 <DD>
-Put a fixed guide at the bottom of the source code.
+Put a fixed guide at the bottom of the screen of the browser.
 <DT><SAMP>`--full-path'</SAMP>
 <DD>
 Use full path name in the file index.
@@ -2920,29 +2925,29 @@ Execute gtags(1) before starting job.
 The <SAMP>`-v'</SAMP>, <SAMP>`-w'</SAMP> and dbpath options are passed to gtags.
 <DT><SAMP>`--gtagsconf'</SAMP> file
 <DD>
-Set the <VAR>GTAGSCONF</VAR> environment variable to file.
+Set environment variable <VAR>GTAGSCONF</VAR> to file.
 <DT><SAMP>`--gtagslabel'</SAMP> label
 <DD>
-Set the <VAR>GTAGSLABEL</VAR> environment variable to label.
+Set environment variable <VAR>GTAGSLABEL</VAR> to label.
 <DT><SAMP>`-h'</SAMP>, <SAMP>`--func-header'</SAMP>[=position]
 <DD>
-Insert function header for each function.
-By default, htags doesn't generate it.
+Insert a function header for each function.
+By default, htags doesn't generate them.
 You can specify the position using position argument,
 which allows one of before, right and after.
 The default position is after.
 <DT><SAMP>`--html-header'</SAMP> file
 <DD>
-Insert header records derived from file into the HTML header.
+Insert a header record derived from file into the HTML header of each file.
 <DT><SAMP>`-I'</SAMP>, <SAMP>`--icon'</SAMP>
 <DD>
 Use icons instead of text for some links.
 <DT><SAMP>`--insert-footer'</SAMP> file
 <DD>
-Insert custom footer derived from file before &#60;/body&#62; tag.
+Insert a custom footer derived from file before &#60;/body&#62; tag of each file.
 <DT><SAMP>`--insert-header'</SAMP> file
 <DD>
-Insert custom header derived from file after &#60;body&#62; tag.
+Insert a custom header derived from file after &#60;body&#62; tag of each file.
 <DT><SAMP>`--item-order'</SAMP> spec
 <DD>
 Specify the order of the items in the top page.
@@ -2953,44 +2958,46 @@ m: mains; d: definition; f: files; t: call tree.
 The default is csmdf.
 <DT><SAMP>`-m'</SAMP>, <SAMP>`--main-func'</SAMP> name
 <DD>
-Specify startup function name. The default is main.
+Specify start-up function name. The default is main.
 <DT><SAMP>`-n'</SAMP>, <SAMP>`--line-number'</SAMP>[=columns]
 <DD>
 Print line numbers. By default, doesn't print line numbers.
 The default value of columns is 4.
 <DT><SAMP>`--map-file'</SAMP>
 <DD>
-Generate files <TT>`MAP'</TT>.
+Generate <TT>`MAP'</TT> file.
 <DT><SAMP>`-o'</SAMP>, <SAMP>`--other'</SAMP>
 <DD>
-Pick up not only source files but also other files in the file index.
+Pick up not only source files but also other files for the file index.
 <DT><SAMP>`--overwrite-key'</SAMP>
 <DD>
-Allow the same key as the parameter of the <SAMP>`--system-cgi'</SAMP> option.
+Allow overwrite of an existing key with the <SAMP>`--system-cgi'</SAMP> option.
 <DT><SAMP>`--system-cgi'</SAMP> key
 <DD>
-Use the system CGI script. The key must be a unique key in your site.
+Use system CGI script. The key must be unique in the site.
 At the first time, you should (1) copy the CGI script written by this command
-into the system CGI directory, and (2) execute bless.sh script at the HTML directory
-as a root user.
+into a system CGI directory, and (2) execute bless.sh script in the HTML directory.
+Please see <TT>`bless.sh'</TT> for details.
 <DT><SAMP>`-s'</SAMP>, <SAMP>`--symbol'</SAMP>
 <DD>
-Make anchors not only for object definitions and references but also other symbols.
+Make anchors not only for definitions and references but also other symbols.
 <DT><SAMP>`--show-position'</SAMP>
 <DD>
-Show position per function definition. The default is false.
+Print the position string per function definition. The string can be interpreted
+by general editors in UNIX. The default is false.
 <DT><SAMP>`--statistics'</SAMP>
 <DD>
 Print statistics information.
 <DT><SAMP>`--suggest'</SAMP>
 <DD>
 Htags chooses popular options on behalf of beginners.
-It is equivalent to '-aghInosTxv --show-position --fixed-guide' now.
+It is equivalent to '-aghInosTv --show-position --fixed-guide' now.
 <DT><SAMP>`--suggest2'</SAMP>
 <DD>
 Htags chooses popular options on behalf of beginners.
 This option enables frame, AJAX and CGI facility in addition
 to the facilities by the <SAMP>`--suggest'</SAMP> option.
+It is equivalent to '--suggest -DfF --auto-completion --tree-view=filetree' now.
 <DT><SAMP>`-T'</SAMP>, <SAMP>`--table-flist'</SAMP>[=rows]
 <DD>
 Use &#60;table&#62; tag to display the file index.
@@ -3006,6 +3013,9 @@ Use &#60;table&#62; tag to display the tag list.
 <DD>
 Use treeview for the file index.
 Please note that this function requires javascript language in your browser.
+Possible values of type are as follows: treeview, filetree,
+treeview-red, treeview-black, treeview-gray,
+treeview-famfamfam. The default is treeview.
 <DT><SAMP>`-v'</SAMP>, <SAMP>`--verbose'</SAMP>
 <DD>
 Verbose mode.
@@ -3045,19 +3055,19 @@ The default is the current directory.
 
 <DT><TT>`GTAGS'</TT>
 <DD>
-Tag file for object definitions.
+Tag file for definitions.
 <DT><TT>`GRTAGS'</TT>
 <DD>
-Tag file for object references.
+Tag file for references.
 <DT><TT>`GPATH'</TT>
 <DD>
-Tag file for files.
+Tag file for source files.
 <DT><TT>`$HOME/.globalrc'</TT>, <TT>`/etc/gtags.conf'</TT>, <TT>`[sysconfdir]/gtags.conf'</TT>
 <DD>
 Configuration files.
 <DT><TT>`HTML/index.html'</TT>
 <DD>
-Startup file.
+Start-up file.
 <DT><TT>`HTML/MAP'</TT>
 <DD>
 Mapping file for converting tag name into the path of tag list.
@@ -3078,6 +3088,10 @@ If this file exists, CGI program <TT>`global.cgi'</TT> sets
 environment variable GTAGSROOT to the contents of it.
 If you move directory <TT>`HTML'</TT> from the original place,
 please make this file.
+<DT><TT>`/usr/local/var/gtags/sitekeys'</TT>
+<DD>
+Site key database directory used for the <SAMP>`--system-cgi'</SAMP>.
+Though its mode is set as 755 by default, it is left to the system administrator. 
 </DL>
 
 
@@ -3118,8 +3132,7 @@ Instead, you can customize the appearance using style sheet file
 <DD>
 Shared data directory. The default is '/usr/local/share' but
 you can change the value using configure script.
-Htags look up template files in the 'gtags' directory
-in this data directory.
+Htags looks up template files there.
 <DT><CODE>gzipped_suffix</CODE>(string)
 <DD>
 Suffix for compressed html file. The default is 'ghtml'.
@@ -3259,7 +3272,7 @@ Print object definitions.
 Show help.
 <DT><SAMP>`-p'</SAMP>
 <DD>
-Print just a generated URL instead of displaying it.
+Print just a generated URL instead of the contents.
 <DT>file
 <DD>
 File name or alias name.
@@ -3283,10 +3296,10 @@ Show version number.
 Hypertext of source code.
 <DT><TT>`GTAGS/'</TT>
 <DD>
-Tag file for object definitions.
+Tag file for definitions.
 <DT><TT>`$HOME/.gozillarc'</TT>
 <DD>
-Alias file. Please read source code for the detail.
+Alias file. Not yet documented.
 </DL>
 
 
@@ -3790,13 +3803,13 @@ of BSD-style objdir. The default is <TT>`/usr/obj'</TT>.
 
 <DT><TT>`GTAGS'</TT>
 <DD>
-Tag file for object definitions.
+Tag file for definitions.
 <DT><TT>`GRTAGS'</TT>
 <DD>
-Tag file for object references.
+Tag file for references.
 <DT><TT>`GPATH'</TT>
 <DD>
-Tag file for path of source files.
+Tag file for source files.
 <DT><TT>`GTAGSROOT'</TT>
 <DD>
 If environment variable <VAR>GTAGSROOT</VAR> is not set
@@ -3864,11 +3877,11 @@ globash<BR>
 <H3><A NAME="SEC117">DESCRIPTION</A></H3>
 <P>
 Globash is a special shell for GLOBAL using GNU bash.
-You can use a lot of function to ease reading source code
+You can use a lot of functions to ease reading source code
 like tag stack, tag mark and cookie.
 At first, you should make tag files using gtags and
 invoke this command in the project.
-Please refer to the help (type 'ghelp'&#60;ENTER&#62;) about a detailed usage.
+Please refer to the help (type 'ghelp'&#60;ENTER&#62;) for details.
 
 
 <H3><A NAME="SEC118">FILES</A></H3>
@@ -3876,16 +3889,16 @@ Please refer to the help (type 'ghelp'&#60;ENTER&#62;) about a detailed usage.
 
 <DT><TT>`GTAGS'</TT>
 <DD>
-Tag file for object definitions.
+Tag file for definitions.
 <DT><TT>`GRTAGS'</TT>
 <DD>
-Tag file for object references.
+Tag file for references.
 <DT><TT>`GPATH'</TT>
 <DD>
-Tag file for path of source files.
+Tag file for source files.
 <DT><TT>`~/.globashrc'</TT>
 <DD>
-The personal initialization file, executed for globash.
+Start-up file.
 </DL>
 
 
@@ -4690,7 +4703,7 @@ Jump to:
 <LI><A HREF="globaldoc.html#IDX31">FDL, GNU Free Documentation License</A>
 </DIR>
 <P><HR><P>
-This document was generated on February, 28  2013 using
+This document was generated on August, 26  2013 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
 </BODY>

@@ -4,8 +4,8 @@
 This manual is available in <a href=http://www.gnu.org/software/global/manual/>various formats</a>.
 <hr>
 <H1>GNU GLOBAL Source Code Tag System</H1>
-<H2>Edition 6.2.8, for GNU GLOBAL version 6.2.8</H2>
-<H2>28 February 2013</H2>
+<H2>Edition 6.2.9, for GNU GLOBAL version 6.2.9</H2>
+<H2>26 August 2013</H2>
 <ADDRESS>by Tama Communications Corporation</ADDRESS>
 <P>
 <P><HR><P>
@@ -77,7 +77,7 @@ This manual is available in <a href=http://www.gnu.org/software/global/manual/>v
 </LI></UL>
 <LI><A NAME="TOC44" HREF="globaldoc.html#SEC44">5. Command References</A>
 </LI><UL>
-<LI><A NAME="TOC45" HREF="globaldoc.html#SEC45">5.1 global - print locations of the specified object.</A>
+<LI><A NAME="TOC45" HREF="globaldoc.html#SEC45">5.1 global - print locations of given symbols</A>
 </LI><UL>
 <LI><A NAME="TOC46" HREF="globaldoc.html#SEC46">NAME</A>
 </LI><LI><A NAME="TOC47" HREF="globaldoc.html#SEC47">SYNOPSIS</A>
@@ -191,6 +191,6 @@ This manual is available in <a href=http://www.gnu.org/software/global/manual/>v
 <LI><A NAME="TOC133" HREF="globaldoc.html#SEC133">Option Index</A>
 </LI></UL>
 <P><HR><P>
-This document was generated on February, 28  2013 using
+This document was generated on August, 26  2013 using
 <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html">texi2html</A>&nbsp;1.57.
 
