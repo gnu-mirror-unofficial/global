@@ -309,6 +309,10 @@ In addition to these, there are many forks and related tools of GLOBAL in Github
 <H3>Source code browsing Tools</H3>
 Please see also <a href="#GLOBAL_related_tools">GLOBAL related tools</a> section.
 <dl>
+<dt><a href="https://github.com/syed/erlcscope">erlcscope</a><dd>
+	Erlcscope builds a cscope compatible database for erlang files.
+	The database can be used with any program which supports cscope
+	along with the standard cscope -d command.
 <dt><a href="https://github.com/woboq/woboq_codebrowser">Woboq Code Browser</a><dd>
 	The Woboq Code Browser is a web-based code browser for C/C++ projects.
 <dt><a href="http://rprichard.github.io/sourceweb/">SourceWeb</a><dd>
