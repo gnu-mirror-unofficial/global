@@ -40,7 +40,7 @@ About patches, please obey the followings if possible:
 <ul>
 <li>Please make patches for the master repository.
 <li>Please don't mix unrelated things into a patch.
-<li>Please attach patches to the mail without referring to an external site.
+<li>Please attach patches to the mail without referring to external sites.
 </ul>
 <p>
 Please check before a proposal whether there is any same proposal in
