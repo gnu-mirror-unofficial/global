@@ -49,15 +49,16 @@ Copyright (c) 2000-2013 Tama Communications Corporation</font></i></p>
 <a href=http://www.tamacom.com/tour/kernel/linux/>
 <img src=htags2.png align=right alt='Linux source code'>
 </a>
-GNU GLOBAL is a source code tagging system that works the same way
-across diverse environments (emacs, vi, less, bash, web browser, etc).
-You can locate symbols in source files and move there easily.
-It is useful for hacking a large project containing many sub-directories,
-many <CODE>#ifdef</CODE> and many <CODE>main()</CODE> functions.
-It is similar to ctags or etags but is different from them at the point of
+GNU GLOBAL is a source code tag system that works the same way
+across diverse environments, such as Emacs editor, Vi editor,
+Less viewer, Bash shell, various web browsers, etc.
+You can locate specified tags, such as functions, macros, structs, classes,
+in your source files and move there easily.
+It is useful for hacking large projects which contain many sub-directories,
+many <code>#ifdef</code> and many <code>main()</code> functions.
+It is similar to ctags or etags, but is different from them at the point of
 independence of any editor.
-It runs on a UNIX(POSIX) compatible operating system like GNU and BSD.
-
+It runs on a UNIX (POSIX) compatible operating system, like GNU and BSD.
 <p>
 GNU GLOBAL is part of the <a href="http://www.gnu.org/">GNU project</a>,
 and is <a href="http://www.gnu.org/philosophy/free-sw.html">free software</a>.
@@ -67,42 +68,41 @@ You can freely copy, modify and redistribute this program under
 GNU GLOBAL has following features:
 
 <ul>
-<li> support C, C++, Yacc, Java, PHP4 and assembly. (definition and reference)
-<li> support 41 languages using Exuberant Ctags. (only definition)
-<li> work the same way across diverse environments.
-        Currently, the following environments are supported:
+<li> supports C, C++, Yacc, Java, PHP4 and assembly. (definition and reference)
+<li> supports 41 languages using Exuberant Ctags. (only definition)
+<li> works the same way across diverse environments like follows:
         <ul>
-        <li> Generic shell command line
+        <li> Shell command line
         <li> Bash shell
-        <li> Vi clone editor (nvi, elvis, vim)
-        <li> Emacs editor
+        <li> Vi editor (Nvi, Elvis, vim)
 	<li> Less viewer
+        <li> Emacs editor (Emacs, Mule, Xemacs)
         <li> Web browser
 		(See <a href=http://www.tamacom.com/tour/kernel/linux/>UNIX kernel source tour!</a>.)
 	<li> Doxygen documentation system
         </ul>
-<li> find locations of specified symbol quickly.
+<li> finds locations of specified symbol quickly.
 <li> locate not only definitions but also references.
-<li> locate paths which matches to a specified pattern.
-<li> hierarchical search by default.
-<li> search not only in a project but also in library projects.
-<li> generate completion list for completing input method.
-<li> support various output format.
+<li> allows duplicate tags.
+<li> locate paths which matches to the specified pattern.
+<li> hierarchical searches by default.
+<li> searches not only in a source project but also in library projects.
+<li> generates completion list for completing input method.
+<li> supports various output formats.
 <li> allows customizing of the set of candidate files to be tagged.
-<li> understand POSIX 1003.2 regular expressions.
-<li> support idutils as an external search engine.
+<li> understands POSIX 1003.2 regular expression.
+<li> supports idutils as an external search engine.
 <li> tag files are independent of machine architecture.
-<li> incremental updating of tag files.
-<li> plug-in parser is available to treat new languages.
-<li> support customizing with 'gtags.conf'.
-<li> generate a hypertext of source code (XHTML ready).
+<li> supports incremental updating of tag files.
+<li> plug-in parser is available to treat new language.
+<li> supports customizing with gtags.conf.
+<li> generates a hypertext of source code.
 <li> compact format to save disk space.
-<li> customizing using a configuration file (gtags.conf).
-<li> support client/server environment (TRAMP ready).
-<li> ignore binary files, dot files and specified files.
-<li> symbolic link loop detection.
-<li> include cscope compatible program (gtags-cscope).
-<li> include grep like command (-g command).
+<li> supports client/server environment (TRAMP ready).
+<li> ignores binary files, dot files and specified files.
+<li> includes cscope-compatible program (gtags-cscope).
+<li> includes grep-like command (-g command).
+<li> deals with the loop of symbolic links well.
 </ul>
 
 Please also see
