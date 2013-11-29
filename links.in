@@ -8,36 +8,36 @@ under the terms of the GNU Free Documentation License, Version 1.1
 
 <h3>Comparison of source code reading tools</h3>
 <dl>
-<dt><a href="https://github.com/OpenGrok/OpenGrok/wiki/Comparison-with-Similar-Tools">'Comparison with Similar Tools' in the OpenGrok project site</a><dd>
+<dt><a href="https://github.com/OpenGrok/OpenGrok/wiki/Comparison-with-Similar-Tools" rel="nofollow">'Comparison with Similar Tools' in the OpenGrok project site</a><dd>
 	This comparison table compares the function of LXR, ctags, cscope, ViewVC, OpenGrok and, GLOBAL
 	which are typical tools for source code reading.
-<dt><a href="http://queue.acm.org/detail.cfm?id=945136">Code Spelunking: Exploring Cavernous Code Bases</a><dd>
+<dt><a href="http://queue.acm.org/detail.cfm?id=945136" rel="nofollow">Code Spelunking: Exploring Cavernous Code Bases</a><dd>
 	Code diving through unfamiliar source bases is something we do far more often than
 	write new code from scratch--make sure you have the right gear for the job. (by George V. Neville-Neil)
-<dt><a href="http://www.lemis.com/grog/software/source-code-navigation.php">Greg's source code navigation tools</a><dd>
+<dt><a href="http://www.lemis.com/grog/software/source-code-navigation.php" rel="nofollow">Greg's source code navigation tools</a><dd>
 	This page is a log of an investigation he made of source code navigation and analysis packages.
-<dt><a href="http://www.ddj.com/cpp/184401358">Navigating Linux Source Code</a><dd>
+<dt><a href="http://www.ddj.com/cpp/184401358" rel="nofollow">Navigating Linux Source Code</a><dd>
 	With legacy code or large projects, navigation is a serious concern. Here are some tools that can help you find your way.
 	(by James Bonang)
 </dl>
 <h3>GLOBAL related articles</h3>
 <dl>
-<dt><a href="http://www.webdbtips.com/6152/">How to read other people's code.</a><dd>
+<dt><a href="http://www.webdbtips.com/6152/" rel="nofollow">How to read other people's code.</a><dd>
 	Grep shortcomings, the program intend to read other people's code,
 	you can consider the use like gtags to this tool. gtags GNU GLOBAL
 	source code tag system. (by Chien-Hsing Wang)
-<dt><a href="http://www.wolinlabs.com/blog/emacs.global.speedbar.html">Code Browsing with Emacs, GLOBAL, and Speedbar</a><dd>
+<dt><a href="http://www.wolinlabs.com/blog/emacs.global.speedbar.html" rel="nofollow">Code Browsing with Emacs, GLOBAL, and Speedbar</a><dd>
 	This article details a simpler solution, using Emacs in combination with GLOBAL and Speedbar
 	for code browsing.
-<dt><a href="http://linux.byexamples.com/archives/538/gnu-global-the-programmers-friend/">GNU GLOBAL, THE PROGRAMMER'S FRIEND</a><dd>
+<dt><a href="http://linux.byexamples.com/archives/538/gnu-global-the-programmers-friend/" rel="nofollow">GNU GLOBAL, THE PROGRAMMER'S FRIEND</a><dd>
 	The reason I shifted to gtags is because ctags is no longer sufficient to me.
 	I have to trace the codes from large volume than last time, and they scatter
 	into many different folders.
-<dt><a href="http://wadeberrier.blogspot.jp/2012/04/source-code-navigation-with-vim.html">Source Code Navigation with VIM</a><dd>
+<dt><a href="http://wadeberrier.blogspot.jp/2012/04/source-code-navigation-with-vim.html" rel="nofollow">Source Code Navigation with VIM</a><dd>
 	In any case, after trying all the above tools (comment: other tag systems), I settled on gnu global,
 	although it took some work to get it working with VIM and my setup.
 	That's what this post is really about: documenting my usage of VIM and gnu global.
-<dt><a href="http://imaginateaqui.net/blog/2008/10/using-rtags-ang-gtags-for-coding-ruby/">Using rtags ang gtags for coding Ruby</a><dd>
+<dt><a href="http://imaginateaqui.net/blog/2008/10/using-rtags-ang-gtags-for-coding-ruby/" rel="nofollow">Using rtags ang gtags for coding Ruby</a><dd>
 	You can use, for example, Exuberant ctags, to parse your Ruby code
 	and then use gtags to navigate it.
 </dl>
@@ -45,27 +45,27 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <h3>GLOBAL related tools</h3>
 
 <dl>
-<dt><a href="https://github.com/5t111111/alt-gtags.vim">alt-gtags.vim</a><dd>
+<dt><a href="https://github.com/5t111111/alt-gtags.vim" rel="nofollow">alt-gtags.vim</a><dd>
 	alt-gtags.vim is a plugin that enables you to use GNU GLOBAL (gtags) in a Vim.
 	if_pyth is required as it is written in Python.
-<dt><a href="https://github.com/hewes/unite-gtags">Unite-gtags</a><dd>
+<dt><a href="https://github.com/hewes/unite-gtags" rel="nofollow">Unite-gtags</a><dd>
 	unite-gtags is a unite.vim's source. Execute 'global' command and display
 	the result in Unite interface.
-<dt><a href="https://github.com/leoliu/ggtags">ggtags</a><dd>
+<dt><a href="https://github.com/leoliu/ggtags" rel="nofollow">ggtags</a><dd>
 	This package is part of GNU ELPA.
 	The goal is to make working with GNU Global in Emacs as effortless
 	and intuitively as possible.
-<dt><a href="https://github.com/baohaojun/ajoke">ajoke</a><dd>
+<dt><a href="https://github.com/baohaojun/ajoke" rel="nofollow">ajoke</a><dd>
 	Ajoke is a tool for doing Java programming on Emacs.
 	It is inspired by Emacs-Eclim, but does not depend on Eclipse.
 	Instead, it uses GNU Global and ctags-exuberant extensively, with a bunch of Perl scripts.
-<dt><a href="http://www.geocities.co.jp/Bookend/2352/sanaly/indexj.html">Sanaly</a><dd>
+<dt><a href="http://www.geocities.co.jp/Bookend/2352/sanaly/indexj.html" rel="nofollow">Sanaly</a><dd>
         Sanaly is a Source code ANALYsis web front end for GNU Global. It can treat
         source files written in python(.py), shell(.sh), perl(.pl) and ruby(.rb).
-<dt><a href="http://www.vim.org/scripts/script.php?script_id=4599">Vim's IDE Mode</a><dd>
+<dt><a href="http://www.vim.org/scripts/script.php?script_id=4599" rel="nofollow">Vim's IDE Mode</a><dd>
 	Videm (Vim's IDE Mode) is a C/C++ IDE  based on vim (will become a common IDE
 	framework in future, I think). Videm use Cscope and GNU GLOBAL as symbol database.
-<dt><a href="http://drupal.org/project/emacs_drush">Drush utilities for Emacs users</a><dd>
+<dt><a href="http://drupal.org/project/emacs_drush" rel="nofollow">Drush utilities for Emacs users</a><dd>
 	Currently the project provides two new Drush commands:
 	<ul>
 	<li>drush etags
@@ -73,126 +73,126 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	</ul>
 	They will run etags/gtags in your DRUPAL_ROOT and generate tag files for use in Emacs
 	and it will help keep them up to date.
-<dt><a href="http://www.vim.org/scripts/script.php?script_id=3868">gtags_mwin.vim</a><dd>
+<dt><a href="http://www.vim.org/scripts/script.php?script_id=3868" rel="nofollow">gtags_mwin.vim</a><dd>
 	Multi windows tag stacked code browsing with global(gtag).
-<dt><a href="https://github.com/syohex/emacs-helm-gtags">helm-gtags.el</a><dd>
+<dt><a href="https://github.com/syohex/emacs-helm-gtags" rel="nofollow">helm-gtags.el</a><dd>
 	helm-gtags.el is GNU GLOBAL helm interface.
 	helm-gtags.el is not compatible anything-gtags.el
-<dt><a href="http://code.google.com/p/seascope/">seascope</a><dd>
+<dt><a href="http://code.google.com/p/seascope/" rel="nofollow">seascope</a><dd>
 	A pyQt GUI front-end for cscope, idutils and gtags.
 	Written in python using pyQt, QScintilla libraries.
-<dt><a href="http://notepad-plus-plus.org/">Notepad++</a><dd>
+<dt><a href="http://notepad-plus-plus.org/" rel="nofollow">Notepad++</a><dd>
 	Notepad++ is a free source code editor and Notepad replacement that supports
 	several languages. You can use GLOBAL using its GtagsPlugin.
-<dt><a href="https://github.com/lqoyzy/global_with_scala">Scala support for gtags</a><dd>
+<dt><a href="https://github.com/lqoyzy/global_with_scala" rel="nofollow">Scala support for gtags</a><dd>
 	Basic scala support for gtags is completed.
 	support for scala class/object/trait/function/variable/value definition and other symbols.
-<dt><a href="http://www.jedit.org/">jEdit</a><dd>
+<dt><a href="http://www.jedit.org/" rel="nofollow">jEdit</a><dd>
 	jEdit is a mature programmer's text editor with hundreds (counting the time
 	developing plug-ins) of person-years of development behind it.
-	<a href="http://plugins.jedit.org/plugins/?GlobalPlugin">GlobalPlugin</a>
+	<a href="http://plugins.jedit.org/plugins/?GlobalPlugin" rel="nofollow">GlobalPlugin</a>
 	provides an interface to the GNU Global source tagging tool.
-<dt><a href="http://cx4a.org/software/auto-complete/">auto-complete.el</a><dd>
+<dt><a href="http://cx4a.org/software/auto-complete/" rel="nofollow">auto-complete.el</a><dd>
 	Auto Complete Mode is the most intelligent auto-completion extension for GNU Emacs.
 	You can use this mode with GLOBAL.
-<dt><a href="http://www.gnu.org/software/cflow/">GNU cflow</a><dd>
+<dt><a href="http://www.gnu.org/software/cflow/" rel="nofollow">GNU cflow</a><dd>
 	GNU cflow analyzes a collection of C source files and prints a graph,
 	charting control flow within the program. You can include this output
 	in your htags hypertext using '--cflow=(cflow's output)'.
 <!--
-<dt><a href="http://code.google.com/p/kxref/">KXref</a><dd>
+<dt><a href="http://code.google.com/p/kxref/" rel="nofollow">KXref</a><dd>
 	KXref is a KDE based front end for GNU Global.
 	This project aims to create a simple front-end for GLOBAL (and much more!).
 -->
-<dt><a href="http://sourceforge.jp/projects/sfnet_ocamlglobaltags/">OCaml Global Tagger</a><dd>
+<dt><a href="http://sourceforge.jp/projects/sfnet_ocamlglobaltags/" rel="nofollow">OCaml Global Tagger</a><dd>
 	A plug-in for GNU Global which tags OCaml source code, using CamlP4 for versions
 	3.10 of OCaml and above. Provides ocaml_tags, which creates tags for ml and mli
 	files, and an ogtags script that wraps a gtags call with the ocaml_tags plug-in.
-<dt><a href="http://cedet.sourceforge.net/">CEDET</a><dd>
+<dt><a href="http://cedet.sourceforge.net/" rel="nofollow">CEDET</a><dd>
 	CEDET is a Collection of Emacs Development Environment Tools  written with the end goal of
 	creating an advanced development environment in Emacs. 
 	The Symbol References tool in CEDET can use GNU GLOBAL as an external tool.
 <!--
-<dt><a href="http://www.opendesktop.org/content/show.php/Kate+Gtags?content=49360&PHPSESSID=0266f910f489d2a865de5621bed641bb">Kate Gtags</a><dd>
+<dt><a href="http://www.opendesktop.org/content/show.php/Kate+Gtags?content=49360&PHPSESSID=0266f910f489d2a865de5621bed641bb" rel="nofollow">Kate Gtags</a><dd>
 	KateGtags is a plug-in for kate that uses the GNU Global source tagging system
 	to provide function definition and reference location.
 -->
-<dt><a href="http://www.emacswiki.org/cgi-bin/wiki/Anything">anything-gtags.el</a><dd>
+<dt><a href="http://www.emacswiki.org/cgi-bin/wiki/Anything" rel="nofollow">anything-gtags.el</a><dd>
 	`anything-gtags-select' is `anything' interface of `gtags-find-tag'.
 	`anything-c-source-gtags-select' is a source for `gtags-find-tag'.
 	Replace *GTAGS SELECT* buffer with `anything' interface.
-<dt><a href="http://www.emacswiki.org/emacs/xgtags.el">xgtags.el</a><dd>
+<dt><a href="http://www.emacswiki.org/emacs/xgtags.el" rel="nofollow">xgtags.el</a><dd>
 	Xgtags.el provides an interface to the GLOBAL cross-referencing tools.
 	While gtags.el, that comes with the GLOBAL distribution, is more a
 	replacement for emacs' own find-tag/pop-tag-mark facility with some
 	extra stuff, xgtags.el tries to permit the same functionality as
 	gtags.el, but behaves more like xcscope.el, the emacs interface for
 	cscope (http://cscope.sourceforge.net).
-<dt><a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen Release 1.4.3 or higher</a><dd>
+<dt><a href="http://www.stack.nl/~dimitri/doxygen/" rel="nofollow">Doxygen Release 1.4.3 or higher</a><dd>
 	Doxygen is a documentation system for C++, Java, IDL and C.
 	<br>
 	Doxygen Release 1.4.3 includes new configuration option USE_HTAGS.
 	When enabled in combination with SOURCE_BROWSER=YES,
 	the source browser of htags(1) is used instead of doxygen's own. 
 	This facility needs GLOBAL-4.8.6 or the later.
-<dt><a href="http://glimmer.sourceforge.net/">Glimmer</a><dd>
+<dt><a href="http://glimmer.sourceforge.net/" rel="nofollow">Glimmer</a><dd>
 	Glimmer is a simple code editor for use with just about any
 	programming language, written by Chris Phelps.
 	It supports GLOBAL by Global.py script.
 <!--
-<dt><a href="http://www.bostic.com/vi/">Nvi-1.79 editor</a><dd>
+<dt><a href="http://www.bostic.com/vi/" rel="nofollow">Nvi-1.79 editor</a><dd>
 	Nvi is a vi clone written by Keith Bostic. You can use GLOBAL
 	from this editor using a patch which is part of the GLOBAL package.
-<dt><a href="http://www.kotnet.org/~skimo/nvi/">Nvi-1.81.5 editor</a><dd>
+<dt><a href="http://www.kotnet.org/~skimo/nvi/" rel="nofollow">Nvi-1.81.5 editor</a><dd>
 	Nvi-1.81.5 is the latest nvi supported by Sven Verdoolaege.
 	You can use GLOBAL from this editor using gtags.pl which is
 	part of the GLOBAL package.
 -->
-<dt><a href="http://www.vim.org/">Vim editor</a><dd>
+<dt><a href="http://www.vim.org/" rel="nofollow">Vim editor</a><dd>
 	Vim is a vi clone written by Bram Moolenaar. You can use GLOBAL
 	from this editor using gtags.vim (and|or) gtags-cscope.vim script.
-<dt><a href="http://elvis.the-little-red-haired-girl.org/">Elvis editor</a><dd>
+<dt><a href="http://elvis.the-little-red-haired-girl.org/" rel="nofollow">Elvis editor</a><dd>
 	Elvis is a vi clone written by Steve Kirkendall,
 	which has two variables "tagprg" and "tagprgonce" for running
 	an external tag search program. You can use them with GLOBAL.
-<dt><a href="http://www.gnu.org/software/emacs/emacs.html">Emacs</a><dd>
+<dt><a href="http://www.gnu.org/software/emacs/emacs.html" rel="nofollow">Emacs</a><dd>
 	Emacs is the extensible, customizable, self-documenting real-time
 	display editor, written by Richard Stallman.
 	You can use this program as a front end of GLOBAL using gtags.el
 	which is part of the GLOBAL package.
-<dt><a href="http://www.greenwoodsoftware.com/less/">Less</a><dd>
+<dt><a href="http://www.greenwoodsoftware.com/less/" rel="nofollow">Less</a><dd>
 	Less is a popular file viewer written by Mark Nudelman.
 	In less-370 or the later, you can use GLOBAL from this tool.
-<dt><a href="http://www.gnu.org/software/idutils/idutils.html">ID utilities</a><dd>
+<dt><a href="http://www.gnu.org/software/idutils/idutils.html" rel="nofollow">ID utilities</a><dd>
 	ID utilities is a very powerful token tag system for generic text file.
 	Its index file is very small and searching is very fast.
 	You can call this command from global(1).
-<dt><a href="http://www.gnu.org/software/bash/bash.html">Bash</a><dd>
+<dt><a href="http://www.gnu.org/software/bash/bash.html" rel="nofollow">Bash</a><dd>
 	Bash is the shell, or command language interpreter,
 	that will appear in the GNU operating system.
 	You can use bash as a special shell for GLOBAL by Globash which
 	is included in GLOBAL package.
-<dt><a href="http://www.gnu.org/software/automake/">Automake</a><dd>
+<dt><a href="http://www.gnu.org/software/automake/" rel="nofollow">Automake</a><dd>
 	Automake is a tool for automatically generating `Makefile.in'
 	files compliant with the GNU Coding Standards. Automake supports
 	GLOBAL by its GTAGS target.
-<dt><a href="http://www.FreeBSD.org/cgi/cvsweb.cgi/src/share/mk/">FreeBSD build system</a><dd>
+<dt><a href="http://www.FreeBSD.org/cgi/cvsweb.cgi/src/share/mk/" rel="nofollow">FreeBSD build system</a><dd>
 	FreeBSD adopted GLOBAL as the standard source code tag system in its
 	build system.
 </dl>
 In addition to these, there are many forks and related tools of GLOBAL in Github. Please see also
-<a href="https://github.com/search?q=GNU+GLOBAL&type=Repositories&ref=searchresults">Projects which include 'GNU GLOBAL' in its title</a>.
+<a href="https://github.com/search?q=GNU+GLOBAL&type=Repositories&ref=searchresults" rel="nofollow">Projects which include 'GNU GLOBAL' in its title</a>.
 
 <h3>Parsers</h3>
 <dl>
-<dt><a href="http://jflex.de/">JFlex</a><dd>
+<dt><a href="http://jflex.de/" rel="nofollow">JFlex</a><dd>
 	JFlex is a lexical analyzer generator for Java, written in Java.
 	It is also a rewrite of the very useful tool. JLex which was developed
 	by Elliot Berk at Princeton University.
-<dt><a href="http://clang.llvm.org/">Clang</a><dd>
+<dt><a href="http://clang.llvm.org/" rel="nofollow">Clang</a><dd>
 	Clang is a compiler front end for the C, C++, Objective-C, and Objective-C++ programming languages.
 	It includes a single unified parser for the language above.
-<dt><a href="http://cedet.sourceforge.net/semantic.shtml">Semantic</a><dd>
+<dt><a href="http://cedet.sourceforge.net/semantic.shtml" rel="nofollow">Semantic</a><dd>
 	Semantic is an infrastructure for parser based text analysis in Emacs.
 	It is a lexer, parser-generator, and parser. It is written in Emacs Lisp
 	and is customized to the way Emacs thinks about language files,
@@ -200,10 +200,10 @@ In addition to these, there are many forks and related tools of GLOBAL in Github
 <dt><a href='http://gonzui.sourceforge.net/langscan/index.html.en'>LangScan</a><dd>
 	LangScan is a library to parse various languages.
 	It is also part of Gonzui source code search engine.
-<dt><a href="http://www.gccxml.org/">GCC-XML</a><dd>
+<dt><a href="http://www.gccxml.org/" rel="nofollow">GCC-XML</a><dd>
 	GCC-XML is a C++ parser, the C++ front-end to GCC, which is
 	currently able to deal with the language in its entirety. 
-<dt><a href="http://sourcebase.sourceforge.net/">SourceBase</a><dd>
+<dt><a href="http://sourcebase.sourceforge.net/" rel="nofollow">SourceBase</a><dd>
 	This is a parser library aimed at developers of free IDEs.
 	SourceBase aims to make parsing based features easy to implement.
 	These include intellisense code completion, producing call graphs
@@ -211,26 +211,26 @@ In addition to these, there are many forks and related tools of GLOBAL in Github
 </dl>
 <h3>Tools similar to grep</h3>
 <dl>
-<dt><a href="https://github.com/ggreer/the_silver_searcher">The Silver Searcher - ag</a><dd>
+<dt><a href="https://github.com/ggreer/the_silver_searcher" rel="nofollow">The Silver Searcher - ag</a><dd>
 	An attempt to make something better than ack, which itself is better than grep.
 	It searches through code about 3x-5x faster than Ack.
-<dt><a href="http://pypi.python.org/pypi/grin">grin</a><dd>
+<dt><a href="http://pypi.python.org/pypi/grin" rel="nofollow">grin</a><dd>
 	A grep program configured the way the author like it, he wrote grin to help himself
 	search directories full of source code. It is written in Python by Robert Kern.
-<dt><a href="http://sourceforge.net/projects/glark/">glark</a><dd>
+<dt><a href="http://sourceforge.net/projects/glark/" rel="nofollow">glark</a><dd>
 	A replacement for (or supplement to) the grep family, glark offers: Perl compatible
 	regular expressions, highlighting of matches, context around matches,
 	complex expressions (``and'' and ``or''), and automatic exclusion of non-text files.
-<dt><a href="http://betterthangrep.com/">ack</a><dd>
+<dt><a href="http://betterthangrep.com/" rel="nofollow">ack</a><dd>
 	Ack is a tool like grep, optimized for programmers.
 	Designed for programmers with large heterogeneous trees of source code,
 	ack is written purely in portable Perl 5 and takes advantage of the power of
 	Perl's regular expressions.
-<dt><a href="http://rak.rubyforge.org/">rak</a><dd>
+<dt><a href="http://rak.rubyforge.org/" rel="nofollow">rak</a><dd>
 	Rak is a grep replacement in pure Ruby. It accepts Ruby syntax regular
 	 expressions and automatically recurses directories, skipping .svn/, .cvs/, pkg/
 	and more things you don't care about. It is based on the Perl tool ack by Andy Lester.
-<dt><a href="http://www.gnu.org/software/grep/">GNU grep</a><dd>
+<dt><a href="http://www.gnu.org/software/grep/" rel="nofollow">GNU grep</a><dd>
 	The grep command searches one or more input files for lines containing
 	a match to a specified pattern. By default, grep prints the matching lines.
 <dt>GNU GLOBAL<dd>
@@ -248,35 +248,35 @@ In addition to these, there are many forks and related tools of GLOBAL in Github
 </dl>
 <h3>Tag commands</h3>
 <dl>
-<dt><a href="http://hackage.haskell.org/package/hothasktags">hothasktags</a><dd>
+<dt><a href="http://hackage.haskell.org/package/hothasktags" rel="nofollow">hothasktags</a><dd>
 	Hothasktags generates ctags files for Haskell, with knowledge of import
 	lists and qualified imports. It provides a smart go-to-definition for Vim,
 	that almost always gets it right in the presence of multiple names from different modules.
-<dt><a href="https://github.com/drothlis/clang-ctags">clang-ctags</a><dd>
+<dt><a href="https://github.com/drothlis/clang-ctags" rel="nofollow">clang-ctags</a><dd>
 	Generate tag file for C++ source code using clang and python.
-<dt><a href="https://github.com/katonori/cxxtags/">cxxtags</a><dd>
+<dt><a href="https://github.com/katonori/cxxtags/" rel="nofollow">cxxtags</a><dd>
 	Cxxtags is a tool to tag(index) C/C++ source files based on clang.
 	The major difference from ctags is C++ support. C++ syntax
 	(ex. class, namespace, template, etc.) is supported(not fully yet though).
 	And generated tag file is a sqlite3 database file.
 	So you can access tag information via sqlite3 queries.
-<dt><a href="https://github.com/Andersbakken/rtags">rtags</a><dd>
+<dt><a href="https://github.com/Andersbakken/rtags" rel="nofollow">rtags</a><dd>
 	RTags is a client/server application that indexes c/c++ code and keeps a persistent
 	in-memory database of references, declarations, definitions, symbolnames etc.
 	It allows you to find symbols by name (including class and namespace scope).
 	Most importantly we give you proper follow-symbol and find-references support.
-<dt><a href="https://github.com/mozilla/doctorjs">jsctags</a><dd>
+<dt><a href="https://github.com/mozilla/doctorjs" rel="nofollow">jsctags</a><dd>
 	jsctags is a ctags-compatible code indexing solution for JavaScript.
 	Its interface and output are essentially identical to Exuberant Ctags.
-<dt><a href="http://ctags.sourceforge.net/">Exuberant Ctags</a><dd>
+<dt><a href="http://ctags.sourceforge.net/" rel="nofollow">Exuberant Ctags</a><dd>
 	Exuberant Ctags is a reimplementation of the ctags(1),
 	written by Darren Hiebert.
 	It is very robust in parsing code and supports many languages
 	and many environments.
-<dt><a href="http://www.fleiner.com/jtags/">JTags</a><dd>
+<dt><a href="http://www.fleiner.com/jtags/" rel="nofollow">JTags</a><dd>
 	JTags is a ctags like program for Java language,
 	written by Claudio Fleiner.
-<dt><a href="http://www.gnu.org/software/emacs/emacs-lisp-intro/html_node/etags.html">etags</a><dd>
+<dt><a href="http://www.gnu.org/software/emacs/emacs-lisp-intro/html_node/etags.html" rel="nofollow">etags</a><dd>
 	You can create a TAGS file by calling the etags program that comes as a part of the Emacs
 	distribution. Usually, etags is compiled and installed when Emacs is built. 
 </dl>
@@ -284,26 +284,26 @@ In addition to these, there are many forks and related tools of GLOBAL in Github
 <H3>IDEs</H3>
 <dl>
 <!--
-<dt><a href="http://developer.android.com/sdk/installing/studio.html">Android Studio</a><dd>
+<dt><a href="http://developer.android.com/sdk/installing/studio.html" rel="nofollow">Android Studio</a><dd>
 	Android Studio is a Android development environment based on IntelliJ IDEA.
 	Similar to Eclipse with the ADT Plugin, Android Studio provides integrated
 	Android developer tools for development and debugging.
 -->
-<dt><a href="http://www.codeblocks.org/">Code::Blocks</a><dd>
+<dt><a href="http://www.codeblocks.org/" rel="nofollow">Code::Blocks</a><dd>
 	Code::Blocks is a free C++ IDE built to meet the most demanding needs of its users.
 	It is designed to be very extensible and fully configurable.
-<dt><a href="http://www.codelite.org/">CodeLite</a><dd>
+<dt><a href="http://www.codelite.org/" rel="nofollow">CodeLite</a><dd>
 	CodeLite is an open-source, cross platform IDE for the C/C++ programming
 	languages (build and tested on Windows XP SP3, Windows Vista, Windows 7,
 	Ubuntu 10.04, and Mac OSX 10.5.8).
-<dt><a href="http://sourceforge.net/projects/vcfbuilder/">VCF Builder IDE</a><dd>
+<dt><a href="http://sourceforge.net/projects/vcfbuilder/" rel="nofollow">VCF Builder IDE</a><dd>
 	The VCF Builder is an advanced development tool for creating C++ applications,
 	and supporting a wide number of plug-ins for enhancing it's functionality.
-<dt><a href="http://netbeans.org/">NetBeans</a><dd>
+<dt><a href="http://netbeans.org/" rel="nofollow">NetBeans</a><dd>
 	NetBeans refers to both a platform framework for Java desktop applications,
 	and an integrated development environment (IDE) for developing with Java,
 	JavaScript, PHP, Python, Ruby, Groovy, C, C++, Scala, Clojure, and others.
-<dt><a href="http://www.eclipse.org/">Eclipse</a><dd>
+<dt><a href="http://www.eclipse.org/" rel="nofollow">Eclipse</a><dd>
 	Eclipse is a multi-language software development environment
 	comprising an integrated development environment (IDE) and
 	an extensible plug-in system.
@@ -312,122 +312,122 @@ In addition to these, there are many forks and related tools of GLOBAL in Github
 <H3>Source code browsing Tools</H3>
 Please see also <a href="#GLOBAL_related_tools">GLOBAL related tools</a> section.
 <dl>
-<dt><a href="https://github.com/syed/erlcscope">erlcscope</a><dd>
+<dt><a href="https://github.com/syed/erlcscope" rel="nofollow">erlcscope</a><dd>
 	Erlcscope builds a cscope compatible database for erlang files.
 	The database can be used with any program which supports cscope
 	along with the standard cscope -d command.
-<dt><a href="https://github.com/woboq/woboq_codebrowser">Woboq Code Browser</a><dd>
+<dt><a href="https://github.com/woboq/woboq_codebrowser" rel="nofollow">Woboq Code Browser</a><dd>
 	The Woboq Code Browser is a web-based code browser for C/C++ projects.
-<dt><a href="http://rprichard.github.io/sourceweb/">SourceWeb</a><dd>
+<dt><a href="http://rprichard.github.io/sourceweb/" rel="nofollow">SourceWeb</a><dd>
 	SourceWeb is a C/C++ code indexer and a code navigator GUI.
 	The indexer uses Clang's libraries to parse translation units.
 	The output is a binary index file, optimized for fast creation, fast lookup,
 	and small size.
-<dt><a href="http://ruben2020.github.io/codequery/">CodeQuery</a><dd>
+<dt><a href="http://ruben2020.github.io/codequery/" rel="nofollow">CodeQuery</a><dd>
 	A code-understanding, code-browsing or code-search tool.
 	This is a tool to index, then query or search C, C++,
 	Java and Python source code. It builds upon the databases of cscope and ctags,
 	and provides a nice GUI tool.
-<dt><a href="http://watermint.github.io/SourceColon/">Sourcecolon</a><dd>
+<dt><a href="http://watermint.github.io/SourceColon/" rel="nofollow">Sourcecolon</a><dd>
 	Source code search engine based upon OpenGrok.
 	It provide simplified interface to search large scale source code tree.
-<dt><a href="https://github.com/wesleyche/SrcExpl">SrcExpl</a><dd>
+<dt><a href="https://github.com/wesleyche/SrcExpl" rel="nofollow">SrcExpl</a><dd>
 	SrcExpl (Source Explorer) is a source code explorer that provides context
 	for the currently selected keyword by displaying the function or type definition or
 	declaration in a separate window. This plugin aims to recreate the context window
 	available in the IDE known as "Source Insight".
-<dt><a href="https://code.google.com/p/codesearch/">Code Search</a><dd>
+<dt><a href="https://code.google.com/p/codesearch/" rel="nofollow">Code Search</a><dd>
 	Code Search is a tool for indexing and then performing regular expression
 	searches over large bodies of source code.
 	It is a set of command-line programs written in Go.
 	Binary downloads are available for those who do not have Go installed.
-<dt><a href="http://milkode.ongaeshi.me/wiki/Main_Page">Milkode</a><dd>
+<dt><a href="http://milkode.ongaeshi.me/wiki/Main_Page" rel="nofollow">Milkode</a><dd>
 	It is line-oriented source code search engine and search app.
 	It is possible to find the line containing the desired keyword
 	from the order of several tens of thousands of files instantly.
-<dt><a href="http://www.csn.ul.ie/~mel/projects/codeviz/">CodeViz</a><dd>
+<dt><a href="http://www.csn.ul.ie/~mel/projects/codeviz/" rel="nofollow">CodeViz</a><dd>
 	This project provides the ability to generate call graphs to aid the task
 	of understanding code. It uses a highly modular set of collection methods
 	and can be adapted to support any language although only C and C++ are
 	currently supported. Each collection method has different advantages
 	and disadvantages.
-<dt><a href="http://silentbob.sourceforge.net/">Silent Bob</a><dd>
+<dt><a href="http://silentbob.sourceforge.net/" rel="nofollow">Silent Bob</a><dd>
 	The SilentBob is yet another indexing tool helping you to find your way through
 	the software source code. Although SilentBob is also able to index sources in 
 	many popular programming languages, currently C/C++ is the most functional back-end.
-<dt><a href="http://opengrok.github.io/OpenGrok/">OpenGrok</a><dd>
+<dt><a href="http://opengrok.github.io/OpenGrok/" rel="nofollow">OpenGrok</a><dd>
 	OpenGrok is a fast and usable source code search and
 	cross reference engine. It helps you search, cross-reference and
 	navigate your source tree.  It can understand various program file
 	formats and version control histories like SCCS, RCS, CVS and
 	Subversion. It is written in Java. 
-<dt><a href="http://gonzui.sourceforge.net/index.html.en">gonzui</a><dd>
+<dt><a href="http://gonzui.sourceforge.net/index.html.en" rel="nofollow">gonzui</a><dd>
 	Gonzui is a source code search engine for accelerating open source
 	software development. You can use this tool for your local source code.
-<dt><a href="http://phpxref.sourceforge.net/">PHPXref</a><dd>
+<dt><a href="http://phpxref.sourceforge.net/" rel="nofollow">PHPXref</a><dd>
 	PHPXref is a developer tool that's designed to ease the process
 	of working on large PHP projects by making it very fast and
 	easy to browse the code documentation along with the code itself.
-<dt><a href="http://students.ceid.upatras.gr/~sxanth/ncc/">ncc</a><dd>
+<dt><a href="http://students.ceid.upatras.gr/~sxanth/ncc/" rel="nofollow">ncc</a><dd>
 	ncc is a compiler that produces program analysis information.
 	ncc is a decent replacement of cflow and cscope able to analyse
 	any program using the gcc compiler.
-<dt><a href="http://sourceforge.net/projects/lxr">LXR</a><dd>
+<dt><a href="http://sourceforge.net/projects/lxr" rel="nofollow">LXR</a><dd>
 	A general purpose source code indexer and cross-referencer that
 	provides web-based browsing of source code with links to the
 	definition and usage of any identifier. Supports multiple languages.
-<dt><a href="http://sourceforge.net/projects/tagsearch/">TagSearch</a><dd>
+<dt><a href="http://sourceforge.net/projects/tagsearch/" rel="nofollow">TagSearch</a><dd>
 	TagSearch is a command line tool for searching Tags in Exuberant
 	ctags Files. - Search for special tag kind (classes, variable
 	definitions ...) - configurable output format - search case
 	sensitive/insensitive - search for partial or full Match.
-<dt><a href="http://freescope.sourceforge.net/">Freescope</a><dd>
+<dt><a href="http://freescope.sourceforge.net/" rel="nofollow">Freescope</a><dd>
 	Freescope is a programmer tool that provides source code browsing on
 	UNIX-like operating systems. It is a clone of the cscope program
 	but has its own unique features such as symbol completion and easy
 	result browsing.
-<dt><a href="http://sourceforge.net/projects/kscope/">KScope</a><dd>
+<dt><a href="http://sourceforge.net/projects/kscope/" rel="nofollow">KScope</a><dd>
 	KScope is a KDE front-end to Cscope. It provides a source-editing
 	environment for large C projects, such as the Linux kernel.
-<dt><a href="http://vim-taglist.sourceforge.net/">Taglist</a><dd>
+<dt><a href="http://vim-taglist.sourceforge.net/" rel="nofollow">Taglist</a><dd>
 	The "Tag List" plug-in is a source code browser for the Vim editor.
 	It provides an overview of the structure of source code files and
 	allows you to efficiently browse through source code files
 	in different programming languages. 
-<dt><a href="http://www.gedanken.demon.co.uk/cxref/">Cxref</a><dd>
+<dt><a href="http://www.gedanken.demon.co.uk/cxref/" rel="nofollow">Cxref</a><dd>
 	Cxref is a C source code cross referencing and documenting program
 	for UNIX, written by Andrew M. Bishop.
 	Cxref makes both html and latex style document.
-<dt><a href="http://www.sapid.org/">Sapid</a><dd>
+<dt><a href="http://www.sapid.org/" rel="nofollow">Sapid</a><dd>
 	Sapid (Sophisticated API for software Development) is a CASE tool
 	platform based on Sophisticated Software Repository,
 	by Nagoya University.
-<dt><a href="http://cscope.sourceforge.net">Cscope</a><dd>
+<dt><a href="http://cscope.sourceforge.net" rel="nofollow">Cscope</a><dd>
 	Cscope is a developer's tool for browsing program code.
 	The cscope code has been released as Open Source by
 	Santa Cruz Operation, Inc. (SCO) under the BSD license.
-<dt><a href="http://sourceforge.net/projects/cbrowser/">Cbrowser</a><dd>
+<dt><a href="http://sourceforge.net/projects/cbrowser/" rel="nofollow">Cbrowser</a><dd>
 	Cbrowser is a graphical C/C++ source code searching and browsing tool,
 	and a hierarchical function call viewer, written by Chris Felaco.
-<dt><a href="http://sourcenav.sourceforge.net/">Source-Navigator</a><dd>
+<dt><a href="http://sourcenav.sourceforge.net/" rel="nofollow">Source-Navigator</a><dd>
 	Source-Navigator is a source code analysis tool by Source-Navigator Team.
 	With it, you can edit your source code, display relationships
 	between classes and functions and members, and display call trees.
 	It is distributed under GPL.
-<dt><a href="http://www.jimbrooks.org/web/hypersrc/hypersrc.html">Hypersrc</a><dd>
+<dt><a href="http://www.jimbrooks.org/web/hypersrc/hypersrc.html" rel="nofollow">Hypersrc</a><dd>
 	Hypersrc is a GTK+/GNOME program for browsing source code, written by
 	Jim Brooks. It is distributed under GPL.
-<dt><a href="http://ecb.sourceforge.net/">ECB(Emacs Code Browser)</a><dd>
+<dt><a href="http://ecb.sourceforge.net/" rel="nofollow">ECB(Emacs Code Browser)</a><dd>
 	ECB is source code browser for Emacs.
 	It is a global minor-mode which displays a couple of
 	windows that can be used to browse directories, files and methods.
 	It supports method parsing for Java, C, C++, Elisp etc.
-<dt><a href="http://rtfm.etla.org/emacs/htmlfontify/">htmlfontify</a><dd>
+<dt><a href="http://rtfm.etla.org/emacs/htmlfontify/" rel="nofollow">htmlfontify</a><dd>
 	Htmlfontify provides a means of converting individual emacs buffers, 
 	source files, or entire source trees to html, preserving formatting 
 	and emacs colourisation / syntax highlighting as much as possible 
 	through careful application of CSS style-sheets and html tags.
-<dt><a href="http://www.gnu.org/software/src-highlite/">GNU Source-highlight</a><dd>
+<dt><a href="http://www.gnu.org/software/src-highlite/" rel="nofollow">GNU Source-highlight</a><dd>
 	Source-highlight, given a source file, produces a document with syntax
 	highlighting. This package can handle Java, Javascript, C,C+, Prolog,
 	Perl, Php3, Python, Flex, ChangeLog and Ruby as source languages, and
@@ -436,39 +436,39 @@ Please see also <a href="#GLOBAL_related_tools">GLOBAL related tools</a> section
 
 <H3>Documentation systems for source code</H3>
 <dl>
-<dt><a href="http://www.phpdoc.org/">phpDocumentor</a><dd>
+<dt><a href="http://www.phpdoc.org/" rel="nofollow">phpDocumentor</a><dd>
 	phpDocumentor is the world standard auto-documentation tool for PHP.
 	Written in PHP, phpDocumentor can be used directly from the
 	command-line, or through an easy to use web interface. 
 <!--
-<dt><a href="http://www.zib.de/Visual/software/doc++/">DOC++</a><dd>
+<dt><a href="http://www.zib.de/Visual/software/doc++/" rel="nofollow">DOC++</a><dd>
 	DOC++ is a documentation system for C/C++ and Java generating both,
 	LaTeX output for high quality hard-copies and HTML output for
 	sophisticated on-line browsing of your documentation.
 -->
-<dt><a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a><dd>
+<dt><a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html" rel="nofollow">ROBODoc</a><dd>
 	ROBODoc is a documentation tool. It extracts specially formatted
 	comment headers from the source file and puts them in a separate file.
 	ROBODoc thus allows you to include the program documentation
 	in the source code and avoid having to maintain two separate documents.
 <!--
-<dt><a href="http://www.sylvantech.com/~talin/projects/scandoc/scandoc.html">ScanDoc</a><dd>
+<dt><a href="http://www.sylvantech.com/~talin/projects/scandoc/scandoc.html" rel="nofollow">ScanDoc</a><dd>
 	ScanDoc is a Perl script which scans C++ source code for
 	specially-formatted comments and produces attractive, organized,
 	indexed documentation. 
 -->
-<dt><a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a><dd>
+<dt><a href="http://www.stack.nl/~dimitri/doxygen/" rel="nofollow">Doxygen</a><dd>
 	Doxygen is a documentation system for C++, Java, IDL
 	(Corba, Microsoft and KDE-DCOP flavors) and C. 
 	You can select output format in HTML, LaTeX, RTF (MS-Word),
 	PostScript, hyperlinked PDF, compressed HTML, and Unix man pages.
-<dt><a href="http://synopsis.sourceforge.net/">Synopsis</a><dd>
+<dt><a href="http://synopsis.sourceforge.net/" rel="nofollow">Synopsis</a><dd>
 	Synopsis is a general source code documentation tool.
 	By means of a modular structure it adapts to different styles of
 	embedded documentation, different programming languages and various
 	output formats. It scales well with the size of the project
 	by allowing processing to be controlled by Makefiles.
-<dt><a href="http://www-cs-faculty.stanford.edu/~knuth/cweb.html">CWEB</a><dd>
+<dt><a href="http://www-cs-faculty.stanford.edu/~knuth/cweb.html" rel="nofollow">CWEB</a><dd>
 	CWEB is a version of WEB for documenting C, C++, and Java programs.
 	WEB was adapted to C by Silvio Levy in 1987, and since then both
 	Knuth and Levy have revised and enhanced the system in many ways,
@@ -478,62 +478,62 @@ Please see also <a href="#GLOBAL_related_tools">GLOBAL related tools</a> section
 
 <h3>Hypertext of source code</h3>
 <dl>
-<dt><a href="http://www.ibiblio.org/linux-source/">The Linux Source Navigator</a><dd>
+<dt><a href="http://www.ibiblio.org/linux-source/" rel="nofollow">The Linux Source Navigator</a><dd>
 	This is a CGI interface to browse the entire Linux kernel source,
 	written by Ben Walter.
-<dt><a href="http://fxr.watson.org/">FreeBSD and Linux Kernel Cross-Reference</a><dd>
+<dt><a href="http://fxr.watson.org/" rel="nofollow">FreeBSD and Linux Kernel Cross-Reference</a><dd>
 	This site provides experimental source code browsing for the FreeBSD and
 	Linux kernels by Robert Watson, based on the software provided by the
-	<a href="http://sourceforge.net/projects/lxr">LXR</a> Project.
-<dt><a href="http://lxr.linux.no/">Cross-Referencing Linux</a><dd>
+	<a href="http://sourceforge.net/projects/lxr" rel="nofollow">LXR</a> Project.
+<dt><a href="http://lxr.linux.no/" rel="nofollow">Cross-Referencing Linux</a><dd>
 	A hypertext presentation of the Linux source code by 
 	Arne Georg Gleditsch and Per Kristian Gjermshus
-	using <a href="http://sourceforge.net/projects/lxr">LXR</a>.
+	using <a href="http://sourceforge.net/projects/lxr" rel="nofollow">LXR</a>.
 <!--
-<dt><a href="http://lxr.linux.no/freebsd/source">FreeBSD Cross-Reference</a><dd>
+<dt><a href="http://lxr.linux.no/freebsd/source" rel="nofollow">FreeBSD Cross-Reference</a><dd>
 	A hypertext presentation of the FreeBSD source code by
 	Arne Georg Gleditsch and Per Kristian Gjermshus
-	using <a href="http://sourceforge.net/projects/lxr">LXR</a>.
-<dt><a href="http://minnie.tuhs.org/FreeBSD-srctree/FreeBSD.html">Cross-references for FreeBSD</a><dd>
+	using <a href="http://sourceforge.net/projects/lxr" rel="nofollow">LXR</a>.
+<dt><a href="http://minnie.tuhs.org/FreeBSD-srctree/FreeBSD.html" rel="nofollow">Cross-references for FreeBSD</a><dd>
 	This is a very instructive browsing site by Warren Toomey, generated by
-	<a href="http://minnie.cs.adfa.oz.au/Src2html/index.html">src2html</a>.
-<dt><a href="http://snapshots.jp.FreeBSD.org/tour/">FreeBSD Source Code Tour</a><dd>
+	<a href="http://minnie.cs.adfa.oz.au/Src2html/index.html" rel="nofollow">src2html</a>.
+<dt><a href="http://snapshots.jp.FreeBSD.org/tour/" rel="nofollow">FreeBSD Source Code Tour</a><dd>
 	This tour guides you to the latest FreeBSD-current and FreeBSD-stable
 	source code. These hypertext are generated every day using GLOBAL
 	by The FreeBSD Project (Japan).
 -->
-<dt><a href="http://www.tamacom.com/tour.html">UNIX kernel source tour!</a><dd>
+<dt><a href="http://www.tamacom.com/tour.html" rel="nofollow">UNIX kernel source tour!</a><dd>
 	This tour contains eight kernels: FreeBSD 7.X, NetBSD 4.X, OpenBSD 4.X, Linux 2.6.X,
 	GNU Hurd 0.3, OpenSolaris, 4.3BSD and UNIX V7(historic UNIX).
 </dl>
 <h3>UNIX and its clone's Kernel source code</h3>
 <dl>
-<dt><a href="http://www.tuhs.org/">The Unix Heritage Society</a><dd>
+<dt><a href="http://www.tuhs.org/" rel="nofollow">The Unix Heritage Society</a><dd>
 	Unix Archive contains 5th, 6th and 7th Edition Unix and more.
 	Now, you can use these source code under BSD style license.
-<dt><a href="http://www.mckusick.com/csrg">CSRG Archive CD-ROMs</a><dd>
+<dt><a href="http://www.mckusick.com/csrg" rel="nofollow">CSRG Archive CD-ROMs</a><dd>
 	Kirk McKusick is selling a 4CD set of all the 4BSD releases
 	from the Computer Systems Research Group.
 	This also includes 1, 2, and 3BSD.
-<dt><a href="http://www.freebsd.org/">FreeBSD</a>,
-<a href="http://www.netbsd.org/">NetBSD</a>,
-<a href="http://www.openbsd.org/">OpenBSD</a>
+<dt><a href="http://www.freebsd.org/" rel="nofollow">FreeBSD</a>,
+<a href="http://www.netbsd.org/" rel="nofollow">NetBSD</a>,
+<a href="http://www.openbsd.org/" rel="nofollow">OpenBSD</a>
 <dd>
 	*BSD's source code is freely available from their FTP sites,
 	and also available in CD sets. You can get the information from
 	their web site.
-<dt><a href="http://www.kernel.org/">The Linux Kernel Archives</a><dd>
+<dt><a href="http://www.kernel.org/" rel="nofollow">The Linux Kernel Archives</a><dd>
 	This is the primary site for the Linux kernel source, but it has
 	much more than just kernels. 
-<dt><a href="http://www.gnu.org/software/hurd/">GNU Hurd</a><dd>
+<dt><a href="http://www.gnu.org/software/hurd/" rel="nofollow">GNU Hurd</a><dd>
 	The GNU Hurd is the GNU project's replacement for the Unix kernel.
 	You can get the latest Hurd source code via the GNU Project's
 	CVS server. 
-<dt><a href="http://www.minix3.org/">MINIX 3</a><dd>
+<dt><a href="http://www.minix3.org/" rel="nofollow">MINIX 3</a><dd>
 	MINIX 3 is a new open-source operating system designed to be highly reliable,
 	flexible, and secure. It is loosely based somewhat on previous versions of MINIX,
 	but is fundamentally different in many key ways. 
-<dt><a href="http://www.opensolaris.org/">OpenSolaris</a><dd>
+<dt><a href="http://www.opensolaris.org/" rel="nofollow">OpenSolaris</a><dd>
 	OpenSolaris is an open source computer operating system based on Solaris
 	created by Sun Microsystems, now a part of Oracle Corporation.
 </dl>
