@@ -20,7 +20,7 @@ of GNU GLOBAL. Here is
 
 GNU GLOBAL project only distributes source package, and GNU GLOBAL only supports
 UNIX(POSIX) environment.
-Following packages are due to outside projects.
+The following packages are due to outside projects.
 <p>
 <a href='http://global.adoxa.vze.com'>DOS and Windows 32 version</a>
 are distributed by Jason Hood.
@@ -41,18 +41,16 @@ are also available.
 <p>
 You can also get binary package from following distributions:
 <ul>
-<!--
-<li><a href='http://www.debian.org'>Debian GNU/Linux</a> (<font color=red>New maintainer needed.</font> Please read <a href='http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=704508'>this</a>.)
--->
+<li><a href='http://fedraproject.org/'>Fedora GNU/Linux</a>.
 <li><a href='http://www.debian.org'>Debian GNU/Linux</a> <font color=red><b><- It's too old. Please don't use Debian's package.</b></font>
 <li><a href='http://www.freebsd.org/'>FreeBSD</a>.
 <li><a href='http://www.netbsd.org/'>NetBSD</a>.
 </ul>
 <h3>CVS repository</h3>
-You can browse the GLOBAL CVS repository via the
+You can browse GLOBAL CVS repository via the
 <a href='http://savannah.gnu.org/cgi-bin/viewcvs/global/global/'>ViewCVS interface</a>.
 <p>
-You can also use the <a href='http://www.gnu.org/software/cvs/cvs.html'>
+You can also use <a href='http://www.gnu.org/software/cvs/cvs.html'>
 CVS utility</a> to obtain anonymous read-only access.
 Please see
 <a href='http://savannah.gnu.org/cvs/?group=global'>
