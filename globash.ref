@@ -7,11 +7,11 @@ globash@*
 @end quotation
 @unnumberedsubsec DESCRIPTION
 Globash is a special shell for GLOBAL using GNU bash.
-You can use a lot of functions to ease reading source code
+You can use a lot of functions to ease reading source code,
 like tag stack, tag mark and cookie.
 At first, you should make tag files using gtags and
 invoke this command in the project.
-Please refer to the help (type 'ghelp'<ENTER>) for details.
+Please refer to the help (type @kbd{ghelp<RET>}) for detailed usage.
 @unnumberedsubsec FILES
 @table @asis
 @item @file{GTAGS}
@@ -25,6 +25,7 @@ Start-up file.
 @end table
 @unnumberedsubsec ENVIRONMENT
 The following environment variables affect the execution of globash:
+
 @table @asis
 @item @var{EDITOR}
 The editor used by the show command.
@@ -39,4 +40,4 @@ GNU GLOBAL source code tag system@*
 @unnumberedsubsec AUTHOR
 Shigio YAMAGUCHI.
 @unnumberedsubsec HISTORY
-The globash command appeared in GLOBAL-4.1(2001).
+The globash command appeared in GLOBAL-4.1 (2001).

@@ -29,14 +29,14 @@ model.in: model.m4 define.html.in faq.html.in
 ${TUTOR}: global.texi version.texi reference.texi fdl.texi gtags-parser.ref global.ref gtags.ref htags.ref
 	@echo "Generating ${MANUAL}.html and ${MANUAL}_toc.html ..."
 	@cp global.texi ${MANUAL}.texi
-	@texi2html -number ${MANUAL}.texi
+	@texi2html -number-sections ${MANUAL}.texi
 	@echo "Generating ${MANUAL}_toc.in ..."
 	@echo "@title Tutorial" > ${MANUAL}_toc.in
 	@echo "@link Tutorial" >> ${MANUAL}_toc.in
 	@echo "@body" >> ${MANUAL}_toc.in
 	@echo "This manual is available in <a href=http://www.gnu.org/software/global/manual/>various formats</a>." >> ${MANUAL}_toc.in
 	@echo "<hr>" >> ${MANUAL}_toc.in
-	@sed -e '1,/^<BODY.*>/d' -e '/<\/BODY.*>/,$$d' < ${MANUAL}_toc.html >> ${MANUAL}_toc.in
+	@sed -e '1,/^<body.*>/d' -e '/<\/body.*>/,$$d' < ${MANUAL}.html >> ${MANUAL}_toc.in
 	@rm -f ${MANUAL}.texi
 clean:
 	rm -f ${HTMLS} ${TUTOR} model.in

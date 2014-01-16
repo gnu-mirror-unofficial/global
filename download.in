@@ -39,7 +39,7 @@ and
 <a href='http://hpux.connect.org.uk/hppd/hpux/'>HP-UX version</a>
 are also available.
 <p>
-You can also get binary package from following distributions:
+You can also get binary package from the following distributions:
 <ul>
 <li><a href='http://fedoraproject.org/'>Fedora GNU/Linux</a>.
 <li><a href='http://www.debian.org'>Debian GNU/Linux</a> <font color=red><b><- It's too old. Please don't use Debian's package.</b></font>

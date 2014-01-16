@@ -4,7 +4,7 @@
 * gtags::          gtags - create tag files for global.
 * htags::          htags - generate a hypertext from a set of source files.
 * gozilla::        gozilla - force mozilla to display specified part of a source file.
-* gtags-cscope::   gtags-cscope - interactively examine a C program
+* gtags-cscope::   gtags-cscope - interactively examine a C program.
 * globash::        globash - a special shell for GLOBAL using GNU bash.
 @end menu
 
@@ -21,7 +21,7 @@
 @section gozilla - force mozilla to display specified part of a source file.
 @include gozilla.ref
 @node gtags-cscope
-@section gtags-cscope - interactively examine a C program
+@section gtags-cscope - interactively examine a C program.
 @include gtags-cscope.ref
 @node globash
 @section globash - a special shell for GLOBAL using GNU bash.

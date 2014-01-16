@@ -11,7 +11,7 @@ Gozilla forces mozilla to display specified part of a source file.
 Gozilla can be used with other browsers like firefox and epiphany.
 
 In advance of using this command, you must execute gtags(1)
-and htags(1) at the root directory of a project to make tag files.
+and htags(1) at the root directory of the project to make tag files.
 Then you can execute this command anywhere in the project.
 
 First form:@*
@@ -20,7 +20,8 @@ This syntax is similar to vi(1) and emacs(1).
 
 Second form:@*
 You can specify a definition name directly. The definition name should
-exist in @file{GTAGS}.
+exist in @file{GTAGS}. This option requires @file{HTML/MAP} generated
+by htags(1).
 
 Some browsers require you to load it before executing gozilla.
 @unnumberedsubsec OPTIONS
@@ -31,11 +32,11 @@ Line number.
 @item @samp{-b} browser
 Browser to use. By default, it is assumed mozilla.
 @item @samp{-d} name
-Print object definitions.
+Print definitions.
 @item @samp{--help}
 Show help.
 @item @samp{-p}
-Print just a generated URL instead of the contents.
+Just print a generated URL instead of displaying it.
 @item file
 File name or alias name.
 @item @samp{-q}, @samp{--quiet}
@@ -47,22 +48,24 @@ Show version number.
 @end table
 @unnumberedsubsec FILES
 @table @asis
+@item @file{GTAGS}
+Tag file for definitions.
 @item @file{HTML/}
 Hypertext of source code.
-@item @file{GTAGS/}
-Tag file for definitions.
+@item @file{HTML/MAP}
+Mapping file for converting tag name into the path of tag list.
 @item @file{$HOME/.gozillarc}
-Alias file. Not yet documented.
+Alias file. Please read the source code for details.
 @end table
 @unnumberedsubsec ENVIRONMENT
 @table @asis
-@item @var{GTAGSROOT}
-The root directory of the project.
-@item @var{GTAGSDBPATH}
-The directory on which tag files exist.
-This value is ignored when GTAGSROOT is not defined.
 @item @var{BROWSER}
 Browser to use. By default, it is assumed mozilla.
+@item @var{GTAGSDBPATH}
+The directory in which the tag files exist.
+This value is ignored when @var{GTAGSROOT} is not defined.
+@item @var{GTAGSROOT}
+The root directory of the project.
 @end table
 @unnumberedsubsec EXAMPLES
 @example
@@ -78,7 +81,7 @@ Browser to use. By default, it is assumed mozilla.
 	$ gozilla -b firefox +82 ctags.c
 @end example
 @unnumberedsubsec DIAGNOSTICS
-Gozilla exits with a non 0 value if an error occurred, 0 otherwise.
+Gozilla exits with a non-0 value if an error occurred, 0 otherwise.
 @unnumberedsubsec SEE ALSO
 global(1),
 gtags(1),

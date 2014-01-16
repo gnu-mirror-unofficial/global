@@ -29,15 +29,15 @@ index.html: $(TARGET)
 	./makehtml.pl index
 global.html: $(SOURCE)
 	rm -rf tmp; mkdir tmp && cp ../*.texi ../*.ref tmp
-	(cd tmp && texi2html -number -monolithic global.texi)
+	(cd tmp && texi2html -number-sections -monolithic global.texi)
 	mv tmp/global.html .
 	rm -rf tmp
 global.html.gz: global.html
 	gzip -c global.html >global.html.gz
 global-html.tar.gz: $(SOURCE)
 	rm -rf tmp; mkdir tmp && cp ../*.texi ../*.ref tmp
-	(cd tmp && texi2html -number -split_chapter global.texi)
-	(cd tmp && tar czvf ../global-html.tar.gz global_*.html)
+	(cd tmp && texi2html -number-sections -split_chapter global.texi)
+	(cd tmp && tar czvf ../global-html.tar.gz global)
 	rm -rf tmp
 global-info.tar.gz: $(SOURCE)
 	makeinfo -I.. $(SOURCE)
