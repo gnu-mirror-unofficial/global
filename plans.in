@@ -8,7 +8,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 Plans of the highest priority are listed first.
 <p>
 <ul>
-<li>Support of glob pattern (wild card) in the skip list.
+<li>Support of gtags.files for the -I option of gtags(1).
 <li>The same --color option as GNU grep.
 <li>Support of ack style output format.
 <li>Remove restriction of the length of a variable identifier (currently < 512).
