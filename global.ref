@@ -3,12 +3,12 @@
 global - print locations of given symbols
 @unnumberedsubsec SYNOPSIS
 @quotation
-global [-adGilnqrstTvx][-e] pattern@*
+global [-adGilnqrsStTvx][-e] pattern@*
 global -c[diIoOPrsT] prefix@*
-global -f[adlnqrstvx][-L file-list] files@*
-global -g[aGilnoOqtvVx][-L file-list][-e] pattern [files]@*
-global -I[ailnqtvx][-e] pattern@*
-global -P[aGilnoOqtvVx][-e] pattern@*
+global -f[adlnqrsStvx][-L file-list] files@*
+global -g[aGilnoOqStvVx][-L file-list][-e] pattern [files]@*
+global -I[ailnqStvx][-e] pattern@*
+global -P[aGilnoOqStvVx][-e] pattern@*
 global -p[qrv]@*
 global -u[qv]@*
 @end quotation
@@ -130,7 +130,7 @@ Reference means the reference to a symbol which has definitions.
 With the @samp{-p} option, print the root directory of the project.
 @item @samp{--result} format
 Print out using format, which may be one of:
-@samp{path} (deault), @samp{ctags}, @samp{ctags-x}, @samp{grep} or @samp{cscope}.
+@samp{path} (default), @samp{ctags}, @samp{ctags-x}, @samp{grep} or @samp{cscope}.
 The @samp{--result=ctags} and @samp{--result=ctags-x} options are
 equivalent to the @samp{-t} and @samp{-x} options respectively.
 The @samp{--result} option is given more priority than the @samp{-t} and @samp{-x} options.
@@ -142,6 +142,9 @@ This option implies the @samp{-u} option.
 @item @samp{-s}, @samp{--symbol}
 Print other symbol tags.
 Other symbol means the reference to a symbol which has no definition.
+@item @samp{-S}, @samp{--scope} dir
+Print only tags which exist under dir directory.
+It is similar to the @samp{-l} option, but you need not change directory.
 @item @samp{-T}, @samp{--through}
 Go through all the tag files listed in @var{GTAGSLIBPATH}.
 By default, stop searching when tag is found.

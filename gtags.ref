@@ -41,7 +41,7 @@ If name is not specified then print all names and values.
 Dump a tag file as text to the standard output. Output format is 'key<tab>data'.
 This is for debugging.
 @item @samp{-f}, @samp{--file} file
-Browse through all source files whose names are listed in file.
+Browse through all files whose names are listed in file.
 The argument file can be set to @samp{-} to accept a list of
 files from the standard input.
 File names must be separated by newline.
@@ -153,6 +153,7 @@ If the value ends with @samp{/}, it is assumed as a directory and
 gtags skips all files under it.
 If the value starts with @samp{/}, it is assumed a relative path
 from the root of source directory.
+The value may include glob patterns (*, ?, [...], [!...], [^...]).
 @end table
 @unnumberedsubsec DIAGNOSTICS
 Gtags exits with a non-0 value if an error occurred, 0 otherwise.

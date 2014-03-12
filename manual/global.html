@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- Created on January 16, 2014 by texi2html 5.0
+<!-- Created on March 12, 2014 by texi2html 5.0
 texi2html was written by: 
             Lionel Cons <Lionel.Cons@cern.ch> (original author)
             Karl Berry  <karl@freefriends.org>
@@ -50,16 +50,16 @@ ul.no-bullet {list-style: none}
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
 
 <h1>GNU GLOBAL Source Code Tag System</h1>
-<h3 align="right">Edition 6.2.10, for GNU GLOBAL version 6.2.10</h3>
-<h3 align="right">16 January 2014</h3>
+<h3 align="right">Edition 6.2.11, for GNU GLOBAL version 6.2.11</h3>
+<h3 align="right">12 March 2014</h3>
 <strong>by Tama Communications Corporation</strong><br>
 
 <p>Copyright &copy; 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2008, 2010,
 2011, 2012, 2013 Tama Communications Corporation
 </p><br>
 <br>
-<p>This manual is for <acronym>GNU</acronym> GLOBAL (version 6.2.10,
-16 January 2014), a source code tag system that works the same way
+<p>This manual is for <acronym>GNU</acronym> GLOBAL (version 6.2.11,
+12 March 2014), a source code tag system that works the same way
 across diverse environments.
 </p><br>
 <br>
@@ -87,7 +87,7 @@ Free Documentation License&quot;.
 <a name="GNU-GLOBAL-source-code-tag-system"></a>
 <h1 class="top">GNU GLOBAL source code tag system</h1>
 
-<p>This manual documents version 6.2.10 of the GNU GLOBAL source code tag system.
+<p>This manual documents version 6.2.11 of the GNU GLOBAL source code tag system.
 </p>
 <table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top"><a href="#Introduction">1 Overview of this tool</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
@@ -2692,12 +2692,12 @@ Instead, you can use incremental updating facility (&lsquo;<samp>-u</samp>&rsquo
 </tr></table>
 <h3 class="unnumberedsubsec">SYNOPSIS</h3>
 <blockquote>
-<p>global [-adGilnqrstTvx][-e] pattern<br>
+<p>global [-adGilnqrsStTvx][-e] pattern<br>
 global -c[diIoOPrsT] prefix<br>
-global -f[adlnqrstvx][-L file-list] files<br>
-global -g[aGilnoOqtvVx][-L file-list][-e] pattern [files]<br>
-global -I[ailnqtvx][-e] pattern<br>
-global -P[aGilnoOqtvVx][-e] pattern<br>
+global -f[adlnqrsStvx][-L file-list] files<br>
+global -g[aGilnoOqStvVx][-L file-list][-e] pattern [files]<br>
+global -I[ailnqStvx][-e] pattern<br>
+global -P[aGilnoOqStvVx][-e] pattern<br>
 global -p[qrv]<br>
 global -u[qv]<br>
 </p></blockquote>
@@ -2898,7 +2898,7 @@ With the &lsquo;<samp>-p</samp>&rsquo; option, print the root directory of the p
 </p></dd>
 <dt>&lsquo;<samp>--result</samp>&rsquo; format</dt>
 <dd><p>Print out using format, which may be one of:
-&lsquo;<samp>path</samp>&rsquo; (deault), &lsquo;<samp>ctags</samp>&rsquo;, &lsquo;<samp>ctags-x</samp>&rsquo;, &lsquo;<samp>grep</samp>&rsquo; or &lsquo;<samp>cscope</samp>&rsquo;.
+&lsquo;<samp>path</samp>&rsquo; (default), &lsquo;<samp>ctags</samp>&rsquo;, &lsquo;<samp>ctags-x</samp>&rsquo;, &lsquo;<samp>grep</samp>&rsquo; or &lsquo;<samp>cscope</samp>&rsquo;.
 The &lsquo;<samp>--result=ctags</samp>&rsquo; and &lsquo;<samp>--result=ctags-x</samp>&rsquo; options are
 equivalent to the &lsquo;<samp>-t</samp>&rsquo; and &lsquo;<samp>-x</samp>&rsquo; options respectively.
 The &lsquo;<samp>--result</samp>&rsquo; option is given more priority than the &lsquo;<samp>-t</samp>&rsquo; and &lsquo;<samp>-x</samp>&rsquo; options.
@@ -2912,6 +2912,10 @@ This option implies the &lsquo;<samp>-u</samp>&rsquo; option.
 <dt>&lsquo;<samp>-s</samp>&rsquo;, &lsquo;<samp>--symbol</samp>&rsquo;</dt>
 <dd><p>Print other symbol tags.
 Other symbol means the reference to a symbol which has no definition.
+</p></dd>
+<dt>&lsquo;<samp>-S</samp>&rsquo;, &lsquo;<samp>--scope</samp>&rsquo; dir</dt>
+<dd><p>Print only tags which exist under dir directory.
+It is similar to the &lsquo;<samp>-l</samp>&rsquo; option, but you need not change directory.
 </p></dd>
 <dt>&lsquo;<samp>-T</samp>&rsquo;, &lsquo;<samp>--through</samp>&rsquo;</dt>
 <dd><p>Go through all the tag files listed in <var>GTAGSLIBPATH</var>.
@@ -3328,7 +3332,7 @@ If name is not specified then print all names and values.
 This is for debugging.
 </p></dd>
 <dt>&lsquo;<samp>-f</samp>&rsquo;, &lsquo;<samp>--file</samp>&rsquo; file</dt>
-<dd><p>Browse through all source files whose names are listed in file.
+<dd><p>Browse through all files whose names are listed in file.
 The argument file can be set to &lsquo;<samp>-</samp>&rsquo; to accept a list of
 files from the standard input.
 File names must be separated by newline.
@@ -3536,6 +3540,7 @@ If the value ends with &lsquo;<samp>/</samp>&rsquo;, it is assumed as a director
 gtags skips all files under it.
 If the value starts with &lsquo;<samp>/</samp>&rsquo;, it is assumed a relative path
 from the root of source directory.
+The value may include glob patterns (*, ?, [...], [!...], [^...]).
 </p></dd>
 </dl>
 <hr>
@@ -6216,7 +6221,7 @@ to permit their use in free software.
 <h1>About This Document</h1>
 
 <p>
-  This document was generated on <i>January 16, 2014</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+  This document was generated on <i>March 12, 2014</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
 </p>
 <p>
   The buttons in the navigation panels have the following meaning:
@@ -6318,7 +6323,7 @@ to permit their use in free software.
 <hr>
 <p>
  <font size="-1">
-  This document was generated on <i>January 16, 2014</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+  This document was generated on <i>March 12, 2014</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
  </font>
  <br>
 
