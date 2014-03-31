@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- Created on March 12, 2014 by texi2html 5.0
+<!-- Created on March 31, 2014 by texi2html 5.0
 texi2html was written by: 
             Lionel Cons <Lionel.Cons@cern.ch> (original author)
             Karl Berry  <karl@freefriends.org>
@@ -50,16 +50,16 @@ ul.no-bullet {list-style: none}
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
 
 <h1>GNU GLOBAL Source Code Tag System</h1>
-<h3 align="right">Edition 6.2.11, for GNU GLOBAL version 6.2.11</h3>
-<h3 align="right">12 March 2014</h3>
+<h3 align="right">Edition 6.2.12, for GNU GLOBAL version 6.2.12</h3>
+<h3 align="right">31 March 2014</h3>
 <strong>by Tama Communications Corporation</strong><br>
 
 <p>Copyright &copy; 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2008, 2010,
 2011, 2012, 2013 Tama Communications Corporation
 </p><br>
 <br>
-<p>This manual is for <acronym>GNU</acronym> GLOBAL (version 6.2.11,
-12 March 2014), a source code tag system that works the same way
+<p>This manual is for <acronym>GNU</acronym> GLOBAL (version 6.2.12,
+31 March 2014), a source code tag system that works the same way
 across diverse environments.
 </p><br>
 <br>
@@ -87,7 +87,7 @@ Free Documentation License&quot;.
 <a name="GNU-GLOBAL-source-code-tag-system"></a>
 <h1 class="top">GNU GLOBAL source code tag system</h1>
 
-<p>This manual documents version 6.2.11 of the GNU GLOBAL source code tag system.
+<p>This manual documents version 6.2.12 of the GNU GLOBAL source code tag system.
 </p>
 <table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top"><a href="#Introduction">1 Overview of this tool</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
@@ -2692,12 +2692,12 @@ Instead, you can use incremental updating facility (&lsquo;<samp>-u</samp>&rsquo
 </tr></table>
 <h3 class="unnumberedsubsec">SYNOPSIS</h3>
 <blockquote>
-<p>global [-adGilnqrsStTvx][-e] pattern<br>
+<p>global [-adGilnqrstTvx][-S dir][-e] pattern<br>
 global -c[diIoOPrsT] prefix<br>
-global -f[adlnqrsStvx][-L file-list] files<br>
-global -g[aGilnoOqStvVx][-L file-list][-e] pattern [files]<br>
-global -I[ailnqStvx][-e] pattern<br>
-global -P[aGilnoOqStvVx][-e] pattern<br>
+global -f[adlnqrstvx][-L file-list][-S dir] files<br>
+global -g[aGilnoOqtvVx][-L file-list][-S dir][-e] pattern [files]<br>
+global -I[ailnqtvx][-S dir][-e] pattern<br>
+global -P[aGilnoOqtvVx][-S dir][-e] pattern<br>
 global -p[qrv]<br>
 global -u[qv]<br>
 </p></blockquote>
@@ -2823,6 +2823,13 @@ differing from gtags(1).
 <dl compact="compact">
 <dt>&lsquo;<samp>-a</samp>&rsquo;, &lsquo;<samp>--absolute</samp>&rsquo;</dt>
 <dd><p>Print absolute path names. By default, print relative path names.
+</p></dd>
+<dt>&lsquo;<samp>--color</samp>&rsquo; when</dt>
+<dd><p>Use color to highlight the pattern within the line; when may be one of:
+never, always or auto (default).
+The default color is bold red text on current background; the environment
+variable <var>GREP_COLOR</var> defines it.
+This option is effective to the following commands: &lt;no command&gt;, -f, -g, -I, -P.
 </p></dd>
 <dt>&lsquo;<samp>-d</samp>&rsquo;, &lsquo;<samp>--definition</samp>&rsquo;</dt>
 <dd><p>Print locations of definitions.
@@ -3046,6 +3053,9 @@ then global sets <var>GTAGSROOT</var> to the contents of the file.
 <p>The following environment variables affect the execution of global:
 </p>
 <dl compact="compact">
+<dt><var>GREP_COLOR</var></dt>
+<dd><p>The color to use for &lsquo;<samp>--color</samp>&rsquo;.
+</p></dd>
 <dt><var>GTAGSBLANKENCODE</var></dt>
 <dd><p>If this variable is set, the &lsquo;<samp>--encode-path=&quot; &lt;TAB&gt;&quot;</samp>&rsquo;
 option is specified.
@@ -6221,7 +6231,7 @@ to permit their use in free software.
 <h1>About This Document</h1>
 
 <p>
-  This document was generated on <i>March 12, 2014</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+  This document was generated on <i>March 31, 2014</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
 </p>
 <p>
   The buttons in the navigation panels have the following meaning:
@@ -6323,7 +6333,7 @@ to permit their use in free software.
 <hr>
 <p>
  <font size="-1">
-  This document was generated on <i>March 12, 2014</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+  This document was generated on <i>March 31, 2014</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
  </font>
  <br>
 
