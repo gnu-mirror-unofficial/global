@@ -46,6 +46,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <a name="GLOBAL_related_tools">
 <h3>GLOBAL related tools</h3>
 
+<dl>
 <dt><a href="https://github.com/5t111111/alt-gtags.vim" rel="nofollow">alt-gtags.vim</a><dd>
 	alt-gtags.vim is a plugin that enables you to use GNU GLOBAL (gtags) in a Vim.
 	if_pyth is required as it is written in Python.
@@ -178,6 +179,7 @@ under the terms of the GNU Free Documentation License, Version 1.1
 	Automake is a tool for automatically generating `Makefile.in'
 	files compliant with the GNU Coding Standards. Automake supports
 	GLOBAL by its GTAGS target.
+
 <dt><a href="http://www.FreeBSD.org/cgi/cvsweb.cgi/src/share/mk/" rel="nofollow">FreeBSD build system</a><dd>
 	FreeBSD adopted GLOBAL as the standard source code tag system in its
 	build system.
