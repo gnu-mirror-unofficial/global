@@ -8,12 +8,6 @@ under the terms of the GNU Free Documentation License, Version 1.1
 Plans of the highest priority are listed first.
 <p>
 <ul>
-<li>Offering three environment variables which define individual default options
-	for global(1), gtags(1) and htags(1), respectively.
-	(GLOBAL_OPTIONS, GTAGS_OPTIONSS, HTAGS_OPTIONS)
-<li>Three options for specifying the system default of global(1).<br />
-	-E (--extended-regexp), -N (--project), -m (--match-case).
-<li>A project basis configuration mechanism. (gtags.conf, gtags.label)
 <li>Make the --literal option available to commands which accept a pattern.
 <li>Support of ack style output format.
 <li>Remove restriction of the length of a variable identifier (currently < 512).
