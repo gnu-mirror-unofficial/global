@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- Created on June 9, 2014 by texi2html 5.0
+<!-- Created on August 11, 2014 by texi2html 5.0
 texi2html was written by: 
             Lionel Cons <Lionel.Cons@cern.ch> (original author)
             Karl Berry  <karl@freefriends.org>
@@ -50,16 +50,16 @@ ul.no-bullet {list-style: none}
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
 
 <h1>GNU GLOBAL Source Code Tag System</h1>
-<h3 align="right">Edition 6.3, for GNU GLOBAL version 6.3</h3>
-<h3 align="right">9 June 2014</h3>
+<h3 align="right">Edition 6.3.1, for GNU GLOBAL version 6.3.1</h3>
+<h3 align="right">11 August 2014</h3>
 <strong>by Tama Communications Corporation</strong><br>
 
 <p>Copyright &copy; 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2008, 2010,
 2011, 2012, 2013 Tama Communications Corporation
 </p><br>
 <br>
-<p>This manual is for <acronym>GNU</acronym> GLOBAL (version 6.3,
-9 June 2014), a source code tag system that works the same way
+<p>This manual is for <acronym>GNU</acronym> GLOBAL (version 6.3.1,
+11 August 2014), a source code tag system that works the same way
 across diverse environments.
 </p><br>
 <br>
@@ -87,11 +87,11 @@ Free Documentation License&quot;.
 <a name="GNU-GLOBAL-source-code-tag-system"></a>
 <h1 class="top">GNU GLOBAL source code tag system</h1>
 
-<p>This manual documents version 6.3 of the GNU GLOBAL source code tag system.
+<p>This manual documents version 6.3.1 of the GNU GLOBAL source code tag system.
 </p>
 <table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top"><a href="#Introduction">1 Overview of this tool</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
-<tr><td align="left" valign="top"><a href="#Global">2 Command line GLOBAL</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#Global">2 Command line</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
 <tr><td align="left" valign="top"><a href="#Applications">3 Various applications</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
 <tr><td align="left" valign="top"><a href="#Other-topics">4 Other topics</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
 <tr><td align="left" valign="top"><a href="#Reference">5 Command References</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
@@ -142,7 +142,7 @@ Free Documentation License&quot;.
 <p>GNU GLOBAL is a source code tag system that works the same way
 across diverse environments, such as Emacs editor, Vi editor,
 Less viewer, Bash shell, various web browsers, etc.
-You can locate specified tags, such as functions, macros, structs, classes,
+You can locate specified symbols, such as functions, macros, structs and classes
 in your source files and move there easily.
 It is useful for hacking large projects which contain many sub-directories,
 many <code>#ifdef</code> and many <code>main()</code> functions.
@@ -169,7 +169,7 @@ independence of any editor.
 <h2 class="section">1.2 Concept of project</h2>
 
 <p>GNU GLOBAL can treat a source tree containing sub-directories as a project.
-Anywhere in the project, you can utilize the high performance tag database.
+Anywhere in the project, you can utilize a high performance tag database.
 You need not specify where the database is, as global(1) locates it by itself.
 Because of this feature, you can move freely in a project,
 and in and out of many projects.
@@ -226,7 +226,7 @@ and in and out of many projects.
 
 </li><li> supports various output formats.
 
-</li><li> allows customizing of the set of candidate files to be tagged.
+</li><li> allows customizing of a set of candidate files to be tagged.
 
 </li><li> understands POSIX 1003.2 regular expression.
 
@@ -238,7 +238,7 @@ and in and out of many projects.
 
 </li><li> plug-in parser is available to treat new language.
 
-</li><li> supports customizing with &lsquo;<tt>gtags.conf</tt>&rsquo;.
+</li><li> supports customizing using &lsquo;<tt>gtags.conf</tt>&rsquo;.
 
 </li><li> generates a hypertext of source code.
 
@@ -251,6 +251,8 @@ and in and out of many projects.
 </li><li> includes cscope-compatible program (gtags-cscope).
 
 </li><li> includes grep-like command (-g command).
+
+</li><li> supports grep-like symbol highlighting.
 </li></ul>
 
 <hr>
@@ -270,10 +272,10 @@ and in and out of many projects.
 <td valign="middle" align="left">[<a href="#Index" title="Index">Index</a>]</td>
 <td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
 </tr></table>
-<a name="Command-line-GLOBAL"></a>
-<h1 class="chapter">2 Command line GLOBAL</h1>
+<a name="Command-line"></a>
+<h1 class="chapter">2 Command line</h1>
 
-<p>You can use the tag facilities from shell command line.
+<p>You can use tag facilities from the shell command line.
 It is a big merit of GLOBAL compared with any other tag system.
 </p>
 <table class="menu" border="0" cellspacing="0">
@@ -317,9 +319,9 @@ please move to the source directory and invoke gtags(1).
     $ gtags
 </pre></div>
 
-<p>Gtags traverses sub-directories, picks up source files and makes three tag files
-at the current directory.
-After this, all files under this directory are treated as a project.
+<p>Gtags traverses sub-directories, picks up symbols from the source files
+and makes three tag files at the current directory.
+After this, all files and directories under the current directory are treated as a project.
 </p>
 <div class="example">
 <pre class="example">    $ ls G*
@@ -335,7 +337,7 @@ After this, all files under this directory are treated as a project.
 &nbsp;&nbsp;&nbsp;path name database
 </li></ul>
 
-<p>You should prepare for considerable disk space for the tag files.
+<p>You should prepare for considerable disk space for tag files.
 For example, Linux-2.6.32 source code requires the following disk space.
 </p>
 <div class="example">
@@ -405,10 +407,9 @@ For example, Linux-2.6.32 source code requires the following disk space.
 </pre></div>
 
 <ul>
-<li> Once you make the tag files at the root directory of the source tree,
-you can execute global(1) from anywhere in the tree.
-By default, you get the relative path of the located files.
-You need not specify where the tag file is, as global(1) locates it by itself.
+<li> Once you make tag files at the root directory of a project,
+you can invoke global(1) from anywhere in the project.
+By default, you get relative paths of the located files.
 
 <div class="example">
 <pre class="example">    $ cd /home/user/ROOT
@@ -422,7 +423,7 @@ You need not specify where the tag file is, as global(1) locates it by itself.
     ../DIR1/fileB.c         # <span class="roman">relative path from DIR2</span>
 </pre></div>
 
-<p>Global command is possible to use only when you are in a project.
+<p>You can use global(1) only when you are in a project.
 If you are out of any project, it shows an error message like follows:
 </p>
 <div class="example">
@@ -448,8 +449,8 @@ If you are out of any project, it shows an error message like follows:
     DIR2/fileC.c
 </pre></div>
 
-</li><li> The &lsquo;<samp>-x</samp>&rsquo; option shows the details.
-It is similar to the &lsquo;<samp>-x</samp>&rsquo; option in ctags(1).
+</li><li> The &lsquo;<samp>-x</samp>&rsquo; option shows details.
+It is similar to the &lsquo;<samp>-x</samp>&rsquo; option of ctags(1).
 <a name="index-_002dx"></a>
 
 <div class="example">
@@ -460,7 +461,7 @@ It is similar to the &lsquo;<samp>-x</samp>&rsquo; option in ctags(1).
     func2              4 DIR2/fileC.c       func2(){ i--; }
 </pre></div>
 
-</li><li> The &lsquo;<samp>-a</samp>&rsquo; option produces the absolute path name.
+</li><li> The &lsquo;<samp>-a</samp>&rsquo; option produces absolute path names.
 <a name="index-_002da"></a>
 
 <div class="example">
@@ -485,19 +486,19 @@ It is similar to the &lsquo;<samp>-x</samp>&rsquo; option in ctags(1).
 </pre></div>
 
 <p>It is similar to egrep(1) but is far more convenient for source code reading,
-because it allows you to search through a project, and only in the source files.
+because it allows you to search through a project, and only in source files.
 </p>
 <p>Additionally, you can use various options:
 </p>
 <dl compact="compact">
 <dt>&lsquo;<samp>-O</samp>&rsquo;</dt>
 <dd><a name="index-_002dO"></a>
-<p>search only in the text files.
+<p>search only in text files.
 </p>
 </dd>
 <dt>&lsquo;<samp>-o</samp>&rsquo;</dt>
 <dd><a name="index-_002do"></a>
-<p>search in both the source files and text files.
+<p>search in both source files and text files.
 </p>
 </dd>
 <dt>&lsquo;<samp>-l</samp>&rsquo;</dt>
@@ -507,10 +508,10 @@ because it allows you to search through a project, and only in the source files.
 </dl>
 
 <p>The &lsquo;<samp>-e</samp>&rsquo;, &lsquo;<samp>-G</samp>&rsquo; and &lsquo;<samp>-i</samp>&rsquo; options are available too.
-The usage is the same as egrep(1).
+The usage is almost same as egrep(1).
 </p>
-<p>You can even change the output format of global(1) to the grep style
-using the &lsquo;<samp>--result=grep</samp>&rsquo; option.
+<p>You can even change the output format of global(1) to grep style
+using &lsquo;<samp>--result=grep</samp>&rsquo; option.
 <a name="index-_002d_002dresult"></a>
 Of course, these options can be used even by other commands.
 </p>
@@ -539,7 +540,7 @@ Of course, these options can be used even by other commands.
     func3              6 DIR2/fileC.c   func3(){
 </pre></div>
 
-</li><li> The &lsquo;<samp>-l</samp>&rsquo; option limits the range of the retrieval under the current directory.
+</li><li> The &lsquo;<samp>-l</samp>&rsquo; option limits the range of retrieval under the current directory.
 <a name="index-_002dl-1"></a>
 
 <div class="example">
@@ -582,7 +583,7 @@ Of course, these options can be used even by other commands.
 </li><li> If your source files are on a read-only device, such as CDROM,
 then you cannot make tag files at the root of the source tree.
 In such case, you can make tag files in another place using
-the <code>GTAGSROOT</code> environment variable.
+<code>GTAGSROOT</code> environment variable.
 
 <div class="example">
 <pre class="example">    $ mkdir /var/dbpath
@@ -595,6 +596,7 @@ the <code>GTAGSROOT</code> environment variable.
 
 <p>There is another method for it. Since global(1) locates tag files also in
 &lsquo;<tt>/usr/obj</tt>&rsquo; + &lt;current directory&gt;, you can setup like follows:
+It is &rsquo;obj&rsquo; directory.
 </p>
 <div class="example">
 <pre class="example">    $ cd /cdrom/src                 # <span class="roman">the root of source tree</span>
@@ -603,17 +605,18 @@ the <code>GTAGSROOT</code> environment variable.
     $ global func
 </pre></div>
 
-<p>The value &lsquo;<tt>/usr/obj</tt>&rsquo; can be changed by environment variable
-<code>MAKEOBJDIRPREFIX</code>.
-The &lsquo;<samp>-O, --objdir</samp>&rsquo; option does it automatically for you.
+<p>The &lsquo;<samp>-O, --objdir</samp>&rsquo; option does it automatically for you.
 <a name="index-_002dO-1"></a>
 </p>
+<p>The path of obj directory can be changed by environment variable
+<code>MAKEOBJDIRPREFIX</code>.
+</p>
 </li><li> If you want to locate symbols that are not defined in the source tree,
-then you can specify library directories with the <code>GTAGSLIBPATH</code>
+then you can specify library directories with <code>GTAGSLIBPATH</code>
 environment variable.
 
-<p>You should execute gtags at each directory of the path.
-If &lsquo;<tt>GTAGS</tt>&rsquo; is not found there, global ignores it.
+<p>You should execute gtags(1) at each directory in the <code>GTAGSLIBPATH</code>.
+If &lsquo;<tt>GTAGS</tt>&rsquo; is not found there, global ignores such directories.
 </p>
 <div class="example">
 <pre class="example">    $ pwd
@@ -838,7 +841,7 @@ Then you can invoke globash(1) command.
 <pre class="example">    GloBash needs a working directory. Do you create '/home/you/.globash'? ([y]/n)
 </pre></div>
 
-<p>Pressing the &lt;ENTER&gt; key, you will see a prompt like this:
+<p>Pressing the &lt;ENTER&gt; key, you will see a prompt as follows:
 </p>
 <div class="example">
 <pre class="example">    [/usr/src/sys]/kern _
@@ -857,7 +860,7 @@ Tag and marker are valid only in a project.
 </pre></div>
 
 <p>If you answer <kbd>y &lt;RET&gt;</kbd>
-or just &lt;RET&gt; in the above prompt then the tag stack and marker
+or just &lt;RET&gt; then the tag stack and marker
 (described later) will be removed.
 </p>
 <p>If you need help then please type <kbd>ghelp</kbd>.
@@ -923,7 +926,7 @@ or just &lt;RET&gt; in the above prompt then the tag stack and marker
     [/usr/src/sys] x kmem_suballoc
 </pre></div>
 
-</li><li> You can select a tag by the <code>show</code> command.
+</li><li> You can select a tag by <code>show</code> command.
 
 <div class="example">
 <pre class="example">    [/usr/src/sys] x main
@@ -935,7 +938,7 @@ or just &lt;RET&gt; in the above prompt then the tag stack and marker
     (Load editor and show boot/alpha/boot1/boot1.c at line 227.)
 </pre></div>
 
-<p>The default editor is vi(1) but you can specify it statically by <code>EDITOR</code>
+<p>The default editor is vi(1). You can specify it statically by <code>EDITOR</code>
 environment variable or temporarily by options.
 </p>
 <div class="example">
@@ -993,7 +996,7 @@ by the <code>pop</code> or <kbd>CTRL-T</kbd> command.
     (Load editor and show boot/alpha/boot1/boot1.c at line 227.)
 </pre></div>
 
-<p>You can print the tag stack with the <code>tags</code> command.
+<p>You can print the current tag stack with <code>tags</code> command.
 </p>
 </li><li> You can remember tags using the <code>mark</code> command.
 
@@ -1018,7 +1021,7 @@ by the <code>pop</code> or <kbd>CTRL-T</kbd> command.
 </pre></div>
 
 <p>Marked tags are valid until you go out of the current project or quit
-the current Bash session.
+the current bash(1) session.
 </p>
 </li><li> You can remember directories using the <code>cookie</code> command,
 and return there using the <code>warp</code> command.
@@ -1059,7 +1062,7 @@ and return there using the <code>warp</code> command.
 <a name="Less-using-GLOBAL"></a>
 <h2 class="section">3.2 Less using GLOBAL</h2>
 
-<p>You can use GLOBAL as the tag system of Less(1) viewer instead of ctags.
+<p>You can use GLOBAL as a tag system of less(1) viewer instead of ctags.
 </p>
 <table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top"><a href="#Features_0028Less_0029">3.2.1 Features</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
@@ -1089,7 +1092,7 @@ and return there using the <code>warp</code> command.
 
 <ul>
 <li>
-You can use most of GLOBAL&rsquo;s facilities from Less viewer.
+You can use most of GLOBAL&rsquo;s facilities from less(1) viewer.
 </li><li>
 Less viewer supports duplicated tag.
 </li></ul>
@@ -1116,7 +1119,7 @@ Less viewer supports duplicated tag.
 
 <p>First, do the preparation of global. See section <a href="#Preparation">Preparation</a>.
 </p>
-<p>Second, to use global from Less, you need to set environment variable
+<p>Second, to use global from less(1), you need to set environment variable
 <code>LESSGLOBALTAGS</code> to &lsquo;<samp>global</samp>&rsquo;.
 </p>
 <div class="example">
@@ -1150,7 +1153,7 @@ Less viewer supports duplicated tag.
 <pre class="example">    $ less -t func1
 </pre></div>
 
-<p>Please note that if &lsquo;<tt>tags</tt>&rsquo; exists in the current directory then Less uses it.
+<p>Please note that if &lsquo;<tt>tags</tt>&rsquo; exists in the current directory then less(1) uses it.
 If you want to use &lsquo;<tt>GTAGS</tt>&rsquo; even if &lsquo;<tt>tags</tt>&rsquo; exists
 then please specify the tag file explicitly like this:
 </p>
@@ -1167,7 +1170,7 @@ then please specify the tag file explicitly like this:
 <p>In the same way, you can use &lsquo;<tt>GTAGS</tt>&rsquo;, &lsquo;<tt>GRTAGS</tt>&rsquo; or
 &lsquo;<tt>GPATH</tt>&rsquo; as tag files.
 </p>
-</li><li> If a number of tags are located, Less goes to the first tag.
+</li><li> If a number of tags are located, less(1) goes to the first tag.
 You can go to next tag by typing <kbd>t</kbd> and back by typing <kbd>T</kbd>.
 
 <dl compact="compact">
@@ -1180,12 +1183,12 @@ You can go to next tag by typing <kbd>t</kbd> and back by typing <kbd>T</kbd>.
 </dl>
 
 </li><li>
-In a Less session, you can use the <kbd>:t</kbd> command to locate a new symbol.
+In a less(1) session, you can use the <kbd>:t</kbd> command to locate a new symbol.
 But in this case, you cannot change the tag file from the one specified by
 the &lsquo;<samp>-T</samp>&rsquo; option.
 
-</li><li> With the &lsquo;<samp>-T-</samp>&rsquo; option, Less reads standard input as a tag file.
-You can connect global and Less with a pipe. It is very convenient.
+</li><li> With the &lsquo;<samp>-T-</samp>&rsquo; option, less(1) reads standard input as a tag file.
+You can connect global and less(1) with a pipe. It is very convenient.
 
 <div class="example">
 <pre class="example">    $ global -x func | less -T-
@@ -1207,7 +1210,7 @@ You can connect global and Less with a pipe. It is very convenient.
     $ global -Px init | less -T-
 </pre></div>
 
-</li><li> If your editor doesn&rsquo;t support GLOBAL directly then you can use Less
+</li><li> If your editor doesn&rsquo;t support GLOBAL directly then you can use less(1)
 as a footstool.
 
 <div class="example">
@@ -3101,6 +3104,7 @@ option is specified.
 <dt><var>GTAGSDBPATH</var></dt>
 <dd><p>The directory in which the tag files exist.
 This value is ignored when <var>GTAGSROOT</var> is not defined.
+Use of this variable is not recommended.
 </p></dd>
 <dt><var>GTAGSFORCECPP</var></dt>
 <dd><p>If this variable is set, each file whose suffix is &lsquo;<tt>.h</tt>&rsquo; is treated
@@ -3122,6 +3126,8 @@ of a log file. There is no default value.
 </p></dd>
 <dt><var>GTAGSROOT</var></dt>
 <dd><p>The root directory of the project.
+Usually, it is recognized by existence of &lsquo;<tt>GTAGS</tt>&rsquo;.
+Use of this variable is not recommended.
 </p></dd>
 <dt><var>GTAGSTHROUGH</var></dt>
 <dd><p>If this variable is set, the &lsquo;<samp>-T</samp>&rsquo; option is specified.
@@ -3162,7 +3168,8 @@ of BSD-style objdir. The default is &lsquo;<tt>/usr/obj</tt>&rsquo;.
 </dl>
 
 <p>Addition to these, the variables listed in the ENVIRONMENT section except for
-GTAGSCONF and GTAGSLABEL are also available as configuration variables.
+GTAGSCONF, GTAGSLABEL, GTAGSROOT and GTAGSDBPATH  are also available
+as configuration variables.
 Each environment variable is given more priority than configuration variable
 of the same name.
 </p><hr>
@@ -6376,7 +6383,7 @@ to permit their use in free software.
     <li><a name="toc-Concept-of-project" href="#Concept-of-project">1.2 Concept of project</a></li>
     <li><a name="toc-Features-7" href="#Features-7">1.3 Features</a></li>
   </ul></li>
-  <li><a name="toc-Command-line-GLOBAL" href="#Global">2 Command line GLOBAL</a>
+  <li><a name="toc-Command-line" href="#Global">2 Command line</a>
   <ul class="no-bullet">
     <li><a name="toc-Preparation-8" href="#Preparation">2.1 Preparation</a></li>
     <li><a name="toc-Basic-usage-1" href="#Basic-usage">2.2 Basic usage</a></li>
@@ -6563,7 +6570,7 @@ to permit their use in free software.
 <h1>About This Document</h1>
 
 <p>
-  This document was generated on <i>June 9, 2014</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+  This document was generated on <i>August 11, 2014</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
 </p>
 <p>
   The buttons in the navigation panels have the following meaning:
@@ -6665,7 +6672,7 @@ to permit their use in free software.
 <hr>
 <p>
  <font size="-1">
-  This document was generated on <i>June 9, 2014</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+  This document was generated on <i>August 11, 2014</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
  </font>
  <br>
 
