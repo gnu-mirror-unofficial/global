@@ -25,6 +25,9 @@ under the terms of the GNU Free Documentation License, Version 1.1
 </dl>
 <h3>GLOBAL related articles</h3>
 <dl>
+<dt><a href="http://tuhdo.github.io/c-ide.html">C/C++ Development Environment for Emacs</a><dd>
+	This guide will help you to setup an efficient working C/C++ environment.
+	It includes introduction of ggtags and helm-gtags.
 <dt><a href="http://en.wikipedia.org/wiki/GNU_GLOBAL">GNU GLOBAL in wikipedia</a><dd>
 	This is a description page of GNU GLOBAL in wikipedia.
 <dt><a href="http://www.webdbtips.com/6152/" rel="nofollow">How to read other people's code.</a><dd>
