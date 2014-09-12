@@ -35,7 +35,7 @@ GNU GLOBAL has the following features:
 <li> supports 6 languages by built-in parser. (definition and reference)<br />
 C, C++, Yacc, Java, PHP4 and assembly.
 <li> supports 25 languages by Pygments + Exuberant Ctags plug-in parser. (definition and reference)<br />
-Awk, Bat, COBOL, C, C++, C#, Erlang, Fortran, Java, JavaScript, Lisp, Lua, Pascal, Perl, PHP, Python, Ruby, Matlab, OCaml, Scheme, Tcl, TeX, Verilog, Vhdl and Vim.
+Awk, Dos batch, COBOL, C, C++, C#, Erlang, Fortran, Java, JavaScript, Lisp, Lua, Pascal, Perl, PHP, Python, Ruby, Matlab, OCaml, Scheme, Tcl, TeX, Verilog, Vhdl and Vim.
 
 <li> works the same way across diverse environments like follows:
         <ul>
