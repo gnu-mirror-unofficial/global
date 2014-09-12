@@ -49,28 +49,34 @@ Copyright (c) 2000-2013 Tama Communications Corporation</font></i></p>
 <a href=http://www.tamacom.com/tour/kernel/linux/>
 <img src=htags2.png align=right alt='Linux source code'>
 </a>
-GNU GLOBAL is a source code tag system that works the same way
+GNU GLOBAL is a source code tagging system that works the same way
 across diverse environments, such as Emacs editor, Vi editor,
 Less viewer, Bash shell, various web browsers, etc.
-You can locate specified tags, such as functions, macros, structs, classes,
+<p>
+You can locate various objects, such as functions, macros, structs, classes,
 in your source files and move there easily.
-It is useful for hacking large projects which contain many sub-directories,
+It is useful for hacking a large projects which contain many sub-directories,
 many <code>#ifdef</code> and many <code>main()</code> functions.
-It is similar to ctags or etags, but is different from them at the point of
-independence of any editor.
-It runs on a UNIX (POSIX) compatible operating system, like GNU and BSD.
+It is similar to ctags or etags, but is different from them in the following two points:
+<ul>
+<li>independence of any editor</li>
+<li>capability to treat definition and reference</li>
+</ul>
+It runs in UNIX (POSIX) compatible operating system, like GNU and BSD.
 <p>
 GNU GLOBAL is part of the <a href="http://www.gnu.org/">GNU project</a>,
 and is <a href="http://www.gnu.org/philosophy/free-sw.html">free software</a>.
 You can freely copy, modify and redistribute this program under
 <a href=license.html>GNU GPL</a>.
 <p>
-GNU GLOBAL has following features:
+GNU GLOBAL has the following features:
 
 <ul>
-<li> supports C, C++, Yacc, Java, PHP4 and assembly by the built-in parser. (definition and reference)
-<li> supports 41 languages (Python, Javascript, Erlang, Ruby, etc) by Exuberant Ctags plug-in parser.
-(only definition)
+<li> supports 6 languages by built-in parser. (definition and reference)<br />
+C, C++, Yacc, Java, PHP4 and assembly.
+<li> supports 25 languages by Pygments + Exuberant Ctags plug-in parser. (definition and reference)<br />
+Awk, Bat, COBOL, C, C++, C#, Erlang, Fortran, Java, JavaScript, Lisp, Lua, Pascal, Perl, PHP, Python, Ruby, Matlab, OCaml, Scheme, Tcl, TeX, Verilog, Vhdl and Vim.
+
 <li> works the same way across diverse environments like follows:
         <ul>
         <li> Shell command line
