@@ -22,6 +22,8 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <dt><a href="http://www.ddj.com/cpp/184401358" rel="nofollow">Navigating Linux Source Code</a><dd>
 	With legacy code or large projects, navigation is a serious concern. Here are some tools that can help you find your way.
 	(by James Bonang)
+<dt><a href="http://www.techwars.io/fight/gtags/ctags/" rel="nofollow">Gtags vs Ctags</a><dd>
+	We compared ctags vs gtags - see result.
 </dl>
 <h3>GLOBAL related articles</h3>
 <dl>
