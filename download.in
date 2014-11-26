@@ -31,7 +31,9 @@ is also distributed by Shankar Chakkere.
 -->
 <p>
 Mac OSX version is distributed by
-<a href='http://www.macports.org/'>MacPorts</a>
+<a href='http://www.macports.org/'>MacPorts</a>, 
+<a href='http://brew.sh/index.html'>Homebrew</a> and
+<a href='http://rudix.org/packages/global.html'>Rudix</a>
 .
 <p>
 <a href='http://www.perzl.org/aix/'>AIX version</a>
