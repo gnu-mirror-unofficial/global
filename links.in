@@ -55,6 +55,10 @@ under the terms of the GNU Free Documentation License, Version 1.1
 <h3>GLOBAL related tools</h3>
 
 <dl>
+<dt><a href="https://pypi.python.org/pypi/azcat/1.01" rel="nofollow">azcat</a><dd>
+	azcat is an alternative to cat(1); specialized for printing.
+	It prints files with syntax highlighting and formatting.
+	The -t option of azcat uses global(1) to search the specified symbol.
 <dt><a href="https://github.com/5t111111/alt-gtags.vim" rel="nofollow">alt-gtags.vim</a><dd>
 	alt-gtags.vim is a plugin that enables you to use GNU GLOBAL (gtags) in a Vim.
 	if_pyth is required as it is written in Python.
