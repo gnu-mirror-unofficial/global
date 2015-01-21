@@ -339,6 +339,10 @@ thanks to Pygments.
 <H3>Source code browsing Tools</H3>
 Please see also <a href="#GLOBAL_related_tools">GLOBAL related tools</a> section.
 <dl>
+<dt><a href="http://ternjs.net/" rel="nofollow">Tern</a><dd>
+	Tern is a stand-alone code-analysis engine for JavaScript.
+	It is intended to be used with a code editor plugin to enhance
+	the editor's support for intelligent JavaScript editing.
 <dt><a href="https://github.com/mozilla/dxr" rel="nofollow">DXR</a><dd>
 	DXR is a source code cross-reference tool that uses static analysis
 	data collected by instrumented compilers.
