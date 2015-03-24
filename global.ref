@@ -154,7 +154,7 @@ equivalent to the @samp{-t} and @samp{-x} options respectively.
 The @samp{--result} option is given more priority than the @samp{-t} and @samp{-x} options.
 @item @samp{--single-update} file
 Update tag files using gtags(1) with the @samp{--single-update} option.
-It is considered that file was added or updated,
+It is considered that file was added, updated or deleted,
 and there is no change in other files.
 This option implies the @samp{-u} option.
 @item @samp{-s}, @samp{--symbol}
@@ -243,8 +243,6 @@ The following environment variables affect the execution of global:
 The color to use for @samp{--color}; @var{GREP_COLORS} has precedence.
 @item @var{GREP_COLORS}
 The color (mt or ms) to use for @samp{--color}; see grep(1).
-@item @var{GLOBAL_OPTIONS}
-The value of this variable is inserted in the head of arguments.
 @item @var{GTAGSBLANKENCODE}
 If this variable is set, the @samp{--encode-path=" <TAB>"}
 option is specified.

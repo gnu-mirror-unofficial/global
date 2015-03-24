@@ -40,6 +40,8 @@ If name is not specified then print all names and values.
 @item @samp{-d}, @samp{--dump} tag-file
 Dump a tag file as text to the standard output. Output format is 'key<tab>data'.
 This is for debugging.
+@item @samp{--explain}
+Explain handling files.
 @item @samp{-f}, @samp{--file} file
 Browse through all files whose names are listed in file.
 The argument file can be set to @samp{-} to accept a list of
@@ -62,7 +64,7 @@ tag files in it.
 If dbpath is specified, this option is ignored.
 @item @samp{--single-update} file
 Update tag files for a single file.
-It is considered that file was added or updated,
+It is considered that file was added, updated or deleted,
 and there is no change in other files.
 This option implies the @samp{-i} option.
 @item @samp{--sqlite3}
