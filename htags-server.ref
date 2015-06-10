@@ -56,3 +56,5 @@ GNU GLOBAL source code tag system@*
 Since Python and Ruby are not Web servers, you must not expect high security.
 @unnumberedsubsec AUTHOR
 Shigio YAMAGUCHI.
+@unnumberedsubsec HISTORY
+The htags-server command appeared in GLOBAL-6.3 (2014).

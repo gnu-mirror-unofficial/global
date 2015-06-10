@@ -3,7 +3,7 @@
 htags - generate a hypertext from a set of source files.
 @unnumberedsubsec SYNOPSIS
 @quotation
-htags [-acDfFghInosTvwx][-d dbpath][-m name][-t title][dir]@*
+htags [-aDfFghInosTvw][-d dbpath][-m name][-t title][dir]@*
 @end quotation
 @unnumberedsubsec DESCRIPTION
 Htags generates a hypertext from a set of source files of
@@ -265,6 +265,8 @@ PHP support is far from complete.
 
 The @samp{-f} and @samp{-D} options generate CGI programs.
 If you open the hypertext to the public, please recognize security dangers.
+
+Htags does not support plug-in parser.
 @unnumberedsubsec AUTHOR
 Shigio YAMAGUCHI, Hideki IWAMOTO and others.
 @unnumberedsubsec HISTORY

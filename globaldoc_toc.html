@@ -39,16 +39,16 @@ This manual is available in <a href=http://www.gnu.org/software/global/manual/>v
 <hr>
 
 <h1>GNU GLOBAL Source Code Tag System</h1>
-<h3 align="right">Edition 6.4, for GNU GLOBAL version 6.4</h3>
-<h3 align="right">24 March 2015</h3>
+<h3 align="right">Edition 6.5, for GNU GLOBAL version 6.5</h3>
+<h3 align="right">10 June 2015</h3>
 <strong>by Tama Communications Corporation</strong><br>
 
 <p>Copyright &copy; 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2008, 2010,
 2011, 2012, 2013 Tama Communications Corporation
 </p><br>
 <br>
-<p>This manual is for <acronym>GNU</acronym> GLOBAL (version 6.4,
-24 March 2015), a source code tag system that works the same way
+<p>This manual is for <acronym>GNU</acronym> GLOBAL (version 6.5,
+10 June 2015), a source code tag system that works the same way
 across diverse environments.
 </p><br>
 <br>
@@ -76,11 +76,11 @@ Free Documentation License&quot;.
 <a name="GNU-GLOBAL-source-code-tag-system"></a>
 <h1 class="top">GNU GLOBAL source code tag system</h1>
 
-<p>This manual documents version 6.4 of the GNU GLOBAL source code tag system.
+<p>This manual documents version 6.5 of the GNU GLOBAL source code tag system.
 </p>
 <table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top"><a href="#Introduction">1 Overview of this tool</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
-<tr><td align="left" valign="top"><a href="#Global">2 Command line</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#Command-line">2 Command line</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
 <tr><td align="left" valign="top"><a href="#Applications">3 Various applications</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
 <tr><td align="left" valign="top"><a href="#Other-topics">4 Other topics</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
 <tr><td align="left" valign="top"><a href="#Reference">5 Command References</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
@@ -96,7 +96,7 @@ Free Documentation License&quot;.
 <td valign="middle" align="left">[<a href="#Top" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#What-is-GNU-GLOBAL_003f" title="Next section in reading order"> &gt; </a>]</td>
-<td valign="middle" align="left">[<a href="#Global" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-line" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -116,7 +116,7 @@ Free Documentation License&quot;.
 <td valign="middle" align="left">[<a href="#Introduction" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Introduction" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#Concept-of-project" title="Next section in reading order"> &gt; </a>]</td>
-<td valign="middle" align="left">[<a href="#Global" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-line" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -145,7 +145,7 @@ independence of any editor.
 <td valign="middle" align="left">[<a href="#What-is-GNU-GLOBAL_003f" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Introduction" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#Features-7" title="Next section in reading order"> &gt; </a>]</td>
-<td valign="middle" align="left">[<a href="#Global" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-line" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -169,8 +169,8 @@ and in and out of many projects.
 <tr><td valign="middle" align="left">[<a href="#Introduction" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Concept-of-project" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Introduction" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#Global" title="Next section in reading order"> &gt; </a>]</td>
-<td valign="middle" align="left">[<a href="#Global" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-line" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-line" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -245,7 +245,7 @@ and in and out of many projects.
 </li></ul>
 
 <hr>
-<a name="Global"></a>
+<a name="Command-line"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Introduction" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Features-7" title="Previous section in reading order"> &lt; </a>]</td>
@@ -261,7 +261,7 @@ and in and out of many projects.
 <td valign="middle" align="left">[<a href="#Index" title="Index">Index</a>]</td>
 <td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
 </tr></table>
-<a name="Command-line"></a>
+<a name="Command-line-1"></a>
 <h1 class="chapter">2 Command line</h1>
 
 <p>You can use tag facilities from the shell command line.
@@ -276,9 +276,9 @@ It is a big merit of GLOBAL compared with any other tag system.
 <hr>
 <a name="Preparation"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
-<tr><td valign="middle" align="left">[<a href="#Global" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#Global" title="Previous section in reading order"> &lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#Global" title="Up section"> Up </a>]</td>
+<tr><td valign="middle" align="left">[<a href="#Command-line" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-line" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-line" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#Basic-usage" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Applications" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -342,9 +342,9 @@ For example, Linux-2.6.32 source code requires the following disk space.
 <hr>
 <a name="Basic-usage"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
-<tr><td valign="middle" align="left">[<a href="#Global" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<tr><td valign="middle" align="left">[<a href="#Command-line" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Preparation" title="Previous section in reading order"> &lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#Global" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-line" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#Applied-usage" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Applications" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -542,9 +542,9 @@ Of course, these options can be used even by other commands.
 <hr>
 <a name="Applied-usage"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
-<tr><td valign="middle" align="left">[<a href="#Global" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<tr><td valign="middle" align="left">[<a href="#Command-line" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Basic-usage" title="Previous section in reading order"> &lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#Global" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#Command-line" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#Applications" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Applications" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -707,7 +707,7 @@ one command. For example:
 <hr>
 <a name="Applications"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
-<tr><td valign="middle" align="left">[<a href="#Global" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<tr><td valign="middle" align="left">[<a href="#Command-line" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Applied-usage" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#GloBash" title="Next section in reading order"> &gt; </a>]</td>
@@ -2634,7 +2634,7 @@ Instead, you can use incremental updating facility (&lsquo;<samp>-u</samp>&rsquo
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Reference" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Reference" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#NAME-5" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#NAME-6" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -2648,12 +2648,12 @@ Instead, you can use incremental updating facility (&lsquo;<samp>-u</samp>&rsquo
 <a name="global-_002d-print-locations-of-given-symbols"></a>
 <h2 class="section">5.1 global - print locations of given symbols</h2>
 <hr>
-<a name="NAME-5"></a>
+<a name="NAME-6"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#global" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#global" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#SYNOPSIS-3" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SYNOPSIS-2" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -2667,10 +2667,10 @@ Instead, you can use incremental updating facility (&lsquo;<samp>-u</samp>&rsquo
 <h3 class="unnumberedsubsec">NAME</h3>
 <p>global - print locations of given symbols
 </p><hr>
-<a name="SYNOPSIS-3"></a>
+<a name="SYNOPSIS-2"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#NAME-5" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#NAME-6" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#global" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#DESCRIPTION-5" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
@@ -2685,7 +2685,7 @@ Instead, you can use incremental updating facility (&lsquo;<samp>-u</samp>&rsquo
 </tr></table>
 <h3 class="unnumberedsubsec">SYNOPSIS</h3>
 <blockquote>
-<p>global [-adEFGilMnqrstTvx][-S dir][-e] pattern<br>
+<p>global [-adEFGilMnNqrstTvx][-S dir][-e] pattern<br>
 global -c[dFiIMoOPrsT] prefix<br>
 global -f[adlnqrstvx][-L file-list][-S dir] files<br>
 global -g[aEGilMnoOqtvVx][-L file-list][-S dir][-e] pattern [files]<br>
@@ -2698,7 +2698,7 @@ global -u[qv]<br>
 <a name="DESCRIPTION-5"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#SYNOPSIS-3" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SYNOPSIS-2" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#global" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#COMMANDS" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
@@ -2752,7 +2752,8 @@ syntax: basic and extended (default).
 </p>
 <dl compact="compact">
 <dt>&lt;no command&gt; pattern</dt>
-<dd><p>Print tags which match to pattern.
+<dd><p>No command means tag search command.
+Print tags which match to pattern.
 By default, print definition tags.
 </p></dd>
 <dt>&lsquo;<samp>-c</samp>&rsquo;, &lsquo;<samp>--completion</samp>&rsquo; [prefix]</dt>
@@ -2874,7 +2875,8 @@ from the standard input. File names must be separated by newline.
 </p></dd>
 <dt>&lsquo;<samp>--literal</samp>&rsquo;</dt>
 <dd><p>Execute literal search instead of regular expression search.
-This option is only valid when the &lsquo;<samp>-g</samp>&rsquo; command is specified.
+This option works with the tag search command, &lsquo;<samp>-g</samp>&rsquo; command, 
+&lsquo;<samp>-P</samp>&rsquo; command and &lsquo;<samp>-I</samp>&rsquo; command.
 </p></dd>
 <dt>&lsquo;<samp>-M</samp>&rsquo;, &lsquo;<samp>--match-case</samp>&rsquo;</dt>
 <dd><p>Search is case-sensitive. This is the default.
@@ -2886,6 +2888,20 @@ This option is valid only with the &lsquo;<samp>-c</samp>&rsquo; command in conj
 </p></dd>
 <dt>&lsquo;<samp>-n</samp>&rsquo;, &lsquo;<samp>--nofilter</samp>&rsquo;</dt>
 <dd><p>Suppress sort filter and path conversion filter.
+</p></dd>
+<dt>&lsquo;<samp>-N</samp>&rsquo;, &lsquo;<samp>--nearness</samp>&rsquo;[=start]</dt>
+<dd><p>Use Nearness sort method for the output of tag search command.
+By default, alphabetical sort method is used.
+The result of nearness sort is concatenation of the followings ([1]-[n])
+in this order. The default of start is the current directory.
+</p><div class="example">
+<pre class="example">		[1] Output of local search in the start directory.
+		[2] Output of local search in the parent directory except for [1].
+		[3] Output of local search in the grandparent directory except for [1]-[2].
+		(repeat untill the project root directory)
+		[n] Output of local search in the project root directory except for [1]-[n-1].
+</pre></div>
+<p>In each directory, they are sorted by alphabetical order.
 </p></dd>
 <dt>&lsquo;<samp>-O</samp>&rsquo;, &lsquo;<samp>--only-other</samp>&rsquo;</dt>
 <dd><p>Treat only text files other than source code, like &lsquo;<tt>README</tt>&rsquo;.
@@ -3164,7 +3180,7 @@ of the same name.
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#CONFIGURATION-2" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#global" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#SEE-ALSO-2" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEE-ALSO-4" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -3178,7 +3194,7 @@ of the same name.
 <h3 class="unnumberedsubsec">DIAGNOSTICS</h3>
 <p>Global exits with a non-0 value if an error occurred, 0 otherwise.
 </p><hr>
-<a name="SEE-ALSO-2"></a>
+<a name="SEE-ALSO-4"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#DIAGNOSTICS" title="Previous section in reading order"> &lt; </a>]</td>
@@ -3205,9 +3221,9 @@ less(1).
 <a name="AUTHOR-1"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#SEE-ALSO-2" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEE-ALSO-4" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#global" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#HISTORY-1" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#HISTORY" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -3221,7 +3237,7 @@ less(1).
 <h3 class="unnumberedsubsec">AUTHOR</h3>
 <p>Shigio YAMAGUCHI, Hideki IWAMOTO and others.
 </p><hr>
-<a name="HISTORY-1"></a>
+<a name="HISTORY"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#AUTHOR-1" title="Previous section in reading order"> &lt; </a>]</td>
@@ -3243,9 +3259,9 @@ less(1).
 <a name="gtags"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#HISTORY-1" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#HISTORY" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Reference" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#NAME-1" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#NAME" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -3259,12 +3275,12 @@ less(1).
 <a name="gtags-_002d-create-tag-files-for-global_002e"></a>
 <h2 class="section">5.2 gtags - create tag files for global.</h2>
 <hr>
-<a name="NAME-1"></a>
+<a name="NAME"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#SYNOPSIS-5" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SYNOPSIS-3" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -3278,12 +3294,12 @@ less(1).
 <h3 class="unnumberedsubsec">NAME</h3>
 <p>gtags - create tag files for global.
 </p><hr>
-<a name="SYNOPSIS-5"></a>
+<a name="SYNOPSIS-3"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#NAME-1" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#NAME" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#DESCRIPTION-3" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#DESCRIPTION-4" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -3299,12 +3315,12 @@ less(1).
 <p>gtags [-ciIOqvw][-d tag-file][-f file][dbpath]<br>
 </p></blockquote>
 <hr>
-<a name="DESCRIPTION-3"></a>
+<a name="DESCRIPTION-4"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#SYNOPSIS-5" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SYNOPSIS-3" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#OPTIONS-2" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#OPTIONS-1" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -3334,12 +3350,12 @@ Files whose names end in &lsquo;<tt>.c++</tt>&rsquo;, &lsquo;<tt>.cc</tt>&rsquo;
 Files whose names end in &lsquo;<tt>.php</tt>&rsquo;, &lsquo;<tt>.php3</tt>&rsquo;, &lsquo;<tt>.phtml</tt>&rsquo; are assumed to be PHP source files.
 Other files are assumed to be text files. Gtags does not treat binary files.
 </p><hr>
-<a name="OPTIONS-2"></a>
+<a name="OPTIONS-1"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#DESCRIPTION-3" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#DESCRIPTION-4" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#EXAMPLES-3" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#EXAMPLES-2" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -3429,12 +3445,12 @@ The default is the current directory.
 </p></dd>
 </dl>
 <hr>
-<a name="EXAMPLES-3"></a>
+<a name="EXAMPLES-2"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#OPTIONS-2" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#OPTIONS-1" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#FILES-1" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#FILES" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -3454,12 +3470,12 @@ The default is the current directory.
 	main              10 src/main.c  main (argc, argv) {
 </pre></div>
 <hr>
-<a name="FILES-1"></a>
+<a name="FILES"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#EXAMPLES-3" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#EXAMPLES-2" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#ENVIRONMENT-3" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#ENVIRONMENT-2" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -3497,10 +3513,10 @@ priority (Lower number means higher priority).
 </p></dd>
 </dl>
 <hr>
-<a name="ENVIRONMENT-3"></a>
+<a name="ENVIRONMENT-2"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#FILES-1" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#FILES" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#CONFIGURATION-1" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
@@ -3553,9 +3569,9 @@ of BSD-style objdir. The default is &lsquo;<tt>/usr/obj</tt>&rsquo;.
 <a name="CONFIGURATION-1"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#ENVIRONMENT-3" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#ENVIRONMENT-2" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#DIAGNOSTICS-3" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#DIAGNOSTICS-4" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -3609,12 +3625,12 @@ GTAGSCONF and GTAGSLABEL are also available as configuration variables.
 Each environment variable is given more priority than configuration variable 
 of the same name.
 </p><hr>
-<a name="DIAGNOSTICS-3"></a>
+<a name="DIAGNOSTICS-4"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#CONFIGURATION-1" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#SEE-ALSO-1" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEE-ALSO" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -3628,12 +3644,12 @@ of the same name.
 <h3 class="unnumberedsubsec">DIAGNOSTICS</h3>
 <p>Gtags exits with a non-0 value if an error occurred, 0 otherwise.
 </p><hr>
-<a name="SEE-ALSO-1"></a>
+<a name="SEE-ALSO"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#DIAGNOSTICS-3" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#DIAGNOSTICS-4" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#BUG-3" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#BUG-2" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -3651,10 +3667,10 @@ htags(1).
 <p>GNU GLOBAL source code tag system<br>
 (http://www.gnu.org/software/global/).
 </p><hr>
-<a name="BUG-3"></a>
+<a name="BUG-2"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#SEE-ALSO-1" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEE-ALSO" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#AUTHOR" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
@@ -3680,9 +3696,9 @@ Probably valid only for FreeBSD and Linux kernel source.
 <a name="AUTHOR"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#BUG-3" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#BUG-2" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#HISTORY-3" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#HISTORY-4" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -3696,7 +3712,7 @@ Probably valid only for FreeBSD and Linux kernel source.
 <h3 class="unnumberedsubsec">AUTHOR</h3>
 <p>Shigio YAMAGUCHI, Hideki IWAMOTO and others.
 </p><hr>
-<a name="HISTORY-3"></a>
+<a name="HISTORY-4"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#AUTHOR" title="Previous section in reading order"> &lt; </a>]</td>
@@ -3718,9 +3734,9 @@ Probably valid only for FreeBSD and Linux kernel source.
 <a name="htags"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#HISTORY-3" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#HISTORY-4" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Reference" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#NAME-3" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#NAME-4" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -3734,7 +3750,7 @@ Probably valid only for FreeBSD and Linux kernel source.
 <a name="htags-_002d-generate-a-hypertext-from-a-set-of-source-files_002e"></a>
 <h2 class="section">5.3 htags - generate a hypertext from a set of source files.</h2>
 <hr>
-<a name="NAME-3"></a>
+<a name="NAME-4"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#htags" title="Previous section in reading order"> &lt; </a>]</td>
@@ -3756,9 +3772,9 @@ Probably valid only for FreeBSD and Linux kernel source.
 <a name="SYNOPSIS-6"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#NAME-3" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#NAME-4" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#htags" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#DESCRIPTION-2" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#DESCRIPTION-3" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -3771,10 +3787,10 @@ Probably valid only for FreeBSD and Linux kernel source.
 </tr></table>
 <h3 class="unnumberedsubsec">SYNOPSIS</h3>
 <blockquote>
-<p>htags [-acDfFghInosTvwx][-d dbpath][-m name][-t title][dir]<br>
+<p>htags [-aDfFghInosTvw][-d dbpath][-m name][-t title][dir]<br>
 </p></blockquote>
 <hr>
-<a name="DESCRIPTION-2"></a>
+<a name="DESCRIPTION-3"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#SYNOPSIS-6" title="Previous section in reading order"> &lt; </a>]</td>
@@ -3811,7 +3827,7 @@ With that option, htags chooses popular options on your behalf.
 <a name="OPTIONS-4"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#DESCRIPTION-2" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#DESCRIPTION-3" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#htags" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#EXAMPLES" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
@@ -4143,7 +4159,7 @@ as a C++ source file.
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#ENVIRONMENT-1" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#htags" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#DIAGNOSTICS-2" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#DIAGNOSTICS-3" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4185,12 +4201,12 @@ GTAGSCONF and GTAGSLABEL are also available as configuration variables.
 Each environment variable is given more priority than configuration variable 
 of the same name.
 </p><hr>
-<a name="DIAGNOSTICS-2"></a>
+<a name="DIAGNOSTICS-3"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#CONFIGURATION" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#htags" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#SEE-ALSO-4" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEE-ALSO-5" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4204,10 +4220,10 @@ of the same name.
 <h3 class="unnumberedsubsec">DIAGNOSTICS</h3>
 <p>Htags exits with a non-0 value if an error occurred, 0 otherwise.
 </p><hr>
-<a name="SEE-ALSO-4"></a>
+<a name="SEE-ALSO-5"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#DIAGNOSTICS-2" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#DIAGNOSTICS-3" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#htags" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#BUG" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
@@ -4230,9 +4246,9 @@ gtags(1).
 <a name="BUG"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#SEE-ALSO-4" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEE-ALSO-5" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#htags" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#AUTHOR-5" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AUTHOR-4" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4251,13 +4267,15 @@ In advance, check the space of your disk.
 </p>
 <p>The &lsquo;<samp>-f</samp>&rsquo; and &lsquo;<samp>-D</samp>&rsquo; options generate CGI programs.
 If you open the hypertext to the public, please recognize security dangers.
+</p>
+<p>Htags does not support plug-in parser.
 </p><hr>
-<a name="AUTHOR-5"></a>
+<a name="AUTHOR-4"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#BUG" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#htags" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#HISTORY-2" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#HISTORY-1" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4271,10 +4289,10 @@ If you open the hypertext to the public, please recognize security dangers.
 <h3 class="unnumberedsubsec">AUTHOR</h3>
 <p>Shigio YAMAGUCHI, Hideki IWAMOTO and others.
 </p><hr>
-<a name="HISTORY-2"></a>
+<a name="HISTORY-1"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#AUTHOR-5" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AUTHOR-4" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#htags" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#htags_002dserver" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
@@ -4293,9 +4311,9 @@ If you open the hypertext to the public, please recognize security dangers.
 <a name="htags_002dserver"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#HISTORY-2" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#HISTORY-1" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Reference" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#NAME-4" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#NAME-5" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4309,12 +4327,12 @@ If you open the hypertext to the public, please recognize security dangers.
 <a name="htags_002dserver-_002d-start-a-private-Web_002fCGI-server-for-hyper_002dtext"></a>
 <h2 class="section">5.4 htags-server - start a private Web/CGI server for hyper-text</h2>
 <hr>
-<a name="NAME-4"></a>
+<a name="NAME-5"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#htags_002dserver" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#htags_002dserver" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#SYNOPSIS" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SYNOPSIS-1" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4328,12 +4346,12 @@ If you open the hypertext to the public, please recognize security dangers.
 <h3 class="unnumberedsubsec">NAME</h3>
 <p>htags-server - start a private Web/CGI server for hyper-text
 </p><hr>
-<a name="SYNOPSIS"></a>
+<a name="SYNOPSIS-1"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#NAME-4" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#NAME-5" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#htags_002dserver" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#DESCRIPTION-1" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#DESCRIPTION" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4349,10 +4367,10 @@ If you open the hypertext to the public, please recognize security dangers.
 <p>htags-server [-b ip-address][-u language][port]<br>
 </p></blockquote>
 <hr>
-<a name="DESCRIPTION-1"></a>
+<a name="DESCRIPTION"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#SYNOPSIS" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SYNOPSIS-1" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#htags_002dserver" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#OPTIONS-3" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
@@ -4381,9 +4399,9 @@ looks for ruby.
 <a name="OPTIONS-3"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#DESCRIPTION-1" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#DESCRIPTION" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#htags_002dserver" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#EXAMPLES-2" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#EXAMPLES-1" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4411,7 +4429,7 @@ for each htags-server. The default value is 8000.
 </p></dd>
 </dl>
 <hr>
-<a name="EXAMPLES-2"></a>
+<a name="EXAMPLES-1"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#OPTIONS-3" title="Previous section in reading order"> &lt; </a>]</td>
@@ -4442,7 +4460,7 @@ for each htags-server. The default value is 8000.
 <a name="DIAGNOSTICS-1"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#EXAMPLES-2" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#EXAMPLES-1" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#htags_002dserver" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#SEE-ALSO-6" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
@@ -4489,7 +4507,7 @@ ruby(1).
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#SEE-ALSO-6" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#htags_002dserver" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#AUTHOR-3" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AUTHOR-2" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4503,12 +4521,12 @@ ruby(1).
 <h3 class="unnumberedsubsec">BUG</h3>
 <p>Since Python and Ruby are not Web servers, you must not expect high security.
 </p><hr>
-<a name="AUTHOR-3"></a>
+<a name="AUTHOR-2"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#BUG-1" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#htags_002dserver" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#gozilla" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#HISTORY-6" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4522,12 +4540,31 @@ ruby(1).
 <h3 class="unnumberedsubsec">AUTHOR</h3>
 <p>Shigio YAMAGUCHI.
 </p><hr>
+<a name="HISTORY-6"></a>
+<table class="header" cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AUTHOR-2" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#htags_002dserver" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#gozilla" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="unnumberedsubsec">HISTORY</h3>
+<p>The htags-server command appeared in GLOBAL-6.3 (2014).
+</p><hr>
 <a name="gozilla"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#AUTHOR-3" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#HISTORY-6" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Reference" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#NAME-2" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#NAME-3" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4541,12 +4578,12 @@ ruby(1).
 <a name="gozilla-_002d-force-mozilla-to-display-specified-part-of-a-source-file_002e"></a>
 <h2 class="section">5.5 gozilla - force mozilla to display specified part of a source file.</h2>
 <hr>
-<a name="NAME-2"></a>
+<a name="NAME-3"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gozilla" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gozilla" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#SYNOPSIS-4" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SYNOPSIS-5" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4560,12 +4597,12 @@ ruby(1).
 <h3 class="unnumberedsubsec">NAME</h3>
 <p>gozilla - force mozilla to display specified part of a source file.
 </p><hr>
-<a name="SYNOPSIS-4"></a>
+<a name="SYNOPSIS-5"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#NAME-2" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#NAME-3" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gozilla" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#DESCRIPTION-6" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#DESCRIPTION-2" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4582,12 +4619,12 @@ ruby(1).
 gozilla [-b browser][-p] -d name<br>
 </p></blockquote>
 <hr>
-<a name="DESCRIPTION-6"></a>
+<a name="DESCRIPTION-2"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#SYNOPSIS-4" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SYNOPSIS-5" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gozilla" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#OPTIONS-1" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#OPTIONS" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4617,12 +4654,12 @@ by htags(1).
 </p>
 <p>Some browsers require you to load it before executing gozilla.
 </p><hr>
-<a name="OPTIONS-1"></a>
+<a name="OPTIONS"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#DESCRIPTION-6" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#DESCRIPTION-2" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gozilla" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#FILES" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#FILES-3" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4665,12 +4702,12 @@ by htags(1).
 </p></dd>
 </dl>
 <hr>
-<a name="FILES"></a>
+<a name="FILES-3"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#OPTIONS-1" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#OPTIONS" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gozilla" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#ENVIRONMENT-2" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#ENVIRONMENT" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4697,12 +4734,12 @@ by htags(1).
 </p></dd>
 </dl>
 <hr>
-<a name="ENVIRONMENT-2"></a>
+<a name="ENVIRONMENT"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#FILES" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#FILES-3" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gozilla" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#EXAMPLES-1" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#EXAMPLES-3" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4729,12 +4766,12 @@ This value is ignored when <var>GTAGSROOT</var> is not defined.
 </p></dd>
 </dl>
 <hr>
-<a name="EXAMPLES-1"></a>
+<a name="EXAMPLES-3"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#ENVIRONMENT-2" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#ENVIRONMENT" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gozilla" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#DIAGNOSTICS-4" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#DIAGNOSTICS-2" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4759,12 +4796,12 @@ This value is ignored when <var>GTAGSROOT</var> is not defined.
 	$ gozilla -b firefox +82 ctags.c
 </pre></div>
 <hr>
-<a name="DIAGNOSTICS-4"></a>
+<a name="DIAGNOSTICS-2"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#EXAMPLES-1" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#EXAMPLES-3" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gozilla" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#SEE-ALSO" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEE-ALSO-3" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4778,10 +4815,10 @@ This value is ignored when <var>GTAGSROOT</var> is not defined.
 <h3 class="unnumberedsubsec">DIAGNOSTICS</h3>
 <p>Gozilla exits with a non-0 value if an error occurred, 0 otherwise.
 </p><hr>
-<a name="SEE-ALSO"></a>
+<a name="SEE-ALSO-3"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#DIAGNOSTICS-4" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#DIAGNOSTICS-2" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gozilla" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#BUGS" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
@@ -4808,7 +4845,7 @@ mozilla(1).
 <a name="BUGS"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#SEE-ALSO" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEE-ALSO-3" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gozilla" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#AUTHORS" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
@@ -4830,7 +4867,7 @@ directories, HTML files and even URLs, because it is omnivorous.
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#BUGS" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gozilla" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#HISTORY" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#HISTORY-2" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4844,7 +4881,7 @@ directories, HTML files and even URLs, because it is omnivorous.
 <h3 class="unnumberedsubsec">AUTHORS</h3>
 <p>Shigio YAMAGUCHI.
 </p><hr>
-<a name="HISTORY"></a>
+<a name="HISTORY-2"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#AUTHORS" title="Previous section in reading order"> &lt; </a>]</td>
@@ -4867,9 +4904,9 @@ installed by default.
 <a name="gtags_002dcscope"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#HISTORY" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#HISTORY-2" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Reference" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#NAME-6" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#NAME-1" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4883,12 +4920,12 @@ installed by default.
 <a name="gtags_002dcscope-_002d-interactively-examine-a-C-program_002e"></a>
 <h2 class="section">5.6 gtags-cscope - interactively examine a C program.</h2>
 <hr>
-<a name="NAME-6"></a>
+<a name="NAME-1"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags_002dcscope" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags_002dcscope" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#SYNOPSIS-1" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SYNOPSIS-4" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4902,12 +4939,12 @@ installed by default.
 <h3 class="unnumberedsubsec">NAME</h3>
 <p>gtags-cscope - interactively examine a C program.
 </p><hr>
-<a name="SYNOPSIS-1"></a>
+<a name="SYNOPSIS-4"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#NAME-6" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#NAME-1" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags_002dcscope" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#DESCRIPTION-4" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#DESCRIPTION-1" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4923,12 +4960,12 @@ installed by default.
 <p>gtags-cscope [-bCdehLlVv][-F file ][-012345678 pattern][-p n]<br>
 </p></blockquote>
 <hr>
-<a name="DESCRIPTION-4"></a>
+<a name="DESCRIPTION-1"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#SYNOPSIS-1" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SYNOPSIS-4" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags_002dcscope" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#OPTIONS" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#OPTIONS-2" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -4950,10 +4987,10 @@ has changed or the list of source files is different. When the
 cross-reference is rebuilt, it is updated incrementally, which makes rebuilding faster
 than the initial build.
 </p><hr>
-<a name="OPTIONS"></a>
+<a name="OPTIONS-2"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#DESCRIPTION-4" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#DESCRIPTION-1" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags_002dcscope" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#Requesting-the-initial-search" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
@@ -5036,7 +5073,7 @@ the default (1). Use &lsquo;<samp>0</samp>&rsquo; to not display the file name a
 <a name="Requesting-the-initial-search"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#OPTIONS" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#OPTIONS-2" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags_002dcscope" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#Issuing-subsequent-requests" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
@@ -5290,7 +5327,7 @@ character of an input line is <kbd>^d</kbd> or <kbd>q</kbd>.
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Line_002dOriented-interface" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags_002dcscope" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#FILES-3" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#FILES-5" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -5396,12 +5433,12 @@ of BSD-style objdir. The default is &lsquo;<tt>/usr/obj</tt>&rsquo;.
 </p></dd>
 </dl>
 <hr>
-<a name="FILES-3"></a>
+<a name="FILES-5"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#ENVIRONMENT-VARIABLES" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags_002dcscope" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#SEE-ALSO-3" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEE-ALSO-2" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -5433,12 +5470,12 @@ then global sets <var>GTAGSROOT</var> to the contents of the file.
 </p></dd>
 </dl>
 <hr>
-<a name="SEE-ALSO-3"></a>
+<a name="SEE-ALSO-2"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#FILES-3" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#FILES-5" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags_002dcscope" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#BUG-2" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#BUG-3" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -5457,12 +5494,12 @@ htags(1).
 <p>GNU GLOBAL source code tag system<br>
 (http://www.gnu.org/software/global/).
 </p><hr>
-<a name="BUG-2"></a>
+<a name="BUG-3"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#SEE-ALSO-3" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEE-ALSO-2" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags_002dcscope" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#AUTHOR-4" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AUTHOR-3" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -5479,12 +5516,12 @@ GLOBAL doesn&rsquo;t recognize it.
 </p>
 <p>&rsquo;Find functions called by this function&rsquo; is not implemented.
 </p><hr>
-<a name="AUTHOR-4"></a>
+<a name="AUTHOR-3"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#BUG-2" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#BUG-3" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags_002dcscope" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#HISTORY-4" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#HISTORY-3" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -5498,10 +5535,10 @@ GLOBAL doesn&rsquo;t recognize it.
 <h3 class="unnumberedsubsec">AUTHOR</h3>
 <p>Joe Steffen (original author) and others.
 </p><hr>
-<a name="HISTORY-4"></a>
+<a name="HISTORY-3"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#AUTHOR-4" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AUTHOR-3" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#gtags_002dcscope" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#globash" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
@@ -5525,9 +5562,9 @@ re-implemented in 2011 using cscope itself.
 <a name="globash"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#HISTORY-4" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#HISTORY-3" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Reference" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#NAME" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#NAME-2" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -5541,12 +5578,12 @@ re-implemented in 2011 using cscope itself.
 <a name="globash-_002d-a-special-shell-for-GLOBAL-using-GNU-bash_002e"></a>
 <h2 class="section">5.7 globash - a special shell for GLOBAL using GNU bash.</h2>
 <hr>
-<a name="NAME"></a>
+<a name="NAME-2"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#globash" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#globash" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#SYNOPSIS-2" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SYNOPSIS" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -5560,12 +5597,12 @@ re-implemented in 2011 using cscope itself.
 <h3 class="unnumberedsubsec">NAME</h3>
 <p>globash - a special shell for GLOBAL using GNU bash.
 </p><hr>
-<a name="SYNOPSIS-2"></a>
+<a name="SYNOPSIS"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#NAME" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#NAME-2" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#globash" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#DESCRIPTION" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#DESCRIPTION-6" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -5581,12 +5618,12 @@ re-implemented in 2011 using cscope itself.
 <p>globash<br>
 </p></blockquote>
 <hr>
-<a name="DESCRIPTION"></a>
+<a name="DESCRIPTION-6"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#SYNOPSIS-2" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SYNOPSIS" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#globash" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#FILES-5" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#FILES-1" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -5605,12 +5642,12 @@ At first, you should make tag files using gtags and
 invoke this command in the project.
 Please refer to the help (type <kbd>ghelp&lt;RET&gt;</kbd>) for detailed usage.
 </p><hr>
-<a name="FILES-5"></a>
+<a name="FILES-1"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#DESCRIPTION" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#DESCRIPTION-6" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#globash" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#ENVIRONMENT" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#ENVIRONMENT-3" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -5637,12 +5674,12 @@ Please refer to the help (type <kbd>ghelp&lt;RET&gt;</kbd>) for detailed usage.
 </p></dd>
 </dl>
 <hr>
-<a name="ENVIRONMENT"></a>
+<a name="ENVIRONMENT-3"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#FILES-5" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#FILES-1" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#globash" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#SEE-ALSO-5" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEE-ALSO-1" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -5662,12 +5699,12 @@ Please refer to the help (type <kbd>ghelp&lt;RET&gt;</kbd>) for detailed usage.
 </p></dd>
 </dl>
 <hr>
-<a name="SEE-ALSO-5"></a>
+<a name="SEE-ALSO-1"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#ENVIRONMENT" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#ENVIRONMENT-3" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#globash" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#AUTHOR-2" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AUTHOR-5" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -5686,10 +5723,10 @@ less(1).
 <p>GNU GLOBAL source code tag system<br>
 (http://www.gnu.org/software/global/).
 </p><hr>
-<a name="AUTHOR-2"></a>
+<a name="AUTHOR-5"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#SEE-ALSO-5" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#SEE-ALSO-1" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#globash" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#HISTORY-5" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
@@ -5708,7 +5745,7 @@ less(1).
 <a name="HISTORY-5"></a>
 <table class="header" cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Reference" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#AUTHOR-2" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#AUTHOR-5" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#globash" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Copying-This-Manual" title="Next chapter"> &gt;&gt; </a>]</td>
@@ -6318,7 +6355,7 @@ to permit their use in free software.
     <li><a name="toc-Concept-of-project" href="#Concept-of-project">1.2 Concept of project</a></li>
     <li><a name="toc-Features-7" href="#Features-7">1.3 Features</a></li>
   </ul></li>
-  <li><a name="toc-Command-line" href="#Global">2 Command line</a>
+  <li><a name="toc-Command-line-1" href="#Command-line">2 Command line</a>
   <ul class="no-bullet">
     <li><a name="toc-Preparation-8" href="#Preparation">2.1 Preparation</a></li>
     <li><a name="toc-Basic-usage-1" href="#Basic-usage">2.2 Basic usage</a></li>
@@ -6381,8 +6418,8 @@ to permit their use in free software.
   <ul class="no-bullet">
     <li><a name="toc-global-_002d-print-locations-of-given-symbols" href="#global">5.1 global - print locations of given symbols</a>
     <ul class="no-bullet">
-      <li><a name="toc-NAME-5" href="#NAME-5">NAME</a></li>
-      <li><a name="toc-SYNOPSIS-3" href="#SYNOPSIS-3">SYNOPSIS</a></li>
+      <li><a name="toc-NAME-6" href="#NAME-6">NAME</a></li>
+      <li><a name="toc-SYNOPSIS-2" href="#SYNOPSIS-2">SYNOPSIS</a></li>
       <li><a name="toc-DESCRIPTION-5" href="#DESCRIPTION-5">DESCRIPTION</a></li>
       <li><a name="toc-COMMANDS" href="#COMMANDS">COMMANDS</a></li>
       <li><a name="toc-OPTIONS-5" href="#OPTIONS-5">OPTIONS</a></li>
@@ -6391,94 +6428,95 @@ to permit their use in free software.
       <li><a name="toc-ENVIRONMENT-4" href="#ENVIRONMENT-4">ENVIRONMENT</a></li>
       <li><a name="toc-CONFIGURATION-2" href="#CONFIGURATION-2">CONFIGURATION</a></li>
       <li><a name="toc-DIAGNOSTICS" href="#DIAGNOSTICS">DIAGNOSTICS</a></li>
-      <li><a name="toc-SEE-ALSO-2" href="#SEE-ALSO-2">SEE ALSO</a></li>
+      <li><a name="toc-SEE-ALSO-4" href="#SEE-ALSO-4">SEE ALSO</a></li>
       <li><a name="toc-AUTHOR-1" href="#AUTHOR-1">AUTHOR</a></li>
-      <li><a name="toc-HISTORY-1" href="#HISTORY-1">HISTORY</a></li>
+      <li><a name="toc-HISTORY" href="#HISTORY">HISTORY</a></li>
     </ul></li>
     <li><a name="toc-gtags-_002d-create-tag-files-for-global_002e" href="#gtags">5.2 gtags - create tag files for global.</a>
     <ul class="no-bullet">
-      <li><a name="toc-NAME-1" href="#NAME-1">NAME</a></li>
-      <li><a name="toc-SYNOPSIS-5" href="#SYNOPSIS-5">SYNOPSIS</a></li>
-      <li><a name="toc-DESCRIPTION-3" href="#DESCRIPTION-3">DESCRIPTION</a></li>
-      <li><a name="toc-OPTIONS-2" href="#OPTIONS-2">OPTIONS</a></li>
-      <li><a name="toc-EXAMPLES-3" href="#EXAMPLES-3">EXAMPLES</a></li>
-      <li><a name="toc-FILES-1" href="#FILES-1">FILES</a></li>
-      <li><a name="toc-ENVIRONMENT-3" href="#ENVIRONMENT-3">ENVIRONMENT</a></li>
+      <li><a name="toc-NAME" href="#NAME">NAME</a></li>
+      <li><a name="toc-SYNOPSIS-3" href="#SYNOPSIS-3">SYNOPSIS</a></li>
+      <li><a name="toc-DESCRIPTION-4" href="#DESCRIPTION-4">DESCRIPTION</a></li>
+      <li><a name="toc-OPTIONS-1" href="#OPTIONS-1">OPTIONS</a></li>
+      <li><a name="toc-EXAMPLES-2" href="#EXAMPLES-2">EXAMPLES</a></li>
+      <li><a name="toc-FILES" href="#FILES">FILES</a></li>
+      <li><a name="toc-ENVIRONMENT-2" href="#ENVIRONMENT-2">ENVIRONMENT</a></li>
       <li><a name="toc-CONFIGURATION-1" href="#CONFIGURATION-1">CONFIGURATION</a></li>
-      <li><a name="toc-DIAGNOSTICS-3" href="#DIAGNOSTICS-3">DIAGNOSTICS</a></li>
-      <li><a name="toc-SEE-ALSO-1" href="#SEE-ALSO-1">SEE ALSO</a></li>
-      <li><a name="toc-BUG-3" href="#BUG-3">BUG</a></li>
+      <li><a name="toc-DIAGNOSTICS-4" href="#DIAGNOSTICS-4">DIAGNOSTICS</a></li>
+      <li><a name="toc-SEE-ALSO" href="#SEE-ALSO">SEE ALSO</a></li>
+      <li><a name="toc-BUG-2" href="#BUG-2">BUG</a></li>
       <li><a name="toc-AUTHOR" href="#AUTHOR">AUTHOR</a></li>
-      <li><a name="toc-HISTORY-3" href="#HISTORY-3">HISTORY</a></li>
+      <li><a name="toc-HISTORY-4" href="#HISTORY-4">HISTORY</a></li>
     </ul></li>
     <li><a name="toc-htags-_002d-generate-a-hypertext-from-a-set-of-source-files_002e" href="#htags">5.3 htags - generate a hypertext from a set of source files.</a>
     <ul class="no-bullet">
-      <li><a name="toc-NAME-3" href="#NAME-3">NAME</a></li>
+      <li><a name="toc-NAME-4" href="#NAME-4">NAME</a></li>
       <li><a name="toc-SYNOPSIS-6" href="#SYNOPSIS-6">SYNOPSIS</a></li>
-      <li><a name="toc-DESCRIPTION-2" href="#DESCRIPTION-2">DESCRIPTION</a></li>
+      <li><a name="toc-DESCRIPTION-3" href="#DESCRIPTION-3">DESCRIPTION</a></li>
       <li><a name="toc-OPTIONS-4" href="#OPTIONS-4">OPTIONS</a></li>
       <li><a name="toc-EXAMPLES" href="#EXAMPLES">EXAMPLES</a></li>
       <li><a name="toc-FILES-2" href="#FILES-2">FILES</a></li>
       <li><a name="toc-ENVIRONMENT-1" href="#ENVIRONMENT-1">ENVIRONMENT</a></li>
       <li><a name="toc-CONFIGURATION" href="#CONFIGURATION">CONFIGURATION</a></li>
-      <li><a name="toc-DIAGNOSTICS-2" href="#DIAGNOSTICS-2">DIAGNOSTICS</a></li>
-      <li><a name="toc-SEE-ALSO-4" href="#SEE-ALSO-4">SEE ALSO</a></li>
+      <li><a name="toc-DIAGNOSTICS-3" href="#DIAGNOSTICS-3">DIAGNOSTICS</a></li>
+      <li><a name="toc-SEE-ALSO-5" href="#SEE-ALSO-5">SEE ALSO</a></li>
       <li><a name="toc-BUG" href="#BUG">BUG</a></li>
-      <li><a name="toc-AUTHOR-5" href="#AUTHOR-5">AUTHOR</a></li>
-      <li><a name="toc-HISTORY-2" href="#HISTORY-2">HISTORY</a></li>
+      <li><a name="toc-AUTHOR-4" href="#AUTHOR-4">AUTHOR</a></li>
+      <li><a name="toc-HISTORY-1" href="#HISTORY-1">HISTORY</a></li>
     </ul></li>
     <li><a name="toc-htags_002dserver-_002d-start-a-private-Web_002fCGI-server-for-hyper_002dtext" href="#htags_002dserver">5.4 htags-server - start a private Web/CGI server for hyper-text</a>
     <ul class="no-bullet">
-      <li><a name="toc-NAME-4" href="#NAME-4">NAME</a></li>
-      <li><a name="toc-SYNOPSIS" href="#SYNOPSIS">SYNOPSIS</a></li>
-      <li><a name="toc-DESCRIPTION-1" href="#DESCRIPTION-1">DESCRIPTION</a></li>
+      <li><a name="toc-NAME-5" href="#NAME-5">NAME</a></li>
+      <li><a name="toc-SYNOPSIS-1" href="#SYNOPSIS-1">SYNOPSIS</a></li>
+      <li><a name="toc-DESCRIPTION" href="#DESCRIPTION">DESCRIPTION</a></li>
       <li><a name="toc-OPTIONS-3" href="#OPTIONS-3">OPTIONS</a></li>
-      <li><a name="toc-EXAMPLES-2" href="#EXAMPLES-2">EXAMPLES</a></li>
+      <li><a name="toc-EXAMPLES-1" href="#EXAMPLES-1">EXAMPLES</a></li>
       <li><a name="toc-DIAGNOSTICS-1" href="#DIAGNOSTICS-1">DIAGNOSTICS</a></li>
       <li><a name="toc-SEE-ALSO-6" href="#SEE-ALSO-6">SEE ALSO</a></li>
       <li><a name="toc-BUG-1" href="#BUG-1">BUG</a></li>
-      <li><a name="toc-AUTHOR-3" href="#AUTHOR-3">AUTHOR</a></li>
+      <li><a name="toc-AUTHOR-2" href="#AUTHOR-2">AUTHOR</a></li>
+      <li><a name="toc-HISTORY-6" href="#HISTORY-6">HISTORY</a></li>
     </ul></li>
     <li><a name="toc-gozilla-_002d-force-mozilla-to-display-specified-part-of-a-source-file_002e" href="#gozilla">5.5 gozilla - force mozilla to display specified part of a source file.</a>
     <ul class="no-bullet">
-      <li><a name="toc-NAME-2" href="#NAME-2">NAME</a></li>
-      <li><a name="toc-SYNOPSIS-4" href="#SYNOPSIS-4">SYNOPSIS</a></li>
-      <li><a name="toc-DESCRIPTION-6" href="#DESCRIPTION-6">DESCRIPTION</a></li>
-      <li><a name="toc-OPTIONS-1" href="#OPTIONS-1">OPTIONS</a></li>
-      <li><a name="toc-FILES" href="#FILES">FILES</a></li>
-      <li><a name="toc-ENVIRONMENT-2" href="#ENVIRONMENT-2">ENVIRONMENT</a></li>
-      <li><a name="toc-EXAMPLES-1" href="#EXAMPLES-1">EXAMPLES</a></li>
-      <li><a name="toc-DIAGNOSTICS-4" href="#DIAGNOSTICS-4">DIAGNOSTICS</a></li>
-      <li><a name="toc-SEE-ALSO" href="#SEE-ALSO">SEE ALSO</a></li>
+      <li><a name="toc-NAME-3" href="#NAME-3">NAME</a></li>
+      <li><a name="toc-SYNOPSIS-5" href="#SYNOPSIS-5">SYNOPSIS</a></li>
+      <li><a name="toc-DESCRIPTION-2" href="#DESCRIPTION-2">DESCRIPTION</a></li>
+      <li><a name="toc-OPTIONS" href="#OPTIONS">OPTIONS</a></li>
+      <li><a name="toc-FILES-3" href="#FILES-3">FILES</a></li>
+      <li><a name="toc-ENVIRONMENT" href="#ENVIRONMENT">ENVIRONMENT</a></li>
+      <li><a name="toc-EXAMPLES-3" href="#EXAMPLES-3">EXAMPLES</a></li>
+      <li><a name="toc-DIAGNOSTICS-2" href="#DIAGNOSTICS-2">DIAGNOSTICS</a></li>
+      <li><a name="toc-SEE-ALSO-3" href="#SEE-ALSO-3">SEE ALSO</a></li>
       <li><a name="toc-BUGS" href="#BUGS">BUGS</a></li>
       <li><a name="toc-AUTHORS" href="#AUTHORS">AUTHORS</a></li>
-      <li><a name="toc-HISTORY" href="#HISTORY">HISTORY</a></li>
+      <li><a name="toc-HISTORY-2" href="#HISTORY-2">HISTORY</a></li>
     </ul></li>
     <li><a name="toc-gtags_002dcscope-_002d-interactively-examine-a-C-program_002e" href="#gtags_002dcscope">5.6 gtags-cscope - interactively examine a C program.</a>
     <ul class="no-bullet">
-      <li><a name="toc-NAME-6" href="#NAME-6">NAME</a></li>
-      <li><a name="toc-SYNOPSIS-1" href="#SYNOPSIS-1">SYNOPSIS</a></li>
-      <li><a name="toc-DESCRIPTION-4" href="#DESCRIPTION-4">DESCRIPTION</a></li>
-      <li><a name="toc-OPTIONS" href="#OPTIONS">OPTIONS</a></li>
+      <li><a name="toc-NAME-1" href="#NAME-1">NAME</a></li>
+      <li><a name="toc-SYNOPSIS-4" href="#SYNOPSIS-4">SYNOPSIS</a></li>
+      <li><a name="toc-DESCRIPTION-1" href="#DESCRIPTION-1">DESCRIPTION</a></li>
+      <li><a name="toc-OPTIONS-2" href="#OPTIONS-2">OPTIONS</a></li>
       <li><a name="toc-Requesting-the-initial-search" href="#Requesting-the-initial-search">Requesting the initial search</a></li>
       <li><a name="toc-Issuing-subsequent-requests" href="#Issuing-subsequent-requests">Issuing subsequent requests</a></li>
       <li><a name="toc-Line_002dOriented-interface" href="#Line_002dOriented-interface">Line-Oriented interface</a></li>
       <li><a name="toc-ENVIRONMENT-VARIABLES" href="#ENVIRONMENT-VARIABLES">ENVIRONMENT VARIABLES</a></li>
-      <li><a name="toc-FILES-3" href="#FILES-3">FILES</a></li>
-      <li><a name="toc-SEE-ALSO-3" href="#SEE-ALSO-3">SEE ALSO</a></li>
-      <li><a name="toc-BUG-2" href="#BUG-2">BUG</a></li>
-      <li><a name="toc-AUTHOR-4" href="#AUTHOR-4">AUTHOR</a></li>
-      <li><a name="toc-HISTORY-4" href="#HISTORY-4">HISTORY</a></li>
+      <li><a name="toc-FILES-5" href="#FILES-5">FILES</a></li>
+      <li><a name="toc-SEE-ALSO-2" href="#SEE-ALSO-2">SEE ALSO</a></li>
+      <li><a name="toc-BUG-3" href="#BUG-3">BUG</a></li>
+      <li><a name="toc-AUTHOR-3" href="#AUTHOR-3">AUTHOR</a></li>
+      <li><a name="toc-HISTORY-3" href="#HISTORY-3">HISTORY</a></li>
     </ul></li>
     <li><a name="toc-globash-_002d-a-special-shell-for-GLOBAL-using-GNU-bash_002e" href="#globash">5.7 globash - a special shell for GLOBAL using GNU bash.</a>
     <ul class="no-bullet">
-      <li><a name="toc-NAME" href="#NAME">NAME</a></li>
-      <li><a name="toc-SYNOPSIS-2" href="#SYNOPSIS-2">SYNOPSIS</a></li>
-      <li><a name="toc-DESCRIPTION" href="#DESCRIPTION">DESCRIPTION</a></li>
-      <li><a name="toc-FILES-5" href="#FILES-5">FILES</a></li>
-      <li><a name="toc-ENVIRONMENT" href="#ENVIRONMENT">ENVIRONMENT</a></li>
-      <li><a name="toc-SEE-ALSO-5" href="#SEE-ALSO-5">SEE ALSO</a></li>
-      <li><a name="toc-AUTHOR-2" href="#AUTHOR-2">AUTHOR</a></li>
+      <li><a name="toc-NAME-2" href="#NAME-2">NAME</a></li>
+      <li><a name="toc-SYNOPSIS" href="#SYNOPSIS">SYNOPSIS</a></li>
+      <li><a name="toc-DESCRIPTION-6" href="#DESCRIPTION-6">DESCRIPTION</a></li>
+      <li><a name="toc-FILES-1" href="#FILES-1">FILES</a></li>
+      <li><a name="toc-ENVIRONMENT-3" href="#ENVIRONMENT-3">ENVIRONMENT</a></li>
+      <li><a name="toc-SEE-ALSO-1" href="#SEE-ALSO-1">SEE ALSO</a></li>
+      <li><a name="toc-AUTHOR-5" href="#AUTHOR-5">AUTHOR</a></li>
       <li><a name="toc-HISTORY-5" href="#HISTORY-5">HISTORY</a></li>
     </ul>
 </li>
@@ -6505,7 +6543,7 @@ to permit their use in free software.
 <h1>About This Document</h1>
 
 <p>
-  This document was generated on <i>March 24, 2015</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+  This document was generated on <i>June 10, 2015</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
 </p>
 <p>
   The buttons in the navigation panels have the following meaning:
@@ -6607,7 +6645,7 @@ to permit their use in free software.
 <hr>
 <p>
  <font size="-1">
-  This document was generated on <i>March 24, 2015</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
+  This document was generated on <i>June 10, 2015</i> using <a href="http://www.nongnu.org/texi2html/"><i>texi2html 5.0</i></a>.
  </font>
  <br>
 
